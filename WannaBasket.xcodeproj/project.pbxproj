@@ -37,6 +37,8 @@
 		CBB9B31B22C4CCA3004C50B3 /* PlayerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31822C4CCA3004C50B3 /* PlayerTableView.swift */; };
 		CBB9B31E22C4CCAC004C50B3 /* AddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B31C22C4CCAC004C50B3 /* AddPlayerView.xib */; };
 		CBB9B31F22C4CCAC004C50B3 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31D22C4CCAC004C50B3 /* AddPlayerView.swift */; };
+		CBB9B32122C4D3BD004C50B3 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B32022C4D3BD004C50B3 /* GameModel.swift */; };
+		CBB9B32322C4EA3D004C50B3 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B32222C4EA3D004C50B3 /* RecordModel.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		CBB9B31822C4CCA3004C50B3 /* PlayerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerTableView.swift; path = WannaBasket/View/PlayerTableView/PlayerTableView.swift; sourceTree = SOURCE_ROOT; };
 		CBB9B31C22C4CCAC004C50B3 /* AddPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddPlayerView.xib; path = WannaBasket/View/AddPlayerView/AddPlayerView.xib; sourceTree = SOURCE_ROOT; };
 		CBB9B31D22C4CCAC004C50B3 /* AddPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPlayerView.swift; path = WannaBasket/View/AddPlayerView/AddPlayerView.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B32022C4D3BD004C50B3 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		CBB9B32222C4EA3D004C50B3 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 			children = (
 				CBFA01AC22B8B99800F71C7B /* PlayerModel.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* TeamModel.swift */,
+				CBB9B32022C4D3BD004C50B3 /* GameModel.swift */,
+				CBB9B32222C4EA3D004C50B3 /* RecordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -577,6 +583,8 @@
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B2D822C08C08004C50B3 /* UITableView+Extension.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
+				CBB9B32122C4D3BD004C50B3 /* GameModel.swift in Sources */,
+				CBB9B32322C4EA3D004C50B3 /* RecordModel.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B31922C4CCA3004C50B3 /* PlayerTableViewCell.swift in Sources */,
