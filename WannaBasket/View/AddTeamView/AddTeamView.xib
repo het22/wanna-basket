@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DoHyeon-Regular.ttf">
+            <string>DoHyeon-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTeamView" customModule="WannaBasket" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="6aw-UK-b7J" id="GDj-hl-bkt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="AddTeamView" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="186"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eUu-VP-1n2">
+                    <rect key="frame" x="0.0" y="0.0" width="451" height="186"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-Au-EdV" userLabel="Up">
+                            <rect key="frame" x="0.0" y="0.0" width="451" height="133"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-oL-sqD">
+                                    <rect key="frame" x="86" y="15.5" width="279" height="102"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 팀 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bni-az-gNv">
+                                            <rect key="frame" x="0.0" y="0.0" width="279" height="47"/>
+                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-JZ-aYa">
+                                            <rect key="frame" x="0.0" y="67" width="69" height="35"/>
+                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="새로운 팀 이름" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-UK-b7J">
+                                            <rect key="frame" x="79" y="67" width="200" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="wox-GS-cL4"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="bni-az-gNv" firstAttribute="leading" secondItem="FDd-oL-sqD" secondAttribute="leading" id="Etx-hK-kjl"/>
+                                        <constraint firstItem="Iyb-JZ-aYa" firstAttribute="leading" secondItem="FDd-oL-sqD" secondAttribute="leading" id="G1r-Ym-Tex"/>
+                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="top" secondItem="bni-az-gNv" secondAttribute="bottom" constant="20" id="HNc-xa-RVU"/>
+                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="leading" secondItem="Iyb-JZ-aYa" secondAttribute="trailing" constant="10" id="LQH-c2-ZPT"/>
+                                        <constraint firstAttribute="trailing" secondItem="6aw-UK-b7J" secondAttribute="trailing" id="Mhd-Hl-Nyd"/>
+                                        <constraint firstAttribute="bottom" secondItem="6aw-UK-b7J" secondAttribute="bottom" id="NgQ-4V-6rN"/>
+                                        <constraint firstItem="bni-az-gNv" firstAttribute="top" secondItem="FDd-oL-sqD" secondAttribute="top" id="OwO-Qz-yz5"/>
+                                        <constraint firstAttribute="trailing" secondItem="bni-az-gNv" secondAttribute="trailing" id="UFC-PO-PaV"/>
+                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="height" secondItem="Iyb-JZ-aYa" secondAttribute="height" id="WVp-Ls-zaF"/>
+                                        <constraint firstAttribute="bottom" secondItem="Iyb-JZ-aYa" secondAttribute="bottom" id="rbg-b5-GBp"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="FDd-oL-sqD" firstAttribute="centerX" secondItem="yHt-Au-EdV" secondAttribute="centerX" id="6wY-Ve-6re"/>
+                                <constraint firstItem="FDd-oL-sqD" firstAttribute="centerY" secondItem="yHt-Au-EdV" secondAttribute="centerY" id="Ozo-YT-IP3"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-V0-eDk" userLabel="Down">
+                            <rect key="frame" x="0.0" y="133" width="451" height="53"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-FW-5Qp">
+                                    <rect key="frame" x="0.0" y="0.0" width="225.5" height="53"/>
+                                    <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                    <state key="normal" title="취소">
+                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonTapped" destination="-1" eventType="touchUpInside" id="kHJ-zs-bPD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-6U-y9A">
+                                    <rect key="frame" x="225.5" y="0.0" width="225.5" height="53"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                    <state key="normal" title="완료">
+                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="completeButtonTapped" destination="-1" eventType="touchUpInside" id="e5g-WV-Bwt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="1eS-FW-5Qp" secondAttribute="bottom" id="0TM-we-mXs"/>
+                                <constraint firstItem="1eS-FW-5Qp" firstAttribute="top" secondItem="K5l-V0-eDk" secondAttribute="top" id="VbA-mY-aOJ"/>
+                                <constraint firstItem="WkK-6U-y9A" firstAttribute="width" secondItem="1eS-FW-5Qp" secondAttribute="width" id="Vhz-cA-v1O"/>
+                                <constraint firstItem="WkK-6U-y9A" firstAttribute="top" secondItem="K5l-V0-eDk" secondAttribute="top" id="Y3E-31-FZo"/>
+                                <constraint firstAttribute="trailing" secondItem="WkK-6U-y9A" secondAttribute="trailing" id="aff-rN-7zT"/>
+                                <constraint firstItem="1eS-FW-5Qp" firstAttribute="leading" secondItem="K5l-V0-eDk" secondAttribute="leading" id="eLz-Ml-pcm"/>
+                                <constraint firstAttribute="bottom" secondItem="WkK-6U-y9A" secondAttribute="bottom" id="hbj-l2-a6b"/>
+                                <constraint firstItem="WkK-6U-y9A" firstAttribute="leading" secondItem="1eS-FW-5Qp" secondAttribute="trailing" id="nO9-cs-4a3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="K5l-V0-eDk" firstAttribute="height" secondItem="yHt-Au-EdV" secondAttribute="height" multiplier="0.4" id="iJt-tz-khN"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eUu-VP-1n2" secondAttribute="trailing" id="AJP-oh-st9"/>
+                <constraint firstItem="eUu-VP-1n2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XgR-aS-7g5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eUu-VP-1n2" secondAttribute="bottom" id="rBA-ia-Rno"/>
+                <constraint firstItem="eUu-VP-1n2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="xY1-5M-wC0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="96.5625" y="-203.75"/>
+        </view>
+    </objects>
+</document>

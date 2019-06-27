@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DoHyeon-Regular.ttf">
+            <string>DoHyeon-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCell" rowHeight="111" id="b26-Rb-TJw" customClass="PlayerTableViewCell" customModule="WannaBasket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="476" height="111"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b26-Rb-TJw" id="dfx-fG-RUP">
+                <rect key="frame" x="0.0" y="0.0" width="476" height="110.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmZ-JH-IDU">
+                        <rect key="frame" x="0.0" y="0.0" width="476" height="110.5"/>
+                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XmZ-JH-IDU" firstAttribute="leading" secondItem="dfx-fG-RUP" secondAttribute="leading" id="2mL-Hi-qem"/>
+                    <constraint firstAttribute="bottom" secondItem="XmZ-JH-IDU" secondAttribute="bottom" id="NJC-zj-Gap"/>
+                    <constraint firstItem="XmZ-JH-IDU" firstAttribute="top" secondItem="dfx-fG-RUP" secondAttribute="top" id="hiQ-1i-G4J"/>
+                    <constraint firstAttribute="trailing" secondItem="XmZ-JH-IDU" secondAttribute="trailing" id="q2G-QU-aQb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="XmZ-JH-IDU" id="kwt-zI-Ths"/>
+            </connections>
+            <point key="canvasLocation" x="114.49275362318842" y="100.78125"/>
+        </tableViewCell>
+    </objects>
+</document>

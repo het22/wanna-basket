@@ -1,0 +1,943 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		239480F520C10083003AE869 /* Pods_WannaBasketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF769EAB4CDFD0873E5A11DA /* Pods_WannaBasketTests.framework */; };
+		3826D846CFF9B74130DA5907 /* Pods_WannaBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEED1CBA0688A1F70F232AF /* Pods_WannaBasket.framework */; };
+		94017A0DF400F7160CABE054 /* Pods_WannaBasketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19B4D980A9D39271B31F6A6 /* Pods_WannaBasketUITests.framework */; };
+		CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0652D722B9B99200330DD7 /* Wireframe.storyboard */; };
+		CB0652DF22B9C42C00330DD7 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0652DE22B9C42C00330DD7 /* Reusable.swift */; };
+		CB0652E122B9C43C00330DD7 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0652E022B9C43C00330DD7 /* NibLoadable.swift */; };
+		CB0652E522B9C58600330DD7 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0652E422B9C58600330DD7 /* UICollectionView+Extension.swift */; };
+		CBB9B2D822C08C08004C50B3 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B2D722C08C08004C50B3 /* UITableView+Extension.swift */; };
+		CBB9B2DB22C0CDDF004C50B3 /* AddButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B2D922C0CDDF004C50B3 /* AddButtonCell.xib */; };
+		CBB9B2DC22C0CDDF004C50B3 /* AddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B2DA22C0CDDF004C50B3 /* AddButtonCell.swift */; };
+		CBB9B2E622C0CDF5004C50B3 /* TeamTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B2E322C0CDF4004C50B3 /* TeamTableView.swift */; };
+		CBB9B2E722C0CDF5004C50B3 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B2E422C0CDF4004C50B3 /* TeamTableViewCell.xib */; };
+		CBB9B2E822C0CDF5004C50B3 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B2E522C0CDF5004C50B3 /* TeamTableViewCell.swift */; };
+		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
+		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
+		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
+		CBB9B2FF22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B2FE22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift */; };
+		CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */; };
+		CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */; };
+		CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */; };
+		CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30922C49D7A004C50B3 /* GameView.swift */; };
+		CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */; };
+		CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */; };
+		CBB9B31422C4CC9C004C50B3 /* AddTeamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B31222C4CC9C004C50B3 /* AddTeamView.xib */; };
+		CBB9B31522C4CC9C004C50B3 /* AddTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31322C4CC9C004C50B3 /* AddTeamView.swift */; };
+		CBB9B31922C4CCA3004C50B3 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31622C4CCA3004C50B3 /* PlayerTableViewCell.swift */; };
+		CBB9B31A22C4CCA3004C50B3 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B31722C4CCA3004C50B3 /* PlayerTableViewCell.xib */; };
+		CBB9B31B22C4CCA3004C50B3 /* PlayerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31822C4CCA3004C50B3 /* PlayerTableView.swift */; };
+		CBB9B31E22C4CCAC004C50B3 /* AddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB9B31C22C4CCAC004C50B3 /* AddPlayerView.xib */; };
+		CBB9B31F22C4CCAC004C50B3 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B31D22C4CCAC004C50B3 /* AddPlayerView.swift */; };
+		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
+		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
+		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
+		CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */; };
+		CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */; };
+		CBFA018A22B89D2B00F71C7B /* WannaBasketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */; };
+		CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA019722B89E0E00F71C7B /* HomeScreen.storyboard */; };
+		CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019822B89E0E00F71C7B /* HomePresenter.swift */; };
+		CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019922B89E0E00F71C7B /* HomeInteractor.swift */; };
+		CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019A22B89E0E00F71C7B /* HomeView.swift */; };
+		CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019B22B89E0E00F71C7B /* HomeProtocol.swift */; };
+		CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019C22B89E0E00F71C7B /* HomeWireframe.swift */; };
+		CBFA01A622B89E7C00F71C7B /* ModuleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */; };
+		CBFA01AD22B8B99800F71C7B /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01AC22B8B99800F71C7B /* PlayerModel.swift */; };
+		CBFA01AF22B8BA7A00F71C7B /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01AE22B8BA7A00F71C7B /* TeamModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBFA017B22B89D2B00F71C7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBFA015B22B89D2A00F71C7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBFA016222B89D2A00F71C7B;
+			remoteInfo = WannaBasket;
+		};
+		CBFA018622B89D2B00F71C7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBFA015B22B89D2A00F71C7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBFA016222B89D2A00F71C7B;
+			remoteInfo = WannaBasket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CEED1CBA0688A1F70F232AF /* Pods_WannaBasket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaBasket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4C63FA225874C548BA3208 /* Pods-WannaBasket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasket/Pods-WannaBasket.debug.xcconfig"; sourceTree = "<group>"; };
+		31D37E559C1328722D7FB561 /* Pods-WannaBasketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketTests/Pods-WannaBasketTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6CD3CA312644EA1D6F143EA /* Pods-WannaBasketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketUITests/Pods-WannaBasketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB0652D722B9B99200330DD7 /* Wireframe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wireframe.storyboard; sourceTree = "<group>"; };
+		CB0652DE22B9C42C00330DD7 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		CB0652E022B9C43C00330DD7 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		CB0652E422B9C58600330DD7 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		CBB9B2D722C08C08004C50B3 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		CBB9B2D922C0CDDF004C50B3 /* AddButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddButtonCell.xib; path = WannaBasket/View/AddButtonCell/AddButtonCell.xib; sourceTree = SOURCE_ROOT; };
+		CBB9B2DA22C0CDDF004C50B3 /* AddButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddButtonCell.swift; path = WannaBasket/View/AddButtonCell/AddButtonCell.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B2E322C0CDF4004C50B3 /* TeamTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableView.swift; path = WannaBasket/View/TeamTableView/TeamTableView.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B2E422C0CDF4004C50B3 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TeamTableViewCell.xib; path = WannaBasket/View/TeamTableView/TeamTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CBB9B2E522C0CDF5004C50B3 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = WannaBasket/View/TeamTableView/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B2FE22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizerWithClosure.swift; sourceTree = "<group>"; };
+		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
+		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
+		CBB9B30922C49D7A004C50B3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWireframe.swift; sourceTree = "<group>"; };
+		CBB9B31222C4CC9C004C50B3 /* AddTeamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddTeamView.xib; path = WannaBasket/View/AddTeamView/AddTeamView.xib; sourceTree = SOURCE_ROOT; };
+		CBB9B31322C4CC9C004C50B3 /* AddTeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTeamView.swift; path = WannaBasket/View/AddTeamView/AddTeamView.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B31622C4CCA3004C50B3 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerTableViewCell.swift; path = WannaBasket/View/PlayerTableView/PlayerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B31722C4CCA3004C50B3 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerTableViewCell.xib; path = WannaBasket/View/PlayerTableView/PlayerTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CBB9B31822C4CCA3004C50B3 /* PlayerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerTableView.swift; path = WannaBasket/View/PlayerTableView/PlayerTableView.swift; sourceTree = SOURCE_ROOT; };
+		CBB9B31C22C4CCAC004C50B3 /* AddPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddPlayerView.xib; path = WannaBasket/View/AddPlayerView/AddPlayerView.xib; sourceTree = SOURCE_ROOT; };
+		CBB9B31D22C4CCAC004C50B3 /* AddPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPlayerView.swift; path = WannaBasket/View/AddPlayerView/AddPlayerView.swift; sourceTree = SOURCE_ROOT; };
+		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
+		CBFA017022B89D2B00F71C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBFA017322B89D2B00F71C7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBFA017522B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFA017A22B89D2B00F71C7B /* WannaBasketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaBasketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaBasketTests.swift; sourceTree = "<group>"; };
+		CBFA018022B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFA018522B89D2B00F71C7B /* WannaBasketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaBasketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaBasketUITests.swift; sourceTree = "<group>"; };
+		CBFA018B22B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFA019722B89E0E00F71C7B /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
+		CBFA019822B89E0E00F71C7B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CBFA019922B89E0E00F71C7B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		CBFA019A22B89E0E00F71C7B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CBFA019B22B89E0E00F71C7B /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		CBFA019C22B89E0E00F71C7B /* HomeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
+		CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleEnum.swift; sourceTree = "<group>"; };
+		CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
+		CBFA01AC22B8B99800F71C7B /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		CBFA01AE22B8BA7A00F71C7B /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		D19B4D980A9D39271B31F6A6 /* Pods_WannaBasketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaBasketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74E44856EE67416DD3D4FA2 /* Pods-WannaBasketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketUITests/Pods-WannaBasketUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D8115EF9D644828DD7C2A787 /* Pods-WannaBasket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasket.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasket/Pods-WannaBasket.release.xcconfig"; sourceTree = "<group>"; };
+		F3A141802DB1E126C19CAC81 /* Pods-WannaBasketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketTests/Pods-WannaBasketTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF769EAB4CDFD0873E5A11DA /* Pods_WannaBasketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaBasketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBFA016022B89D2A00F71C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3826D846CFF9B74130DA5907 /* Pods_WannaBasket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA017722B89D2B00F71C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				239480F520C10083003AE869 /* Pods_WannaBasketTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA018222B89D2B00F71C7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94017A0DF400F7160CABE054 /* Pods_WannaBasketUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		823BB5DDB42597BE4AB9A780 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F4C63FA225874C548BA3208 /* Pods-WannaBasket.debug.xcconfig */,
+				D8115EF9D644828DD7C2A787 /* Pods-WannaBasket.release.xcconfig */,
+				F3A141802DB1E126C19CAC81 /* Pods-WannaBasketTests.debug.xcconfig */,
+				31D37E559C1328722D7FB561 /* Pods-WannaBasketTests.release.xcconfig */,
+				B6CD3CA312644EA1D6F143EA /* Pods-WannaBasketUITests.debug.xcconfig */,
+				D74E44856EE67416DD3D4FA2 /* Pods-WannaBasketUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB0652D922B9C27400330DD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B2F522C34A41004C50B3 /* AddTeamView */,
+				CBB9B30022C45D92004C50B3 /* AddPlayerView */,
+				CB0652E822C04BF000330DD7 /* AddButtonCell */,
+				CB0652E722C04A1900330DD7 /* TeamTableView */,
+				CBB9B2E922C20548004C50B3 /* PlayerTableView */,
+			);
+			name = View;
+			path = "퍋ㅈ";
+			sourceTree = "<group>";
+		};
+		CB0652E722C04A1900330DD7 /* TeamTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B2E322C0CDF4004C50B3 /* TeamTableView.swift */,
+				CBB9B2E522C0CDF5004C50B3 /* TeamTableViewCell.swift */,
+				CBB9B2E422C0CDF4004C50B3 /* TeamTableViewCell.xib */,
+			);
+			path = TeamTableView;
+			sourceTree = "<group>";
+		};
+		CB0652E822C04BF000330DD7 /* AddButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B2DA22C0CDDF004C50B3 /* AddButtonCell.swift */,
+				CBB9B2D922C0CDDF004C50B3 /* AddButtonCell.xib */,
+			);
+			path = AddButtonCell;
+			sourceTree = "<group>";
+		};
+		CBB9B2E922C20548004C50B3 /* PlayerTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B31822C4CCA3004C50B3 /* PlayerTableView.swift */,
+				CBB9B31622C4CCA3004C50B3 /* PlayerTableViewCell.swift */,
+				CBB9B31722C4CCA3004C50B3 /* PlayerTableViewCell.xib */,
+			);
+			path = PlayerTableView;
+			sourceTree = "<group>";
+		};
+		CBB9B2F522C34A41004C50B3 /* AddTeamView */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B31322C4CC9C004C50B3 /* AddTeamView.swift */,
+				CBB9B31222C4CC9C004C50B3 /* AddTeamView.xib */,
+			);
+			path = AddTeamView;
+			sourceTree = "<group>";
+		};
+		CBB9B30022C45D92004C50B3 /* AddPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B31D22C4CCAC004C50B3 /* AddPlayerView.swift */,
+				CBB9B31C22C4CCAC004C50B3 /* AddPlayerView.xib */,
+			);
+			path = AddPlayerView;
+			sourceTree = "<group>";
+		};
+		CBB9B30522C49D62004C50B3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */,
+				CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */,
+				CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */,
+				CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */,
+				CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */,
+				CBB9B30922C49D7A004C50B3 /* GameView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		CBFA015A22B89D2A00F71C7B = {
+			isa = PBXGroup;
+			children = (
+				CBFA016522B89D2A00F71C7B /* WannaBasket */,
+				CBFA017D22B89D2B00F71C7B /* WannaBasketTests */,
+				CBFA018822B89D2B00F71C7B /* WannaBasketUITests */,
+				CBFA016422B89D2A00F71C7B /* Products */,
+				823BB5DDB42597BE4AB9A780 /* Pods */,
+				EA8827BE7A61829FDE6C2D35 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CBFA016422B89D2A00F71C7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA016322B89D2A00F71C7B /* WannaBasket.app */,
+				CBFA017A22B89D2B00F71C7B /* WannaBasketTests.xctest */,
+				CBFA018522B89D2B00F71C7B /* WannaBasketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBFA016522B89D2A00F71C7B /* WannaBasket */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA01AB22B8B8EC00F71C7B /* SupportFile */,
+				CBFA01A722B8A6C700F71C7B /* Font */,
+				CBFA01AA22B8B8A700F71C7B /* Extension */,
+				CBFA01A922B8B89400F71C7B /* Model */,
+				CB0652D922B9C27400330DD7 /* View */,
+				CBFA01A422B89E2B00F71C7B /* Module */,
+			);
+			path = WannaBasket;
+			sourceTree = "<group>";
+		};
+		CBFA017D22B89D2B00F71C7B /* WannaBasketTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */,
+				CBFA018022B89D2B00F71C7B /* Info.plist */,
+			);
+			path = WannaBasketTests;
+			sourceTree = "<group>";
+		};
+		CBFA018822B89D2B00F71C7B /* WannaBasketUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */,
+				CBFA018B22B89D2B00F71C7B /* Info.plist */,
+			);
+			path = WannaBasketUITests;
+			sourceTree = "<group>";
+		};
+		CBFA01A322B89E2300F71C7B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA019722B89E0E00F71C7B /* HomeScreen.storyboard */,
+				CBFA019B22B89E0E00F71C7B /* HomeProtocol.swift */,
+				CBFA019C22B89E0E00F71C7B /* HomeWireframe.swift */,
+				CBFA019922B89E0E00F71C7B /* HomeInteractor.swift */,
+				CBFA019822B89E0E00F71C7B /* HomePresenter.swift */,
+				CBFA019A22B89E0E00F71C7B /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CBFA01A422B89E2B00F71C7B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */,
+				CBFA01A322B89E2300F71C7B /* Home */,
+				CBB9B30522C49D62004C50B3 /* Game */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CBFA01A722B8A6C700F71C7B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CBFA01A922B8B89400F71C7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA01AC22B8B99800F71C7B /* PlayerModel.swift */,
+				CBFA01AE22B8BA7A00F71C7B /* TeamModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBFA01AA22B8B8A700F71C7B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB0652DE22B9C42C00330DD7 /* Reusable.swift */,
+				CB0652E022B9C43C00330DD7 /* NibLoadable.swift */,
+				CB0652E422B9C58600330DD7 /* UICollectionView+Extension.swift */,
+				CBB9B2D722C08C08004C50B3 /* UITableView+Extension.swift */,
+				CBB9B2FE22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CBFA01AB22B8B8EC00F71C7B /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				CBFA017522B89D2B00F71C7B /* Info.plist */,
+				CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */,
+				CBFA017022B89D2B00F71C7B /* Assets.xcassets */,
+				CBFA016622B89D2A00F71C7B /* AppDelegate.swift */,
+				CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */,
+				CB0652D722B9B99200330DD7 /* Wireframe.storyboard */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		EA8827BE7A61829FDE6C2D35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CEED1CBA0688A1F70F232AF /* Pods_WannaBasket.framework */,
+				FF769EAB4CDFD0873E5A11DA /* Pods_WannaBasketTests.framework */,
+				D19B4D980A9D39271B31F6A6 /* Pods_WannaBasketUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBFA016222B89D2A00F71C7B /* WannaBasket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBFA018E22B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasket" */;
+			buildPhases = (
+				01004B50FDC6F5AD7F8CFE65 /* [CP] Check Pods Manifest.lock */,
+				CBFA015F22B89D2A00F71C7B /* Sources */,
+				CBFA016022B89D2A00F71C7B /* Frameworks */,
+				CBFA016122B89D2A00F71C7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WannaBasket;
+			productName = WannaBasket;
+			productReference = CBFA016322B89D2A00F71C7B /* WannaBasket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBFA017922B89D2B00F71C7B /* WannaBasketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBFA019122B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasketTests" */;
+			buildPhases = (
+				0F13DD5519411B1090D92446 /* [CP] Check Pods Manifest.lock */,
+				CBFA017622B89D2B00F71C7B /* Sources */,
+				CBFA017722B89D2B00F71C7B /* Frameworks */,
+				CBFA017822B89D2B00F71C7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBFA017C22B89D2B00F71C7B /* PBXTargetDependency */,
+			);
+			name = WannaBasketTests;
+			productName = WannaBasketTests;
+			productReference = CBFA017A22B89D2B00F71C7B /* WannaBasketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CBFA018422B89D2B00F71C7B /* WannaBasketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBFA019422B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasketUITests" */;
+			buildPhases = (
+				F8ECDD7ACF6FD2A83F01838F /* [CP] Check Pods Manifest.lock */,
+				CBFA018122B89D2B00F71C7B /* Sources */,
+				CBFA018222B89D2B00F71C7B /* Frameworks */,
+				CBFA018322B89D2B00F71C7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBFA018722B89D2B00F71C7B /* PBXTargetDependency */,
+			);
+			name = WannaBasketUITests;
+			productName = WannaBasketUITests;
+			productReference = CBFA018522B89D2B00F71C7B /* WannaBasketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBFA015B22B89D2A00F71C7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Het Song";
+				TargetAttributes = {
+					CBFA016222B89D2A00F71C7B = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					CBFA017922B89D2B00F71C7B = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CBFA016222B89D2A00F71C7B;
+					};
+					CBFA018422B89D2B00F71C7B = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CBFA016222B89D2A00F71C7B;
+					};
+				};
+			};
+			buildConfigurationList = CBFA015E22B89D2A00F71C7B /* Build configuration list for PBXProject "WannaBasket" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBFA015A22B89D2A00F71C7B;
+			productRefGroup = CBFA016422B89D2A00F71C7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBFA016222B89D2A00F71C7B /* WannaBasket */,
+				CBFA017922B89D2B00F71C7B /* WannaBasketTests */,
+				CBFA018422B89D2B00F71C7B /* WannaBasketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBFA016122B89D2A00F71C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */,
+				CBB9B31E22C4CCAC004C50B3 /* AddPlayerView.xib in Resources */,
+				CBB9B2DB22C0CDDF004C50B3 /* AddButtonCell.xib in Resources */,
+				CBB9B31A22C4CCA3004C50B3 /* PlayerTableViewCell.xib in Resources */,
+				CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */,
+				CBB9B31422C4CC9C004C50B3 /* AddTeamView.xib in Resources */,
+				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
+				CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */,
+				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
+				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
+				CBB9B2E722C0CDF5004C50B3 /* TeamTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA017822B89D2B00F71C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA018322B89D2B00F71C7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01004B50FDC6F5AD7F8CFE65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WannaBasket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F13DD5519411B1090D92446 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WannaBasketTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8ECDD7ACF6FD2A83F01838F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WannaBasketUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBFA015F22B89D2A00F71C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB9B2DC22C0CDDF004C50B3 /* AddButtonCell.swift in Sources */,
+				CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */,
+				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
+				CBB9B2D822C08C08004C50B3 /* UITableView+Extension.swift in Sources */,
+				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
+				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
+				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
+				CBB9B31922C4CCA3004C50B3 /* PlayerTableViewCell.swift in Sources */,
+				CBB9B31522C4CC9C004C50B3 /* AddTeamView.swift in Sources */,
+				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
+				CBFA01AD22B8B99800F71C7B /* PlayerModel.swift in Sources */,
+				CB0652E522B9C58600330DD7 /* UICollectionView+Extension.swift in Sources */,
+				CBB9B2E822C0CDF5004C50B3 /* TeamTableViewCell.swift in Sources */,
+				CBB9B31F22C4CCAC004C50B3 /* AddPlayerView.swift in Sources */,
+				CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */,
+				CB0652DF22B9C42C00330DD7 /* Reusable.swift in Sources */,
+				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
+				CBB9B2FF22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift in Sources */,
+				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,
+				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,
+				CB0652E122B9C43C00330DD7 /* NibLoadable.swift in Sources */,
+				CBFA01AF22B8BA7A00F71C7B /* TeamModel.swift in Sources */,
+				CBFA01A622B89E7C00F71C7B /* ModuleEnum.swift in Sources */,
+				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
+				CBB9B2E622C0CDF5004C50B3 /* TeamTableView.swift in Sources */,
+				CBB9B31B22C4CCA3004C50B3 /* PlayerTableView.swift in Sources */,
+				CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA017622B89D2B00F71C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFA018122B89D2B00F71C7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFA018A22B89D2B00F71C7B /* WannaBasketUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBFA017C22B89D2B00F71C7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBFA016222B89D2A00F71C7B /* WannaBasket */;
+			targetProxy = CBFA017B22B89D2B00F71C7B /* PBXContainerItemProxy */;
+		};
+		CBFA018722B89D2B00F71C7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBFA016222B89D2A00F71C7B /* WannaBasket */;
+			targetProxy = CBFA018622B89D2B00F71C7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBFA017322B89D2B00F71C7B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBFA018C22B89D2B00F71C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBFA018D22B89D2B00F71C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBFA018F22B89D2B00F71C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F4C63FA225874C548BA3208 /* Pods-WannaBasket.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = "$(SRCROOT)/WannaBasket/SupportFile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBFA019022B89D2B00F71C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8115EF9D644828DD7C2A787 /* Pods-WannaBasket.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = "$(SRCROOT)/WannaBasket/SupportFile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CBFA019222B89D2B00F71C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A141802DB1E126C19CAC81 /* Pods-WannaBasketTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = WannaBasketTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WannaBasket.app/WannaBasket";
+			};
+			name = Debug;
+		};
+		CBFA019322B89D2B00F71C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D37E559C1328722D7FB561 /* Pods-WannaBasketTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = WannaBasketTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WannaBasket.app/WannaBasket";
+			};
+			name = Release;
+		};
+		CBFA019522B89D2B00F71C7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6CD3CA312644EA1D6F143EA /* Pods-WannaBasketUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = WannaBasketUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WannaBasket;
+			};
+			name = Debug;
+		};
+		CBFA019622B89D2B00F71C7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D74E44856EE67416DD3D4FA2 /* Pods-WannaBasketUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RG8N8ES43K;
+				INFOPLIST_FILE = WannaBasketUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HET.WannaBasketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WannaBasket;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBFA015E22B89D2A00F71C7B /* Build configuration list for PBXProject "WannaBasket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFA018C22B89D2B00F71C7B /* Debug */,
+				CBFA018D22B89D2B00F71C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBFA018E22B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFA018F22B89D2B00F71C7B /* Debug */,
+				CBFA019022B89D2B00F71C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBFA019122B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFA019222B89D2B00F71C7B /* Debug */,
+				CBFA019322B89D2B00F71C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBFA019422B89D2B00F71C7B /* Build configuration list for PBXNativeTarget "WannaBasketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFA019522B89D2B00F71C7B /* Debug */,
+				CBFA019622B89D2B00F71C7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */,
+			);
+			currentVersion = CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */;
+			path = WannaBasket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CBFA015B22B89D2A00F71C7B /* Project object */;
+}
