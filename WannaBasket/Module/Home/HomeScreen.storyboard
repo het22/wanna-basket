@@ -141,16 +141,16 @@
                                                 <rect key="frame" x="226.33333333333334" y="0.0" width="283.33333333333326" height="326"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-lf-Mj9" customClass="TeamTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="20.000000000000014" y="0.0" width="243.33333333333337" height="326"/>
+                                                        <rect key="frame" x="10" y="0.0" width="263.33333333333331" height="326"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ung-lf-Mj9" firstAttribute="leading" secondItem="EQt-i5-1qM" secondAttribute="leading" constant="20" id="EKO-8S-n5c"/>
+                                                    <constraint firstItem="Ung-lf-Mj9" firstAttribute="leading" secondItem="EQt-i5-1qM" secondAttribute="leading" constant="10" id="EKO-8S-n5c"/>
                                                     <constraint firstItem="Ung-lf-Mj9" firstAttribute="top" secondItem="EQt-i5-1qM" secondAttribute="top" id="H5v-dt-BDa"/>
                                                     <constraint firstAttribute="bottom" secondItem="Ung-lf-Mj9" secondAttribute="bottom" id="Pid-a1-TBq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ung-lf-Mj9" secondAttribute="trailing" constant="20" id="yzQ-S6-2GH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ung-lf-Mj9" secondAttribute="trailing" constant="10" id="yzQ-S6-2GH"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZe-64-yrT" userLabel="Away">
