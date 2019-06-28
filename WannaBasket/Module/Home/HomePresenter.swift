@@ -16,7 +16,7 @@ class HomePresenter: HomePresenterProtocol {
     
     var teams: [Team] = []
     var homeTeamIndex: Int?
-    var awayTeamIndex: Int?
+    var awayTeamIndex: Int? = 0
     var addHomePlayer: Bool = true
     
     func viewDidLoad() {
@@ -25,9 +25,9 @@ class HomePresenter: HomePresenterProtocol {
         let temp2 = Team(name: "마하맨")
         temp2.players.append(contentsOf: [Player(name: "송호철"),Player(name: "백승희"), Player(name: "박건"), Player(name: "송해찬"), Player(name: "한수흠")])
         teams.append(contentsOf: [temp1, temp2])
-        view?.showTeams(teams)
-        view?.showHomeTeam(nil)
-        view?.showAwayTeam(nil)
+        view?.updateTeams(teams)
+        view?.updateHomeTeam(nil)
+        view?.updateAwayTeam(nil)
     }
     
     func startButtonTapped() {
@@ -36,53 +36,100 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didAddTeamButtonTap() {
-        view?.hideAddTeamView = false
+        view?.showAddTeamView = true
     }
     
-    func didTeamCellTap(at index: Int) {
+    func didTeamCellTap(at index: Int, onLeft: Bool) {
+        
+//        if onLeft {
+//            if awayTeamIndex == index {
+//                self.awayTeamIndex = nil
+//                view?.highlightTeam(at: index, bool: false)
+//                view?.updateAwayTeam(nil)
+//            }
+//            if let homeTeamIndex = homeTeamIndex {
+//                if homeTeamIndex == index {
+//                    self.homeTeamIndex = nil
+//                    view?.highlightTeam(at: index, bool: false)
+//                    view?.updateHomeTeam(nil)
+//                } else {
+//                    self.homeTeamIndex = index
+//                    view?.highlightTeam(at: homeTeamIndex, bool: false)
+//                    view?.highlightTeam(at: index, bool: true)
+//                    view?.updateHomeTeam(teams[index])
+//                }
+//            } else {
+//                homeTeamIndex = index
+//                view?.highlightTeam(at: index, bool: true)
+//                view?.updateHomeTeam(teams[index])
+//            }
+//        } else {
+//            if homeTeamIndex == index {
+//                self.homeTeamIndex = nil
+//                view?.highlightTeam(at: index, bool: false)
+//                view?.updateHomeTeam(nil)
+//            }
+//            if let awayTeamIndex = awayTeamIndex {
+//                if awayTeamIndex == index {
+//                    self.awayTeamIndex = nil
+//                    view?.highlightTeam(at: index, bool: false)
+//                    view?.updateAwayTeam(nil)
+//                } else {
+//                    self.awayTeamIndex = index
+//                    view?.highlightTeam(at: awayTeamIndex, bool: false)
+//                    view?.highlightTeam(at: index, bool: true)
+//                    view?.updateAwayTeam(teams[index])
+//                }
+//            } else {
+//                awayTeamIndex = index
+//                view?.highlightTeam(at: index, bool: true)
+//                view?.updateAwayTeam(teams[index])
+//            }
+//        }
+        
         if index == homeTeamIndex {
             homeTeamIndex = nil
             view?.highlightTeam(at: index, bool: false)
-            view?.showHomeTeam(nil)
+            view?.updateHomeTeam(nil)
         } else if index == awayTeamIndex {
             awayTeamIndex = nil
             view?.highlightTeam(at: index, bool: false)
-            view?.showAwayTeam(nil)
+            view?.updateAwayTeam(nil)
         } else {
             if homeTeamIndex == nil {
                 homeTeamIndex = index
                 view?.highlightTeam(at: index, bool: true)
-                view?.showHomeTeam(teams[index])
+                view?.updateHomeTeam(teams[index])
             } else if awayTeamIndex == nil {
                 awayTeamIndex = index
                 view?.highlightTeam(at: index, bool: true)
-                view?.showAwayTeam(teams[index])
+                view?.updateAwayTeam(teams[index])
             }
         }
     }
     
     func didAddPlayerButtonTap(home: Bool) {
         addHomePlayer = home
-        view?.hideAddPlayerView = false
+        view?.showAddPlayerView = true
     }
     
     func didAddTeamCompleteButtonTap(name: String?) {
         if let name = name, name != "" {
             let team = Team(name: name)
             teams.append(team)
-            view?.showTeams(teams)
+            view?.updateTeams(teams)
         }
-        view?.hideAddTeamView = true
+        view?.showAddTeamView = false
     }
     
     func didAddPlayerCompleteButtonTap(name: String?) {
         if let name = name, name != "", let index = addHomePlayer ? homeTeamIndex : awayTeamIndex  {
             let player = Player(name: name)
             teams[index].players.append(player)
-            if addHomePlayer { view?.showHomeTeam(teams[index]) }
-            else { view?.showAwayTeam(teams[index]) }
+            if addHomePlayer { view?.updateHomeTeam(teams[index]) }
+            else { view?.updateAwayTeam(teams[index]) }
         }
-        view?.hideAddPlayerView = true
+        view?.showAddPlayerView = false
     }
 }
 

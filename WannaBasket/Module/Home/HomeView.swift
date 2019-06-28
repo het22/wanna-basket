@@ -33,16 +33,13 @@ class HomeView: UIViewController {
     
     private var backgroundView: UIView?
     private var addTeamView: AddTeamView?
-    private var _hideAddTeamView: Bool = true
-    var hideAddTeamView: Bool {
-        get { return _hideAddTeamView }
+    private var _showAddTeamView: Bool = false
+    var showAddTeamView: Bool {
+        get { return _showAddTeamView }
         set(newVal) {
-            if newVal == hideAddTeamView { return }
+            if newVal == showAddTeamView { return }
             if newVal {
-                backgroundView?.removeFromSuperview()
-                addTeamView?.removeFromSuperview()
-            } else {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.hideAddTeamView = true }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddTeamView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -59,26 +56,22 @@ class HomeView: UIViewController {
                 addTeamView!.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
                 addTeamView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
                 addTeamView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+            } else {
+                backgroundView?.removeFromSuperview()
+                addTeamView?.removeFromSuperview()
             }
-            _hideAddTeamView = newVal
+            _showAddTeamView = newVal
         }
     }
     
-    @objc func execute() {
-        
-    }
-    
     private var addPlayerView: AddPlayerView?
-    private var _hideAddPlayerView: Bool = true
-    var hideAddPlayerView: Bool {
-        get { return _hideAddPlayerView }
+    private var _showAddPlayerView: Bool = false
+    var showAddPlayerView: Bool {
+        get { return _showAddPlayerView }
         set(newVal) {
-            if newVal == hideAddPlayerView { return }
+            if newVal == showAddPlayerView { return }
             if newVal {
-                backgroundView?.removeFromSuperview()
-                addPlayerView?.removeFromSuperview()
-            } else {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.hideAddPlayerView = true }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddPlayerView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -95,8 +88,11 @@ class HomeView: UIViewController {
                 addPlayerView!.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
                 addPlayerView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
                 addPlayerView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+            } else {
+                backgroundView?.removeFromSuperview()
+                addPlayerView?.removeFromSuperview()
             }
-            _hideAddPlayerView = newVal
+            _showAddPlayerView = newVal
         }
     }
     
@@ -104,7 +100,7 @@ class HomeView: UIViewController {
 
 extension HomeView: HomeViewProtocol {
     
-    func showTeams(_ teams: [Team]) {
+    func updateTeams(_ teams: [Team]) {
         teamTableView.reloadData(with: teams)
     }
     
@@ -112,12 +108,12 @@ extension HomeView: HomeViewProtocol {
         teamTableView.highlightCell(at: index, bool: bool)
     }
     
-    func showHomeTeam(_ team: Team?) {
+    func updateHomeTeam(_ team: Team?) {
         homeTeamLabel.text = team?.name ?? "홈팀"
         homePlayerTableView.reloadData(with: team?.players ?? nil)
     }
     
-    func showAwayTeam(_ team: Team?) {
+    func updateAwayTeam(_ team: Team?) {
         awayTeamLabel.text = team?.name ?? "원정팀"
         awayPlayerTableView.reloadData(with: team?.players ?? nil)
     }
@@ -126,8 +122,8 @@ extension HomeView: HomeViewProtocol {
 extension HomeView: AddTeamViewDelegate, AddPlayerViewDelegate {
     
     func didCancelButtonTap() {
-        hideAddTeamView = true
-        hideAddPlayerView = true
+        showAddTeamView = false
+        showAddPlayerView = false
     }
     
     func didAddTeamCompleteButtonTap(name: String?) {
@@ -149,8 +145,8 @@ extension HomeView: TeamTableViewDelegate {
         
     }
     
-    func didTeamCellTap(at index: Int) {
-        presenter?.didTeamCellTap(at: index)
+    func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool) {
+        presenter?.didTeamCellTap(at: indexPath.section - 1, onLeft: onLeft)
     }
 }
 
@@ -163,5 +159,9 @@ extension HomeView: PlayerTableViewDelegate {
 
     func didDeletePlayerButtonTap() {
 
+    }
+    
+    func didPlayerCellTap(at indexPath: IndexPath) {
+        
     }
 }
