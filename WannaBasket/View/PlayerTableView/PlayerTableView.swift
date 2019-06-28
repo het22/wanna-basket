@@ -8,14 +8,20 @@
 
 import UIKit
 
+protocol PlayerTableViewDelegate {
+    func didAddPlayerButtonTap(id: ObjectIdentifier)
+    func didDeletePlayerButtonTap()
+    func didPlayerCellTap(at index: Int)
+}
+
 class PlayerTableView: UITableView {
     
     var _delegate: PlayerTableViewDelegate?
     
-    let placeholder = "팀을 선택하세요"
-    let padding: CGFloat = 10
-    let buttonHeight: CGFloat = 30
-    @IBInspectable var color: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    @IBInspectable var placeholder: String = "팀을 선택하세요"
+    @IBInspectable var spacing: CGFloat = 10
+    @IBInspectable var buttonHeight: CGFloat = 30
+    @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,18 +47,27 @@ class PlayerTableView: UITableView {
         return label
     }()
     
-    private var players: [Player]?
-    func reloadData(with players: [Player]?) {
-        self.players = players
-        placeholderLabel.isHidden = (players != nil)
+    private var playerList: [Player]?
+    func reloadData(with playerList: [Player]?) {
+        placeholderLabel.isHidden = (playerList != nil)
+        self.playerList = playerList
         reloadData()
+    }
+}
+
+extension PlayerTableView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == IndexPath(row: 0, section: 0) {
+            _delegate?.didAddPlayerButtonTap(id: ObjectIdentifier(self))
+        }
     }
 }
 
 extension PlayerTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (players?.count ?? -1) + 1
+        return (playerList?.count ?? -1) + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,13 +79,13 @@ extension PlayerTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section==0 ? 0 : padding
+        return section==0 ? 0 : spacing
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == IndexPath(row: 0, section: 0) { return buttonHeight }
         else {
-            let cellHeight = (bounds.height - buttonHeight) / 5 - padding
+            let cellHeight = (bounds.height - buttonHeight) / 5 - spacing
             return cellHeight
         }
     }
@@ -78,26 +93,12 @@ extension PlayerTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath == IndexPath(row: 0, section: 0) {
             let cell = dequeueReusableCell(forIndexPath: indexPath) as AddButtonCell
-            cell.setup(color: color)
+            cell.setup(color: highlightColor)
             return cell
         } else {
             let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
-            cell.setup(name: players![indexPath.section - 1].name)
+            cell.setup(name: playerList![indexPath.section - 1].name)
             return cell
-        }
-    }
-}
-
-protocol PlayerTableViewDelegate {
-    func didAddPlayerButtonTap(id: ObjectIdentifier)
-    func didDeletePlayerButtonTap()
-}
-
-extension PlayerTableView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath == IndexPath(row: 0, section: 0) {
-            _delegate?.didAddPlayerButtonTap(id: ObjectIdentifier(self))
         }
     }
 }
