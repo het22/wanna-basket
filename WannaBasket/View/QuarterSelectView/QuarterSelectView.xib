@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuarterSelectView" customModule="WannaBasket" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="gUI-pv-igh" id="Jl8-fg-SsJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="840" height="187"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="gUI-pv-igh">
+                    <rect key="frame" x="0.0" y="0.0" width="840" height="187"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-aa-Dq8" userLabel="1Q" customClass="QuarterView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="176" height="187"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="1Q"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9o-yd-Fy2" userLabel="2Q" customClass="QuarterView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="166" y="0.0" width="176" height="187"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="2Q"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y23-Nh-psU" userLabel="3Q" customClass="QuarterView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="332" y="0.0" width="176" height="187"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="3Q"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcc-G6-Ewu" userLabel="4Q" customClass="QuarterView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="498" y="0.0" width="176" height="187"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="4Q"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-uN-A7J" userLabel="End" customClass="QuarterView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="664" y="0.0" width="176" height="187"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="END"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="HVN-uN-A7J" firstAttribute="width" secondItem="7yd-aa-Dq8" secondAttribute="width" id="7SP-0Q-JNa"/>
+                        <constraint firstItem="zcc-G6-Ewu" firstAttribute="width" secondItem="7yd-aa-Dq8" secondAttribute="width" id="DXD-Wx-rTS"/>
+                        <constraint firstItem="Y23-Nh-psU" firstAttribute="width" secondItem="7yd-aa-Dq8" secondAttribute="width" id="G9n-aA-wEe"/>
+                        <constraint firstItem="X9o-yd-Fy2" firstAttribute="width" secondItem="7yd-aa-Dq8" secondAttribute="width" id="zvJ-kj-vu1"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gUI-pv-igh" secondAttribute="bottom" id="1g5-N3-k5o"/>
+                <constraint firstItem="gUI-pv-igh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6Ht-RU-TmV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gUI-pv-igh" secondAttribute="trailing" id="bla-kn-gMd"/>
+                <constraint firstItem="gUI-pv-igh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fLw-tf-nhN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="218.84057971014494" y="-237.6358695652174"/>
+        </view>
+    </objects>
+</document>
