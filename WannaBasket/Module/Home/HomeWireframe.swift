@@ -34,7 +34,8 @@ class HomeWireframe: HomeWireframeProtocol {
     
     func presentModule(source: HomeViewProtocol, module: Module) {
         if let sourceView = source as? UIViewController {
-            sourceView.present(module.view, animated: true, completion: nil)
+            let destinationView = module.view
+            sourceView.present(destinationView, animated: true, completion: nil)
         }
     }
 }

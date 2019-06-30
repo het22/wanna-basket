@@ -22,3 +22,16 @@ protocol GameModel {
     // Record
     
 }
+
+class Game: GameModel {
+    
+    var homeTeam: Team
+    var awayTeam: Team
+    var homeOnFloorIndexes: [Int] = []
+    var awayOnFloorIndexes: [Int] = []
+    
+    init(homeTeam: Team, awayTeam: Team) {
+        self.homeTeam = homeTeam
+        self.awayTeam = awayTeam
+    }
+}

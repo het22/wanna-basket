@@ -31,8 +31,10 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func startButtonTapped() {
-        guard let view = view else { return }
-        wireframe?.presentModule(source: view, module: Module.Game)
+        guard let hti = homeTeamIndex, let ati = awayTeamIndex else { return }
+        wireframe?.presentModule(source: view!,
+                                 module: Module.Game(game: Game(homeTeam: teams[hti],
+                                                                awayTeam: teams[ati])))
     }
     
     func didAddTeamButtonTap() {

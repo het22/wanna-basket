@@ -11,14 +11,14 @@ import UIKit
 enum Module {
     
     case Home
-    case Game
+    case Game(game: Game)
     
     var view: UIViewController {
         switch self {
         case .Home:
             return HomeWireframe.createModule()
-        case .Game:
-            return GameWireframe.createModule()
+        case .Game(let game):
+            return GameWireframe.createModule(with: game)
         }
     }
 }

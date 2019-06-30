@@ -14,7 +14,7 @@ class GameWireframe: GameWireframeProtocol {
         return UIStoryboard(name: "GameScreen", bundle: Bundle.main)
     }
     
-    static func createModule() -> UIViewController {
+    static func createModule(with game: Game) -> UIViewController {
         let viewController = mainStoryboard.instantiateInitialViewController()
         if let view = viewController as? GameView {
             let interactor  = GameInteractor()
@@ -26,6 +26,8 @@ class GameWireframe: GameWireframeProtocol {
             presenter.view = view
             presenter.interactor = interactor
             presenter.wireframe = wireframe
+            
+            presenter.game = game
             
             return view
         }
