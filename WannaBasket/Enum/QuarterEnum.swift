@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum Quarter: CustomStringConvertible {
+enum Quarter: Int, CustomStringConvertible {
     
-    case First
-    case Second
-    case Third
-    case Fourth
-    case End
+    case First = 1
+    case Second = 2
+    case Third = 3
+    case Fourth = 4
+    case End = 0
     
     var description: String {
         switch self {
