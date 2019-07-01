@@ -69,8 +69,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-ej-XiH" userLabel="Middle">
                                         <rect key="frame" x="0.0" y="22.666666666666664" width="736" height="65.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="65.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -82,9 +82,12 @@
                                                 <state key="normal" title="1쿼터">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="quarterButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="V5E-eT-m6C"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
-                                                <rect key="frame" x="574.66666666666663" y="0.0" width="161.33333333333337" height="65.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
+                                                <rect key="frame" x="620.33333333333337" y="0.0" width="115.66666666666663" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -107,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="88" width="736" height="326"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-ty-sJw" userLabel="Home">
-                                                <rect key="frame" x="0.0" y="0.0" width="226.33333333333334" height="326"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="326"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8r-DbG" userLabel="Bar">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="326"/>
@@ -117,11 +120,17 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-fK-wdD" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="0.0" width="201.33333333333334" height="326"/>
+                                                        <rect key="frame" x="25" y="0.0" width="159" height="326"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
+                                                                <real key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
@@ -138,29 +147,29 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-O4-WHd" userLabel="Control">
-                                                <rect key="frame" x="226.33333333333334" y="0.0" width="283.33333333333326" height="326"/>
+                                                <rect key="frame" x="184" y="0.0" width="368" height="326"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FeF-RO-gm6">
-                                                        <rect key="frame" x="10" y="0.0" width="263.33333333333331" height="326"/>
+                                                        <rect key="frame" x="10" y="0.0" width="348" height="326"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="Game">
-                                                                <rect key="frame" x="0.0" y="0.0" width="263.33333333333331" height="124"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Dx-m5r" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="124"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="63" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -178,25 +187,25 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
-                                                                        <rect key="frame" x="39.666666666666657" y="0.0" width="184" height="124"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="115"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="90"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
-                                                                        <rect key="frame" x="223.66666666666666" y="0.0" width="39.666666666666657" height="124"/>
+                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="63" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -231,23 +240,23 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="Shot">
-                                                                <rect key="frame" x="0.0" y="126" width="263.33333333333331" height="123.66666666666669"/>
+                                                                <rect key="frame" x="0.0" y="117" width="348" height="115"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-QG-jto" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="123.66666666666667"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-tw-RBM" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="60.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-bo-PI8" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="62.666666666666686" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -265,33 +274,33 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
-                                                                        <rect key="frame" x="39.666666666666657" y="0.0" width="184" height="61.666666666666664"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="50"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="56.666666666666664"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
-                                                                        <rect key="frame" x="41.666666666666657" y="63.666666666666686" width="89" height="60"/>
+                                                                        <rect key="frame" x="54.33333333333335" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                                        <state key="normal" title="14">
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                        <state key="normal" title="14초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
                                                                     </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-Xp-zbi" userLabel="Right">
-                                                                        <rect key="frame" x="223.66666666666666" y="0.0" width="39.666666666666657" height="123.66666666666667"/>
+                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-uv-lpU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="60.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Ic-NeC" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="62.666666666666686" width="39.666666666666664" height="61"/>
+                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -309,10 +318,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
-                                                                        <rect key="frame" x="132.66666666666666" y="63.666666666666686" width="89" height="60"/>
+                                                                        <rect key="frame" x="175" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                                        <state key="normal" title="24">
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                        <state key="normal" title="24초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
                                                                     </button>
@@ -328,55 +337,55 @@
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="centerX" secondItem="ic1-YH-dPv" secondAttribute="centerX" id="NuM-gN-XNq"/>
                                                                     <constraint firstItem="Y8p-u8-SYU" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="trailing" constant="2" id="Poo-dx-Md5"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="trailing" id="R53-hg-lqP"/>
-                                                                    <constraint firstItem="Y8p-u8-SYU" firstAttribute="top" secondItem="G1P-aU-1s1" secondAttribute="bottom" constant="2" id="Udl-dd-MVL"/>
                                                                     <constraint firstAttribute="bottom" secondItem="417-Pg-fCx" secondAttribute="bottom" id="UpH-dQ-0tT"/>
                                                                     <constraint firstAttribute="trailing" secondItem="JtT-Xp-zbi" secondAttribute="trailing" id="Yyi-kK-ikb"/>
                                                                     <constraint firstItem="JtT-Xp-zbi" firstAttribute="top" secondItem="ic1-YH-dPv" secondAttribute="top" id="ZEe-yV-XXd"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Y8p-u8-SYU" secondAttribute="bottom" id="a33-to-rjW"/>
+                                                                    <constraint firstItem="Y8p-u8-SYU" firstAttribute="height" secondItem="C4U-bo-PI8" secondAttribute="height" id="aWb-Mm-Uio"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="top" secondItem="ic1-YH-dPv" secondAttribute="top" id="bRi-FH-Xt4"/>
-                                                                    <constraint firstItem="G1P-aU-1s1" firstAttribute="height" secondItem="ic1-YH-dPv" secondAttribute="height" multiplier="0.5" id="eLa-cd-W7y"/>
                                                                     <constraint firstAttribute="bottom" secondItem="hYD-QG-jto" secondAttribute="bottom" id="eeh-vh-Xmr"/>
+                                                                    <constraint firstItem="417-Pg-fCx" firstAttribute="height" secondItem="m7x-Ic-NeC" secondAttribute="height" id="g4Z-co-0aP"/>
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="width" secondItem="Y8p-u8-SYU" secondAttribute="width" id="hfQ-U7-Qpx"/>
                                                                     <constraint firstAttribute="bottom" secondItem="JtT-Xp-zbi" secondAttribute="bottom" id="hwG-Xn-0wc"/>
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="leading" secondItem="Y8p-u8-SYU" secondAttribute="trailing" constant="2" id="yaZ-Jy-H1Y"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Score">
-                                                                <rect key="frame" x="0.0" y="251.66666666666671" width="263.33333333333331" height="74.333333333333343"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control">
+                                                                <rect key="frame" x="0.0" y="234" width="348" height="92"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-cl-rg0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="263.33333333333331" height="74.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="10" width="348" height="77"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-cq-8WQ" userLabel="14 Sec Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="64.333333333333329" height="74.333333333333329"/>
-                                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                                                <state key="normal" title="&lt;">
-                                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-cq-8WQ" userLabel="Rewind">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="77"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                                <state key="normal" title="취소">
+                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-zB-XLJ" userLabel="14 Sec Button">
-                                                                                <rect key="frame" x="66.333333333333343" y="0.0" width="64.333333333333343" height="74.333333333333329"/>
-                                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                                                <state key="normal" title="1PT">
-                                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-zB-XLJ" userLabel="1pt">
+                                                                                <rect key="frame" x="87.666666666666686" y="0.0" width="85.333333333333314" height="77"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                                <state key="normal" title="1점">
+                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-an-czi" userLabel="14 Sec Button">
-                                                                                <rect key="frame" x="132.66666666666666" y="0.0" width="64.333333333333343" height="74.333333333333329"/>
-                                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                                                <state key="normal" title="2PT">
-                                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-an-czi" userLabel="2pt">
+                                                                                <rect key="frame" x="175" y="0.0" width="85.666666666666686" height="77"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                                <state key="normal" title="2점">
+                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpw-vC-W8t" userLabel="14 Sec Button">
-                                                                                <rect key="frame" x="198.99999999999997" y="0.0" width="64.333333333333343" height="74.333333333333329"/>
-                                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                                                <state key="normal" title="3PT">
-                                                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpw-vC-W8t" userLabel="3pt">
+                                                                                <rect key="frame" x="262.66666666666669" y="0.0" width="85.333333333333314" height="77"/>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                                <state key="normal" title="3점">
+                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                             </button>
                                                                         </subviews>
@@ -390,14 +399,14 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="5bQ-cl-rg0" firstAttribute="leading" secondItem="h9f-qz-HO8" secondAttribute="leading" id="86h-3m-ZiR"/>
-                                                                    <constraint firstItem="5bQ-cl-rg0" firstAttribute="top" secondItem="h9f-qz-HO8" secondAttribute="top" id="Onp-3q-nU0"/>
+                                                                    <constraint firstItem="5bQ-cl-rg0" firstAttribute="top" secondItem="h9f-qz-HO8" secondAttribute="top" constant="10" id="Onp-3q-nU0"/>
                                                                     <constraint firstAttribute="trailing" secondItem="5bQ-cl-rg0" secondAttribute="trailing" id="Q5f-a3-Wdu"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="5bQ-cl-rg0" secondAttribute="bottom" id="hnr-hy-y1U"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="5bQ-cl-rg0" secondAttribute="bottom" constant="5" id="hnr-hy-y1U"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="h9f-qz-HO8" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" multiplier="0.6" id="ODA-Ys-D3t"/>
+                                                            <constraint firstItem="h9f-qz-HO8" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" multiplier="0.8" id="ODA-Ys-D3t"/>
                                                             <constraint firstItem="ic1-YH-dPv" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" id="rql-fY-kTj"/>
                                                         </constraints>
                                                     </stackView>
@@ -411,21 +420,27 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-ql-D04" userLabel="Away">
-                                                <rect key="frame" x="509.66666666666669" y="0.0" width="226.33333333333331" height="326"/>
+                                                <rect key="frame" x="552" y="0.0" width="184" height="326"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5v5-rN-LIL" userLabel="Bar">
-                                                        <rect key="frame" x="206.33333333333331" y="0.0" width="20" height="326"/>
+                                                        <rect key="frame" x="164" y="0.0" width="20" height="326"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="aGR-pD-igT"/>
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-fn-OG7" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="326"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="326"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
                                                                 <color key="value" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
+                                                                <real key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
@@ -443,7 +458,7 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Lrt-ty-sJw" firstAttribute="width" secondItem="fWg-O4-WHd" secondAttribute="width" multiplier="0.8" id="VdJ-hY-A4C"/>
+                                            <constraint firstItem="Lrt-ty-sJw" firstAttribute="width" secondItem="fWg-O4-WHd" secondAttribute="width" multiplier="0.5" id="VdJ-hY-A4C"/>
                                             <constraint firstItem="CbD-ql-D04" firstAttribute="width" secondItem="Lrt-ty-sJw" secondAttribute="width" id="g2Q-3J-I70"/>
                                         </constraints>
                                     </stackView>
@@ -463,6 +478,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Og7-JB-ygZ"/>
                     </view>
+                    <connections>
+                        <outlet property="awayPlayerTableView" destination="AeC-fn-OG7" id="CZh-AC-LwX"/>
+                        <outlet property="awayScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
+                        <outlet property="awayTeamLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
+                        <outlet property="cancelButton" destination="kHf-cq-8WQ" id="kIL-WS-hZ8"/>
+                        <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
+                        <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
+                        <outlet property="homeScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
+                        <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
+                        <outlet property="pt1Button" destination="Cub-zB-XLJ" id="wy2-cA-Iii"/>
+                        <outlet property="pt2Button" destination="JV7-an-czi" id="WQR-pc-Ucq"/>
+                        <outlet property="pt3Button" destination="Tpw-vC-W8t" id="px9-ft-hbK"/>
+                        <outlet property="quarterButton" destination="9F4-VT-ML8" id="LTr-te-gkR"/>
+                        <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-HO-OZS" sceneMemberID="firstResponder"/>
             </objects>

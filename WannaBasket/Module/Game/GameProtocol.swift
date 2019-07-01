@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GameWireframeProtocol: class {
-    static func createModule() -> UIViewController
+    static func createModule(with game: Game) -> UIViewController
 }
 
 protocol GameInteractorInputProtocol: class {
@@ -33,7 +33,9 @@ protocol GamePresenterProtocol: class {
     var interactor: GameInteractorInputProtocol? { get set }
     
     // VIEW -> PRESENTER
-    
+    func viewDidLoad()
+    func didQuarterButtonTap()
+    func didQuarterSelect(quarter: Quarter)
 }
 
 protocol GameViewProtocol: class {
@@ -41,5 +43,8 @@ protocol GameViewProtocol: class {
     var presenter: GamePresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
-    
+    func updateHomeTeam(_ team: Team)
+    func updateAwayTeam(_ team: Team)
+    func showQuarterSelectView(quarter: Quarter, bool: Bool)
+    func updateQuarter(quarter: Quarter)
 }
