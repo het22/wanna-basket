@@ -21,9 +21,11 @@ class HomeView: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
         teamTableView._delegate = self
         homePlayerTableView._delegate = self
         awayPlayerTableView._delegate = self
+        
         presenter?.viewDidLoad()
     }
     
@@ -53,7 +55,7 @@ class HomeView: UIViewController {
                 
                 addTeamView!.translatesAutoresizingMaskIntoConstraints = false
                 addTeamView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                addTeamView!.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+                addTeamView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
                 addTeamView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
                 addTeamView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
             } else {
@@ -85,7 +87,7 @@ class HomeView: UIViewController {
                 
                 addPlayerView!.translatesAutoresizingMaskIntoConstraints = false
                 addPlayerView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                addPlayerView!.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+                addPlayerView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
                 addPlayerView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
                 addPlayerView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
             } else {
@@ -104,8 +106,8 @@ extension HomeView: HomeViewProtocol {
         teamTableView.reloadData(with: teams)
     }
     
-    func highlightTeam(at index: Int, bool: Bool) {
-        teamTableView.highlightCell(at: index, bool: bool)
+    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool) {
+        teamTableView.highlightCell(at: index, onLeft: onLeft, bool: bool)
     }
     
     func updateHomeTeam(_ team: Team?) {

@@ -49,7 +49,7 @@ protocol HomeViewProtocol: class {
 
     // PRESENTER -> VIEW
     func updateTeams(_ teams: [Team])
-    func highlightTeam(at index: Int, bool: Bool)
+    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
     func updateHomeTeam(_ team: Team?)
     func updateAwayTeam(_ team: Team?)
     var showAddTeamView: Bool { get set }

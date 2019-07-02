@@ -16,7 +16,7 @@ class HomePresenter: HomePresenterProtocol {
     
     var teams: [Team] = []
     var homeTeamIndex: Int?
-    var awayTeamIndex: Int? = 0
+    var awayTeamIndex: Int?
     var addHomePlayer: Bool = true
     
     func viewDidLoad() {
@@ -43,68 +43,38 @@ class HomePresenter: HomePresenterProtocol {
     
     func didTeamCellTap(at index: Int, onLeft: Bool) {
         
-//        if onLeft {
-//            if awayTeamIndex == index {
-//                self.awayTeamIndex = nil
-//                view?.highlightTeam(at: index, bool: false)
-//                view?.updateAwayTeam(nil)
-//            }
-//            if let homeTeamIndex = homeTeamIndex {
-//                if homeTeamIndex == index {
-//                    self.homeTeamIndex = nil
-//                    view?.highlightTeam(at: index, bool: false)
-//                    view?.updateHomeTeam(nil)
-//                } else {
-//                    self.homeTeamIndex = index
-//                    view?.highlightTeam(at: homeTeamIndex, bool: false)
-//                    view?.highlightTeam(at: index, bool: true)
-//                    view?.updateHomeTeam(teams[index])
-//                }
-//            } else {
-//                homeTeamIndex = index
-//                view?.highlightTeam(at: index, bool: true)
-//                view?.updateHomeTeam(teams[index])
-//            }
-//        } else {
-//            if homeTeamIndex == index {
-//                self.homeTeamIndex = nil
-//                view?.highlightTeam(at: index, bool: false)
-//                view?.updateHomeTeam(nil)
-//            }
-//            if let awayTeamIndex = awayTeamIndex {
-//                if awayTeamIndex == index {
-//                    self.awayTeamIndex = nil
-//                    view?.highlightTeam(at: index, bool: false)
-//                    view?.updateAwayTeam(nil)
-//                } else {
-//                    self.awayTeamIndex = index
-//                    view?.highlightTeam(at: awayTeamIndex, bool: false)
-//                    view?.highlightTeam(at: index, bool: true)
-//                    view?.updateAwayTeam(teams[index])
-//                }
-//            } else {
-//                awayTeamIndex = index
-//                view?.highlightTeam(at: index, bool: true)
-//                view?.updateAwayTeam(teams[index])
-//            }
-//        }
-        
-        if index == homeTeamIndex {
-            homeTeamIndex = nil
-            view?.highlightTeam(at: index, bool: false)
-            view?.updateHomeTeam(nil)
-        } else if index == awayTeamIndex {
-            awayTeamIndex = nil
-            view?.highlightTeam(at: index, bool: false)
-            view?.updateAwayTeam(nil)
-        } else {
-            if homeTeamIndex == nil {
+        if onLeft {
+            if let homeTeamIndex = homeTeamIndex {
+                if homeTeamIndex == index {
+                    self.homeTeamIndex = nil
+                    view?.highlightTeam(at: index, onLeft: onLeft, bool: false)
+                    view?.updateHomeTeam(nil)
+                } else {
+                    self.homeTeamIndex = index
+                    view?.highlightTeam(at: homeTeamIndex, onLeft: onLeft, bool: false)
+                    view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
+                    view?.updateHomeTeam(teams[index])
+                }
+            } else {
                 homeTeamIndex = index
-                view?.highlightTeam(at: index, bool: true)
+                view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
                 view?.updateHomeTeam(teams[index])
-            } else if awayTeamIndex == nil {
+            }
+        } else {
+            if let awayTeamIndex = awayTeamIndex {
+                if awayTeamIndex == index {
+                    self.awayTeamIndex = nil
+                    view?.highlightTeam(at: index, onLeft: onLeft, bool: false)
+                    view?.updateAwayTeam(nil)
+                } else {
+                    self.awayTeamIndex = index
+                    view?.highlightTeam(at: awayTeamIndex, onLeft: onLeft, bool: false)
+                    view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
+                    view?.updateAwayTeam(teams[index])
+                }
+            } else {
                 awayTeamIndex = index
-                view?.highlightTeam(at: index, bool: true)
+                view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
                 view?.updateAwayTeam(teams[index])
             }
         }
@@ -128,6 +98,10 @@ class HomePresenter: HomePresenterProtocol {
         if let name = name, name != "", let index = addHomePlayer ? homeTeamIndex : awayTeamIndex  {
             let player = Player(name: name)
             teams[index].players.append(player)
+            if homeTeamIndex == awayTeamIndex {
+                view?.updateHomeTeam(teams[index])
+                view?.updateAwayTeam(teams[index])
+            }
             if addHomePlayer { view?.updateHomeTeam(teams[index]) }
             else { view?.updateAwayTeam(teams[index]) }
         }
