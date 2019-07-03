@@ -35,8 +35,6 @@ class GameView: UIViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        homePlayerTableView.hideAddButtonCell = true
-        awayPlayerTableView.hideAddButtonCell = true
         presenter?.viewDidLoad()
         
         let buttons = [cancelButton, pt1Button, pt2Button, pt3Button]

@@ -30,7 +30,19 @@ class HomeView: UIViewController {
     }
     
     @IBAction func startButtonTapped() {
-        presenter?.startButtonTapped()
+        presenter?.didStartButtonTap()
+    }
+    
+    @IBAction func newTeamButtonTapped() {
+        presenter?.didNewTeamButtonTap()
+    }
+    
+    @IBAction func newHomePlayerButtonTapped() {
+        presenter?.didNewHomePlayerButtonTap()
+    }
+    
+    @IBAction func newAwayPlayerButtonTapped() {
+        presenter?.didNewAwayPlayerButtonTap()
     }
     
     private var backgroundView: UIView?
@@ -139,25 +151,16 @@ extension HomeView: AddTeamViewDelegate, AddPlayerViewDelegate {
 
 extension HomeView: TeamTableViewDelegate {
     
-    func didAddTeamButtonTap() {
-        presenter?.didAddTeamButtonTap()
-    }
-    
     func didDeleteTeamButtonTap() {
         
     }
     
     func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool) {
-        presenter?.didTeamCellTap(at: indexPath.section - 1, onLeft: onLeft)
+        presenter?.didTeamCellTap(at: indexPath.section, onLeft: onLeft)
     }
 }
 
 extension HomeView: PlayerTableViewDelegate {
-
-    func didAddPlayerButtonTap(id: ObjectIdentifier) {
-        let home = (id == ObjectIdentifier(homePlayerTableView))
-        presenter?.didAddPlayerButtonTap(home: home)
-    }
 
     func didDeletePlayerButtonTap() {
 

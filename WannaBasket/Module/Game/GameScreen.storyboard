@@ -129,9 +129,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
-                                                                <real key="value" value="30"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                 </subviews>
@@ -438,9 +435,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                                 <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
-                                                                <real key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>

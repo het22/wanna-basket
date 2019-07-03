@@ -23,8 +23,6 @@
 		CB5DAC2F22C7159F0047FE62 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DAC1B22C7159F0047FE62 /* TeamTableViewCell.swift */; };
 		CB5DAC3022C7159F0047FE62 /* AddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5DAC1D22C7159F0047FE62 /* AddPlayerView.xib */; };
 		CB5DAC3122C7159F0047FE62 /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DAC1E22C7159F0047FE62 /* AddPlayerView.swift */; };
-		CB5DAC3222C7159F0047FE62 /* AddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DAC2022C7159F0047FE62 /* AddButtonCell.swift */; };
-		CB5DAC3322C7159F0047FE62 /* AddButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5DAC2122C7159F0047FE62 /* AddButtonCell.xib */; };
 		CB5DAC3422C7159F0047FE62 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5DAC2322C7159F0047FE62 /* PlayerTableViewCell.xib */; };
 		CB5DAC3522C7159F0047FE62 /* PlayerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DAC2422C7159F0047FE62 /* PlayerTableView.swift */; };
 		CB5DAC3622C7159F0047FE62 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DAC2522C7159F0047FE62 /* PlayerTableViewCell.swift */; };
@@ -97,8 +95,6 @@
 		CB5DAC1B22C7159F0047FE62 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		CB5DAC1D22C7159F0047FE62 /* AddPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPlayerView.xib; sourceTree = "<group>"; };
 		CB5DAC1E22C7159F0047FE62 /* AddPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
-		CB5DAC2022C7159F0047FE62 /* AddButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonCell.swift; sourceTree = "<group>"; };
-		CB5DAC2122C7159F0047FE62 /* AddButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddButtonCell.xib; sourceTree = "<group>"; };
 		CB5DAC2322C7159F0047FE62 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
 		CB5DAC2422C7159F0047FE62 /* PlayerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableView.swift; sourceTree = "<group>"; };
 		CB5DAC2522C7159F0047FE62 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,9 +189,8 @@
 			children = (
 				CB5DAC1C22C7159F0047FE62 /* AddPlayerView */,
 				CB5DAC2622C7159F0047FE62 /* AddTeamView */,
-				CB5DAC1F22C7159F0047FE62 /* AddButtonCell */,
-				CB5DAC2222C7159F0047FE62 /* PlayerTableView */,
 				CB5DAC1322C7159F0047FE62 /* QuarterSelectView */,
+				CB5DAC2222C7159F0047FE62 /* PlayerTableView */,
 				CB5DAC1822C7159F0047FE62 /* TeamTableView */,
 			);
 			path = View;
@@ -229,15 +224,6 @@
 				CB5DAC1D22C7159F0047FE62 /* AddPlayerView.xib */,
 			);
 			path = AddPlayerView;
-			sourceTree = "<group>";
-		};
-		CB5DAC1F22C7159F0047FE62 /* AddButtonCell */ = {
-			isa = PBXGroup;
-			children = (
-				CB5DAC2022C7159F0047FE62 /* AddButtonCell.swift */,
-				CB5DAC2122C7159F0047FE62 /* AddButtonCell.xib */,
-			);
-			path = AddButtonCell;
 			sourceTree = "<group>";
 		};
 		CB5DAC2222C7159F0047FE62 /* PlayerTableView */ = {
@@ -522,7 +508,6 @@
 			files = (
 				CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */,
 				CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */,
-				CB5DAC3322C7159F0047FE62 /* AddButtonCell.xib in Resources */,
 				CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */,
 				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
 				CB5DAC3022C7159F0047FE62 /* AddPlayerView.xib in Resources */,
@@ -631,7 +616,6 @@
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
-				CB5DAC3222C7159F0047FE62 /* AddButtonCell.swift in Sources */,
 				CBFA01AD22B8B99800F71C7B /* PlayerModel.swift in Sources */,
 				CB0652E522B9C58600330DD7 /* UICollectionView+Extension.swift in Sources */,
 				CB5DAC3122C7159F0047FE62 /* AddPlayerView.swift in Sources */,

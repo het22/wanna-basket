@@ -11,6 +11,7 @@ import UIKit
 class PlayerTableViewCell: UITableViewCell, NibLoadable, Reusable {
     
     @IBOutlet weak var nameLabel: UILabel!
+    var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,21 +21,22 @@ class PlayerTableViewCell: UITableViewCell, NibLoadable, Reusable {
     func commonInit() {
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        layer.cornerRadius = 5
         selectionStyle = .none
     }
     
-    func setup(name: String) {
-        nameLabel.text = name
+    func setup(name: String, highlightColor: UIColor) {
+        self.nameLabel.text = name
+        self.highlightColor = highlightColor
     }
     
-//    private var _highlight: Bool = false
-//    var highlight: Bool {
-//        get { return _highlight }
-//        set(newVal) {
-//            backgroundColor = newVal ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//            _highlight = newVal
-//        }
-//    }
+    private var _isHighlighted: Bool = false
+    override var isHighlighted: Bool {
+        get { return _isHighlighted }
+        set(newVal) {
+            backgroundColor = newVal ? highlightColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            layer.borderColor = newVal ? highlightColor.cgColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            _isHighlighted = newVal
+        }
+    }
 }

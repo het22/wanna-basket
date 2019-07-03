@@ -9,9 +9,8 @@
 import UIKit
 
 protocol TeamTableViewDelegate {
-    func didAddTeamButtonTap()
     func didDeleteTeamButtonTap()
-    func didTeamCellTap(at index: Int)
+    func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool)
 }
 
 class TeamTableView: UITableView {
@@ -19,17 +18,16 @@ class TeamTableView: UITableView {
     var _delegate: TeamTableViewDelegate?
     
     @IBInspectable var spacing: CGFloat = 10
-    @IBInspectable var buttonHeight: CGFloat = 30
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        rowHeight = 50
+        
         contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         alwaysBounceVertical = true
         showsVerticalScrollIndicator = false
         separatorStyle = .none
+        
         register(TeamTableViewCell.self)
-        register(AddButtonCell.self)
         dataSource = self
         delegate = self
     }
@@ -40,9 +38,10 @@ class TeamTableView: UITableView {
         reloadData()
     }
     
-    func highlightCell(at index: Int, bool: Bool) {
-        if let cell = cellForRow(at: IndexPath(row: 0, section: index + 1)) as? TeamTableViewCell {
-            cell.highlight = bool
+    func highlightCell(at index: Int, onLeft: Bool, bool: Bool) {
+        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? TeamTableViewCell {
+            if onLeft { cell.highlightOnLeft = bool }
+            else { cell.highlightOnRight = bool }
         }
     }
 }
@@ -50,10 +49,8 @@ class TeamTableView: UITableView {
 extension TeamTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath == IndexPath(row: 0, section: 0) {
-            _delegate?.didAddTeamButtonTap()
-        } else {
-            _delegate?.didTeamCellTap(at: indexPath.section - 1)
+        if let cell = cellForRow(at: indexPath) as? TeamTableViewCell {
+            _delegate?.didTeamCellTap(at: indexPath, onLeft: cell.tapOnLeft)
         }
     }
 }
@@ -61,7 +58,7 @@ extension TeamTableView: UITableViewDelegate {
 extension TeamTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return teamList.count + 1
+        return teamList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,21 +74,13 @@ extension TeamTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath == IndexPath(row: 0, section: 0) { return buttonHeight }
-        else {
-            let cellHeight = (bounds.height - buttonHeight) / 5 - spacing
-            return cellHeight
-        }
+        let cellHeight = bounds.height / 5 - spacing
+        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath == IndexPath(row: 0, section: 0) {
-            let cell = dequeueReusableCell(forIndexPath: indexPath) as AddButtonCell
-            return cell
-        } else {
-            let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamTableViewCell
-            cell.setup(name: teamList[indexPath.section - 1].name)
-            return cell
-        }
+        let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamTableViewCell
+        cell.setup(name: teamList[indexPath.section].name)
+        return cell
     }
 }

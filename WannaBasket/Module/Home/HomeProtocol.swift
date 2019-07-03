@@ -35,12 +35,16 @@ protocol HomePresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func startButtonTapped()
-    func didAddTeamButtonTap()
-    func didTeamCellTap(at index: Int, onLeft: Bool)
-    func didAddPlayerButtonTap(home: Bool)
+    
+    func didStartButtonTap()
+    func didNewTeamButtonTap()
+    func didNewHomePlayerButtonTap()
+    func didNewAwayPlayerButtonTap()
+    
     func didAddTeamCompleteButtonTap(name: String?)
     func didAddPlayerCompleteButtonTap(name: String?)
+    
+    func didTeamCellTap(at index: Int, onLeft: Bool)
 }
 
 protocol HomeViewProtocol: class {
@@ -49,9 +53,11 @@ protocol HomeViewProtocol: class {
 
     // PRESENTER -> VIEW
     func updateTeams(_ teams: [Team])
-    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
     func updateHomeTeam(_ team: Team?)
     func updateAwayTeam(_ team: Team?)
+    
+    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
+    
     var showAddTeamView: Bool { get set }
     var showAddPlayerView: Bool { get set }
 }

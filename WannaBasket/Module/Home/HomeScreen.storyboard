@@ -117,29 +117,40 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vCl-QC-0X1" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="0.0" width="159" height="326"/>
+                                                        <rect key="frame" x="25" y="35" width="159" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="팀을 선택하세요"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
-                                                                <real key="value" value="30"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
                                                                 <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-UG-52x">
+                                                        <rect key="frame" x="25" y="0.0" width="159" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="newHomePlayerButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="vV1-Sx-qUG"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="sna-UG-52x" firstAttribute="leading" secondItem="pYl-ph-gZj" secondAttribute="trailing" constant="5" id="0yf-hE-arf"/>
                                                     <constraint firstItem="pYl-ph-gZj" firstAttribute="top" secondItem="Rux-Ze-XTg" secondAttribute="top" id="2w4-Ah-Lev"/>
                                                     <constraint firstItem="vCl-QC-0X1" firstAttribute="leading" secondItem="pYl-ph-gZj" secondAttribute="trailing" constant="5" id="DRf-pI-lbd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sna-UG-52x" secondAttribute="trailing" id="LYT-tV-3VL"/>
+                                                    <constraint firstItem="vCl-QC-0X1" firstAttribute="top" secondItem="sna-UG-52x" secondAttribute="bottom" constant="5" id="Yim-bx-7nZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="vCl-QC-0X1" secondAttribute="trailing" id="aqj-bY-6o3"/>
+                                                    <constraint firstItem="sna-UG-52x" firstAttribute="top" secondItem="Rux-Ze-XTg" secondAttribute="top" id="bzT-uf-ppM"/>
                                                     <constraint firstAttribute="bottom" secondItem="pYl-ph-gZj" secondAttribute="bottom" id="fXO-lz-QIg"/>
-                                                    <constraint firstItem="vCl-QC-0X1" firstAttribute="top" secondItem="Rux-Ze-XTg" secondAttribute="top" id="jzy-Zm-on7"/>
                                                     <constraint firstAttribute="bottom" secondItem="vCl-QC-0X1" secondAttribute="bottom" id="taQ-rH-UUK"/>
                                                     <constraint firstItem="pYl-ph-gZj" firstAttribute="leading" secondItem="Rux-Ze-XTg" secondAttribute="leading" id="vgE-la-C6v"/>
                                                 </constraints>
@@ -148,23 +159,38 @@
                                                 <rect key="frame" x="184" y="0.0" width="368" height="326"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-lf-Mj9" customClass="TeamTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="0.0" width="348" height="326"/>
+                                                        <rect key="frame" x="10" y="35" width="348" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
-                                                                <real key="value" value="30"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C77-se-t78">
+                                                        <rect key="frame" x="10" y="0.0" width="348" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="eBs-1P-AL5"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="hAX-q4-r3G"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="newTeamButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="aVp-pS-MgN"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="C77-se-t78" firstAttribute="top" secondItem="EQt-i5-1qM" secondAttribute="top" id="3wb-uv-Frw"/>
                                                     <constraint firstItem="Ung-lf-Mj9" firstAttribute="leading" secondItem="EQt-i5-1qM" secondAttribute="leading" constant="10" id="EKO-8S-n5c"/>
-                                                    <constraint firstItem="Ung-lf-Mj9" firstAttribute="top" secondItem="EQt-i5-1qM" secondAttribute="top" id="H5v-dt-BDa"/>
                                                     <constraint firstAttribute="bottom" secondItem="Ung-lf-Mj9" secondAttribute="bottom" id="Pid-a1-TBq"/>
+                                                    <constraint firstItem="C77-se-t78" firstAttribute="leading" secondItem="EQt-i5-1qM" secondAttribute="leading" constant="10" id="aeD-GE-j5u"/>
+                                                    <constraint firstItem="Ung-lf-Mj9" firstAttribute="top" secondItem="C77-se-t78" secondAttribute="bottom" constant="5" id="iRA-zN-rD2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C77-se-t78" secondAttribute="trailing" constant="10" id="q9T-M7-MUE"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ung-lf-Mj9" secondAttribute="trailing" constant="10" id="yzQ-S6-2GH"/>
                                                 </constraints>
                                             </view>
@@ -179,7 +205,7 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zeg-aO-gAf" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="326"/>
+                                                        <rect key="frame" x="0.0" y="35" width="159" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -189,25 +215,38 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonHeight">
-                                                                <real key="value" value="30"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-SS-WRo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="newAwayPlayerButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="qN6-FI-9fo"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Mme-2S-qgJ" secondAttribute="trailing" id="0le-kR-hoX"/>
-                                                    <constraint firstItem="zeg-aO-gAf" firstAttribute="top" secondItem="tZe-64-yrT" secondAttribute="top" id="CYN-10-jto"/>
+                                                    <constraint firstItem="zeg-aO-gAf" firstAttribute="top" secondItem="iOs-SS-WRo" secondAttribute="bottom" constant="5" id="Aha-FZ-2qN"/>
                                                     <constraint firstAttribute="bottom" secondItem="Mme-2S-qgJ" secondAttribute="bottom" id="FM3-Cu-apI"/>
                                                     <constraint firstItem="Mme-2S-qgJ" firstAttribute="top" secondItem="tZe-64-yrT" secondAttribute="top" id="ShR-yl-QGv"/>
+                                                    <constraint firstItem="Mme-2S-qgJ" firstAttribute="leading" secondItem="iOs-SS-WRo" secondAttribute="trailing" constant="5" id="Xkl-Iw-ebZ"/>
                                                     <constraint firstItem="Mme-2S-qgJ" firstAttribute="leading" secondItem="zeg-aO-gAf" secondAttribute="trailing" constant="5" id="b6j-bN-XLN"/>
+                                                    <constraint firstItem="iOs-SS-WRo" firstAttribute="top" secondItem="tZe-64-yrT" secondAttribute="top" id="dFK-cM-F5M"/>
+                                                    <constraint firstItem="iOs-SS-WRo" firstAttribute="leading" secondItem="tZe-64-yrT" secondAttribute="leading" id="esV-oS-61Y"/>
                                                     <constraint firstItem="zeg-aO-gAf" firstAttribute="leading" secondItem="tZe-64-yrT" secondAttribute="leading" id="j75-gh-r7n"/>
                                                     <constraint firstAttribute="bottom" secondItem="zeg-aO-gAf" secondAttribute="bottom" id="lih-Pa-tH8"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="sna-UG-52x" firstAttribute="height" secondItem="C77-se-t78" secondAttribute="height" id="Igt-Zf-hni"/>
+                                            <constraint firstItem="iOs-SS-WRo" firstAttribute="height" secondItem="C77-se-t78" secondAttribute="height" id="Wr9-fo-jdU"/>
                                             <constraint firstItem="Rux-Ze-XTg" firstAttribute="width" secondItem="EQt-i5-1qM" secondAttribute="width" multiplier="0.5" id="cSW-n3-fs8"/>
                                             <constraint firstItem="tZe-64-yrT" firstAttribute="width" secondItem="Rux-Ze-XTg" secondAttribute="width" id="p1L-Qw-Lp0"/>
                                         </constraints>
