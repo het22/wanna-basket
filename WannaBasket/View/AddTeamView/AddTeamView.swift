@@ -36,6 +36,8 @@ class AddTeamView: UIView, NibLoadable {
         layer.borderWidth = 1
         layer.cornerRadius = 10
         layer.masksToBounds = true
+        
+        nameTextField.becomeFirstResponder()
     }
     
     @IBAction func cancelButtonTapped() {
