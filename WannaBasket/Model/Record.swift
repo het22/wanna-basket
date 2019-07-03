@@ -16,3 +16,7 @@ import Foundation
 protocol RecordModel {
     
 }
+
+struct Record: RecordModel {
+    
+}
