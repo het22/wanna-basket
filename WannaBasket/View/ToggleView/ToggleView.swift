@@ -1,5 +1,5 @@
 //
-//  ToggleButton.swift
+//  ToggleView.swift
 //  WannaBasket
 //
 //  Created by Het Song on 04/07/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToggleButton: UIView, NibLoadable {
+class ToggleView: UIView, NibLoadable {
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var nameLabel: UILabel!
