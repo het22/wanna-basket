@@ -293,6 +293,9 @@
                                                                         <state key="normal" title="14초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="reset14ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="ped-ym-6Dm"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-Xp-zbi" userLabel="Right">
                                                                         <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
@@ -332,6 +335,9 @@
                                                                         <state key="normal" title="24초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="reset24ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="0E1-pg-bea"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

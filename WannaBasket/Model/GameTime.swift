@@ -49,6 +49,11 @@ class GameTime: GameTimeModel {
         quarters.append(quarter)
     }
     
+    func resetShotClock(shotClock: Float) {
+        quarters[currentQuarterNum].shotClock = shotClock
+        isShotClockRunning = false
+    }
+    
     private var gameClockTimer: Timer?
     private var _isGameClockRunning = false
     public var isGameClockRunning: Bool {
@@ -82,7 +87,7 @@ class GameTime: GameTimeModel {
     public var isShotClockRunning: Bool {
         get { return _isShotClockRunning }
         set(newVal) {
-            if _isShotClockRunning == newVal { return }
+            if _isShotClockRunning == newVal && _isShotClockRunning { return }
             _isShotClockRunning = newVal
             if newVal {
                 shotClockTimer = Timer.scheduledTimer(timeInterval: 0.1,

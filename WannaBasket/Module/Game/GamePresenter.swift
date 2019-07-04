@@ -35,6 +35,14 @@ class GamePresenter: GamePresenterProtocol {
     func didShotClockLabelTap() {
         gameTime.isShotClockRunning = !gameTime.isShotClockRunning
     }
+    
+    func didReset14ButtonTap() {
+        gameTime.resetShotClock(shotClock: 14.0)
+    }
+    
+    func didReset24ButtonTap() {
+        gameTime.resetShotClock(shotClock: 24.0)
+    }
 }
 
 extension GamePresenter: GameTimeDelegate {

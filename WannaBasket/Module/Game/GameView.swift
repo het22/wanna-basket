@@ -26,7 +26,6 @@ class GameView: UIViewController {
     @IBOutlet weak var gameClockLabel: UILabel!
     @IBOutlet weak var shotClockLabel: UILabel!
     
-    private var backgroundView: UIView?
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +46,14 @@ class GameView: UIViewController {
     
     @IBAction func shotClockLabelTapped() {
         presenter?.didShotClockLabelTap()
+    }
+    
+    @IBAction func reset14ButtonTapped() {
+        presenter?.didReset14ButtonTap()
+    }
+    
+    @IBAction func reset24ButtonTapped() {
+        presenter?.didReset24ButtonTap()
     }
 }
 

@@ -37,6 +37,8 @@ protocol GamePresenterProtocol: class {
     func didQuarterLabelTap()
     func didGameClockLabelTap()
     func didShotClockLabelTap()
+    func didReset14ButtonTap()
+    func didReset24ButtonTap()
 }
 
 protocol GameViewProtocol: class {
