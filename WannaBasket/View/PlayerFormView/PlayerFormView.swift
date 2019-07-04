@@ -32,7 +32,7 @@ class PlayerFormView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        layer.borderColor = Constants.Color.Steel.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 10
         layer.masksToBounds = true
