@@ -26,7 +26,6 @@ class ToggleView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        layer.borderColor = highlightColor.cgColor
         layer.borderWidth = 2
     }
     
@@ -35,15 +34,17 @@ class ToggleView: UIView, NibLoadable {
         self.highlightColor = highlightColor
     }
     
-    private var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    private var _isHighlighted: Bool = false
-    var isHighlighted: Bool {
-        get { return _isHighlighted }
-        set(newVal) {
-            if newVal == _isHighlighted { return }
-            view.backgroundColor = newVal ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            _isHighlighted = newVal
+    private var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+        didSet(oldVal) {
+            layer.borderColor = highlightColor.cgColor
+            nameLabel.textColor = highlightColor
+        }
+    }
+    var isHighlighted: Bool = false {
+        willSet(newVal) {
+            if newVal == isHighlighted { return }
+            view.backgroundColor = newVal ? highlightColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : highlightColor
         }
     }
 }
