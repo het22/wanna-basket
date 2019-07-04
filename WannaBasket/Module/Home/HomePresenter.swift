@@ -40,17 +40,17 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didNewTeamButtonTap() {
-        view?.showAddTeamView = true
+        view?.showTeamFormView = true
     }
     
     func didNewHomePlayerButtonTap() {
         addHomePlayer = true
-        view?.showAddPlayerView = true
+        view?.showPlayerFormView = true
     }
     
     func didNewAwayPlayerButtonTap() {
         addHomePlayer = false
-        view?.showAddPlayerView = true
+        view?.showPlayerFormView = true
     }
     
     func didAddTeamCompleteButtonTap(name: String?) {
@@ -59,10 +59,10 @@ class HomePresenter: HomePresenterProtocol {
             teams.append(team)
             view?.updateTeams(teams)
         }
-        view?.showAddTeamView = false
+        view?.showTeamFormView = false
     }
     
-    func didAddPlayerCompleteButtonTap(name: String?) {
+    func didPlayerFormCompleteButtonTap(name: String?) {
         if let name = name, name != "", let index = addHomePlayer ? homeTeamIndex : awayTeamIndex  {
             let player = Player(name: name)
             teams[index].players.append(player)
@@ -73,7 +73,7 @@ class HomePresenter: HomePresenterProtocol {
             if addHomePlayer { view?.updateHomeTeam(teams[index]) }
             else { view?.updateAwayTeam(teams[index]) }
         }
-        view?.showAddPlayerView = false
+        view?.showPlayerFormView = false
     }
     
     func didTeamCellTap(at index: Int, onLeft: Bool) {

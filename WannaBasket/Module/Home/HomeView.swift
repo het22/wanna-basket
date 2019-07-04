@@ -46,12 +46,12 @@ class HomeView: UIViewController {
     }
     
     private var backgroundView: UIView?
-    private var addTeamView: AddTeamView?
-    var showAddTeamView: Bool = false {
+    private var teamFormView: TeamFormView?
+    var showTeamFormView: Bool = false {
         willSet(newVal) {
-            if newVal == showAddTeamView { return }
+            if newVal == showTeamFormView { return }
             if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddTeamView = false }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.showTeamFormView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -59,28 +59,28 @@ class HomeView: UIViewController {
                 backgroundView!.addGestureRecognizer(dismissGesture)
                 view.addSubview(backgroundView!)
                 
-                addTeamView = AddTeamView(frame: CGRect.zero)
-                addTeamView?.delegate = self
-                view.addSubview(addTeamView!)
+                teamFormView = TeamFormView(frame: CGRect.zero)
+                teamFormView?.delegate = self
+                view.addSubview(teamFormView!)
                 
-                addTeamView!.translatesAutoresizingMaskIntoConstraints = false
-                addTeamView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                addTeamView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
-                addTeamView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-                addTeamView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+                teamFormView!.translatesAutoresizingMaskIntoConstraints = false
+                teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
+                teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+                teamFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
             } else {
                 backgroundView?.removeFromSuperview()
-                addTeamView?.removeFromSuperview()
+                teamFormView?.removeFromSuperview()
             }
         }
     }
     
-    private var addPlayerView: AddPlayerView?
-    var showAddPlayerView: Bool = false {
+    private var playerFormView: PlayerFormView?
+    var showPlayerFormView: Bool = false {
         willSet(newVal) {
-            if newVal == showAddPlayerView { return }
+            if newVal == showPlayerFormView { return }
             if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddPlayerView = false }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.showPlayerFormView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -88,18 +88,18 @@ class HomeView: UIViewController {
                 backgroundView!.addGestureRecognizer(dismissGesture)
                 view.addSubview(backgroundView!)
                 
-                addPlayerView = AddPlayerView(frame: CGRect.zero)
-                addPlayerView?.delegate = self
-                view.addSubview(addPlayerView!)
+                playerFormView = PlayerFormView(frame: CGRect.zero)
+                playerFormView?.delegate = self
+                view.addSubview(playerFormView!)
                 
-                addPlayerView!.translatesAutoresizingMaskIntoConstraints = false
-                addPlayerView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                addPlayerView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
-                addPlayerView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-                addPlayerView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+                playerFormView!.translatesAutoresizingMaskIntoConstraints = false
+                playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
+                playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+                playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
             } else {
                 backgroundView?.removeFromSuperview()
-                addPlayerView?.removeFromSuperview()
+                playerFormView?.removeFromSuperview()
             }
         }
     }
@@ -127,19 +127,25 @@ extension HomeView: HomeViewProtocol {
     }
 }
 
-extension HomeView: AddTeamViewDelegate, AddPlayerViewDelegate {
+extension HomeView: TeamFormViewDelegate {
     
-    func didCancelButtonTap() {
-        showAddTeamView = false
-        showAddPlayerView = false
+    func didTeamFormCancelButtonTap() {
+        showTeamFormView = false
     }
     
-    func didAddTeamCompleteButtonTap(name: String?) {
+    func didTeamFormCompleteButtonTap(name: String?) {
         presenter?.didAddTeamCompleteButtonTap(name: name)
     }
+}
+
+extension HomeView: PlayerFormViewDelegate {
     
-    func didAddPlayerCompleteButtonTap(name: String?) {
-        presenter?.didAddPlayerCompleteButtonTap(name: name)
+    func didPlayerFormCancelButtonTap() {
+        showPlayerFormView = false
+    }
+    
+    func didPlayerFormCompleteButtonTap(name: String?) {
+        presenter?.didPlayerFormCompleteButtonTap(name: name)
     }
 }
 

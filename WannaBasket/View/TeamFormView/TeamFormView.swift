@@ -1,5 +1,5 @@
 //
-//  AddTeamView.swift
+//  TeamFormView.swift
 //  WannaBasket
 //
 //  Created by Het Song on 26/06/2019.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol AddTeamViewDelegate {
-    func didCancelButtonTap()
-    func didAddTeamCompleteButtonTap(name: String?)
+protocol TeamFormViewDelegate {
+    func didTeamFormCancelButtonTap()
+    func didTeamFormCompleteButtonTap(name: String?)
 }
 
-class AddTeamView: UIView, NibLoadable {
+class TeamFormView: UIView, NibLoadable {
     
-    var delegate: AddTeamViewDelegate?
+    var delegate: TeamFormViewDelegate?
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -41,10 +41,10 @@ class AddTeamView: UIView, NibLoadable {
     }
     
     @IBAction func cancelButtonTapped() {
-        delegate?.didCancelButtonTap()
+        delegate?.didTeamFormCancelButtonTap()
     }
     
     @IBAction func completeButtonTapped() {
-        delegate?.didAddTeamCompleteButtonTap(name: nameTextField.text)
+        delegate?.didTeamFormCompleteButtonTap(name: nameTextField.text)
     }
 }

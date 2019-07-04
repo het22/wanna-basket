@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlayerView" customModule="WannaBasket" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerFormView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
                 <outlet property="nameTextField" destination="1IM-rq-a5w" id="ojE-Hq-kuV"/>
             </connections>

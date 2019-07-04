@@ -42,7 +42,7 @@ protocol HomePresenterProtocol: class {
     func didNewAwayPlayerButtonTap()
     
     func didAddTeamCompleteButtonTap(name: String?)
-    func didAddPlayerCompleteButtonTap(name: String?)
+    func didPlayerFormCompleteButtonTap(name: String?)
     
     func didTeamCellTap(at index: Int, onLeft: Bool)
 }
@@ -58,6 +58,6 @@ protocol HomeViewProtocol: class {
     
     func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
     
-    var showAddTeamView: Bool { get set }
-    var showAddPlayerView: Bool { get set }
+    var showTeamFormView: Bool { get set }
+    var showPlayerFormView: Bool { get set }
 }

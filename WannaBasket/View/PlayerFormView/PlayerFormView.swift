@@ -1,5 +1,5 @@
 //
-//  AddPlayerView.swift
+//  PlayerFormView.swift
 //  WannaBasket
 //
 //  Created by Het Song on 27/06/2019.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol AddPlayerViewDelegate {
-    func didCancelButtonTap()
-    func didAddPlayerCompleteButtonTap(name: String?)
+protocol PlayerFormViewDelegate {
+    func didPlayerFormCancelButtonTap()
+    func didPlayerFormCompleteButtonTap(name: String?)
 }
 
-class AddPlayerView: UIView, NibLoadable {
+class PlayerFormView: UIView, NibLoadable {
     
-    var delegate: AddPlayerViewDelegate?
+    var delegate: PlayerFormViewDelegate?
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -41,10 +41,10 @@ class AddPlayerView: UIView, NibLoadable {
     }
     
     @IBAction func cancelButtonTapped() {
-        delegate?.didCancelButtonTap()
+        delegate?.didPlayerFormCancelButtonTap()
     }
     
     @IBAction func completeButtonTapped() {
-        delegate?.didAddPlayerCompleteButtonTap(name: nameTextField.text)
+        delegate?.didPlayerFormCompleteButtonTap(name: nameTextField.text)
     }
 }
