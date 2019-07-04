@@ -47,10 +47,8 @@ class HomeView: UIViewController {
     
     private var backgroundView: UIView?
     private var addTeamView: AddTeamView?
-    private var _showAddTeamView: Bool = false
-    var showAddTeamView: Bool {
-        get { return _showAddTeamView }
-        set(newVal) {
+    var showAddTeamView: Bool = false {
+        willSet(newVal) {
             if newVal == showAddTeamView { return }
             if newVal {
                 let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddTeamView = false }
@@ -74,15 +72,12 @@ class HomeView: UIViewController {
                 backgroundView?.removeFromSuperview()
                 addTeamView?.removeFromSuperview()
             }
-            _showAddTeamView = newVal
         }
     }
     
     private var addPlayerView: AddPlayerView?
-    private var _showAddPlayerView: Bool = false
-    var showAddPlayerView: Bool {
-        get { return _showAddPlayerView }
-        set(newVal) {
+    var showAddPlayerView: Bool = false {
+        willSet(newVal) {
             if newVal == showAddPlayerView { return }
             if newVal {
                 let dismissGesture = UITapGestureRecognizerWithClosure { self.showAddPlayerView = false }
@@ -106,7 +101,6 @@ class HomeView: UIViewController {
                 backgroundView?.removeFromSuperview()
                 addPlayerView?.removeFromSuperview()
             }
-            _showAddPlayerView = newVal
         }
     }
     
