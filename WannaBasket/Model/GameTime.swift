@@ -21,32 +21,31 @@ class GameTime: GameTimeModel {
 
     var delegate: GameTimeDelegate?
     
-    var quarters: [Quarter]
-    var currentQuarter: Int
+    var quarters: [Quarter] = []
+    var currentQuarter: Int = 0
     
     let fullGameClock: Float = 600.0
     let fullOverTimeClock: Float = 300.0
     let fullShotClock: Float = 24.0
     
     init(numberOfQuarter: Int) {
-        quarters = []
         for i in 0 ... numberOfQuarter-1 {
             let quarter = Quarter(number: i, gameClock: fullGameClock, shotClock: fullShotClock)
             quarters.append(quarter)
         }
-        currentQuarter = 0
     }
     
-    func addQuarter() {
-        let number = quarters.count
-        let quarter = Quarter(number: number, gameClock: fullGameClock, shotClock: fullShotClock)
-        quarters.append(quarter)
+    func updateQuarter(newQuarter: Int) {
+        isGameClockRunning = false
+        isShotClockRunning = false
+        currentQuarter = newQuarter
+        delegate?.didGameClockUpdate(gameClock: quarters[currentQuarter].gameClock, isRunning: false)
+        delegate?.didShotClockUpdate(shotClock: quarters[currentQuarter].shotClock, isRunning: false)
     }
     
-    func addOverTime() {
-        let number = quarters.count
-        let quarter = Quarter(number: number, gameClock: fullOverTimeClock, shotClock: fullShotClock)
-        quarters.append(quarter)
+    func resetGameClock(gameClock: Float) {
+        quarters[currentQuarter].gameClock = gameClock
+        isGameClockRunning = false
     }
     
     func resetShotClock(shotClock: Float) {
@@ -73,7 +72,7 @@ class GameTime: GameTimeModel {
             }
         }
     }
-    @objc func updateGameClock() {
+    @objc private func updateGameClock() {
         quarters[currentQuarter].gameClock -= 0.1
         if quarters[currentQuarter].gameClock <= 0.0 {
             quarters[currentQuarter].gameClock = 0.0
@@ -101,7 +100,7 @@ class GameTime: GameTimeModel {
             }
         }
     }
-    @objc func updateShotClock() {
+    @objc private func updateShotClock() {
         quarters[currentQuarter].shotClock -= 0.1
         if quarters[currentQuarter].shotClock <= 0.0 {
             quarters[currentQuarter].shotClock = 0.0

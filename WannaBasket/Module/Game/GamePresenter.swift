@@ -33,6 +33,7 @@ class GamePresenter: GamePresenterProtocol {
     
     func didQuarterButtonTap(quarter: Int?) {
         if let quarter = quarter {
+            gameTime.updateQuarter(newQuarter: quarter)
             view?.updateQuarter(quarter: quarter)
             view?.showQuarterSelectView(currentQuarter: quarter, bool: false)
         } else {
