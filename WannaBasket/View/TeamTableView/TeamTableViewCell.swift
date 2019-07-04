@@ -46,7 +46,7 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
         get { return _highlightOnLeft }
         set(newVal) {
             leftArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            leftArrow.backgroundColor = newVal ? #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            leftArrow.backgroundColor = newVal ? Constants.Color.HomeDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             _highlightOnLeft = newVal
         }
     }
@@ -56,7 +56,7 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
         get { return _highlightOnRight }
         set(newVal) {
             rightArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            rightArrow.backgroundColor = newVal ? #colorLiteral(red: 1, green: 0.3195095657, blue: 0.4566315059, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            rightArrow.backgroundColor = newVal ? Constants.Color.AwayDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             _highlightOnRight = newVal
         }
     }

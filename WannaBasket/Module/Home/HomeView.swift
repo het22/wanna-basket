@@ -117,12 +117,12 @@ extension HomeView: HomeViewProtocol {
     }
     
     func updateHomeTeam(_ team: Team?) {
-        homeTeamLabel.text = team?.name ?? "홈팀"
+        homeTeamLabel.text = team?.name ?? Constants.Text.HomeDefault
         homePlayerTableView.reloadData(with: team?.players ?? nil)
     }
     
     func updateAwayTeam(_ team: Team?) {
-        awayTeamLabel.text = team?.name ?? "원정팀"
+        awayTeamLabel.text = team?.name ?? Constants.Text.AwayDefault
         awayPlayerTableView.reloadData(with: team?.players ?? nil)
     }
 }

@@ -42,6 +42,7 @@
 		CBC6F01222CD99F70021A11D /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01122CD99F70021A11D /* NumberFormatter.swift */; };
 		CBC6F01422CDA33C0021A11D /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01322CDA33C0021A11D /* ToggleButton.swift */; };
 		CBC6F01622CDA3480021A11D /* ToggleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F01522CDA3480021A11D /* ToggleButton.xib */; };
+		CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01822CDE0D30021A11D /* Constants.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		CBC6F01122CD99F70021A11D /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		CBC6F01322CDA33C0021A11D /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		CBC6F01522CDA3480021A11D /* ToggleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToggleButton.xib; sourceTree = "<group>"; };
+		CBC6F01822CDE0D30021A11D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -363,10 +365,10 @@
 			children = (
 				CB0652DE22B9C42C00330DD7 /* Reusable.swift */,
 				CB0652E022B9C43C00330DD7 /* NibLoadable.swift */,
+				CBC6F01122CD99F70021A11D /* NumberFormatter.swift */,
 				CB0652E422B9C58600330DD7 /* UICollectionView+Extension.swift */,
 				CBB9B2D722C08C08004C50B3 /* UITableView+Extension.swift */,
 				CBB9B2FE22C45424004C50B3 /* UITapGestureRecognizerWithClosure.swift */,
-				CBC6F01122CD99F70021A11D /* NumberFormatter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -374,11 +376,12 @@
 		CBFA01AB22B8B8EC00F71C7B /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
-				CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */,
-				CBFA017522B89D2B00F71C7B /* Info.plist */,
-				CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */,
 				CBFA017022B89D2B00F71C7B /* Assets.xcassets */,
+				CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */,
+				CBFA017522B89D2B00F71C7B /* Info.plist */,
+				CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */,
 				CBFA016622B89D2A00F71C7B /* AppDelegate.swift */,
+				CBC6F01822CDE0D30021A11D /* Constants.swift */,
 				CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */,
 				CB0652D722B9B99200330DD7 /* Wireframe.storyboard */,
 			);
@@ -605,6 +608,7 @@
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
 				CB5DAC2E22C7159F0047FE62 /* TeamTableView.swift in Sources */,
 				CBB9B32122C4D3BD004C50B3 /* Game.swift in Sources */,
+				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* GameTime.swift in Sources */,
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
