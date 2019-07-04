@@ -29,6 +29,8 @@ class GameView: UIViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+        homePlayerTableView._delegate = self
+        awayPlayerTableView._delegate = self
         presenter?.viewDidLoad()
     }
     
@@ -116,6 +118,11 @@ extension GameView: GameViewProtocol {
         let quarterDescription = (quarter < 4) ? "\(quarter+1)쿼터" : "연장\(quarter-3)차"
         quarterLabel.text = quarterDescription
     }
+    
+    func highlightPlayerCell(of home: Bool, at indexPath: IndexPath, bool: Bool) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
+        playerTableView?.highlightCell(at: indexPath, bool: bool)
+    }
 }
 
 extension GameView: PlayerTableViewDelegate {
@@ -124,8 +131,9 @@ extension GameView: PlayerTableViewDelegate {
         
     }
     
-    func didPlayerCellTap(at indexPath: IndexPath) {
-        
+    func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath) {
+        let home = (objectID == ObjectIdentifier(homePlayerTableView))
+        presenter?.didPlayerCellTap(of: home, at: indexPath)
     }
 }
 

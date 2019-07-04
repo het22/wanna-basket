@@ -34,12 +34,16 @@ protocol GamePresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
+    
     func didQuarterLabelTap()
     func didQuarterButtonTap(quarter: Int?)
+    
     func didGameClockLabelTap()
     func didShotClockLabelTap()
     func didReset14ButtonTap()
     func didReset24ButtonTap()
+    
+    func didPlayerCellTap(of home: Bool, at indexPath: IndexPath)
 }
 
 protocol GameViewProtocol: class {
@@ -47,11 +51,15 @@ protocol GameViewProtocol: class {
     var presenter: GamePresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
+    func dismiss(animated flag: Bool, completion: (() -> Void)?)
+    
     func updateHomeTeam(_ team: Team)
     func updateAwayTeam(_ team: Team)
+    func highlightPlayerCell(of home: Bool, at indexPath: IndexPath, bool: Bool)
+    
+    func showQuarterSelectView(currentQuarter: Int, bool: Bool)
+    func updateQuarter(quarter: Int)
+    
     func updateGameClock(gameClock: Float, isRunning: Bool)
     func updateShotClock(shotClock: Float, isRunning: Bool)
-    func updateQuarter(quarter: Int)
-    func showQuarterSelectView(currentQuarter: Int, bool: Bool)
-    func dismiss(animated flag: Bool, completion: (() -> Void)?)
 }

@@ -166,7 +166,7 @@ extension HomeView: PlayerTableViewDelegate {
 
     }
     
-    func didPlayerCellTap(at indexPath: IndexPath) {
+    func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath) {
         
     }
 }

@@ -252,9 +252,9 @@
 		CBC6F02622CDEC8A0021A11D /* PlayerTableView */ = {
 			isa = PBXGroup;
 			children = (
-				CBC6F02722CDEC8A0021A11D /* PlayerTableViewCell.xib */,
 				CBC6F02822CDEC8A0021A11D /* PlayerTableView.swift */,
 				CBC6F02922CDEC8A0021A11D /* PlayerTableViewCell.swift */,
+				CBC6F02722CDEC8A0021A11D /* PlayerTableViewCell.xib */,
 			);
 			path = PlayerTableView;
 			sourceTree = "<group>";

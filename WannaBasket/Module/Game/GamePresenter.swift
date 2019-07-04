@@ -56,6 +56,10 @@ class GamePresenter: GamePresenterProtocol {
     func didReset24ButtonTap() {
         gameTime.resetShotClock(shotClock: 24.0)
     }
+    
+    func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
+        view?.highlightPlayerCell(of: home, at: indexPath, bool: true)
+    }
 }
 
 extension GamePresenter: GameTimeDelegate {

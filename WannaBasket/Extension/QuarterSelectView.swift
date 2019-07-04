@@ -45,7 +45,7 @@ class QuarterSelectView: UIView, NibLoadable {
         for i in 0...count {
             let view = ToggleView(frame: CGRect.zero)
             view.setup(name: (i==count) ? "나가기" : "\(i+1)쿼터",
-                       highlightColor: Constants.Color.Black)
+                highlightColor: (i==count) ? Constants.Color.Silver : Constants.Color.Black)
             view.isHighlighted = (i==currentQuarter)
             hStack.addArrangedSubview(view)
             
