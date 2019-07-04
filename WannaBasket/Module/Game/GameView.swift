@@ -31,10 +31,6 @@ class GameView: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
     }
-
-    @IBAction func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func quarterLabelTapped() {
         presenter?.didQuarterLabelTap()
@@ -54,6 +50,37 @@ class GameView: UIViewController {
     
     @IBAction func reset24ButtonTapped() {
         presenter?.didReset24ButtonTap()
+    }
+    
+    private var backgroundView: UIView?
+    private var quarterSelectView: QuarterSelectView?
+    private var isShowingQuaterSelectView: Bool = false
+    func showQuarterSelectView(currentQuarter: Int, bool: Bool) {
+        if bool == isShowingQuaterSelectView { return }
+        isShowingQuaterSelectView = bool
+        if bool {
+            let dismissGesture = UITapGestureRecognizerWithClosure { self.showQuarterSelectView(currentQuarter: currentQuarter, bool: false) }
+            dismissGesture.numberOfTapsRequired = 1
+            
+            backgroundView = UIView(frame: view.bounds)
+            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.addGestureRecognizer(dismissGesture)
+            self.view.addSubview(backgroundView!)
+            
+            quarterSelectView = QuarterSelectView(frame: CGRect.zero)
+            quarterSelectView?.delegate = self
+            quarterSelectView?.setup(currentQuarter: currentQuarter)
+            self.view.addSubview(quarterSelectView!)
+            
+            quarterSelectView!.translatesAutoresizingMaskIntoConstraints = false
+            quarterSelectView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            quarterSelectView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
+            quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75).isActive = true
+            quarterSelectView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        } else {
+            backgroundView?.removeFromSuperview()
+            quarterSelectView?.removeFromSuperview()
+        }
     }
 }
 
@@ -85,8 +112,8 @@ extension GameView: GameViewProtocol {
         shotClockLabel.textColor = isRunning ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
     }
     
-    func updateQuarter(quarterNum: Int) {
-        let quarterDescription = (quarterNum < 4) ? "\(quarterNum+1)쿼터" : "연장\(quarterNum-3)차"
+    func updateQuarter(quarter: Int) {
+        let quarterDescription = (quarter < 4) ? "\(quarter+1)쿼터" : "연장\(quarter-3)차"
         quarterLabel.text = quarterDescription
     }
 }
@@ -99,5 +126,12 @@ extension GameView: PlayerTableViewDelegate {
     
     func didPlayerCellTap(at indexPath: IndexPath) {
         
+    }
+}
+
+extension GameView: QuarterSelectViewDelegate {
+    
+    func didQuarterButtonTap(quarter: Int?) {
+        presenter?.didQuarterButtonTap(quarter: quarter)
     }
 }

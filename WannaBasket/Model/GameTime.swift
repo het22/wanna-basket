@@ -22,7 +22,7 @@ class GameTime: GameTimeModel {
     var delegate: GameTimeDelegate?
     
     var quarters: [Quarter]
-    var currentQuarterNum: Int
+    var currentQuarter: Int
     
     let fullGameClock: Float = 600.0
     let fullOverTimeClock: Float = 300.0
@@ -34,7 +34,7 @@ class GameTime: GameTimeModel {
             let quarter = Quarter(number: i, gameClock: fullGameClock, shotClock: fullShotClock)
             quarters.append(quarter)
         }
-        currentQuarterNum = 0
+        currentQuarter = 0
     }
     
     func addQuarter() {
@@ -50,7 +50,7 @@ class GameTime: GameTimeModel {
     }
     
     func resetShotClock(shotClock: Float) {
-        quarters[currentQuarterNum].shotClock = shotClock
+        quarters[currentQuarter].shotClock = shotClock
         isShotClockRunning = false
     }
     
@@ -69,17 +69,17 @@ class GameTime: GameTimeModel {
                                                       repeats: true)
             } else {
                 gameClockTimer?.invalidate()
-                delegate?.didGameClockUpdate(gameClock: quarters[currentQuarterNum].gameClock, isRunning: false)
+                delegate?.didGameClockUpdate(gameClock: quarters[currentQuarter].gameClock, isRunning: false)
             }
         }
     }
     @objc func updateGameClock() {
-        quarters[currentQuarterNum].gameClock -= 0.1
-        if quarters[currentQuarterNum].gameClock <= 0.0 {
-            quarters[currentQuarterNum].gameClock = 0.0
+        quarters[currentQuarter].gameClock -= 0.1
+        if quarters[currentQuarter].gameClock <= 0.0 {
+            quarters[currentQuarter].gameClock = 0.0
             isGameClockRunning = false
         }
-        delegate?.didGameClockUpdate(gameClock: quarters[currentQuarterNum].gameClock, isRunning: isGameClockRunning)
+        delegate?.didGameClockUpdate(gameClock: quarters[currentQuarter].gameClock, isRunning: isGameClockRunning)
     }
     
     private var shotClockTimer: Timer?
@@ -97,17 +97,17 @@ class GameTime: GameTimeModel {
                                                       repeats: true)
             } else {
                 shotClockTimer?.invalidate()
-                delegate?.didShotClockUpdate(shotClock: quarters[currentQuarterNum].shotClock, isRunning: false)
+                delegate?.didShotClockUpdate(shotClock: quarters[currentQuarter].shotClock, isRunning: false)
             }
         }
     }
     @objc func updateShotClock() {
-        quarters[currentQuarterNum].shotClock -= 0.1
-        if quarters[currentQuarterNum].shotClock <= 0.0 {
-            quarters[currentQuarterNum].shotClock = 0.0
+        quarters[currentQuarter].shotClock -= 0.1
+        if quarters[currentQuarter].shotClock <= 0.0 {
+            quarters[currentQuarter].shotClock = 0.0
             isShotClockRunning = false
         }
-        delegate?.didShotClockUpdate(shotClock: quarters[currentQuarterNum].shotClock, isRunning: isShotClockRunning)
+        delegate?.didShotClockUpdate(shotClock: quarters[currentQuarter].shotClock, isRunning: isShotClockRunning)
     }
 }
 

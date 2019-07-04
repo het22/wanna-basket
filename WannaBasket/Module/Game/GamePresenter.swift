@@ -24,11 +24,20 @@ class GamePresenter: GamePresenterProtocol {
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarterNum: gameTime.currentQuarterNum)
+        view?.updateQuarter(quarter: gameTime.currentQuarter)
     }
     
     func didQuarterLabelTap() {
-        
+        view?.showQuarterSelectView(currentQuarter: gameTime.currentQuarter, bool: true)
+    }
+    
+    func didQuarterButtonTap(quarter: Int?) {
+        if let quarter = quarter {
+            view?.updateQuarter(quarter: quarter)
+            view?.showQuarterSelectView(currentQuarter: quarter, bool: false)
+        } else {
+            view?.dismiss(animated: true, completion: nil)
+        }
     }
     
     func didGameClockLabelTap() {

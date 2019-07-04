@@ -30,10 +30,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="736" height="22.666666666666668"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSN-pR-dM2">
-                                                <rect key="frame" x="337" y="0.0" width="62" height="22.666666666666668"/>
+                                                <rect key="frame" x="352.66666666666669" y="0.0" width="31" height="22.666666666666668"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                <state key="normal" title="뒤로가기">
+                                                <state key="normal" title="게임">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
