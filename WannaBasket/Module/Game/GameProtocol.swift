@@ -34,8 +34,9 @@ protocol GamePresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func didQuarterButtonTap()
-    func didQuarterSelect(quarter: Quarter)
+    func didQuarterLabelTap()
+    func didGameClockLabelTap()
+    func didShotClockLabelTap()
 }
 
 protocol GameViewProtocol: class {
@@ -45,6 +46,7 @@ protocol GameViewProtocol: class {
     // PRESENTER -> VIEW
     func updateHomeTeam(_ team: Team)
     func updateAwayTeam(_ team: Team)
-    func showQuarterSelectView(quarter: Quarter, bool: Bool)
-    func updateQuarter(quarter: Quarter)
+    func updateGameClock(gameClock: Float, isRunning: Bool)
+    func updateShotClock(shotClock: Float, isRunning: Bool)
+    func updateQuarter(quarterNum: Int)
 }

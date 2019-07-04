@@ -15,22 +15,36 @@ class GamePresenter: GamePresenterProtocol {
     var wireframe: GameWireframeProtocol?
     
     var game: Game!
-    var quarter: Quarter = .First
+    var gameTime = GameTime(numberOfQuarter: 4)
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarter: quarter)
+        view?.updateQuarter(quarterNum: gameTime.currentQuarterNum)
+        gameTime.delegate = self
     }
     
-    func didQuarterButtonTap() {
-        view?.showQuarterSelectView(quarter: quarter, bool: true)
+    func didQuarterLabelTap() {
+        
     }
     
-    func didQuarterSelect(quarter: Quarter) {
-        self.quarter = quarter
-        view?.showQuarterSelectView(quarter: quarter, bool: false)
-        view?.updateQuarter(quarter: quarter)
+    func didGameClockLabelTap() {
+        gameTime.isGameClockRunning = !gameTime.isGameClockRunning
+    }
+    
+    func didShotClockLabelTap() {
+        gameTime.isShotClockRunning = !gameTime.isShotClockRunning
+    }
+}
+
+extension GamePresenter: GameTimeDelegate {
+    
+    func didGameClockUpdate(gameClock: Float, isRunning: Bool) {
+        view?.updateGameClock(gameClock: gameClock, isRunning: isRunning)
+    }
+    
+    func didShotClockUpdate(shotClock: Float, isRunning: Bool) {
+        view?.updateShotClock(shotClock: shotClock, isRunning: isRunning)
     }
 }
 

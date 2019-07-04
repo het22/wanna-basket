@@ -70,24 +70,22 @@
                                         <rect key="frame" x="0.0" y="22.666666666666664" width="736" height="65.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="65.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-VT-ML8">
-                                                <rect key="frame" x="302" y="0.0" width="132" height="65.333333333333329"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿼터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooT-Wl-SSq">
+                                                <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="65.333333333333329"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
-                                                <state key="normal" title="1쿼터">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <nil key="highlightedColor"/>
                                                 <connections>
-                                                    <action selector="quarterButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="V5E-eT-m6C"/>
+                                                    <outletCollection property="gestureRecognizers" destination="W5d-cc-aM2" appends="YES" id="xAo-g3-oIo"/>
                                                 </connections>
-                                            </button>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
-                                                <rect key="frame" x="620.33333333333337" y="0.0" width="115.66666666666663" height="65.333333333333329"/>
+                                                <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -95,14 +93,17 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="9F4-VT-ML8" secondAttribute="bottom" id="1ja-Wv-2jE"/>
-                                            <constraint firstItem="9F4-VT-ML8" firstAttribute="centerX" secondItem="P9Z-ej-XiH" secondAttribute="centerX" id="A0G-hf-tFR"/>
+                                            <constraint firstItem="L0I-Kd-rAa" firstAttribute="leading" secondItem="ooT-Wl-SSq" secondAttribute="trailing" id="KaP-WY-oZK"/>
+                                            <constraint firstItem="ooT-Wl-SSq" firstAttribute="centerX" secondItem="P9Z-ej-XiH" secondAttribute="centerX" id="NIO-J9-h6x"/>
                                             <constraint firstAttribute="trailing" secondItem="L0I-Kd-rAa" secondAttribute="trailing" id="PJL-AV-Ijc"/>
                                             <constraint firstAttribute="bottom" secondItem="Snx-rD-dpQ" secondAttribute="bottom" id="RgM-rh-McU"/>
+                                            <constraint firstAttribute="bottom" secondItem="ooT-Wl-SSq" secondAttribute="bottom" id="Rv1-Jp-4wr"/>
+                                            <constraint firstItem="ooT-Wl-SSq" firstAttribute="width" secondItem="P9Z-ej-XiH" secondAttribute="width" multiplier="0.33" id="XOz-tb-0wv"/>
+                                            <constraint firstItem="ooT-Wl-SSq" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="ceb-Y5-ee7"/>
                                             <constraint firstItem="Snx-rD-dpQ" firstAttribute="leading" secondItem="P9Z-ej-XiH" secondAttribute="leading" id="jwy-rY-Av7"/>
                                             <constraint firstItem="L0I-Kd-rAa" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="mEu-2t-aBI"/>
                                             <constraint firstItem="Snx-rD-dpQ" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="njE-EC-zls"/>
-                                            <constraint firstItem="9F4-VT-ML8" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="wIv-aP-Gxj"/>
+                                            <constraint firstItem="ooT-Wl-SSq" firstAttribute="leading" secondItem="Snx-rD-dpQ" secondAttribute="trailing" id="t0q-gU-ewD"/>
                                             <constraint firstAttribute="bottom" secondItem="L0I-Kd-rAa" secondAttribute="bottom" id="yu1-wL-V8g"/>
                                         </constraints>
                                     </view>
@@ -183,10 +184,15 @@
                                                                             <constraint firstItem="8Nh-82-5kP" firstAttribute="top" secondItem="h0M-XF-yMU" secondAttribute="bottom" constant="2" id="xY7-0Z-ybC"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
+                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
                                                                         <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="115"/>
+                                                                        <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="90"/>
+                                                                        <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="jWK-l1-VIH" appends="YES" id="0i0-wO-o6k"/>
+                                                                        </connections>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
                                                                         <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
@@ -270,10 +276,15 @@
                                                                             <constraint firstItem="C4U-bo-PI8" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="leading" id="wSF-Fq-kP3"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
+                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
                                                                         <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="56.666666666666664"/>
+                                                                        <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
+                                                                        <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <connections>
+                                                                            <outletCollection property="gestureRecognizers" destination="ATi-qN-hep" appends="YES" id="KZr-OK-2Uo"/>
+                                                                        </connections>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
                                                                         <rect key="frame" x="54.33333333333335" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
@@ -464,6 +475,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CvP-FW-Eng" secondAttribute="trailing" id="GwX-U6-2Mi"/>
                             <constraint firstItem="CvP-FW-Eng" firstAttribute="leading" secondItem="eXd-LB-hEg" secondAttribute="leading" id="OdN-ZB-hHG"/>
@@ -476,19 +488,30 @@
                         <outlet property="awayPlayerTableView" destination="AeC-fn-OG7" id="CZh-AC-LwX"/>
                         <outlet property="awayScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
                         <outlet property="awayTeamLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
-                        <outlet property="cancelButton" destination="kHf-cq-8WQ" id="kIL-WS-hZ8"/>
                         <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
                         <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
                         <outlet property="homeScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
                         <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
-                        <outlet property="pt1Button" destination="Cub-zB-XLJ" id="wy2-cA-Iii"/>
-                        <outlet property="pt2Button" destination="JV7-an-czi" id="WQR-pc-Ucq"/>
-                        <outlet property="pt3Button" destination="Tpw-vC-W8t" id="px9-ft-hbK"/>
-                        <outlet property="quarterButton" destination="9F4-VT-ML8" id="LTr-te-gkR"/>
+                        <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-HO-OZS" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W5d-cc-aM2" userLabel="QuarterLabel Gesture">
+                    <connections>
+                        <action selector="quarterLabelTapped" destination="CiF-JI-gzH" id="3yV-Tb-pSh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jWK-l1-VIH" userLabel="GameClockLabel Gesture">
+                    <connections>
+                        <action selector="gameClockLabelTapped" destination="CiF-JI-gzH" id="CJr-we-A4E"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ATi-qN-hep" userLabel="ShotClockLabel Gesture">
+                    <connections>
+                        <action selector="shotClockLabelTapped" destination="CiF-JI-gzH" id="5Eh-hw-pUw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="46.467391304347828" y="-136.23188405797103"/>
         </scene>
