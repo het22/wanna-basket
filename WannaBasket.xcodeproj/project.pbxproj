@@ -40,6 +40,8 @@
 		CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */; };
 		CBC6F00E22CD6E430021A11D /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F00D22CD6E430021A11D /* GameTime.swift */; };
 		CBC6F01222CD99F70021A11D /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01122CD99F70021A11D /* NumberFormatter.swift */; };
+		CBC6F01422CDA33C0021A11D /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01322CDA33C0021A11D /* ToggleButton.swift */; };
+		CBC6F01622CDA3480021A11D /* ToggleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F01522CDA3480021A11D /* ToggleButton.xib */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		CBC411F322C8ED410048BFDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBC6F00D22CD6E430021A11D /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
 		CBC6F01122CD99F70021A11D /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		CBC6F01322CDA33C0021A11D /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		CBC6F01522CDA3480021A11D /* ToggleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToggleButton.xib; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 		CB5DAC1222C7156C0047FE62 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBC6F01722CDA34B0021A11D /* ToggleButton */,
 				CB5DAC1C22C7159F0047FE62 /* AddPlayerView */,
 				CB5DAC2622C7159F0047FE62 /* AddTeamView */,
 				CB5DAC2222C7159F0047FE62 /* PlayerTableView */,
@@ -246,6 +251,15 @@
 				CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		CBC6F01722CDA34B0021A11D /* ToggleButton */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6F01322CDA33C0021A11D /* ToggleButton.swift */,
+				CBC6F01522CDA3480021A11D /* ToggleButton.xib */,
+			);
+			path = ToggleButton;
 			sourceTree = "<group>";
 		};
 		CBFA015A22B89D2A00F71C7B = {
@@ -338,8 +352,8 @@
 				CBFA01AC22B8B99800F71C7B /* Player.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
 				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
-				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
 				CBC6F00D22CD6E430021A11D /* GameTime.swift */,
+				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +514,7 @@
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
 				CB5DAC3422C7159F0047FE62 /* PlayerTableViewCell.xib in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
+				CBC6F01622CDA3480021A11D /* ToggleButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +608,7 @@
 				CBC6F00E22CD6E430021A11D /* GameTime.swift in Sources */,
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
+				CBC6F01422CDA33C0021A11D /* ToggleButton.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
 				CBFA01AD22B8B99800F71C7B /* Player.swift in Sources */,
