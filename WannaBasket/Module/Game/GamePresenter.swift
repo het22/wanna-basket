@@ -15,13 +15,16 @@ class GamePresenter: GamePresenterProtocol {
     var wireframe: GameWireframeProtocol?
     
     var game: Game!
-    var gameTime = GameTime(numberOfQuarter: 4)
+    lazy var gameTime: GameTime = {
+        let time = GameTime(numberOfQuarter: 4)
+        time.delegate = self
+        return time
+    }()
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
         view?.updateQuarter(quarterNum: gameTime.currentQuarterNum)
-        gameTime.delegate = self
     }
     
     func didQuarterLabelTap() {
