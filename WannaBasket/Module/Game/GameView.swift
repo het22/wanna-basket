@@ -67,11 +67,16 @@ class GameView: UIViewController {
     private var backgroundView: UIView?
     private var quarterSelectView: QuarterSelectView?
     private var isShowingQuaterSelectView: Bool = false
-    func showQuarterSelectView(currentQuarterNum: Int, bool: Bool) {
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarterNum: Int, bool: Bool) {
         if bool == isShowingQuaterSelectView { return }
         isShowingQuaterSelectView = bool
         if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure { self.showQuarterSelectView(currentQuarterNum: currentQuarterNum, bool: false) }
+            let dismissGesture = UITapGestureRecognizerWithClosure {
+                self.showQuarterSelectView(maxRegularQuarterNum: maxRegularQuarterNum,
+                                           overtimeQuarterCount: overtimeQuarterCount,
+                                           currentQuarterNum: currentQuarterNum,
+                                           bool: false)
+            }
             dismissGesture.numberOfTapsRequired = 1
             
             backgroundView = UIView(frame: view.bounds)
@@ -81,7 +86,9 @@ class GameView: UIViewController {
             
             quarterSelectView = QuarterSelectView(frame: CGRect.zero)
             quarterSelectView?.delegate = self
-            quarterSelectView?.setup(currentQuarterNum: currentQuarterNum)
+            quarterSelectView?.setup(maxRegularQuarterNum: maxRegularQuarterNum,
+                                     overtimeQuarterCount: overtimeQuarterCount,
+                                     currentQuarterNum: currentQuarterNum)
             self.view.addSubview(quarterSelectView!)
             
             quarterSelectView!.translatesAutoresizingMaskIntoConstraints = false

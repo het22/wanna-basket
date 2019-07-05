@@ -39,18 +39,18 @@ class QuarterSelectView: UIView, NibLoadable {
         hStack.spacing = 5
     }
     
-    func setup(currentQuarterNum: Int) {
-        let count = 4
+    func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarterNum: Int) {
+        
         var firstView: UIView?
-        for i in 0...count {
+        for i in 0...maxRegularQuarterNum {
             let view = ToggleView(frame: CGRect.zero)
-            view.setup(name: (i==count) ? "나가기" : "\(i+1)쿼터",
-                highlightColor: (i==count) ? Constants.Color.Silver : Constants.Color.Black)
+            view.setup(name: (i==maxRegularQuarterNum) ? "나가기" : "\(i+1)쿼터",
+                highlightColor: (i==maxRegularQuarterNum) ? Constants.Color.Silver : Constants.Color.Black)
             view.isHighlighted = (i==currentQuarterNum)
             hStack.addArrangedSubview(view)
             
             let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didQuarterButtonTap(quarterNum: (i==count) ? nil : i)
+                self.delegate?.didQuarterButtonTap(quarterNum: (i==maxRegularQuarterNum) ? nil : i)
             }
             gesture.numberOfTapsRequired = 1
             view.addGestureRecognizer(gesture)

@@ -58,7 +58,7 @@ protocol GameViewProtocol: class {
     func updateAwayTeam(_ team: Team)
     func highlightPlayerCell(of home: Bool, at indexPath: IndexPath, bool: Bool)
     
-    func showQuarterSelectView(currentQuarterNum: Int, bool: Bool)
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarterNum: Int, bool: Bool)
     func updateQuarter(quarterNum: Int)
     
     func updateGameClock(_ gameClock: Float, isRunning: Bool)

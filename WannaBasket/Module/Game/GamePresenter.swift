@@ -42,14 +42,20 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didQuarterLabelTap() {
-        view?.showQuarterSelectView(currentQuarterNum: game.time.currentQuarterNum, bool: true)
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+                                    overtimeQuarterCount: 0,
+                                    currentQuarterNum: game.time.currentQuarterNum,
+                                    bool: true)
     }
     
     func didQuarterButtonTap(quarterNum: Int?) {
         if let quarterNum = quarterNum {
             game.time.updateQuarter(quarterNum: quarterNum)
             view?.updateQuarter(quarterNum: quarterNum)
-            view?.showQuarterSelectView(currentQuarterNum: quarterNum, bool: false)
+            view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+                                        overtimeQuarterCount: 0,
+                                        currentQuarterNum: game.time.currentQuarterNum,
+                                        bool: false)
         } else {
             view?.dismiss(animated: true, completion: nil)
         }
