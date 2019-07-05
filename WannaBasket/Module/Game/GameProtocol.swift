@@ -39,7 +39,7 @@ protocol GamePresenterProtocol: class {
     func didBenchButtonTap(of home: Bool)
     
     func didQuarterLabelTap()
-    func didQuarterButtonTap(quarterNum: Int?)
+    func didQuarterSelect(quarterNum: Int?)
     
     func didGameClockLabelTap()
     func didShotClockLabelTap()

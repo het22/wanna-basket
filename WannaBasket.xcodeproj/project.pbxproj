@@ -43,10 +43,12 @@
 		CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */; };
 		CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */; };
 		CBC6F04822CDEC8A0021A11D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */; };
-		CBC6F04B22CDF9820021A11D /* QuarterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */; };
-		CBC6F04D22CDF9880021A11D /* QuarterSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */; };
 		CBC6F05322CF063B0021A11D /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05222CF063B0021A11D /* Stat.swift */; };
 		CBC6F05522CF2C2B0021A11D /* Quarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05422CF2C2B0021A11D /* Quarter.swift */; };
+		CBC6F05822CFA08B0021A11D /* QuarterSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F05622CFA08B0021A11D /* QuarterSelectView.xib */; };
+		CBC6F05922CFA08B0021A11D /* QuarterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05722CFA08B0021A11D /* QuarterSelectView.swift */; };
+		CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05B22CFA1670021A11D /* StatSelectView.swift */; };
+		CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F05D22CFA1730021A11D /* StatSelectView.xib */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -118,10 +120,12 @@
 		CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuarterSelectView.swift; path = WannaBasket/Extension/QuarterSelectView.swift; sourceTree = SOURCE_ROOT; };
-		CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuarterSelectView.xib; path = WannaBasket/Extension/QuarterSelectView.xib; sourceTree = SOURCE_ROOT; };
 		CBC6F05222CF063B0021A11D /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		CBC6F05422CF2C2B0021A11D /* Quarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
+		CBC6F05622CFA08B0021A11D /* QuarterSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuarterSelectView.xib; sourceTree = "<group>"; };
+		CBC6F05722CFA08B0021A11D /* QuarterSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterSelectView.swift; sourceTree = "<group>"; };
+		CBC6F05B22CFA1670021A11D /* StatSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSelectView.swift; sourceTree = "<group>"; };
+		CBC6F05D22CFA1730021A11D /* StatSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatSelectView.xib; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				CBC6F02322CDEC8A0021A11D /* ToggleView */,
 				CBC6F01D22CDEC8A0021A11D /* PlayerFormView */,
 				CBC6F02022CDEC8A0021A11D /* TeamFormView */,
+				CBC6F05A22CFA0F50021A11D /* StatSelectView */,
 				CBC6F04922CDF96C0021A11D /* QuarterSelectView */,
 				CBC6F02622CDEC8A0021A11D /* PlayerTableView */,
 				CBC6F02A22CDEC8A0021A11D /* TeamTableView */,
@@ -291,10 +296,19 @@
 		CBC6F04922CDF96C0021A11D /* QuarterSelectView */ = {
 			isa = PBXGroup;
 			children = (
-				CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */,
-				CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */,
+				CBC6F05722CFA08B0021A11D /* QuarterSelectView.swift */,
+				CBC6F05622CFA08B0021A11D /* QuarterSelectView.xib */,
 			);
 			path = QuarterSelectView;
+			sourceTree = "<group>";
+		};
+		CBC6F05A22CFA0F50021A11D /* StatSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6F05B22CFA1670021A11D /* StatSelectView.swift */,
+				CBC6F05D22CFA1730021A11D /* StatSelectView.xib */,
+			);
+			path = StatSelectView;
 			sourceTree = "<group>";
 		};
 		CBFA015A22B89D2A00F71C7B = {
@@ -387,8 +401,8 @@
 				CBFA01AC22B8B99800F71C7B /* Player.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
 				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
-				CBC6F00D22CD6E430021A11D /* GameTime.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
+				CBC6F00D22CD6E430021A11D /* GameTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,13 +540,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */,
 				CBC6F03C22CDEC8A0021A11D /* PlayerTableViewCell.xib in Resources */,
 				CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */,
 				CBC6F03A22CDEC8A0021A11D /* ToggleView.xib in Resources */,
 				CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */,
 				CBC6F03F22CDEC8A0021A11D /* TeamTableViewCell.xib in Resources */,
 				CBC6F03922CDEC8A0021A11D /* TeamFormView.xib in Resources */,
-				CBC6F04D22CDF9880021A11D /* QuarterSelectView.xib in Resources */,
+				CBC6F05822CFA08B0021A11D /* QuarterSelectView.xib in Resources */,
 				CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */,
 				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
 				CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */,
@@ -638,11 +653,13 @@
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
 				CBFA01AD22B8B99800F71C7B /* Player.swift in Sources */,
 				CBC6F05522CF2C2B0021A11D /* Quarter.swift in Sources */,
+				CBC6F05922CFA08B0021A11D /* QuarterSelectView.swift in Sources */,
 				CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */,
 				CBC6F04522CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
 				CBC6F04222CDEC8A0021A11D /* NumberFormatter.swift in Sources */,
+				CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */,
 				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,
 				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,
 				CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */,
@@ -652,7 +669,6 @@
 				CBC6F03D22CDEC8A0021A11D /* PlayerTableView.swift in Sources */,
 				CBC6F05322CF063B0021A11D /* Stat.swift in Sources */,
 				CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */,
-				CBC6F04B22CDF9820021A11D /* QuarterSelectView.swift in Sources */,
 				CBC6F03B22CDEC8A0021A11D /* ToggleView.swift in Sources */,
 				CBC6F04422CDEC8A0021A11D /* Reusable.swift in Sources */,
 				CBC6F03822CDEC8A0021A11D /* TeamFormView.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuarterSelectViewDelegate {
-    func didQuarterButtonTap(quarterNum: Int?)
+    func didQuarterSelect(quarterNum: Int?)
 }
 
 class QuarterSelectView: UIView, NibLoadable {
@@ -50,7 +50,7 @@ class QuarterSelectView: UIView, NibLoadable {
             hStack.addArrangedSubview(view)
             
             let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didQuarterButtonTap(quarterNum: (i==maxRegularQuarterNum) ? nil : i)
+                self.delegate?.didQuarterSelect(quarterNum: (i==maxRegularQuarterNum) ? nil : i)
             }
             gesture.numberOfTapsRequired = 1
             view.addGestureRecognizer(gesture)

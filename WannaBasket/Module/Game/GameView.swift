@@ -156,7 +156,7 @@ extension GameView: PlayerTableViewDelegate {
 
 extension GameView: QuarterSelectViewDelegate {
     
-    func didQuarterButtonTap(quarterNum: Int?) {
-        presenter?.didQuarterButtonTap(quarterNum: quarterNum)
+    func didQuarterSelect(quarterNum: Int?) {
+        presenter?.didQuarterSelect(quarterNum: quarterNum)
     }
 }

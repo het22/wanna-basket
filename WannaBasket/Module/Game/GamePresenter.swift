@@ -48,10 +48,12 @@ class GamePresenter: GamePresenterProtocol {
                                     bool: true)
     }
     
-    func didQuarterButtonTap(quarterNum: Int?) {
+    func didQuarterSelect(quarterNum: Int?) {
         if let quarterNum = quarterNum {
-            game.time.updateQuarter(quarterNum: quarterNum)
-            view?.updateQuarter(quarterNum: quarterNum)
+            if quarterNum != game.time.currentQuarterNum {
+                game.time.updateQuarter(quarterNum: quarterNum)
+                view?.updateQuarter(quarterNum: quarterNum)
+            }
             view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
                                         overtimeQuarterCount: 0,
                                         currentQuarterNum: game.time.currentQuarterNum,
