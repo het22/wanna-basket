@@ -20,6 +20,7 @@ class GamePresenter: GamePresenterProtocol {
         time.delegate = self
         return time
     }()
+    var currentPlayerIndexPath: (home: Bool, indexPath: IndexPath)?
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
@@ -58,6 +59,14 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
+        if let current = currentPlayerIndexPath {
+            view?.highlightPlayerCell(of: current.home, at: current.indexPath, bool: false)
+            if current == (home, indexPath) {
+                currentPlayerIndexPath = nil
+                return
+            }
+        }
+        currentPlayerIndexPath = (home, indexPath)
         view?.highlightPlayerCell(of: home, at: indexPath, bool: true)
     }
 }
