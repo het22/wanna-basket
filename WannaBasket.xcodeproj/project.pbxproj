@@ -46,6 +46,7 @@
 		CBC6F04B22CDF9820021A11D /* QuarterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */; };
 		CBC6F04D22CDF9880021A11D /* QuarterSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */; };
 		CBC6F05322CF063B0021A11D /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05222CF063B0021A11D /* Stat.swift */; };
+		CBC6F05522CF2C2B0021A11D /* Quarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05422CF2C2B0021A11D /* Quarter.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuarterSelectView.swift; path = WannaBasket/Extension/QuarterSelectView.swift; sourceTree = SOURCE_ROOT; };
 		CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuarterSelectView.xib; path = WannaBasket/Extension/QuarterSelectView.xib; sourceTree = SOURCE_ROOT; };
 		CBC6F05222CF063B0021A11D /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
+		CBC6F05422CF2C2B0021A11D /* Quarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
 				CBC6F05222CF063B0021A11D /* Stat.swift */,
+				CBC6F05422CF2C2B0021A11D /* Quarter.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
 				CBFA01AD22B8B99800F71C7B /* Player.swift in Sources */,
+				CBC6F05522CF2C2B0021A11D /* Quarter.swift in Sources */,
 				CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */,
 				CBC6F04522CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,

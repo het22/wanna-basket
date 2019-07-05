@@ -24,7 +24,7 @@ class GamePresenter: GamePresenterProtocol {
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarter: game.time.currentQuarter)
+        view?.updateQuarter(quarterNum: game.time.currentQuarterNum)
     }
     
     func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
@@ -42,14 +42,14 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didQuarterLabelTap() {
-        view?.showQuarterSelectView(currentQuarter: game.time.currentQuarter, bool: true)
+        view?.showQuarterSelectView(currentQuarterNum: game.time.currentQuarterNum, bool: true)
     }
     
-    func didQuarterButtonTap(quarter: Int?) {
-        if let quarter = quarter {
-            game.time.updateQuarter(newQuarter: quarter)
-            view?.updateQuarter(quarter: quarter)
-            view?.showQuarterSelectView(currentQuarter: quarter, bool: false)
+    func didQuarterButtonTap(quarterNum: Int?) {
+        if let quarterNum = quarterNum {
+            game.time.updateQuarter(quarterNum: quarterNum)
+            view?.updateQuarter(quarterNum: quarterNum)
+            view?.showQuarterSelectView(currentQuarterNum: quarterNum, bool: false)
         } else {
             view?.dismiss(animated: true, completion: nil)
         }
@@ -64,22 +64,22 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didReset14ButtonTap() {
-        game.time.resetShotClock(shotClock: 14.0)
+        game.time.resetShotClock(14.0)
     }
     
     func didReset24ButtonTap() {
-        game.time.resetShotClock(shotClock: 24.0)
+        game.time.resetShotClock(24.0)
     }
 }
 
 extension GamePresenter: GameTimeDelegate {
     
     func didGameClockUpdate(gameClock: Float, isRunning: Bool) {
-        view?.updateGameClock(gameClock: gameClock, isRunning: isRunning)
+        view?.updateGameClock(gameClock, isRunning: isRunning)
     }
     
     func didShotClockUpdate(shotClock: Float, isRunning: Bool) {
-        view?.updateShotClock(shotClock: shotClock, isRunning: isRunning)
+        view?.updateShotClock(shotClock, isRunning: isRunning)
     }
 }
 

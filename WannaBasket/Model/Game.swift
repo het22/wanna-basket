@@ -30,7 +30,7 @@ class Game: GameModel {
     var homeOnFloorIndexes: [Int] = []
     var awayOnFloorIndexes: [Int] = []
     
-    var time: GameTime = GameTime(numberOfQuarter: 4)
+    var time: GameTime = GameTime(maxRegularQuarterNum: 4)
     
     init(homeTeam: Team, awayTeam: Team) {
         self.homeTeam = homeTeam

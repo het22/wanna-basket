@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuarterSelectViewDelegate {
-    func didQuarterButtonTap(quarter: Int?)
+    func didQuarterButtonTap(quarterNum: Int?)
 }
 
 class QuarterSelectView: UIView, NibLoadable {
@@ -39,18 +39,18 @@ class QuarterSelectView: UIView, NibLoadable {
         hStack.spacing = 5
     }
     
-    func setup(currentQuarter: Int) {
+    func setup(currentQuarterNum: Int) {
         let count = 4
         var firstView: UIView?
         for i in 0...count {
             let view = ToggleView(frame: CGRect.zero)
             view.setup(name: (i==count) ? "나가기" : "\(i+1)쿼터",
                 highlightColor: (i==count) ? Constants.Color.Silver : Constants.Color.Black)
-            view.isHighlighted = (i==currentQuarter)
+            view.isHighlighted = (i==currentQuarterNum)
             hStack.addArrangedSubview(view)
             
             let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didQuarterButtonTap(quarter: (i==count) ? nil : i)
+                self.delegate?.didQuarterButtonTap(quarterNum: (i==count) ? nil : i)
             }
             gesture.numberOfTapsRequired = 1
             view.addGestureRecognizer(gesture)

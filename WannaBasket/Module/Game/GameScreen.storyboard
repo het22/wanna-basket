@@ -511,7 +511,6 @@
                         <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
                         <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
-                        <outlet property="trailing" destination="WSo-Dc-9LM" id="mN7-l7-YCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-HO-OZS" sceneMemberID="firstResponder"/>
