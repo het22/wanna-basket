@@ -17,7 +17,7 @@ protocol GameModel {
     var awayOnFloorIndexes: [Int] { get set }
     
     // Quarter & Time Info
-    
+    var time: GameTime { get set }
     
     // Record
     
@@ -29,6 +29,8 @@ class Game: GameModel {
     var awayTeam: Team
     var homeOnFloorIndexes: [Int] = []
     var awayOnFloorIndexes: [Int] = []
+    
+    var time: GameTime = GameTime(numberOfQuarter: 4)
     
     init(homeTeam: Team, awayTeam: Team) {
         self.homeTeam = homeTeam

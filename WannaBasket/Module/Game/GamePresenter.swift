@@ -14,27 +14,40 @@ class GamePresenter: GamePresenterProtocol {
     var interactor: GameInteractorInputProtocol?
     var wireframe: GameWireframeProtocol?
     
-    var game: Game!
-    lazy var gameTime: GameTime = {
-        let time = GameTime(numberOfQuarter: 4)
-        time.delegate = self
-        return time
-    }()
+    var game: Game! {
+        didSet(oldVal) {
+            game.time.delegate = self
+        }
+    }
     var currentPlayerIndexPath: (home: Bool, indexPath: IndexPath)?
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarter: gameTime.currentQuarter)
+        view?.updateQuarter(quarter: game.time.currentQuarter)
+    }
+    
+    func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
+        if let current = currentPlayerIndexPath {
+            currentPlayerIndexPath = nil
+            view?.highlightPlayerCell(of: current.home, at: current.indexPath, bool: false)
+            if current == (home, indexPath) { return }
+        }
+        currentPlayerIndexPath = (home, indexPath)
+        view?.highlightPlayerCell(of: home, at: indexPath, bool: true)
+    }
+    
+    func didBenchButtonTap(of home: Bool) {
+        print(home)
     }
     
     func didQuarterLabelTap() {
-        view?.showQuarterSelectView(currentQuarter: gameTime.currentQuarter, bool: true)
+        view?.showQuarterSelectView(currentQuarter: game.time.currentQuarter, bool: true)
     }
     
     func didQuarterButtonTap(quarter: Int?) {
         if let quarter = quarter {
-            gameTime.updateQuarter(newQuarter: quarter)
+            game.time.updateQuarter(newQuarter: quarter)
             view?.updateQuarter(quarter: quarter)
             view?.showQuarterSelectView(currentQuarter: quarter, bool: false)
         } else {
@@ -43,31 +56,19 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didGameClockLabelTap() {
-        gameTime.isGameClockRunning = !gameTime.isGameClockRunning
+        game.time.isGameClockRunning = !game.time.isGameClockRunning
     }
     
     func didShotClockLabelTap() {
-        gameTime.isShotClockRunning = !gameTime.isShotClockRunning
+        game.time.isShotClockRunning = !game.time.isShotClockRunning
     }
     
     func didReset14ButtonTap() {
-        gameTime.resetShotClock(shotClock: 14.0)
+        game.time.resetShotClock(shotClock: 14.0)
     }
     
     func didReset24ButtonTap() {
-        gameTime.resetShotClock(shotClock: 24.0)
-    }
-    
-    func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
-        if let current = currentPlayerIndexPath {
-            view?.highlightPlayerCell(of: current.home, at: current.indexPath, bool: false)
-            if current == (home, indexPath) {
-                currentPlayerIndexPath = nil
-                return
-            }
-        }
-        currentPlayerIndexPath = (home, indexPath)
-        view?.highlightPlayerCell(of: home, at: indexPath, bool: true)
+        game.time.resetShotClock(shotClock: 24.0)
     }
 }
 
