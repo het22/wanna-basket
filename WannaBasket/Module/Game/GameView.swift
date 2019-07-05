@@ -12,8 +12,12 @@ class GameView: UIViewController {
 
 	var presenter: GamePresenterProtocol?
     
-    @IBOutlet weak var homePlayerTableView: PlayerTableView!
-    @IBOutlet weak var awayPlayerTableView: PlayerTableView!
+    @IBOutlet weak var homePlayerTableView: PlayerTableView! {
+        didSet { homePlayerTableView._delegate = self }
+    }
+    @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
+        didSet { awayPlayerTableView._delegate = self }
+    }
     
     @IBOutlet weak var homeTeamLabel: UILabel!
     @IBOutlet weak var awayTeamLabel: UILabel!
@@ -31,8 +35,6 @@ class GameView: UIViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        homePlayerTableView._delegate = self
-        awayPlayerTableView._delegate = self
         presenter?.viewDidLoad()
     }
     
