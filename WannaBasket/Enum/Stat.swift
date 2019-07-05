@@ -9,9 +9,11 @@
 import Foundation
 
 enum Stat {
-    case PT1
-    case PT2
-    case PT3
+    enum Score {
+        case One
+        case Two
+        case Three
+    }
     case Assist
     case Block
     case Rebound
