@@ -17,6 +17,8 @@ class GameView: UIViewController {
     
     @IBOutlet weak var homeTeamLabel: UILabel!
     @IBOutlet weak var awayTeamLabel: UILabel!
+    @IBOutlet weak var homeBenchButton: UIButton!
+    @IBOutlet weak var awayBenchButton: UIButton!
     
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
@@ -52,6 +54,14 @@ class GameView: UIViewController {
     
     @IBAction func reset24ButtonTapped() {
         presenter?.didReset24ButtonTap()
+    }
+    
+    @IBAction func homeBenchButtonTapped() {
+        presenter?.didBenchButtonTap(of: true)
+    }
+    
+    @IBAction func awayBenchButtonTapped() {
+        presenter?.didBenchButtonTap(of: false)
     }
     
     private var backgroundView: UIView?

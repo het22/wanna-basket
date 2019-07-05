@@ -45,6 +45,7 @@
 		CBC6F04822CDEC8A0021A11D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */; };
 		CBC6F04B22CDF9820021A11D /* QuarterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */; };
 		CBC6F04D22CDF9880021A11D /* QuarterSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */; };
+		CBC6F05322CF063B0021A11D /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05222CF063B0021A11D /* Stat.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -57,7 +58,7 @@
 		CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019A22B89E0E00F71C7B /* HomeView.swift */; };
 		CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019B22B89E0E00F71C7B /* HomeProtocol.swift */; };
 		CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019C22B89E0E00F71C7B /* HomeWireframe.swift */; };
-		CBFA01A622B89E7C00F71C7B /* ModuleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */; };
+		CBFA01A622B89E7C00F71C7B /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01A522B89E7C00F71C7B /* Module.swift */; };
 		CBFA01AD22B8B99800F71C7B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01AC22B8B99800F71C7B /* Player.swift */; };
 		CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA01AE22B8BA7A00F71C7B /* Team.swift */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,7 @@
 		CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		CBC6F04A22CDF9820021A11D /* QuarterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuarterSelectView.swift; path = WannaBasket/Extension/QuarterSelectView.swift; sourceTree = SOURCE_ROOT; };
 		CBC6F04C22CDF9880021A11D /* QuarterSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuarterSelectView.xib; path = WannaBasket/Extension/QuarterSelectView.xib; sourceTree = SOURCE_ROOT; };
+		CBC6F05222CF063B0021A11D /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -136,7 +138,7 @@
 		CBFA019A22B89E0E00F71C7B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBFA019B22B89E0E00F71C7B /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		CBFA019C22B89E0E00F71C7B /* HomeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
-		CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleEnum.swift; sourceTree = "<group>"; };
+		CBFA01A522B89E7C00F71C7B /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
 		CBFA01AC22B8B99800F71C7B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		CBFA01AE22B8BA7A00F71C7B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -204,7 +206,8 @@
 		CBB9B32D22C5F66A004C50B3 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				CBFA01A522B89E7C00F71C7B /* ModuleEnum.swift */,
+				CBFA01A522B89E7C00F71C7B /* Module.swift */,
+				CBC6F05222CF063B0021A11D /* Stat.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -262,9 +265,9 @@
 		CBC6F02A22CDEC8A0021A11D /* TeamTableView */ = {
 			isa = PBXGroup;
 			children = (
-				CBC6F02B22CDEC8A0021A11D /* TeamTableViewCell.xib */,
 				CBC6F02C22CDEC8A0021A11D /* TeamTableView.swift */,
 				CBC6F02D22CDEC8A0021A11D /* TeamTableViewCell.swift */,
+				CBC6F02B22CDEC8A0021A11D /* TeamTableViewCell.xib */,
 			);
 			path = TeamTableView;
 			sourceTree = "<group>";
@@ -639,10 +642,11 @@
 				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,
 				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,
 				CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */,
-				CBFA01A622B89E7C00F71C7B /* ModuleEnum.swift in Sources */,
+				CBFA01A622B89E7C00F71C7B /* Module.swift in Sources */,
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
 				CBC6F03D22CDEC8A0021A11D /* PlayerTableView.swift in Sources */,
+				CBC6F05322CF063B0021A11D /* Stat.swift in Sources */,
 				CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */,
 				CBC6F04B22CDF9820021A11D /* QuarterSelectView.swift in Sources */,
 				CBC6F03B22CDEC8A0021A11D /* ToggleView.swift in Sources */,

@@ -107,13 +107,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-ty-sJw" userLabel="Home">
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="326"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8r-DbG" userLabel="Bar">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02m-0X-vfQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="326"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="my7-N6-KA3"/>
+                                                            <constraint firstAttribute="width" constant="20" id="afK-lG-XC3"/>
                                                         </constraints>
-                                                    </view>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        <state key="normal" title="&gt;">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="homeBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="XCS-WK-wY0"/>
+                                                        </connections>
+                                                    </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-fK-wdD" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="0.0" width="159" height="326"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,11 +138,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="S0k-fK-wdD" secondAttribute="bottom" id="7sy-6z-E5U"/>
                                                     <constraint firstItem="S0k-fK-wdD" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="DYI-em-X45"/>
-                                                    <constraint firstAttribute="bottom" secondItem="7Lc-8r-DbG" secondAttribute="bottom" id="FC9-l4-8JC"/>
-                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="leading" secondItem="7Lc-8r-DbG" secondAttribute="trailing" constant="5" id="IAx-QH-JRK"/>
-                                                    <constraint firstItem="7Lc-8r-DbG" firstAttribute="leading" secondItem="Lrt-ty-sJw" secondAttribute="leading" id="Ig5-cV-jmm"/>
-                                                    <constraint firstItem="7Lc-8r-DbG" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="Vtb-wf-Cg2"/>
+                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="leading" secondItem="02m-0X-vfQ" secondAttribute="trailing" constant="5" id="OvS-8W-Jxn"/>
+                                                    <constraint firstItem="02m-0X-vfQ" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="QAX-qW-a8C"/>
+                                                    <constraint firstItem="02m-0X-vfQ" firstAttribute="leading" secondItem="Lrt-ty-sJw" secondAttribute="leading" id="WBk-l6-w4J"/>
                                                     <constraint firstAttribute="trailing" secondItem="S0k-fK-wdD" secondAttribute="trailing" id="WSo-Dc-9LM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="02m-0X-vfQ" secondAttribute="bottom" id="oNN-Bz-FRX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-O4-WHd" userLabel="Control">
@@ -430,13 +437,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-ql-D04" userLabel="Away">
                                                 <rect key="frame" x="552" y="0.0" width="184" height="326"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5v5-rN-LIL" userLabel="Bar">
-                                                        <rect key="frame" x="164" y="0.0" width="20" height="326"/>
-                                                        <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="aGR-pD-igT"/>
-                                                        </constraints>
-                                                    </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-fn-OG7" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="326"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -449,16 +449,31 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-4a-KuH">
+                                                        <rect key="frame" x="164" y="0.0" width="20" height="326"/>
+                                                        <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="Dow-0Q-vsI"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="m73-bT-AMI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        <state key="normal" title="&lt;">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="awayBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="IUd-wm-fTf"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="5v5-rN-LIL" firstAttribute="leading" secondItem="AeC-fn-OG7" secondAttribute="trailing" constant="5" id="ETO-qz-NAY"/>
+                                                    <constraint firstItem="eSJ-4a-KuH" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="GUj-cz-iJG"/>
                                                     <constraint firstItem="AeC-fn-OG7" firstAttribute="leading" secondItem="CbD-ql-D04" secondAttribute="leading" id="Hbk-91-JCu"/>
-                                                    <constraint firstItem="5v5-rN-LIL" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="bHq-lp-aaz"/>
                                                     <constraint firstAttribute="bottom" secondItem="AeC-fn-OG7" secondAttribute="bottom" id="dGQ-kh-hLa"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5v5-rN-LIL" secondAttribute="trailing" id="mUL-S2-23P"/>
+                                                    <constraint firstItem="eSJ-4a-KuH" firstAttribute="leading" secondItem="AeC-fn-OG7" secondAttribute="trailing" constant="5" id="hfK-r9-zvf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eSJ-4a-KuH" secondAttribute="bottom" id="hrn-Ki-tzZ"/>
                                                     <constraint firstItem="AeC-fn-OG7" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="ort-2E-Kcl"/>
-                                                    <constraint firstAttribute="bottom" secondItem="5v5-rN-LIL" secondAttribute="bottom" id="rJ3-pC-nXY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eSJ-4a-KuH" secondAttribute="trailing" id="yhg-C6-59m"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -485,15 +500,18 @@
                         <viewLayoutGuide key="safeArea" id="Og7-JB-ygZ"/>
                     </view>
                     <connections>
+                        <outlet property="awayBenchButton" destination="eSJ-4a-KuH" id="su4-sm-NRT"/>
                         <outlet property="awayPlayerTableView" destination="AeC-fn-OG7" id="CZh-AC-LwX"/>
                         <outlet property="awayScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
                         <outlet property="awayTeamLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
                         <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
+                        <outlet property="homeBenchButton" destination="02m-0X-vfQ" id="vnB-kI-f1N"/>
                         <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
                         <outlet property="homeScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
                         <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
                         <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
+                        <outlet property="trailing" destination="WSo-Dc-9LM" id="mN7-l7-YCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-HO-OZS" sceneMemberID="firstResponder"/>
@@ -513,7 +531,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="46.467391304347828" y="-136.23188405797103"/>
+            <point key="canvasLocation" x="24" y="-138"/>
         </scene>
     </scenes>
 </document>
