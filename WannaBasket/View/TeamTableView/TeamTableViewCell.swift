@@ -29,39 +29,22 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
         nameLabel.text = name
     }
     
-//    private var _highlight: Bool = false
-//    var highlight: Bool {
-//        get { return _highlight }
-//        set(newVal) {
-//            backgroundColor = newVal ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//            rightArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//            leftArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//            _highlight = newVal
-//        }
-//    }
-    
-    private var _highlightOnLeft: Bool = false
-    var highlightOnLeft: Bool {
-        get { return _highlightOnLeft }
-        set(newVal) {
+    var highlightOnLeft: Bool = false {
+        willSet(newVal) {
+            if newVal == highlightOnLeft { return }
             leftArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             leftArrow.backgroundColor = newVal ? Constants.Color.HomeDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            _highlightOnLeft = newVal
         }
     }
     
-    private var _highlightOnRight: Bool = false
-    var highlightOnRight: Bool {
-        get { return _highlightOnRight }
-        set(newVal) {
+    var highlightOnRight: Bool = false {
+        willSet(newVal) {
+            if newVal == highlightOnRight { return }
             rightArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             rightArrow.backgroundColor = newVal ? Constants.Color.AwayDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            _highlightOnRight = newVal
         }
     }
 
-    
     var tapOnLeft: Bool = true
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let location = touches.first?.location(in: self) {
