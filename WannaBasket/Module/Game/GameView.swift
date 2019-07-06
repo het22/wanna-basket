@@ -50,6 +50,12 @@ class GameView: UIViewController {
         presenter?.didShotClockLabelTap()
     }
     
+    @IBAction func clockControlButtonTapped(sender: UIButton) {
+        guard let id = sender.accessibilityIdentifier,
+              let control = ClockControl(rawValue: id) else { return }
+        presenter?.didClockControlButtonTap(control: control)
+    }
+    
     @IBAction func reset14ButtonTapped() {
         presenter?.didReset14ButtonTap()
     }

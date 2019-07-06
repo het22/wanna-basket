@@ -152,26 +152,34 @@
                                                         <rect key="frame" x="10" y="0.0" width="348" height="326"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="Game">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="107.33333333333333"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Dx-m5r" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="107.33333333333333"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="52.666666666666664"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Game Min Plus Button">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="GameMinPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="nxf-DX-7zp"/>
+                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="54.666666666666657" width="52.333333333333336" height="52.666666666666657"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Game Min Minus Button">
+                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="GameMinMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Ywu-NG-qie"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -186,7 +194,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
-                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="107.33333333333333"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="115"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="85"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,23 +204,31 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
-                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="107.33333333333333"/>
+                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="52.666666666666664"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Game Sec Plus Button">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="GameSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="wWS-kP-Hyg"/>
+                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="54.666666666666657" width="52.333333333333336" height="52.666666666666657"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Game Sec Minus Button">
+                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="GameSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Wlv-F9-IbI"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -244,26 +260,34 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="Shot">
-                                                                <rect key="frame" x="0.0" y="109.33333333333336" width="348" height="128.66666666666663"/>
+                                                                <rect key="frame" x="0.0" y="117" width="348" height="115"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-QG-jto" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="128.66666666666666"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-tw-RBM" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="63.333333333333336"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-tw-RBM" userLabel="Shot Sec Plus Button">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="ShotSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="XDA-MI-hXF"/>
+                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-bo-PI8" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="65.333333333333343" width="52.333333333333336" height="63.333333333333343"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-bo-PI8" userLabel="Shot Sec Minus Button">
+                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="ShotSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="nFg-gN-XCH"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -278,7 +302,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
-                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="63.333333333333336"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="56.666666666666664"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -288,7 +312,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
-                                                                        <rect key="frame" x="54.33333333333335" y="65.333333333333343" width="118.66666666666669" height="63.333333333333343"/>
+                                                                        <rect key="frame" x="54.33333333333335" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="14초">
@@ -299,23 +323,31 @@
                                                                         </connections>
                                                                     </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-Xp-zbi" userLabel="Right">
-                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="128.66666666666666"/>
+                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-uv-lpU" userLabel="Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="63.333333333333336"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-uv-lpU" userLabel="Shot Point Plus Button">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="ShotPointPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Tm9-zI-ZcM"/>
+                                                                                </connections>
                                                                             </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Ic-NeC" userLabel="Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="65.333333333333343" width="52.333333333333336" height="63.333333333333343"/>
+                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Ic-NeC" userLabel="Shot Point Minus Button">
+                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="ShotPointMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="S3s-Zj-N95"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <constraints>
@@ -330,7 +362,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
-                                                                        <rect key="frame" x="175" y="65.333333333333343" width="118.66666666666669" height="63.333333333333343"/>
+                                                                        <rect key="frame" x="175" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="24초">
@@ -366,13 +398,13 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control">
-                                                                <rect key="frame" x="0.0" y="240" width="348" height="86"/>
+                                                                <rect key="frame" x="0.0" y="234" width="348" height="92"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-cl-rg0">
-                                                                        <rect key="frame" x="0.0" y="10" width="348" height="71"/>
+                                                                        <rect key="frame" x="0.0" y="10" width="348" height="77"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-cq-8WQ" userLabel="Rewind">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="71"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="77"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                                 <state key="normal" title="취소">
@@ -380,7 +412,7 @@
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-zB-XLJ" userLabel="1pt">
-                                                                                <rect key="frame" x="87.666666666666686" y="0.0" width="85.333333333333314" height="71"/>
+                                                                                <rect key="frame" x="87.666666666666686" y="0.0" width="85.333333333333314" height="77"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                                 <state key="normal" title="1점">
@@ -388,7 +420,7 @@
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-an-czi" userLabel="2pt">
-                                                                                <rect key="frame" x="175" y="0.0" width="85.666666666666686" height="71"/>
+                                                                                <rect key="frame" x="175" y="0.0" width="85.666666666666686" height="77"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                                 <state key="normal" title="2점">
@@ -396,7 +428,7 @@
                                                                                 </state>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpw-vC-W8t" userLabel="3pt">
-                                                                                <rect key="frame" x="262.66666666666669" y="0.0" width="85.333333333333314" height="71"/>
+                                                                                <rect key="frame" x="262.66666666666669" y="0.0" width="85.333333333333314" height="77"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                                 <state key="normal" title="3점">
@@ -422,7 +454,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="h9f-qz-HO8" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" multiplier="0.8" id="ODA-Ys-D3t"/>
-                                                            <constraint firstItem="ic1-YH-dPv" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" multiplier="1.2" id="rql-fY-kTj"/>
+                                                            <constraint firstItem="ic1-YH-dPv" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" id="rql-fY-kTj"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>

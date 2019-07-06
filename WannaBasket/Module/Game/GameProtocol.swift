@@ -43,6 +43,7 @@ protocol GamePresenterProtocol: class {
     
     func didGameClockLabelTap()
     func didShotClockLabelTap()
+    func didClockControlButtonTap(control: ClockControl)
     func didReset14ButtonTap()
     func didReset24ButtonTap()
 }

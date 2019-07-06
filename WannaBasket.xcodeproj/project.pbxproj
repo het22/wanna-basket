@@ -49,6 +49,7 @@
 		CBC6F05922CFA08B0021A11D /* QuarterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05722CFA08B0021A11D /* QuarterSelectView.swift */; };
 		CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05B22CFA1670021A11D /* StatSelectView.swift */; };
 		CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F05D22CFA1730021A11D /* StatSelectView.xib */; };
+		CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F05F22D03DAB0021A11D /* ClockControl.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -126,6 +127,7 @@
 		CBC6F05722CFA08B0021A11D /* QuarterSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterSelectView.swift; sourceTree = "<group>"; };
 		CBC6F05B22CFA1670021A11D /* StatSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSelectView.swift; sourceTree = "<group>"; };
 		CBC6F05D22CFA1730021A11D /* StatSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatSelectView.xib; sourceTree = "<group>"; };
+		CBC6F05F22D03DAB0021A11D /* ClockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControl.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
 				CBC6F05222CF063B0021A11D /* Stat.swift */,
 				CBC6F05422CF2C2B0021A11D /* Quarter.swift */,
+				CBC6F05F22D03DAB0021A11D /* ClockControl.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
 				CBB9B32122C4D3BD004C50B3 /* Game.swift in Sources */,
+				CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */,
 				CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */,
 				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* GameTime.swift in Sources */,

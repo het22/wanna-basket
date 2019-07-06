@@ -71,6 +71,27 @@ class GamePresenter: GamePresenterProtocol {
         game.time.isShotClockRunning = !game.time.isShotClockRunning
     }
     
+    func didClockControlButtonTap(control: ClockControl) {
+        switch control {
+        case .GameMinPlus:
+            game.time.addGameClock(60.0)
+        case .GameMinMinus:
+            game.time.addGameClock(-60.0)
+        case .GameSecPlus:
+            game.time.addGameClock(1.0)
+        case .GameSecMinus:
+            game.time.addGameClock(-1.0)
+        case .ShotSecPlus:
+            game.time.addShotClock(1.0)
+        case .ShotSecMinus:
+            game.time.addShotClock(-1.0)
+        case .ShotPointPlus:
+            game.time.addShotClock(0.1)
+        case .ShotPointMinus:
+            game.time.addShotClock(-0.1)
+        }
+    }
+    
     func didReset14ButtonTap() {
         game.time.resetShotClock(14.0)
     }

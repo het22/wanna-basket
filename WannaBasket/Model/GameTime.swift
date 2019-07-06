@@ -48,6 +48,28 @@ class GameTime {
                                      isRunning: false)
     }
     
+    func addGameClock(_ amount: Float) {
+        currentQuarter.gameClock += amount
+        if currentQuarter.gameClock <= 0 {
+            currentQuarter.gameClock = 0.0
+            isGameClockRunning = false
+        } else if currentQuarter.gameClock >= maxGameClock {
+            currentQuarter.gameClock = maxGameClock
+        }
+        delegate?.didGameClockUpdate(gameClock: currentQuarter.gameClock, isRunning: isGameClockRunning)
+    }
+    
+    func addShotClock(_ amount: Float) {
+        currentQuarter.shotClock += amount
+        if currentQuarter.shotClock <= 0 {
+            currentQuarter.shotClock = 0.0
+            isShotClockRunning = false
+        } else if currentQuarter.shotClock >= maxShotClock {
+            currentQuarter.shotClock = maxShotClock
+        }
+        delegate?.didShotClockUpdate(shotClock: currentQuarter.shotClock, isRunning: isShotClockRunning)
+    }
+    
     func resetGameClock(_ gameClock: Float) {
         currentQuarter.gameClock = gameClock
         isGameClockRunning = false
