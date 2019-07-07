@@ -75,13 +75,17 @@ class GamePresenter: GamePresenterProtocol {
     func didClockControlButtonTap(control: ClockControl) {
         switch control {
         case .GameMinPlus:
-            game.time.addGameClock(60.0)
+            let bool = (game.time.currentQuarter.gameClock > 60.0)
+            game.time.addGameClock(bool ? 60.0 : 1.0)
         case .GameMinMinus:
-            game.time.addGameClock(-60.0)
+            let bool = (game.time.currentQuarter.gameClock > 61.0)
+            game.time.addGameClock(bool ? -60.0 : -1.0)
         case .GameSecPlus:
-            game.time.addGameClock(1.0)
+            let bool = (game.time.currentQuarter.gameClock >= 60.0)
+            game.time.addGameClock(bool ? 1.0 : 0.1)
         case .GameSecMinus:
-            game.time.addGameClock(-1.0)
+            let bool = (game.time.currentQuarter.gameClock > 60.0)
+            game.time.addGameClock(bool ? -1.0 : -0.1)
         case .ShotSecPlus:
             game.time.addShotClock(1.0)
         case .ShotSecMinus:

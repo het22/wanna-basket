@@ -17,7 +17,7 @@ class GameTime {
 
     var delegate: GameTimeDelegate?
     
-    var quarters: [Quarter] = []
+    private var quarters: [Quarter] = []
     var currentQuarter: Quarter {
         get { return quarters[currentQuarterNum] }
         set(newVal) { quarters[currentQuarterNum] = newVal }
@@ -25,9 +25,9 @@ class GameTime {
     var currentQuarterNum: Int = 0
     var maxRegularQuarterNum: Int
     
-    let maxGameClock: Float = 600.0
-    let maxOverTimeClock: Float = 300.0
-    let maxShotClock: Float = 24.0
+    private let maxGameClock: Float = 600.0
+    private let maxOverTimeClock: Float = 300.0
+    private let maxShotClock: Float = 24.0
     
     init(maxRegularQuarterNum: Int) {
         self.maxRegularQuarterNum = maxRegularQuarterNum
