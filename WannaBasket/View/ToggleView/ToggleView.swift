@@ -26,7 +26,7 @@ class ToggleView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        layer.borderWidth = 2
+        layer.borderWidth = 1
     }
     
     func setup(name: String, highlightColor: UIColor) {

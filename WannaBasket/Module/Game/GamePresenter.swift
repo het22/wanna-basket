@@ -20,6 +20,7 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     var currentPlayerIndexPath: (home: Bool, indexPath: IndexPath)?
+    var currentStat: Stat.Score?
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
@@ -98,6 +99,22 @@ class GamePresenter: GamePresenterProtocol {
     
     func didReset24ButtonTap() {
         game.time.resetShotClock(24.0)
+    }
+    
+    func didStatSelect(stat: Stat.Score?) {
+        if stat == nil {
+            print("취소")
+            return
+        }
+        if currentStat != nil {
+            view?.highlightStatsCell(of: currentStat, bool: false)
+            if currentStat == stat {
+                currentStat = nil
+                return
+            }
+        }
+        currentStat = stat
+        view?.highlightStatsCell(of: stat, bool: true)
     }
 }
 

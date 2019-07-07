@@ -21,8 +21,6 @@ class GameView: UIViewController {
     
     @IBOutlet weak var homeTeamLabel: UILabel!
     @IBOutlet weak var awayTeamLabel: UILabel!
-    @IBOutlet weak var homeBenchButton: UIButton!
-    @IBOutlet weak var awayBenchButton: UIButton!
     
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
@@ -31,6 +29,10 @@ class GameView: UIViewController {
     
     @IBOutlet weak var gameClockLabel: UILabel!
     @IBOutlet weak var shotClockLabel: UILabel!
+    
+    @IBOutlet weak var statSelectView: StatSelectView! {
+        didSet { statSelectView.delegate = self }
+    }
     
     
 	override func viewDidLoad() {
@@ -131,12 +133,12 @@ extension GameView: GameViewProtocol {
         } else {
             gameClockLabel.text = shotClockFormat.string(from: NSNumber(value: gameClock))
         }
-        gameClockLabel.textColor = isRunning ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+        gameClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     
     func updateShotClock(_ shotClock: Float, isRunning: Bool) {
         shotClockLabel.text = shotClockFormat.string(from: NSNumber(value: shotClock))
-        shotClockLabel.textColor = isRunning ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+        shotClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     
     func updateQuarter(quarterNum: Int) {
@@ -147,6 +149,10 @@ extension GameView: GameViewProtocol {
     func highlightPlayerCell(of home: Bool, at indexPath: IndexPath, bool: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.highlightCell(at: indexPath, bool: bool)
+    }
+    
+    func highlightStatsCell(of stat: Stat.Score?, bool: Bool) {
+        statSelectView.highlightCell(of: stat, bool: bool)
     }
 }
 
@@ -166,5 +172,12 @@ extension GameView: QuarterSelectViewDelegate {
     
     func didQuarterSelect(quarterNum: Int?) {
         presenter?.didQuarterSelect(quarterNum: quarterNum)
+    }
+}
+
+extension GameView: StatSelectViewDelegate {
+    
+    func didStatSelect(stat: Stat.Score?) {
+        presenter?.didStatSelect(stat: stat)
     }
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
+            <connections>
+                <outlet property="score1ToggleView" destination="aJw-eU-5dS" id="drx-Fy-jhE"/>
+                <outlet property="score2ToggleView" destination="6NP-0I-OIc" id="d7o-R0-WbC"/>
+                <outlet property="score3ToggleView" destination="l51-rI-1gm" id="9lM-2L-rHR"/>
+                <outlet property="undoToggleView" destination="bYR-0F-V3O" id="RWF-pG-afT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="837" height="171"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ftq-Ou-vco">
+                    <rect key="frame" x="0.0" y="0.0" width="837" height="171"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYR-0F-V3O" customClass="ToggleView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="205.66666666666666" height="171"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-eU-5dS" customClass="ToggleView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="210.66666666666663" y="0.0" width="205.33333333333337" height="171"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NP-0I-OIc" customClass="ToggleView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="421.00000000000006" y="0.0" width="205.66666666666669" height="171"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l51-rI-1gm" customClass="ToggleView" customModule="WannaBasket" customModuleProvider="target">
+                            <rect key="frame" x="631.66666666666663" y="0.0" width="205.33333333333337" height="171"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aJw-eU-5dS" firstAttribute="width" secondItem="bYR-0F-V3O" secondAttribute="width" id="3I8-Ap-P9u"/>
+                        <constraint firstItem="l51-rI-1gm" firstAttribute="width" secondItem="bYR-0F-V3O" secondAttribute="width" id="WWu-6J-vAe"/>
+                        <constraint firstItem="6NP-0I-OIc" firstAttribute="width" secondItem="bYR-0F-V3O" secondAttribute="width" id="edz-fi-Qbm"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ftq-Ou-vco" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hgZ-5Z-kEM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ftq-Ou-vco" secondAttribute="bottom" id="ila-eP-5lS"/>
+                <constraint firstItem="ftq-Ou-vco" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nQF-Uw-oX6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ftq-Ou-vco" secondAttribute="trailing" id="zWt-6A-JUN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="31" y="-128"/>
+        </view>
+    </objects>
+</document>

@@ -104,25 +104,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZu-k9-acy" userLabel="Down">
                                         <rect key="frame" x="0.0" y="88" width="736" height="326"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-ty-sJw" userLabel="Home">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-ty-sJw" userLabel="Home Team">
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="326"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02m-0X-vfQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="326"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="afK-lG-XC3"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                                        <state key="normal" title="&gt;">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="homeBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="XCS-WK-wY0"/>
-                                                        </connections>
-                                                    </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-fK-wdD" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="0.0" width="159" height="326"/>
+                                                        <rect key="frame" x="25" y="35" width="159" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -133,32 +119,56 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-ZV-p8M" userLabel="Bar">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="326"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="jeB-h8-PII"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm3-cW-Aw7">
+                                                        <rect key="frame" x="25" y="0.0" width="159" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Sd0-Bi-pfQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                                        <state key="normal" title="교체">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="homeBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="dgW-87-1f5"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="top" secondItem="wm3-cW-Aw7" secondAttribute="bottom" constant="5" id="6DG-Z5-Dfg"/>
                                                     <constraint firstAttribute="bottom" secondItem="S0k-fK-wdD" secondAttribute="bottom" id="7sy-6z-E5U"/>
-                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="DYI-em-X45"/>
-                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="leading" secondItem="02m-0X-vfQ" secondAttribute="trailing" constant="5" id="OvS-8W-Jxn"/>
-                                                    <constraint firstItem="02m-0X-vfQ" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="QAX-qW-a8C"/>
-                                                    <constraint firstItem="02m-0X-vfQ" firstAttribute="leading" secondItem="Lrt-ty-sJw" secondAttribute="leading" id="WBk-l6-w4J"/>
+                                                    <constraint firstItem="wm3-cW-Aw7" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="ALs-BS-MVY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wm3-cW-Aw7" secondAttribute="trailing" id="K1s-RL-ltZ"/>
+                                                    <constraint firstItem="2Ck-ZV-p8M" firstAttribute="top" secondItem="Lrt-ty-sJw" secondAttribute="top" id="Tse-kg-FUn"/>
                                                     <constraint firstAttribute="trailing" secondItem="S0k-fK-wdD" secondAttribute="trailing" id="WSo-Dc-9LM"/>
-                                                    <constraint firstAttribute="bottom" secondItem="02m-0X-vfQ" secondAttribute="bottom" id="oNN-Bz-FRX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2Ck-ZV-p8M" secondAttribute="bottom" id="XBt-6y-QLp"/>
+                                                    <constraint firstItem="S0k-fK-wdD" firstAttribute="leading" secondItem="2Ck-ZV-p8M" secondAttribute="trailing" constant="5" id="ZHi-2u-pys"/>
+                                                    <constraint firstItem="wm3-cW-Aw7" firstAttribute="leading" secondItem="2Ck-ZV-p8M" secondAttribute="trailing" constant="5" id="ZTJ-ok-8fZ"/>
+                                                    <constraint firstItem="2Ck-ZV-p8M" firstAttribute="leading" secondItem="Lrt-ty-sJw" secondAttribute="leading" id="pyo-Te-RFW"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-O4-WHd" userLabel="Control">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-O4-WHd" userLabel="Game Control">
                                                 <rect key="frame" x="184" y="0.0" width="368" height="326"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="FeF-RO-gm6">
-                                                        <rect key="frame" x="10" y="0.0" width="348" height="326"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FeF-RO-gm6">
+                                                        <rect key="frame" x="10" y="0.0" width="348" height="321"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="Game">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
+                                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="GameClock">
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="111"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Dx-m5r" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="111"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Game Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="54.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -170,7 +180,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Game Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="56.666666666666657" width="50.333333333333336" height="54.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -194,7 +204,8 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
-                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="115"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="111"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="85"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,10 +215,10 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
-                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
+                                                                        <rect key="frame" x="297.66666666666669" y="0.0" width="50.333333333333314" height="111"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Game Sec Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="54.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -219,7 +230,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Game Sec Minus Button">
-                                                                                <rect key="frame" x="0.0" y="58.666666666666657" width="52.333333333333336" height="56.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="56.666666666666657" width="50.333333333333336" height="54.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -247,8 +258,8 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="9RH-yp-Zo6" secondAttribute="bottom" id="38H-zV-jiO"/>
                                                                     <constraint firstItem="9RH-yp-Zo6" firstAttribute="top" secondItem="XZc-Id-YWD" secondAttribute="top" id="53s-T6-2ue"/>
-                                                                    <constraint firstItem="9RH-yp-Zo6" firstAttribute="leading" secondItem="P4y-Dx-m5r" secondAttribute="trailing" id="5cZ-QE-CQH"/>
-                                                                    <constraint firstItem="iID-oV-Ju2" firstAttribute="leading" secondItem="9RH-yp-Zo6" secondAttribute="trailing" id="8mc-ob-OiL"/>
+                                                                    <constraint firstItem="9RH-yp-Zo6" firstAttribute="leading" secondItem="P4y-Dx-m5r" secondAttribute="trailing" constant="2" id="5cZ-QE-CQH"/>
+                                                                    <constraint firstItem="iID-oV-Ju2" firstAttribute="leading" secondItem="9RH-yp-Zo6" secondAttribute="trailing" constant="2" id="8mc-ob-OiL"/>
                                                                     <constraint firstAttribute="trailing" secondItem="iID-oV-Ju2" secondAttribute="trailing" id="BGT-ap-I5c"/>
                                                                     <constraint firstItem="P4y-Dx-m5r" firstAttribute="leading" secondItem="XZc-Id-YWD" secondAttribute="leading" id="H0p-vY-ep3"/>
                                                                     <constraint firstItem="iID-oV-Ju2" firstAttribute="top" secondItem="XZc-Id-YWD" secondAttribute="top" id="IwD-HZ-LFi"/>
@@ -259,14 +270,14 @@
                                                                     <constraint firstItem="P4y-Dx-m5r" firstAttribute="top" secondItem="XZc-Id-YWD" secondAttribute="top" id="uM1-Pq-toc"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="Shot">
-                                                                <rect key="frame" x="0.0" y="117" width="348" height="115"/>
+                                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="ShotClock">
+                                                                <rect key="frame" x="0.0" y="116" width="348" height="111"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-QG-jto" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="115"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="111"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-tw-RBM" userLabel="Shot Sec Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="54.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -278,7 +289,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-bo-PI8" userLabel="Shot Sec Minus Button">
-                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="56.666666666666686" width="50.333333333333336" height="54.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -302,7 +313,8 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
-                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="56.666666666666664"/>
+                                                                        <rect key="frame" x="52.333333333333329" y="0.0" width="243.33333333333337" height="72.333333333333329"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -312,7 +324,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
-                                                                        <rect key="frame" x="54.33333333333335" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
+                                                                        <rect key="frame" x="52.33333333333335" y="74.333333333333314" width="120.66666666666669" height="36.666666666666657"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="14초">
@@ -322,11 +334,22 @@
                                                                             <action selector="reset14ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="ped-ym-6Dm"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
+                                                                        <rect key="frame" x="175" y="74.333333333333314" width="120.66666666666669" height="36.666666666666657"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                        <state key="normal" title="24초">
+                                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="reset24ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="0E1-pg-bea"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-Xp-zbi" userLabel="Right">
-                                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="52.333333333333314" height="115"/>
+                                                                        <rect key="frame" x="297.66666666666669" y="0.0" width="50.333333333333314" height="111"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-uv-lpU" userLabel="Shot Point Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="56.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="54.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotPointPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -338,7 +361,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Ic-NeC" userLabel="Shot Point Minus Button">
-                                                                                <rect key="frame" x="0.0" y="58.666666666666686" width="52.333333333333336" height="56.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="56.666666666666686" width="50.333333333333336" height="54.333333333333343"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotPointMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -361,95 +384,34 @@
                                                                             <constraint firstItem="D1b-uv-lpU" firstAttribute="leading" secondItem="JtT-Xp-zbi" secondAttribute="leading" id="vvc-Fb-K2X"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
-                                                                        <rect key="frame" x="175" y="58.666666666666686" width="118.66666666666669" height="56.333333333333343"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                                                                        <state key="normal" title="24초">
-                                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="reset24ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="0E1-pg-bea"/>
-                                                                        </connections>
-                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="hYD-QG-jto" firstAttribute="leading" secondItem="ic1-YH-dPv" secondAttribute="leading" id="31v-DA-kS6"/>
-                                                                    <constraint firstItem="JtT-Xp-zbi" firstAttribute="leading" secondItem="G1P-aU-1s1" secondAttribute="trailing" id="9kX-H6-bEa"/>
+                                                                    <constraint firstItem="JtT-Xp-zbi" firstAttribute="leading" secondItem="G1P-aU-1s1" secondAttribute="trailing" constant="2" id="9kX-H6-bEa"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="width" secondItem="ic1-YH-dPv" secondAttribute="width" multiplier="0.7" id="Fdl-h6-kWV"/>
                                                                     <constraint firstItem="JtT-Xp-zbi" firstAttribute="leading" secondItem="417-Pg-fCx" secondAttribute="trailing" constant="2" id="ISH-eG-vgY"/>
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="top" secondItem="G1P-aU-1s1" secondAttribute="bottom" constant="2" id="JeC-km-wiZ"/>
                                                                     <constraint firstItem="hYD-QG-jto" firstAttribute="top" secondItem="ic1-YH-dPv" secondAttribute="top" id="Neu-se-wP0"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="centerX" secondItem="ic1-YH-dPv" secondAttribute="centerX" id="NuM-gN-XNq"/>
+                                                                    <constraint firstItem="Y8p-u8-SYU" firstAttribute="top" secondItem="G1P-aU-1s1" secondAttribute="bottom" constant="2" id="PBF-AU-mJS"/>
                                                                     <constraint firstItem="Y8p-u8-SYU" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="trailing" constant="2" id="Poo-dx-Md5"/>
-                                                                    <constraint firstItem="G1P-aU-1s1" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="trailing" id="R53-hg-lqP"/>
+                                                                    <constraint firstItem="G1P-aU-1s1" firstAttribute="leading" secondItem="hYD-QG-jto" secondAttribute="trailing" constant="2" id="R53-hg-lqP"/>
                                                                     <constraint firstAttribute="bottom" secondItem="417-Pg-fCx" secondAttribute="bottom" id="UpH-dQ-0tT"/>
                                                                     <constraint firstAttribute="trailing" secondItem="JtT-Xp-zbi" secondAttribute="trailing" id="Yyi-kK-ikb"/>
                                                                     <constraint firstItem="JtT-Xp-zbi" firstAttribute="top" secondItem="ic1-YH-dPv" secondAttribute="top" id="ZEe-yV-XXd"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Y8p-u8-SYU" secondAttribute="bottom" id="a33-to-rjW"/>
-                                                                    <constraint firstItem="Y8p-u8-SYU" firstAttribute="height" secondItem="C4U-bo-PI8" secondAttribute="height" id="aWb-Mm-Uio"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="top" secondItem="ic1-YH-dPv" secondAttribute="top" id="bRi-FH-Xt4"/>
                                                                     <constraint firstAttribute="bottom" secondItem="hYD-QG-jto" secondAttribute="bottom" id="eeh-vh-Xmr"/>
-                                                                    <constraint firstItem="417-Pg-fCx" firstAttribute="height" secondItem="m7x-Ic-NeC" secondAttribute="height" id="g4Z-co-0aP"/>
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="width" secondItem="Y8p-u8-SYU" secondAttribute="width" id="hfQ-U7-Qpx"/>
                                                                     <constraint firstAttribute="bottom" secondItem="JtT-Xp-zbi" secondAttribute="bottom" id="hwG-Xn-0wc"/>
+                                                                    <constraint firstItem="G1P-aU-1s1" firstAttribute="height" secondItem="ic1-YH-dPv" secondAttribute="height" multiplier="0.65" id="phN-f3-Bac"/>
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="leading" secondItem="Y8p-u8-SYU" secondAttribute="trailing" constant="2" id="yaZ-Jy-H1Y"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control">
-                                                                <rect key="frame" x="0.0" y="234" width="348" height="92"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-cl-rg0">
-                                                                        <rect key="frame" x="0.0" y="10" width="348" height="77"/>
-                                                                        <subviews>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHf-cq-8WQ" userLabel="Rewind">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="77"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                                                                                <state key="normal" title="취소">
-                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </state>
-                                                                            </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-zB-XLJ" userLabel="1pt">
-                                                                                <rect key="frame" x="87.666666666666686" y="0.0" width="85.333333333333314" height="77"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                                                                                <state key="normal" title="1점">
-                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </state>
-                                                                            </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-an-czi" userLabel="2pt">
-                                                                                <rect key="frame" x="175" y="0.0" width="85.666666666666686" height="77"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                                                                                <state key="normal" title="2점">
-                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </state>
-                                                                            </button>
-                                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpw-vC-W8t" userLabel="3pt">
-                                                                                <rect key="frame" x="262.66666666666669" y="0.0" width="85.333333333333314" height="77"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                                                                                <state key="normal" title="3점">
-                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </state>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="Tpw-vC-W8t" firstAttribute="width" secondItem="kHf-cq-8WQ" secondAttribute="width" id="dYh-HV-mTE"/>
-                                                                            <constraint firstItem="JV7-an-czi" firstAttribute="width" secondItem="kHf-cq-8WQ" secondAttribute="width" id="lQ8-rh-SJs"/>
-                                                                            <constraint firstItem="Cub-zB-XLJ" firstAttribute="width" secondItem="kHf-cq-8WQ" secondAttribute="width" id="rdf-NE-B9J"/>
-                                                                        </constraints>
-                                                                    </stackView>
-                                                                </subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="232" width="348" height="89"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="5bQ-cl-rg0" firstAttribute="leading" secondItem="h9f-qz-HO8" secondAttribute="leading" id="86h-3m-ZiR"/>
-                                                                    <constraint firstItem="5bQ-cl-rg0" firstAttribute="top" secondItem="h9f-qz-HO8" secondAttribute="top" constant="10" id="Onp-3q-nU0"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="5bQ-cl-rg0" secondAttribute="trailing" id="Q5f-a3-Wdu"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="5bQ-cl-rg0" secondAttribute="bottom" constant="5" id="hnr-hy-y1U"/>
-                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
@@ -461,16 +423,16 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="FeF-RO-gm6" firstAttribute="leading" secondItem="fWg-O4-WHd" secondAttribute="leading" constant="10" id="7SQ-rR-cAR"/>
-                                                    <constraint firstAttribute="bottom" secondItem="FeF-RO-gm6" secondAttribute="bottom" id="8bA-mk-GnK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FeF-RO-gm6" secondAttribute="bottom" constant="5" id="8bA-mk-GnK"/>
                                                     <constraint firstAttribute="trailing" secondItem="FeF-RO-gm6" secondAttribute="trailing" constant="10" id="O4V-AB-L6p"/>
                                                     <constraint firstItem="FeF-RO-gm6" firstAttribute="top" secondItem="fWg-O4-WHd" secondAttribute="top" id="aqD-9q-hJx"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-ql-D04" userLabel="Away">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-ql-D04" userLabel="Away Team">
                                                 <rect key="frame" x="552" y="0.0" width="184" height="326"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-fn-OG7" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="326"/>
+                                                        <rect key="frame" x="0.0" y="35" width="159" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -481,31 +443,40 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-4a-KuH">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-jT-FNH" userLabel="Bar">
                                                         <rect key="frame" x="164" y="0.0" width="20" height="326"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="Dow-0Q-vsI"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="m73-bT-AMI"/>
+                                                            <constraint firstAttribute="width" constant="20" id="pnH-qT-9gE"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                                        <state key="normal" title="&lt;">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jB-E3-hk5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="9aw-cm-tm0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                                        <state key="normal" title="교체">
+                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="awayBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="IUd-wm-fTf"/>
+                                                            <action selector="awayBenchButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="fue-Wo-eCq"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="eSJ-4a-KuH" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="GUj-cz-iJG"/>
+                                                    <constraint firstItem="gPw-jT-FNH" firstAttribute="leading" secondItem="7jB-E3-hk5" secondAttribute="trailing" constant="5" id="3AC-Eq-HNg"/>
+                                                    <constraint firstItem="AeC-fn-OG7" firstAttribute="top" secondItem="7jB-E3-hk5" secondAttribute="bottom" constant="5" id="GsG-HL-js0"/>
+                                                    <constraint firstItem="gPw-jT-FNH" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="GwX-XX-ATv"/>
                                                     <constraint firstItem="AeC-fn-OG7" firstAttribute="leading" secondItem="CbD-ql-D04" secondAttribute="leading" id="Hbk-91-JCu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gPw-jT-FNH" secondAttribute="trailing" id="NrN-cO-Fk3"/>
+                                                    <constraint firstItem="7jB-E3-hk5" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="ZAY-gr-693"/>
+                                                    <constraint firstItem="gPw-jT-FNH" firstAttribute="leading" secondItem="AeC-fn-OG7" secondAttribute="trailing" constant="5" id="cOd-Jb-leY"/>
                                                     <constraint firstAttribute="bottom" secondItem="AeC-fn-OG7" secondAttribute="bottom" id="dGQ-kh-hLa"/>
-                                                    <constraint firstItem="eSJ-4a-KuH" firstAttribute="leading" secondItem="AeC-fn-OG7" secondAttribute="trailing" constant="5" id="hfK-r9-zvf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="eSJ-4a-KuH" secondAttribute="bottom" id="hrn-Ki-tzZ"/>
-                                                    <constraint firstItem="AeC-fn-OG7" firstAttribute="top" secondItem="CbD-ql-D04" secondAttribute="top" id="ort-2E-Kcl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eSJ-4a-KuH" secondAttribute="trailing" id="yhg-C6-59m"/>
+                                                    <constraint firstItem="7jB-E3-hk5" firstAttribute="leading" secondItem="CbD-ql-D04" secondAttribute="leading" id="lD6-6I-bjR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gPw-jT-FNH" secondAttribute="bottom" id="u2M-1h-OvZ"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -532,17 +503,16 @@
                         <viewLayoutGuide key="safeArea" id="Og7-JB-ygZ"/>
                     </view>
                     <connections>
-                        <outlet property="awayBenchButton" destination="eSJ-4a-KuH" id="su4-sm-NRT"/>
                         <outlet property="awayPlayerTableView" destination="AeC-fn-OG7" id="CZh-AC-LwX"/>
                         <outlet property="awayScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
                         <outlet property="awayTeamLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
                         <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
-                        <outlet property="homeBenchButton" destination="02m-0X-vfQ" id="vnB-kI-f1N"/>
                         <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
                         <outlet property="homeScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
                         <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
                         <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
+                        <outlet property="statSelectView" destination="h9f-qz-HO8" id="yqi-9X-eVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQj-HO-OZS" sceneMemberID="firstResponder"/>
@@ -562,7 +532,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="24" y="-138"/>
+            <point key="canvasLocation" x="23.64130434782609" y="-139.13043478260872"/>
         </scene>
     </scenes>
 </document>
