@@ -155,6 +155,10 @@ extension HomeView: TeamTableViewDelegate {
         
     }
     
+    func didTeamCellDequeue() -> (home: Int?, away: Int?) {
+        return presenter?.didTeamCellDequeue() ?? (nil, nil)
+    }
+    
     func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool) {
         presenter?.didTeamCellTap(at: indexPath.section, onLeft: onLeft)
     }

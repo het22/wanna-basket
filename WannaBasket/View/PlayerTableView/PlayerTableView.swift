@@ -17,14 +17,16 @@ class PlayerTableView: UITableView {
     
     var _delegate: PlayerTableViewDelegate?
     
-    @IBInspectable var placeholder: String = "팀을 선택하세요"
+    @IBInspectable var placeholderNoTeam: String = "팀을 선택하세요"
+    @IBInspectable var placeholderNoPlayer: String = "선수를 생성하세요"
     @IBInspectable var spacing: CGFloat = 5
     @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    @IBInspectable var cellCount: CGFloat = 4.5
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: spacing, right: 0)
         alwaysBounceVertical = true
         showsVerticalScrollIndicator = false
         separatorStyle = .none
@@ -35,18 +37,24 @@ class PlayerTableView: UITableView {
     }
     
     private lazy var placeholderLabel: UILabel = {
-        let label = UILabel(frame: self.bounds)
-        label.text = placeholder
-        label.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        let label = UILabel(frame: CGRect.zero)
+        label.textColor = Constants.Color.Silver
         label.font = UIFont(name: "DoHyeon-Regular", size: 20)
         label.textAlignment = .center
         self.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        label.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        label.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         return label
     }()
     
     private var playerList: [Player]?
     func reloadData(with playerList: [Player]?) {
-        placeholderLabel.isHidden = (playerList != nil)
+        placeholderLabel.isHidden = (playerList != nil) && (playerList?.count != 0)
+        if playerList == nil { placeholderLabel.text = placeholderNoTeam }
+        if playerList?.count == 0 { placeholderLabel.text = placeholderNoPlayer }
         self.playerList = playerList
         reloadData()
     }
@@ -86,7 +94,7 @@ extension PlayerTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellHeight = bounds.height / 5 - spacing
+        let cellHeight = bounds.height / cellCount - spacing
         return cellHeight
     }
     
