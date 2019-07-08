@@ -105,6 +105,19 @@ class HomePresenter: HomePresenterProtocol {
         view?.showPlayerFormView = false
     }
     
+    func didDeleteTeamAction(at index: Int) {
+        teams.remove(at: index)
+        if let homeIndex = currentTeamIndex.home {
+            if index == homeIndex { currentTeamIndex.home = nil }
+            if index < homeIndex { currentTeamIndex.home = homeIndex-1 }
+        }
+        if let awayIndex = currentTeamIndex.away {
+            if index == awayIndex { currentTeamIndex.away = nil }
+            if index < awayIndex { currentTeamIndex.away = awayIndex-1 }
+        }
+        view?.updateTeams(teams)
+    }
+    
     func didTeamCellTap(at index: Int, onLeft: Bool) {
         if onLeft {
             currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index

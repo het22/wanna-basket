@@ -171,8 +171,8 @@ extension HomeView: PlayerFormViewDelegate {
 
 extension HomeView: TeamTableViewDelegate {
     
-    func didDeleteTeamButtonTap() {
-        
+    func didDeleteTeamAction(at indexPath: IndexPath) {
+        presenter?.didDeleteTeamAction(at: indexPath.section)
     }
     
     func didTeamCellDequeue() -> (home: Int?, away: Int?) {
