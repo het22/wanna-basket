@@ -171,27 +171,27 @@ extension HomeView: PlayerFormViewDelegate {
 
 extension HomeView: TeamTableViewDelegate {
     
-    func didDeleteTeamAction(at indexPath: IndexPath) {
-        presenter?.didDeleteTeamAction(at: indexPath.section)
+    func didDeleteTeamAction(at index: Int) {
+        presenter?.didDeleteTeamAction(at: index)
     }
     
     func didTeamCellDequeue() -> (home: Int?, away: Int?) {
         return presenter?.didTeamCellDequeue() ?? (nil, nil)
     }
     
-    func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool) {
-        presenter?.didTeamCellTap(at: indexPath.section, onLeft: onLeft)
+    func didTeamCellTap(at index: Int, onLeft: Bool) {
+        presenter?.didTeamCellTap(at: index, onLeft: onLeft)
     }
 }
 
 extension HomeView: PlayerTableViewDelegate {
     
-    func didDeletePlayerAction(at indexPath: IndexPath, of objectID: ObjectIdentifier) {
+    func didDeletePlayerAction(at index: Int, of objectID: ObjectIdentifier) {
         let home = (objectID == ObjectIdentifier(homePlayerTableView))
-        presenter?.didDeletePlayerAction(at: indexPath.section, of: home)
+        presenter?.didDeletePlayerAction(at: index, of: home)
     }
     
-    func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath) {
+    func didPlayerCellTap(at index: Int, of objectID: ObjectIdentifier) {
         
     }
 }

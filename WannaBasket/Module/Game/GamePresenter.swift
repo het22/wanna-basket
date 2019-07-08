@@ -28,14 +28,14 @@ class GamePresenter: GamePresenterProtocol {
         view?.updateQuarter(quarterNum: game.time.currentQuarterNum)
     }
     
-    func didPlayerCellTap(of home: Bool, at indexPath: IndexPath) {
-        if let current = currentPlayerIndexPath {
-            currentPlayerIndexPath = nil
-            view?.highlightPlayerCell(of: current.home, at: current.indexPath, bool: false)
-            if current == (home, indexPath) { return }
+    func didPlayerCellTap(at index: Int, of home: Bool) {
+        if let current = currentPlayerIndex {
+            currentPlayerIndex = nil
+            view?.highlightPlayerCell(at: current.index, of: current.home, bool: false)
+            if current == (home, index) { return }
         }
-        currentPlayerIndexPath = (home, indexPath)
-        view?.highlightPlayerCell(of: home, at: indexPath, bool: true)
+        currentPlayerIndex = (home, index)
+        view?.highlightPlayerCell(at: index, of: home, bool: true)
     }
     
     func didBenchButtonTap(of home: Bool) {

@@ -95,8 +95,8 @@ class GameView: UIViewController {
             self.view.addSubview(backgroundView!)
             
             quarterSelectView = QuarterSelectView(frame: CGRect.zero)
-            quarterSelectView?.delegate = self
-            quarterSelectView?.setup(maxRegularQuarterNum: maxRegularQuarterNum,
+            quarterSelectView!.delegate = self
+            quarterSelectView!.setup(maxRegularQuarterNum: maxRegularQuarterNum,
                                      overtimeQuarterCount: overtimeQuarterCount,
                                      currentQuarterNum: currentQuarterNum)
             self.view.addSubview(quarterSelectView!)
@@ -108,7 +108,9 @@ class GameView: UIViewController {
             quarterSelectView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
         } else {
             backgroundView?.removeFromSuperview()
+            backgroundView = nil
             quarterSelectView?.removeFromSuperview()
+            quarterSelectView = nil
         }
     }
 }
@@ -146,9 +148,9 @@ extension GameView: GameViewProtocol {
         quarterLabel.text = quarterDescription
     }
     
-    func highlightPlayerCell(of home: Bool, at indexPath: IndexPath, bool: Bool) {
+    func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
-        playerTableView?.highlightCell(at: indexPath, bool: bool)
+        playerTableView?.highlightCell(at: index, bool: bool)
     }
     
     func highlightStatsCell(of stat: Stat.Score?, bool: Bool) {
@@ -158,13 +160,13 @@ extension GameView: GameViewProtocol {
 
 extension GameView: PlayerTableViewDelegate {
     
-    func didDeletePlayerAction(at indexPath: IndexPath, of objectID: ObjectIdentifier) {
+    func didDeletePlayerAction(at index: Int, of objectID: ObjectIdentifier) {
         
     }
     
-    func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath) {
+    func didPlayerCellTap(at index: Int, of objectID: ObjectIdentifier) {
         let home = (objectID == ObjectIdentifier(homePlayerTableView))
-        presenter?.didPlayerCellTap(of: home, at: indexPath)
+        presenter?.didPlayerCellTap(at: index, of: home)
     }
 }
 

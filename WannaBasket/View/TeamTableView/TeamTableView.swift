@@ -9,9 +9,9 @@
 import UIKit
 
 protocol TeamTableViewDelegate {
-    func didDeleteTeamAction(at indexPath: IndexPath)
+    func didDeleteTeamAction(at index: Int)
+    func didTeamCellTap(at index: Int, onLeft: Bool)
     func didTeamCellDequeue() -> (home: Int?, away: Int?)
-    func didTeamCellTap(at indexPath: IndexPath, onLeft: Bool)
 }
 
 class TeamTableView: UITableView {
@@ -70,14 +70,14 @@ extension TeamTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = cellForRow(at: indexPath) as? TeamTableViewCell {
-            _delegate?.didTeamCellTap(at: indexPath, onLeft: cell.tapOnLeft)
+            _delegate?.didTeamCellTap(at: indexPath.section, onLeft: cell.tapOnLeft)
         }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") {
             (action, indexPath) in
-            self._delegate?.didDeleteTeamAction(at: indexPath)
+            self._delegate?.didDeleteTeamAction(at: indexPath.section)
         }
         deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]
