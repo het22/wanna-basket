@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct Quarter: CustomStringConvertible {
+struct Time: CustomStringConvertible, Equatable {
     
-    let type: QuarterType
-    enum QuarterType: CustomStringConvertible {
+    let quarter: Quarter
+    enum Quarter: CustomStringConvertible, Equatable {
+        
         case Regular(Int)
         case Overtime(Int)
         
@@ -27,9 +28,9 @@ struct Quarter: CustomStringConvertible {
         var description: String {
             switch self {
             case .Regular:
-                return "\(num+1)쿼터"
+                return "\(num)쿼터"
             case .Overtime:
-                return "연장\(num+1)쿼터"
+                return "연장\(num)쿼터"
             }
         }
     }
@@ -51,6 +52,13 @@ struct Quarter: CustomStringConvertible {
     }
     
     var description: String {
-        return "\(type.description) \(gameClockDescription) \(shotClockDescription)"
+        return "\(quarter.description) \(gameClockDescription) \(shotClockDescription)"
+    }
+    
+    static func == (lhs: Time, rhs: Time) -> Bool {
+        let quarterEqual = (lhs.quarter == rhs.quarter)
+        let gameClockEqual = (lhs.gameClock == rhs.gameClock)
+        let shotClockEqual = (lhs.shotClock == rhs.shotClock)
+        return quarterEqual && gameClockEqual && shotClockEqual
     }
 }
