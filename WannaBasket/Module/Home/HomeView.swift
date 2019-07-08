@@ -12,20 +12,25 @@ class HomeView: UIViewController {
 
 	var presenter: HomePresenterProtocol?
     
-    @IBOutlet weak var teamTableView: TeamTableView!
-    @IBOutlet weak var homePlayerTableView: PlayerTableView!
-    @IBOutlet weak var awayPlayerTableView: PlayerTableView!
+    @IBOutlet weak var teamTableView: TeamTableView! {
+        didSet { teamTableView._delegate = self }
+    }
+    @IBOutlet weak var homePlayerTableView: PlayerTableView! {
+        didSet { homePlayerTableView._delegate = self }
+    }
+    @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
+        didSet { awayPlayerTableView._delegate = self }
+    }
     
     @IBOutlet weak var homeTeamLabel: UILabel!
     @IBOutlet weak var awayTeamLabel: UILabel!
+    
+    @IBOutlet weak var gameStartButton: UIButton!
+    @IBOutlet weak var homePlayerAddButton: UIButton!
+    @IBOutlet weak var awayPlayerAddButton: UIButton!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        
-        teamTableView._delegate = self
-        homePlayerTableView._delegate = self
-        awayPlayerTableView._delegate = self
-        
         presenter?.viewDidLoad()
     }
     
@@ -124,6 +129,21 @@ extension HomeView: HomeViewProtocol {
     func updateAwayTeam(_ team: Team?) {
         awayTeamLabel.text = team?.name ?? Constants.Text.AwayDefault
         awayPlayerTableView.reloadData(with: team?.players ?? nil)
+    }
+    
+    func enableGameStartButton(bool: Bool) {
+        gameStartButton.isEnabled = bool
+        gameStartButton.alpha = bool ? 1.0 : 0.5
+    }
+    
+    func enableHomePlayerAddButton(bool: Bool) {
+        homePlayerAddButton.isEnabled = bool
+        homePlayerAddButton.alpha = bool ? 1.0 : 0.5
+    }
+    
+    func enableAwayPlayerAddButton(bool: Bool) {
+        awayPlayerAddButton.isEnabled = bool
+        awayPlayerAddButton.alpha = bool ? 1.0 : 0.5
     }
 }
 

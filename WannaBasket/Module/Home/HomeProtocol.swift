@@ -59,6 +59,10 @@ protocol HomeViewProtocol: class {
     
     func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
     
+    func enableGameStartButton(bool: Bool)
+    func enableHomePlayerAddButton(bool: Bool)
+    func enableAwayPlayerAddButton(bool: Bool)
+    
     var showTeamFormView: Bool { get set }
     var showPlayerFormView: Bool { get set }
 }

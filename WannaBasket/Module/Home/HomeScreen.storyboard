@@ -75,12 +75,15 @@
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Ko-A2j">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Ko-A2j" userLabel="Start Game Button">
                                                 <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="65.333333333333329"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <state key="normal" title="게임시작">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="disabled">
+                                                    <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="startButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFt-Yd-luk"/>
@@ -267,8 +270,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="awayPlayerAddButton" destination="iOs-SS-WRo" id="MI7-za-q14"/>
                         <outlet property="awayPlayerTableView" destination="zeg-aO-gAf" id="onp-zJ-VKh"/>
                         <outlet property="awayTeamLabel" destination="YsF-GD-Ayo" id="Jiy-x9-cf2"/>
+                        <outlet property="gameStartButton" destination="QE1-Ko-A2j" id="yih-LO-KHc"/>
+                        <outlet property="homePlayerAddButton" destination="sna-UG-52x" id="bjN-nc-3Ku"/>
                         <outlet property="homePlayerTableView" destination="vCl-QC-0X1" id="INh-a9-Ui8"/>
                         <outlet property="homeTeamLabel" destination="fMm-jb-J4V" id="jau-jI-2o8"/>
                         <outlet property="teamTableView" destination="Ung-lf-Mj9" id="Wgl-Bk-weq"/>

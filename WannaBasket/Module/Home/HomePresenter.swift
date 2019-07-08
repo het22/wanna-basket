@@ -15,8 +15,14 @@ class HomePresenter: HomePresenterProtocol {
     var wireframe: HomeWireframeProtocol?
     
     var teams: [Team] = []
-    var currentTeamIndex: (home: Int?, away: Int?) = (nil, nil)
-    var addHomePlayer: Bool = true
+    var currentTeamIndex: (home: Int?, away: Int?) = (nil, nil) {
+        didSet {
+            view?.enableHomePlayerAddButton(bool: (currentTeamIndex.home == nil) ? false : true)
+            view?.enableAwayPlayerAddButton(bool: (currentTeamIndex.away == nil) ? false : true)
+            view?.enableGameStartButton(bool: (currentTeamIndex.home == nil || currentTeamIndex.away == nil) ? false : true)
+        }
+    }
+    var isAddingHomePlayer: Bool = true
     
     func viewDidLoad() {
         // Temp Data
@@ -34,6 +40,7 @@ class HomePresenter: HomePresenterProtocol {
         view?.updateTeams(teams)
         view?.updateHomeTeam(nil)
         view?.updateAwayTeam(nil)
+        currentTeamIndex = (nil, nil)
     }
     
     func didStartButtonTap() {
@@ -49,12 +56,12 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didNewHomePlayerButtonTap() {
-        addHomePlayer = true
+        isAddingHomePlayer = true
         view?.showPlayerFormView = true
     }
     
     func didNewAwayPlayerButtonTap() {
-        addHomePlayer = false
+        isAddingHomePlayer = false
         view?.showPlayerFormView = true
     }
     
@@ -68,22 +75,21 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didPlayerFormCompleteButtonTap(name: String?) {
-        if let name = name, name != "", let index = addHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
+        if let name = name, name != "", let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
             let player = Player(name: name)
             teams[index].players.append(player)
             if currentTeamIndex.home == currentTeamIndex.away {
                 view?.updateHomeTeam(teams[index])
                 view?.updateAwayTeam(teams[index])
             }
-            if addHomePlayer { view?.updateHomeTeam(teams[index]) }
+            if isAddingHomePlayer { view?.updateHomeTeam(teams[index]) }
             else { view?.updateAwayTeam(teams[index]) }
         }
         view?.showPlayerFormView = false
     }
     
     func didTeamCellTap(at index: Int, onLeft: Bool) {
-        if onLeft {
-            if let homeTeamIndex = currentTeamIndex.home {
+        if onLeft {if let homeTeamIndex = currentTeamIndex.home {
                 if homeTeamIndex == index {
                     self.currentTeamIndex.home = nil
                     view?.highlightTeam(at: index, onLeft: onLeft, bool: false)
