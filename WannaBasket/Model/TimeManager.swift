@@ -21,11 +21,12 @@ class TimeManager {
     let maxGameClock: Float = 600.0
     let maxOverTimeClock: Float = 300.0
     let maxShotClock: Float = 24.0
-    var maxRegularQuarterNum: Int
+    var maxRegularQuarterNum: Int = 4
+    var overtimeQuarterCount: Int = 0
     
     init(maxRegularQuarterNum: Int) {
-        self.maxRegularQuarterNum = maxRegularQuarterNum
-        for i in 1...maxRegularQuarterNum {
+//        self.maxRegularQuarterNum = maxRegularQuarterNum
+        for i in 1...self.maxRegularQuarterNum {
             times.append(Time(quarter: .Regular(i),
                                  gameClock: maxGameClock,
                                  shotClock: maxShotClock))
@@ -55,14 +56,17 @@ class TimeManager {
         }
     }
     
-    func updateQuarter(quarterNum: Int) {
-        isGameClockRunning = false
-        isShotClockRunning = false
-//        currentTimeNum = quarterNum
-        delegate?.didGameClockUpdate(gameClock: times[quarterNum].gameClock,
-                                     isRunning: false)
-        delegate?.didShotClockUpdate(shotClock: times[quarterNum].shotClock,
-                                     isRunning: false)
+    func updateQuarter(quarter: Time.Quarter) {
+        switch quarter {
+        case .Regular(let num):
+            if 0 < num && num <= maxRegularQuarterNum {
+                currentQuarter = quarter
+            }
+        case .Overtime(let num):
+            if 0 < num && num <= overtimeQuarterCount {
+                currentQuarter = quarter
+            }
+        }
     }
     
     func addGameClock(_ amount: Float) {
