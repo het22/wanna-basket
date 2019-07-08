@@ -53,8 +53,20 @@ class StatSelectView: UIView, NibLoadable {
     func highlightCell(of stat: Stat.Score?, bool: Bool) {
         let views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
         let stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
-        if let index = stats.firstIndex(of: stat) {
-            views[index]?.isHighlighted = bool
+        if let index = stats.firstIndex(of: stat), let view = views[index] {
+            view.isHighlighted = bool
+        }
+    }
+    
+    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void) {
+        let views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
+        let stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
+        if let index = stats.firstIndex(of: stat), let view = views[index] {
+            self.isUserInteractionEnabled = false
+            view.animateBlink { bool in
+                completion(bool)
+                self.isUserInteractionEnabled = true
+            }
         }
     }
 }

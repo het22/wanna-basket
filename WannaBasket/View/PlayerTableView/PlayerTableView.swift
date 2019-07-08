@@ -64,6 +64,16 @@ class PlayerTableView: UITableView {
             cell.isHighlighted = bool
         }
     }
+    
+    func blinkCell(at index: Int, completion: @escaping (Bool)->Void) {
+        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) {
+            self.isUserInteractionEnabled = false
+            cell.animateBlink { bool in
+                completion(bool)
+                self.isUserInteractionEnabled = true
+            }
+        }
+    }
 }
 
 extension PlayerTableView: UITableViewDelegate {

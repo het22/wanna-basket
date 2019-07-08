@@ -156,6 +156,15 @@ extension GameView: GameViewProtocol {
     func highlightStatsCell(of stat: Stat.Score?, bool: Bool) {
         statSelectView.highlightCell(of: stat, bool: bool)
     }
+    
+    func blinkPlayerCell(at index: Int, of home: Bool, completion: @escaping (Bool)->Void) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
+        playerTableView?.blinkCell(at: index, completion: completion)
+    }
+    
+    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void) {
+        statSelectView.blinkStatCell(of: stat, completion: completion)
+    }
 }
 
 extension GameView: PlayerTableViewDelegate {

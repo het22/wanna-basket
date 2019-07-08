@@ -133,9 +133,12 @@ extension GamePresenter: GameDelegate {
     }
     
     func didSelectPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
-        print(playerTuple, stat)
-        game.currentPlayerTuple = nil
-        game.currentStat = nil
+        view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
+            self.game.currentPlayerTuple = nil
+        }
+        view?.blinkStatCell(of: stat) { bool in
+            self.game.currentStat = nil
+        }
     }
 }
 

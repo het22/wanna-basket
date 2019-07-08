@@ -59,16 +59,17 @@ protocol GameViewProtocol: class {
     
     func updateHomeTeam(_ team: Team)
     func updateAwayTeam(_ team: Team)
-    func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool)
     
     func showQuarterSelectView(maxRegularQuarterNum: Int,
                                overtimeQuarterCount: Int,
                                currentQuarterNum: Int,
                                bool: Bool)
     func updateQuarter(quarterNum: Int)
-    
     func updateGameClock(_ gameClock: Float, isRunning: Bool)
     func updateShotClock(_ shotClock: Float, isRunning: Bool)
     
+    func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool)
     func highlightStatsCell(of stat: Stat.Score?, bool: Bool)
+    func blinkPlayerCell(at index: Int, of home: Bool, completion: @escaping (Bool)->Void)
+    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void)
 }
