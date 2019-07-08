@@ -41,7 +41,7 @@ protocol HomePresenterProtocol: class {
     func didNewHomePlayerButtonTap()
     func didNewAwayPlayerButtonTap()
     
-    func didAddTeamCompleteButtonTap(name: String?)
+    func didTeamFormCompleteButtonTap(name: String?)
     func didPlayerFormCompleteButtonTap(name: String?)
     
     func didTeamCellDequeue() -> (home: Int?, away: Int?)

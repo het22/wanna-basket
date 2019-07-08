@@ -154,7 +154,7 @@ extension HomeView: TeamFormViewDelegate {
     }
     
     func didTeamFormCompleteButtonTap(name: String?) {
-        presenter?.didAddTeamCompleteButtonTap(name: name)
+        presenter?.didTeamFormCompleteButtonTap(name: name)
     }
 }
 

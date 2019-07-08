@@ -16,10 +16,28 @@ class HomePresenter: HomePresenterProtocol {
     
     var teams: [Team] = []
     var currentTeamIndex: (home: Int?, away: Int?) = (nil, nil) {
-        didSet {
+        didSet(oldVal) {
             view?.enableHomePlayerAddButton(bool: (currentTeamIndex.home == nil) ? false : true)
             view?.enableAwayPlayerAddButton(bool: (currentTeamIndex.away == nil) ? false : true)
             view?.enableGameStartButton(bool: (currentTeamIndex.home == nil || currentTeamIndex.away == nil) ? false : true)
+            
+            if let oldIndex = oldVal.home {
+                view?.highlightTeam(at: oldIndex, onLeft: true, bool: false)
+                view?.updateHomeTeam(nil)
+            }
+            if let newIndex = currentTeamIndex.home {
+                view?.highlightTeam(at: newIndex, onLeft: true, bool: true)
+                view?.updateHomeTeam(teams[newIndex])
+            }
+            
+            if let oldIndex = oldVal.away {
+                view?.highlightTeam(at: oldIndex, onLeft: false, bool: false)
+                view?.updateAwayTeam(nil)
+            }
+            if let newIndex = currentTeamIndex.away {
+                view?.highlightTeam(at: newIndex, onLeft: false, bool: true)
+                view?.updateAwayTeam(teams[newIndex])
+            }
         }
     }
     var isAddingHomePlayer: Bool = true
@@ -40,7 +58,6 @@ class HomePresenter: HomePresenterProtocol {
         view?.updateTeams(teams)
         view?.updateHomeTeam(nil)
         view?.updateAwayTeam(nil)
-        currentTeamIndex = (nil, nil)
     }
     
     func didStartButtonTap() {
@@ -65,7 +82,7 @@ class HomePresenter: HomePresenterProtocol {
         view?.showPlayerFormView = true
     }
     
-    func didAddTeamCompleteButtonTap(name: String?) {
+    func didTeamFormCompleteButtonTap(name: String?) {
         if let name = name, name != "" {
             let team = Team(name: name)
             teams.append(team)
@@ -89,39 +106,10 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTeamCellTap(at index: Int, onLeft: Bool) {
-        if onLeft {if let homeTeamIndex = currentTeamIndex.home {
-                if homeTeamIndex == index {
-                    self.currentTeamIndex.home = nil
-                    view?.highlightTeam(at: index, onLeft: onLeft, bool: false)
-                    view?.updateHomeTeam(nil)
-                } else {
-                    self.currentTeamIndex.home = index
-                    view?.highlightTeam(at: homeTeamIndex, onLeft: onLeft, bool: false)
-                    view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
-                    view?.updateHomeTeam(teams[index])
-                }
-            } else {
-                currentTeamIndex.home = index
-                view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
-                view?.updateHomeTeam(teams[index])
-            }
+        if onLeft {
+            currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
         } else {
-            if let awayTeamIndex = currentTeamIndex.away {
-                if awayTeamIndex == index {
-                    self.currentTeamIndex.away = nil
-                    view?.highlightTeam(at: index, onLeft: onLeft, bool: false)
-                    view?.updateAwayTeam(nil)
-                } else {
-                    self.currentTeamIndex.away = index
-                    view?.highlightTeam(at: awayTeamIndex, onLeft: onLeft, bool: false)
-                    view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
-                    view?.updateAwayTeam(teams[index])
-                }
-            } else {
-                currentTeamIndex.away = index
-                view?.highlightTeam(at: index, onLeft: onLeft, bool: true)
-                view?.updateAwayTeam(teams[index])
-            }
+            currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
         }
     }
     
