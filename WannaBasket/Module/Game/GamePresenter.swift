@@ -15,12 +15,11 @@ class GamePresenter: GamePresenterProtocol {
     var wireframe: GameWireframeProtocol?
     
     var game: Game! {
-        didSet(oldVal) {
+        didSet {
+            game.delegate = self
             game.time.delegate = self
         }
     }
-    var currentPlayerIndexPath: (home: Bool, indexPath: IndexPath)?
-    var currentStat: Stat.Score?
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
@@ -29,13 +28,11 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didPlayerCellTap(at index: Int, of home: Bool) {
-        if let current = currentPlayerIndex {
-            currentPlayerIndex = nil
-            view?.highlightPlayerCell(at: current.index, of: current.home, bool: false)
-            if current == (home, index) { return }
+        if let current = game.currentPlayerTuple, current == (home, index) {
+            game.currentPlayerTuple = nil
+        } else {
+            game.currentPlayerTuple = (home, index)
         }
-        currentPlayerIndex = (home, index)
-        view?.highlightPlayerCell(at: index, of: home, bool: true)
     }
     
     func didBenchButtonTap(of home: Bool) {
@@ -106,19 +103,35 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didStatSelect(stat: Stat.Score?) {
-        if stat == nil {
-            print("취소")
-            return
+        if let current = game.currentStat, current == stat {
+            game.currentStat = nil
+        } else {
+            game.currentStat = stat
         }
-        if currentStat != nil {
-            view?.highlightStatsCell(of: currentStat, bool: false)
-            if currentStat == stat {
-                currentStat = nil
-                return
-            }
+    }
+}
+
+extension GamePresenter: GameDelegate {
+    
+    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?,
+                                  newTuple: (home: Bool, index: Int)?) {
+        if let oldTuple = oldTuple {
+            view?.highlightPlayerCell(at: oldTuple.index, of: oldTuple.home, bool: false)
         }
-        currentStat = stat
-        view?.highlightStatsCell(of: stat, bool: true)
+        if let newTuple = newTuple {
+            view?.highlightPlayerCell(at: newTuple.index, of: newTuple.home, bool: true)
+        }
+    }
+    
+    func didCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?) {
+        if let oldStat = oldStat {
+            view?.highlightStatsCell(of: oldStat, bool: false)
+        }
+        if let newStat = newStat {
+            view?.highlightStatsCell(of: newStat, bool: true)
+        }
+    }
+    
     }
 }
 

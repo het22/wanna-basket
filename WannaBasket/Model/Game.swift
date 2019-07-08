@@ -8,29 +8,31 @@
 
 import Foundation
 
-protocol GameModel {
-    
-    // Team & Player Info
-    var homeTeam: Team { get set }
-    var awayTeam: Team { get set }
-    var homeOnFloorIndexes: [Int] { get set }
-    var awayOnFloorIndexes: [Int] { get set }
-    
-    // Quarter & Time Info
-    var time: GameTime { get set }
-    
-    // Record
-    
+protocol GameDelegate {
+    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?,
+                                  newTuple: (home: Bool, index: Int)?)
+    func didCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
 }
 
-class Game: GameModel {
+class Game {
+    
+    var delegate: GameDelegate?
     
     var homeTeam: Team
     var awayTeam: Team
-    var homeOnFloorIndexes: [Int] = []
-    var awayOnFloorIndexes: [Int] = []
     
     var time: GameTime = GameTime(maxRegularQuarterNum: 4)
+    
+    var currentPlayerTuple: (home: Bool, index: Int)? {
+        didSet(oldVal) {
+            delegate?.didCurrentPlayerTupleSet(oldTuple: oldVal, newTuple: currentPlayerTuple)
+        }
+    }
+    var currentStat: Stat.Score? {
+        didSet(oldVal) {
+            delegate?.didCurrentStat(oldStat: oldVal, newStat: currentStat)
+        }
+    }
     
     init(homeTeam: Team, awayTeam: Team) {
         self.homeTeam = homeTeam
