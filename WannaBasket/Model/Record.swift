@@ -8,15 +8,26 @@
 
 import Foundation
 
-/*
- * 게임에서 발생하는 모든 기록을 표현할 수 있는 모델
- * 다른 기록으로부터 독립적이어야 함
- * 되돌릴 수 있어야함
- */
+// 나중에 수정할 것: 팀과 선수의 사본이 아니라 키 값을 가져야 한다.
+
 protocol RecordModel {
-    
+    var quarter: Quarter { get set }
+    var home: Bool { get set }
+    var team: Team { get set }
+    var player: Player { get set }
+    var stat: Stat.Score { get set }
 }
 
-struct Record: RecordModel {
+struct Record: RecordModel, CustomStringConvertible {
+    var quarter: Quarter
+    var home: Bool
+    var team: Team
+    var player: Player
+    var stat: Stat.Score
     
+    var description: String {
+        get {
+            return "\(quarter) | \(home ? "홈팀" : "원정팀")(\(team.name)) | \(player.name) \(stat)"
+        }
+    }
 }
