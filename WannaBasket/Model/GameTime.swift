@@ -31,8 +31,8 @@ class GameTime {
     
     init(maxRegularQuarterNum: Int) {
         self.maxRegularQuarterNum = maxRegularQuarterNum
-        for _ in 0...maxRegularQuarterNum-1 {
-            quarters.append(Quarter(type: .Regular,
+        for i in 0...maxRegularQuarterNum-1 {
+            quarters.append(Quarter(type: .Regular(i),
                                     gameClock: maxGameClock,
                                     shotClock: maxShotClock))
         }
