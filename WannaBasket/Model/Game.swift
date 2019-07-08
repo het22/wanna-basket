@@ -24,6 +24,8 @@ class Game {
     
     var time: GameTime = GameTime(maxRegularQuarterNum: 4)
     
+    var records: [RecordModel] = []
+    
     var currentPlayerTuple: (home: Bool, index: Int)? {
         didSet(oldTuple) {
             delegate?.didCurrentPlayerTupleSet(oldTuple: oldTuple, newTuple: currentPlayerTuple)
@@ -44,5 +46,19 @@ class Game {
     init(homeTeam: Team, awayTeam: Team) {
         self.homeTeam = homeTeam
         self.awayTeam = awayTeam
+    }
+    
+    func addRecords() {
+        guard let playerTuple = currentPlayerTuple, let stat = currentStat else {
+            return
+        }
+        let team = playerTuple.home ? homeTeam : awayTeam
+        let record = Record(quarter: time.currentQuarter,
+                            home: playerTuple.home,
+                            team: team,
+                            player: team.players[playerTuple.index],
+                            stat: stat)
+        records.append(record)
+        print(record)
     }
 }

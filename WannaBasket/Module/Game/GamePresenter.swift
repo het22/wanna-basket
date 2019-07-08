@@ -36,7 +36,7 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didBenchButtonTap(of home: Bool) {
-        print(home)
+        
     }
     
     func didQuarterLabelTap() {
@@ -133,6 +133,7 @@ extension GamePresenter: GameDelegate {
     }
     
     func didSelectPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+        game.addRecords()
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
         }

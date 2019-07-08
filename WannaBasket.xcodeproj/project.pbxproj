@@ -217,9 +217,9 @@
 			isa = PBXGroup;
 			children = (
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
-				CBC6F05222CF063B0021A11D /* Stat.swift */,
 				CBC6F05422CF2C2B0021A11D /* Quarter.swift */,
 				CBC6F05F22D03DAB0021A11D /* ClockControl.swift */,
+				CBC6F05222CF063B0021A11D /* Stat.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -406,8 +406,8 @@
 			children = (
 				CBFA01AC22B8B99800F71C7B /* Player.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
-				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
+				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
 				CBC6F00D22CD6E430021A11D /* GameTime.swift */,
 			);
 			path = Model;
