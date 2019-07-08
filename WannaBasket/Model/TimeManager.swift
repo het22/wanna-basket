@@ -18,9 +18,9 @@ class TimeManager {
 
     var delegate: GameTimeDelegate?
     
-    private let maxGameClock: Float = 600.0
-    private let maxOverTimeClock: Float = 300.0
-    private let maxShotClock: Float = 24.0
+    let maxGameClock: Float = 600.0
+    let maxOverTimeClock: Float = 300.0
+    let maxShotClock: Float = 24.0
     var maxRegularQuarterNum: Int
     
     init(maxRegularQuarterNum: Int) {
@@ -44,7 +44,14 @@ class TimeManager {
             }
         }
         set(newVal) {
-            
+            switch currentQuarter {
+            case .Regular(let num):
+                times[num-1].gameClock = newVal.gameClock
+                times[num-1].shotClock = newVal.shotClock
+            case .Overtime(let num):
+                times[maxRegularQuarterNum+num-1].gameClock = newVal.gameClock
+                times[maxRegularQuarterNum+num-1].shotClock = newVal.shotClock
+            }
         }
     }
     
