@@ -79,6 +79,7 @@ extension TeamTableView: UITableViewDelegate {
             (action, indexPath) in
             self._delegate?.didDeleteTeamAction(at: indexPath)
         }
+        deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]
     }
 }

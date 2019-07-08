@@ -45,6 +45,7 @@ protocol HomePresenterProtocol: class {
     func didPlayerFormCompleteButtonTap(name: String?)
     
     func didDeleteTeamAction(at index: Int)
+    func didDeletePlayerAction(at index: Int, of home: Bool)
     func didTeamCellDequeue() -> (home: Int?, away: Int?)
     func didTeamCellTap(at index: Int, onLeft: Bool)
 }

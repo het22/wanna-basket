@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PlayerTableViewDelegate {
-    func didDeletePlayerButtonTap()
+    func didDeletePlayerAction(at indexPath: IndexPath, of objectID: ObjectIdentifier)
     func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath)
 }
 
@@ -72,6 +72,14 @@ extension PlayerTableView: UITableViewDelegate {
         if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
             _delegate?.didPlayerCellTap(of: ObjectIdentifier(self), at: indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (UITableViewRowAction, IndexPath) in
+            self._delegate?.didDeletePlayerAction(at: indexPath, of: ObjectIdentifier(self))
+        }
+        deleteAction.backgroundColor = Constants.Color.AwayDefault
+        return [deleteAction]
     }
 }
 

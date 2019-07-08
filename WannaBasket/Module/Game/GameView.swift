@@ -158,7 +158,7 @@ extension GameView: GameViewProtocol {
 
 extension GameView: PlayerTableViewDelegate {
     
-    func didDeletePlayerButtonTap() {
+    func didDeletePlayerAction(at indexPath: IndexPath, of objectID: ObjectIdentifier) {
         
     }
     

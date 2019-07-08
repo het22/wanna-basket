@@ -56,8 +56,7 @@ class HomePresenter: HomePresenterProtocol {
         teams.append(Team(name: "MSA"))
         
         view?.updateTeams(teams)
-        view?.updateHomeTeam(nil)
-        view?.updateAwayTeam(nil)
+        currentTeamIndex = (nil, nil)
     }
     
     func didStartButtonTap() {
@@ -116,6 +115,19 @@ class HomePresenter: HomePresenterProtocol {
             if index < awayIndex { currentTeamIndex.away = awayIndex-1 }
         }
         view?.updateTeams(teams)
+    }
+    
+    func didDeletePlayerAction(at index: Int, of home: Bool) {
+        if let teamIndex = home ? currentTeamIndex.home : currentTeamIndex.away {
+            teams[teamIndex].players.remove(at: index)
+            if teamIndex == (home ? currentTeamIndex.away : currentTeamIndex.home) {
+                view?.updateHomeTeam(teams[teamIndex])
+                view?.updateAwayTeam(teams[teamIndex])
+            } else {
+                if home { view?.updateHomeTeam(teams[teamIndex]) }
+                else { view?.updateAwayTeam(teams[teamIndex]) }
+            }
+        }
     }
     
     func didTeamCellTap(at index: Int, onLeft: Bool) {

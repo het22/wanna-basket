@@ -185,9 +185,10 @@ extension HomeView: TeamTableViewDelegate {
 }
 
 extension HomeView: PlayerTableViewDelegate {
-
-    func didDeletePlayerButtonTap() {
-
+    
+    func didDeletePlayerAction(at indexPath: IndexPath, of objectID: ObjectIdentifier) {
+        let home = (objectID == ObjectIdentifier(homePlayerTableView))
+        presenter?.didDeletePlayerAction(at: indexPath.section, of: home)
     }
     
     func didPlayerCellTap(of objectID: ObjectIdentifier ,at indexPath: IndexPath) {
