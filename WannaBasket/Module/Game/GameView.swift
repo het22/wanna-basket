@@ -160,12 +160,8 @@ extension GameView: GameViewProtocol {
 
 extension GameView: PlayerTableViewDelegate {
     
-    func didDeletePlayerAction(at index: Int, of objectID: ObjectIdentifier) {
-        
-    }
-    
-    func didPlayerCellTap(at index: Int, of objectID: ObjectIdentifier) {
-        let home = (objectID == ObjectIdentifier(homePlayerTableView))
+    func didPlayerCellTap(at index: Int, of objectIdHash: Int) {
+        let home = (objectIdHash == ObjectIdentifier(homePlayerTableView).hashValue)
         presenter?.didPlayerCellTap(at: index, of: home)
     }
 }

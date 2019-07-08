@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol PlayerTableViewDelegate {
-    func didDeletePlayerAction(at index: Int, of objectID: ObjectIdentifier)
-    func didPlayerCellTap(at index: Int, of objectID: ObjectIdentifier)
+@objc protocol PlayerTableViewDelegate {
+    @objc optional func didDeletePlayerAction(at index: Int, of objectIdHash: Int)
+    func didPlayerCellTap(at index: Int, of objectIdHash: Int)
 }
 
 class PlayerTableView: UITableView {
@@ -70,13 +70,16 @@ extension PlayerTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
-            _delegate?.didPlayerCellTap(at: indexPath.section, of: ObjectIdentifier(self))
+            _delegate?.didPlayerCellTap(at: indexPath.section, of: ObjectIdentifier(self).hashValue)
         }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        guard let didDeletePlayerAction = _delegate?.didDeletePlayerAction else {
+            return []
+        }
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (UITableViewRowAction, IndexPath) in
-            self._delegate?.didDeletePlayerAction(at: indexPath.section, of: ObjectIdentifier(self))
+            didDeletePlayerAction(indexPath.section, ObjectIdentifier(self).hashValue)
         }
         deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]
