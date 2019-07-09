@@ -326,7 +326,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
-                                                                        <rect key="frame" x="47.33333333333335" y="68.666666666666686" width="125.66666666666669" height="42.333333333333343"/>
+                                                                        <rect key="frame" x="47.333333333333336" y="68.666666666666686" width="124.33333333333331" height="42.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="14초">
@@ -337,7 +337,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
-                                                                        <rect key="frame" x="175" y="68.666666666666686" width="125.66666666666669" height="42.333333333333343"/>
+                                                                        <rect key="frame" x="176.66666666666669" y="68.666666666666686" width="124" height="42.333333333333343"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="24초">
@@ -408,7 +408,7 @@
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="width" secondItem="Y8p-u8-SYU" secondAttribute="width" id="hfQ-U7-Qpx"/>
                                                                     <constraint firstAttribute="bottom" secondItem="JtT-Xp-zbi" secondAttribute="bottom" id="hwG-Xn-0wc"/>
                                                                     <constraint firstItem="G1P-aU-1s1" firstAttribute="height" secondItem="ic1-YH-dPv" secondAttribute="height" multiplier="0.6" id="phN-f3-Bac"/>
-                                                                    <constraint firstItem="417-Pg-fCx" firstAttribute="leading" secondItem="Y8p-u8-SYU" secondAttribute="trailing" constant="2" id="yaZ-Jy-H1Y"/>
+                                                                    <constraint firstItem="417-Pg-fCx" firstAttribute="leading" secondItem="Y8p-u8-SYU" secondAttribute="trailing" constant="5" id="yaZ-Jy-H1Y"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">

@@ -19,9 +19,9 @@ class Player: PlayerModel {
     var name: String
     var number: Int
     
-    init(name: String) {
+    init(name: String, number: Int) {
         self.uuid = ""
         self.name = name
-        self.number = 0
+        self.number = number
     }
 }

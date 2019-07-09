@@ -16,13 +16,13 @@ class GameTest: XCTestCase {
     override func setUp() {
         let homeTeam = Team(name: "TeamA")
         homeTeam.players.append(contentsOf: [
-                Player(name: "PlayerA"),
-                Player(name: "PlayerB")
+                Player(name: "PlayerA", number: 1),
+                Player(name: "PlayerB", number: 2)
             ])
         let awayTeam = Team(name: "TeamB")
         awayTeam.players.append(contentsOf: [
-            Player(name: "PlayerC"),
-            Player(name: "PlayerD")
+            Player(name: "PlayerC", number: 1),
+            Player(name: "PlayerD", number: 2)
             ])
         game = Game(homeTeam: homeTeam, awayTeam: awayTeam)
     }

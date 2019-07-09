@@ -45,9 +45,17 @@ class HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         // Temp Data
         let temp1 = Team(name: "쿠스켓")
-        temp1.players.append(contentsOf: [Player(name: "유현석"),Player(name: "정상빈"), Player(name: "이재원"), Player(name: "송해찬"), Player(name: "박진모")])
+        temp1.players.append(contentsOf: [Player(name: "유현석", number: 10),
+                                          Player(name: "정상빈", number: 8),
+                                          Player(name: "이재원", number: 2),
+                                          Player(name: "송해찬", number: 3),
+                                          Player(name: "박진모", number: 1)])
         let temp2 = Team(name: "마하맨")
-        temp2.players.append(contentsOf: [Player(name: "송호철"),Player(name: "백승희"), Player(name: "박건"), Player(name: "송해찬"), Player(name: "한수흠")])
+        temp2.players.append(contentsOf: [Player(name: "송호철", number: 22),
+                                          Player(name: "백승희", number: 23),
+                                          Player(name: "박건", number: 9),
+                                          Player(name: "송해찬", number: 49),
+                                          Player(name: "한수흠", number: 12)])
         teams.append(contentsOf: [temp1, temp2])
         teams.append(Team(name: "업템포"))
         teams.append(Team(name: "LP SUPPORT"))
@@ -85,9 +93,9 @@ class HomePresenter: HomePresenterProtocol {
         view?.showTeamFormView = false
     }
     
-    func didTapPlayerFormCompleteButton(name: String?) {
-        if let name = name, name != "", let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
-            let player = Player(name: name)
+    func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
+        if let name = name, let number = number, let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
+            let player = Player(name: name, number: number)
             teams[index].players.append(player)
             if currentTeamIndex.home == currentTeamIndex.away {
                 view?.updateHomeTeam(teams[index])

@@ -161,8 +161,8 @@ extension HomeView: PlayerFormViewDelegate {
         showPlayerFormView = false
     }
     
-    func didTapPlayerFormCompleteButton(name: String?) {
-        presenter?.didTapPlayerFormCompleteButton(name: name)
+    func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
+        presenter?.didTapPlayerFormCompleteButton(name: name, number: number)
     }
 }
 

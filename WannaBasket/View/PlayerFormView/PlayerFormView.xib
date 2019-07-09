@@ -17,68 +17,107 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerFormView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
-                <outlet property="nameTextField" destination="1IM-rq-a5w" id="ojE-Hq-kuV"/>
+                <outlet property="nameTextField" destination="Xev-Bz-ncg" id="ca8-Y6-Yse"/>
+                <outlet property="numberTextField" destination="nJH-D8-PMg" id="fel-VZ-fxd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="AddTeamView" id="NM5-od-VeZ">
+        <view contentMode="scaleToFill" restorationIdentifier="AddTeamView" id="AF2-Yh-brq">
             <rect key="frame" x="0.0" y="0.0" width="403" height="281"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-pL-BVD">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zGN-Aw-xuu">
                     <rect key="frame" x="0.0" y="0.0" width="403" height="281"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDd-EZ-jWX" userLabel="Up">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN7-nb-XHI" userLabel="Up">
                             <rect key="frame" x="0.0" y="0.0" width="403" height="200.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPc-Xm-q2F">
-                                    <rect key="frame" x="66" y="55.5" width="271" height="90"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B2y-yb-31R">
+                                    <rect key="frame" x="67.5" y="20" width="268" height="160.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 선수 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0s-Dn-h3x">
-                                            <rect key="frame" x="0.0" y="0.0" width="271" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 선수 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-nU-lwh">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="50.5"/>
                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5Q-t5-HNt">
-                                            <rect key="frame" x="0.0" y="60" width="61" height="30"/>
-                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="새로운 선수 이름" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1IM-rq-a5w">
-                                            <rect key="frame" x="71" y="60" width="200" height="30"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="527-WV-fDd" userLabel="Spacing">
+                                            <rect key="frame" x="0.0" y="50.5" width="268" height="10"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6i-3m-6A1">
+                                            <rect key="frame" x="0.0" y="60.5" width="268" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9Z-2f-5zr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61" height="50"/>
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선수 이름" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xev-Bz-ncg">
+                                                    <rect key="frame" x="71" y="0.0" width="197" height="50"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="Yu2-vv-Lj6"/>
+                                                <constraint firstItem="Xev-Bz-ncg" firstAttribute="leading" secondItem="z9Z-2f-5zr" secondAttribute="trailing" constant="10" id="1bG-7X-YsQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xev-Bz-ncg" secondAttribute="trailing" id="FlM-7d-1Yk"/>
+                                                <constraint firstAttribute="bottom" secondItem="z9Z-2f-5zr" secondAttribute="bottom" id="fBq-VN-koL"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xev-Bz-ncg" secondAttribute="bottom" id="ggv-NH-Qvb"/>
+                                                <constraint firstItem="z9Z-2f-5zr" firstAttribute="top" secondItem="F6i-3m-6A1" secondAttribute="top" id="h0O-jm-WOB"/>
+                                                <constraint firstItem="Xev-Bz-ncg" firstAttribute="height" secondItem="z9Z-2f-5zr" secondAttribute="height" id="iUO-pP-W3H"/>
+                                                <constraint firstItem="z9Z-2f-5zr" firstAttribute="leading" secondItem="F6i-3m-6A1" secondAttribute="leading" id="kpF-XP-wes"/>
+                                                <constraint firstItem="Xev-Bz-ncg" firstAttribute="top" secondItem="F6i-3m-6A1" secondAttribute="top" id="nit-pG-ZFj"/>
                                             </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuU-Cp-RqY">
+                                            <rect key="frame" x="0.0" y="110.5" width="268" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번호:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDJ-pe-qfa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="50"/>
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선수 번호" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJH-D8-PMg">
+                                                    <rect key="frame" x="63" y="0.0" width="205" height="50"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="tDJ-pe-qfa" firstAttribute="leading" secondItem="VuU-Cp-RqY" secondAttribute="leading" id="FGF-kx-5LH"/>
+                                                <constraint firstAttribute="bottom" secondItem="nJH-D8-PMg" secondAttribute="bottom" id="FIX-1q-edk"/>
+                                                <constraint firstItem="nJH-D8-PMg" firstAttribute="height" secondItem="tDJ-pe-qfa" secondAttribute="height" id="HLc-hl-jo5"/>
+                                                <constraint firstAttribute="trailing" secondItem="nJH-D8-PMg" secondAttribute="trailing" id="Nxh-0e-Nh2"/>
+                                                <constraint firstItem="tDJ-pe-qfa" firstAttribute="top" secondItem="VuU-Cp-RqY" secondAttribute="top" id="QUh-UJ-DBu"/>
+                                                <constraint firstItem="nJH-D8-PMg" firstAttribute="leading" secondItem="tDJ-pe-qfa" secondAttribute="trailing" constant="10" id="RHM-Ma-jdF"/>
+                                                <constraint firstItem="nJH-D8-PMg" firstAttribute="top" secondItem="VuU-Cp-RqY" secondAttribute="top" id="jfs-t8-vHf"/>
+                                                <constraint firstAttribute="bottom" secondItem="tDJ-pe-qfa" secondAttribute="bottom" id="lFb-ds-SAd"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="1IM-rq-a5w" secondAttribute="bottom" id="BzD-mN-ZA9"/>
-                                        <constraint firstItem="1IM-rq-a5w" firstAttribute="top" secondItem="x0s-Dn-h3x" secondAttribute="bottom" constant="20" id="CSC-qn-RQ7"/>
-                                        <constraint firstItem="x0s-Dn-h3x" firstAttribute="leading" secondItem="LPc-Xm-q2F" secondAttribute="leading" id="HlC-aL-q5e"/>
-                                        <constraint firstItem="x0s-Dn-h3x" firstAttribute="top" secondItem="LPc-Xm-q2F" secondAttribute="top" id="NEF-4d-feR"/>
-                                        <constraint firstItem="1IM-rq-a5w" firstAttribute="leading" secondItem="H5Q-t5-HNt" secondAttribute="trailing" constant="10" id="ePG-HU-fnu"/>
-                                        <constraint firstItem="1IM-rq-a5w" firstAttribute="height" secondItem="H5Q-t5-HNt" secondAttribute="height" id="iaH-FX-Pcc"/>
-                                        <constraint firstItem="H5Q-t5-HNt" firstAttribute="leading" secondItem="LPc-Xm-q2F" secondAttribute="leading" id="lqg-Ob-ugK"/>
-                                        <constraint firstAttribute="trailing" secondItem="x0s-Dn-h3x" secondAttribute="trailing" id="pfR-1k-Fpf"/>
-                                        <constraint firstAttribute="trailing" secondItem="1IM-rq-a5w" secondAttribute="trailing" id="quL-JY-cev"/>
-                                        <constraint firstAttribute="bottom" secondItem="H5Q-t5-HNt" secondAttribute="bottom" id="rs1-f3-d5B"/>
+                                        <constraint firstItem="F6i-3m-6A1" firstAttribute="height" secondItem="4yg-nU-lwh" secondAttribute="height" id="94G-Tg-a8R"/>
+                                        <constraint firstItem="527-WV-fDd" firstAttribute="height" secondItem="4yg-nU-lwh" secondAttribute="height" multiplier="0.2" id="Eih-hZ-JLS"/>
+                                        <constraint firstItem="VuU-Cp-RqY" firstAttribute="height" secondItem="F6i-3m-6A1" secondAttribute="height" id="Js8-3k-wg1"/>
+                                        <constraint firstItem="VuU-Cp-RqY" firstAttribute="top" secondItem="F6i-3m-6A1" secondAttribute="bottom" id="Og2-rF-ElE"/>
                                     </constraints>
-                                </view>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="LPc-Xm-q2F" firstAttribute="centerX" secondItem="GDd-EZ-jWX" secondAttribute="centerX" id="DWh-uv-UJW"/>
-                                <constraint firstItem="LPc-Xm-q2F" firstAttribute="centerY" secondItem="GDd-EZ-jWX" secondAttribute="centerY" id="Zs4-LQ-hKD"/>
+                                <constraint firstItem="B2y-yb-31R" firstAttribute="centerY" secondItem="SN7-nb-XHI" secondAttribute="centerY" id="NX2-jk-Sjr"/>
+                                <constraint firstItem="B2y-yb-31R" firstAttribute="height" relation="lessThanOrEqual" secondItem="SN7-nb-XHI" secondAttribute="height" multiplier="0.8" id="Nba-6q-0eH"/>
+                                <constraint firstItem="B2y-yb-31R" firstAttribute="centerX" secondItem="SN7-nb-XHI" secondAttribute="centerX" id="mVd-0U-voR"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jG-mm-dD8" userLabel="Down">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-b1-gUh" userLabel="Down">
                             <rect key="frame" x="0.0" y="200.5" width="403" height="80.5"/>
                             <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCi-VQ-7jf">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXT-2v-mga">
                                     <rect key="frame" x="0.0" y="0.0" width="201.5" height="80.5"/>
                                     <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
@@ -86,10 +125,10 @@
                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="cancelButtonTapped" destination="-1" eventType="touchUpInside" id="IaA-gZ-IE4"/>
+                                        <action selector="cancelButtonTapped" destination="-1" eventType="touchUpInside" id="gjy-Vo-GId"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkL-iy-Nqx">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5c-Sy-BBX">
                                     <rect key="frame" x="201.5" y="0.0" width="201.5" height="80.5"/>
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
@@ -97,38 +136,38 @@
                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="completeButtonTapped" destination="-1" eventType="touchUpInside" id="qr1-TF-SWU"/>
+                                        <action selector="completeButtonTapped" destination="-1" eventType="touchUpInside" id="DlK-OD-TC7"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="CCi-VQ-7jf" firstAttribute="leading" secondItem="5jG-mm-dD8" secondAttribute="leading" id="9wV-66-Jpd"/>
-                                <constraint firstItem="OkL-iy-Nqx" firstAttribute="top" secondItem="5jG-mm-dD8" secondAttribute="top" id="9xM-mB-T1X"/>
-                                <constraint firstAttribute="trailing" secondItem="OkL-iy-Nqx" secondAttribute="trailing" id="Gk8-hp-5nj"/>
-                                <constraint firstAttribute="bottom" secondItem="OkL-iy-Nqx" secondAttribute="bottom" id="cDc-gr-yQV"/>
-                                <constraint firstItem="OkL-iy-Nqx" firstAttribute="leading" secondItem="CCi-VQ-7jf" secondAttribute="trailing" id="pZN-8K-Gkm"/>
-                                <constraint firstAttribute="bottom" secondItem="CCi-VQ-7jf" secondAttribute="bottom" id="pb9-R5-xRP"/>
-                                <constraint firstItem="OkL-iy-Nqx" firstAttribute="width" secondItem="CCi-VQ-7jf" secondAttribute="width" id="rem-s0-Bn6"/>
-                                <constraint firstItem="CCi-VQ-7jf" firstAttribute="top" secondItem="5jG-mm-dD8" secondAttribute="top" id="yjX-CK-DmY"/>
+                                <constraint firstAttribute="trailing" secondItem="x5c-Sy-BBX" secondAttribute="trailing" id="8d2-Uc-C7F"/>
+                                <constraint firstItem="x5c-Sy-BBX" firstAttribute="leading" secondItem="qXT-2v-mga" secondAttribute="trailing" id="XDR-sk-TfS"/>
+                                <constraint firstItem="x5c-Sy-BBX" firstAttribute="width" secondItem="qXT-2v-mga" secondAttribute="width" id="Zin-KY-qf5"/>
+                                <constraint firstItem="qXT-2v-mga" firstAttribute="top" secondItem="1AG-b1-gUh" secondAttribute="top" id="Zoj-eK-crf"/>
+                                <constraint firstItem="x5c-Sy-BBX" firstAttribute="top" secondItem="1AG-b1-gUh" secondAttribute="top" id="bRN-C9-7uO"/>
+                                <constraint firstAttribute="bottom" secondItem="qXT-2v-mga" secondAttribute="bottom" id="f4q-YQ-XQ9"/>
+                                <constraint firstItem="qXT-2v-mga" firstAttribute="leading" secondItem="1AG-b1-gUh" secondAttribute="leading" id="jCa-0h-oOl"/>
+                                <constraint firstAttribute="bottom" secondItem="x5c-Sy-BBX" secondAttribute="bottom" id="s7k-Pm-j2p"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="5jG-mm-dD8" firstAttribute="height" secondItem="GDd-EZ-jWX" secondAttribute="height" multiplier="0.4" id="I3g-0m-AA8"/>
+                        <constraint firstItem="1AG-b1-gUh" firstAttribute="height" secondItem="SN7-nb-XHI" secondAttribute="height" multiplier="0.4" id="dJL-OW-SDN"/>
                     </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="KYb-pL-BVD" firstAttribute="leading" secondItem="C4D-eJ-baG" secondAttribute="leading" id="Tpg-WU-Rrl"/>
-                <constraint firstItem="KYb-pL-BVD" firstAttribute="trailing" secondItem="C4D-eJ-baG" secondAttribute="trailing" id="hdD-eY-1Im"/>
-                <constraint firstAttribute="bottom" secondItem="KYb-pL-BVD" secondAttribute="bottom" id="q42-7Z-Ndq"/>
-                <constraint firstItem="KYb-pL-BVD" firstAttribute="top" secondItem="NM5-od-VeZ" secondAttribute="top" id="z5t-q0-wct"/>
+                <constraint firstItem="zGN-Aw-xuu" firstAttribute="trailing" secondItem="5of-wH-4ll" secondAttribute="trailing" id="8Gz-ej-eWE"/>
+                <constraint firstItem="zGN-Aw-xuu" firstAttribute="leading" secondItem="5of-wH-4ll" secondAttribute="leading" id="o3o-BU-lZI"/>
+                <constraint firstAttribute="bottom" secondItem="zGN-Aw-xuu" secondAttribute="bottom" id="o9g-m3-K6F"/>
+                <constraint firstItem="zGN-Aw-xuu" firstAttribute="top" secondItem="AF2-Yh-brq" secondAttribute="top" id="qBx-1E-fBp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="C4D-eJ-baG"/>
-            <point key="canvasLocation" x="41.304347826086961" y="-148.32589285714286"/>
+            <viewLayoutGuide key="safeArea" id="5of-wH-4ll"/>
+            <point key="canvasLocation" x="25" y="-296"/>
         </view>
     </objects>
 </document>

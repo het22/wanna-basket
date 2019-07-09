@@ -41,7 +41,7 @@ protocol HomePresenterProtocol: class {
     func didTapNewPlayerButton(of home: Bool)
     
     func didTapTeamFormCompleteButton(name: String?)
-    func didTapPlayerFormCompleteButton(name: String?)
+    func didTapPlayerFormCompleteButton(name: String?, number: Int?)
     
     func didDeleteTeamAction(at index: Int)
     func didDeletePlayerAction(at index: Int, of home: Bool)

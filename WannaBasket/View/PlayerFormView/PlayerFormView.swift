@@ -10,7 +10,7 @@ import UIKit
 
 protocol PlayerFormViewDelegate {
     func didTapPlayerFormCancelButton()
-    func didTapPlayerFormCompleteButton(name: String?)
+    func didTapPlayerFormCompleteButton(name: String?, number: Int?)
 }
 
 class PlayerFormView: UIView, NibLoadable {
@@ -18,6 +18,7 @@ class PlayerFormView: UIView, NibLoadable {
     var delegate: PlayerFormViewDelegate?
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var numberTextField: UITextField!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +46,7 @@ class PlayerFormView: UIView, NibLoadable {
     }
     
     @IBAction func completeButtonTapped() {
-        delegate?.didTapPlayerFormCompleteButton(name: nameTextField.text)
+        delegate?.didTapPlayerFormCompleteButton(name: nameTextField.text,
+                                                 number: Int(numberTextField.text ?? ""))
     }
 }
