@@ -10,21 +10,21 @@ import UIKit
 
 extension UIView {
     
-    func animateBlink(completion: @escaping (Bool)->Void) {
+    func animateBlink(completion: ((Bool)->Void)?) {
         let duration = 0.4
         let delay = 0.0
         UIView.animate(withDuration: duration/4, delay: delay, options: [.repeat, .autoreverse], animations: {
             self.alpha = 0.5
         }, completion: { bool in
             self.alpha = 1.0
-            completion(bool)
+            completion?(bool)
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + (duration)) {
             self.layer.removeAllAnimations()
         }
     }
     
-    func animateGradient(completion: @escaping (Bool)->Void) {
+    func animateGradient(completion: ((Bool)->Void)?) {
         let gradient: CAGradientLayer = {
             let gradient = CAGradientLayer()
             gradient.frame = self.bounds
@@ -51,7 +51,7 @@ extension UIView {
         gradient.add(animation, forKey: "animation")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (animation.duration/2)) {
-            completion(true)
+            completion?(true)
         }
     }
 }

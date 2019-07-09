@@ -70,6 +70,8 @@ protocol GameViewProtocol: class {
     
     func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool)
     func highlightStatCell(of stat: Stat.Score?, bool: Bool)
-    func blinkPlayerCell(at index: Int, of home: Bool, completion: @escaping (Bool)->Void)
-    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void)
+    
+    func blinkScoreLabel(of home: Bool, completion: ((Bool)->Void)?)
+    func blinkPlayerCell(at index: Int, of home: Bool, completion: ((Bool)->Void)?)
+    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?)
 }

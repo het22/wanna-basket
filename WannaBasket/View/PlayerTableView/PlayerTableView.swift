@@ -65,11 +65,11 @@ class PlayerTableView: UITableView {
         }
     }
     
-    func blinkCell(at index: Int, completion: @escaping (Bool)->Void) {
+    func blinkCell(at index: Int, completion: ((Bool)->Void)?) {
         if let cell = cellForRow(at: IndexPath(row: 0, section: index)) {
             self.isUserInteractionEnabled = false
             cell.animateBlink { bool in
-                completion(bool)
+                completion?(bool)
                 self.isUserInteractionEnabled = true
             }
         }

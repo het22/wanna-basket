@@ -28,10 +28,10 @@ class GameTest: XCTestCase {
     }
     
     func testGetScore() {
-        game.addRecords(playerTuple: (true, 0), stat: .Two)
-        game.addRecords(playerTuple: (false, 0), stat: .Three)
-        game.addRecords(playerTuple: (true, 1), stat: .Two)
-        game.addRecords(playerTuple: (true, 1), stat: .One)
+        game.addRecord(playerTuple: (true, 0), stat: .Two)
+        game.addRecord(playerTuple: (false, 0), stat: .Three)
+        game.addRecord(playerTuple: (true, 1), stat: .Two)
+        game.addRecord(playerTuple: (true, 1), stat: .One)
         XCTAssertEqual(game.scores.home, 5)
         XCTAssertEqual(game.scores.away, 3)
     }

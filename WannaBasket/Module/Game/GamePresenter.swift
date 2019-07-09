@@ -112,7 +112,7 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didSelectUndo() {
-        print("undo")
+        game.removeLastRecord()
     }
 }
 
@@ -138,7 +138,7 @@ extension GamePresenter: GameDelegate {
     }
     
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
-        game.addRecords(playerTuple: playerTuple, stat: stat)
+        game.addRecord(playerTuple: playerTuple, stat: stat)
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
         }
@@ -152,6 +152,15 @@ extension GamePresenter: GameDelegate {
         let home = record.home
         let score = home ? game.scores.home : game.scores.away
         view?.updateTeamScoreLabel(score: score, of: home)
+        view?.blinkScoreLabel(of: home, completion: nil)
+    }
+    
+    func didRemoveLastRecord(record: RecordModel) {
+        let home = record.home
+        let score = home ? game.scores.home : game.scores.away
+        view?.updateTeamScoreLabel(score: score, of: home)
+        view?.blinkScoreLabel(of: home, completion: nil)
+        view?.blinkStatCell(of: nil, completion: nil)
     }
 }
 

@@ -12,7 +12,9 @@ protocol GameDelegate {
     func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
     func didSetCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score)
+    
     func didAddRecord(record: RecordModel)
+    func didRemoveLastRecord(record: RecordModel)
 }
 
 class Game {
@@ -52,7 +54,7 @@ class Game {
     }
     
     var records: [RecordModel] = []
-    func addRecords(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+    func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
         let team = playerTuple.home ? teams.home : teams.away
         let record = Record(quarter: timeManager.currentTime,
                             home: playerTuple.home,
@@ -61,5 +63,12 @@ class Game {
                             stat: stat)
         records.append(record)
         delegate?.didAddRecord(record: record)
+    }
+    
+    func removeLastRecord() {
+        if records.count > 0 {
+            let record = records.removeLast()
+            delegate?.didRemoveLastRecord(record: record)
+        }
     }
 }

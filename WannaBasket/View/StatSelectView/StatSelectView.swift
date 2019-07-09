@@ -41,7 +41,7 @@ class StatSelectView: UIView, NibLoadable {
     func commonInit() {
         for i in 0...views.count-1 {
             views[i]?.setup(name: names[i],
-                            highlightColor: i==0 ? Constants.Color.Steel : highlightColor)
+                            highlightColor: i==0 ? Constants.Color.Steel : Constants.Color.Black)
             let gesture = UITapGestureRecognizerWithClosure {
                 if let stat = self.stats[i] {
                     self.delegate?.didSelectStat(stat: stat)
@@ -54,18 +54,17 @@ class StatSelectView: UIView, NibLoadable {
         }
     }
     
-    let highlightColor = Constants.Color.Black
     func highlightCell(of stat: Stat.Score?, bool: Bool) {
         if let index = stats.firstIndex(of: stat), let view = views[index] {
             view.isHighlighted = bool
         }
     }
     
-    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void) {
+    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?) {
         if let index = stats.firstIndex(of: stat), let view = views[index] {
             self.isUserInteractionEnabled = false
             view.animateBlink { bool in
-                completion(bool)
+                completion?(bool)
                 self.isUserInteractionEnabled = true
             }
         }

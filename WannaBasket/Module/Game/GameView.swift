@@ -151,12 +151,17 @@ extension GameView: GameViewProtocol {
         statSelectView.highlightCell(of: stat, bool: bool)
     }
     
-    func blinkPlayerCell(at index: Int, of home: Bool, completion: @escaping (Bool)->Void) {
+    func blinkScoreLabel(of home: Bool, completion: ((Bool)->Void)?) {
+        let scoreLabel = home ? homeTeamScoreLabel : awayTeamScoreLabel
+        scoreLabel?.animateBlink(completion: completion)
+    }
+    
+    func blinkPlayerCell(at index: Int, of home: Bool, completion: ((Bool)->Void)?) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.blinkCell(at: index, completion: completion)
     }
     
-    func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void) {
+    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?) {
         statSelectView.blinkStatCell(of: stat, completion: completion)
     }
 }
