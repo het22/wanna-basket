@@ -31,10 +31,11 @@ class GameView: UIViewController {
         didSet { statSelectView.delegate = self }
     }
     
-    
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        
+        updateTeamScoreLabel(score: 22, of: true)
     }
     
     @IBAction func quarterLabelTapped() {
@@ -126,7 +127,7 @@ extension GameView: GameViewProtocol {
     
     func updateTeamScoreLabel(score: Int, of home: Bool) {
         let teamScoreLabel = home ? homeTeamScoreLabel : awayTeamScoreLabel
-        teamScoreLabel?.text = "\(score)"
+        teamScoreLabel?.text = scoreFormat.string(from: NSNumber(value: score))!
     }
     
     func updateQuarterLabel(_ quarter: Quarter) {

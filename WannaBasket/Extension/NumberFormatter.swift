@@ -8,19 +8,25 @@
 
 import Foundation
 
-let shotClockFormat: NumberFormatter = {
-    let temp = NumberFormatter()
-    temp.numberStyle = .decimal
-    temp.minimumFractionDigits = 1
-    temp.maximumFractionDigits = 1
-    return temp
-}()
-
 let gameClockFormat: NumberFormatter = {
-    let temp = NumberFormatter()
-    temp.numberStyle = .decimal
-    temp.minimumIntegerDigits = 2
-    temp.maximumIntegerDigits = 2
-    return temp
+    let format = NumberFormatter()
+    format.numberStyle = .decimal
+    format.maximumIntegerDigits = 2
+    return format
 }()
 
+let shotClockFormat: NumberFormatter = {
+    let format = NumberFormatter()
+    format.numberStyle = .decimal
+    format.minimumFractionDigits = 1
+    format.maximumFractionDigits = 1
+    return format
+}()
+
+let scoreFormat: NumberFormatter = {
+    let format = NumberFormatter()
+    format.numberStyle = .decimal
+    format.maximumIntegerDigits = 3
+    format.minimumIntegerDigits = 3
+    return format
+}()
