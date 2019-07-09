@@ -9,7 +9,8 @@
 import UIKit
 
 protocol StatSelectViewDelegate {
-    func didStatSelect(stat: Stat.Score?)
+    func didStatSelect(stat: Stat.Score)
+    func didUndoSelect()
 }
 
 class StatSelectView: UIView, NibLoadable {
@@ -20,6 +21,10 @@ class StatSelectView: UIView, NibLoadable {
     @IBOutlet weak var score1ToggleView: ToggleView!
     @IBOutlet weak var score2ToggleView: ToggleView!
     @IBOutlet weak var score3ToggleView: ToggleView!
+    
+    lazy var views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
+    lazy var stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
+    lazy var names = ["취소", "1점", "2점", "3점"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,15 +39,15 @@ class StatSelectView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        let views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
-        let stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
-        let names = ["취소", "1점", "2점", "3점"]
-        
         for i in 0...views.count-1 {
             views[i]?.setup(name: names[i],
                             highlightColor: i==0 ? Constants.Color.Steel : highlightColor)
             let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didStatSelect(stat: stats[i])
+                if let stat = self.stats[i] {
+                    self.delegate?.didStatSelect(stat: stat)
+                } else {
+                    self.delegate?.didUndoSelect()
+                }
             }
             gesture.numberOfTapsRequired = 1
             views[i]?.addGestureRecognizer(gesture)
@@ -51,16 +56,12 @@ class StatSelectView: UIView, NibLoadable {
     
     let highlightColor = Constants.Color.Black
     func highlightCell(of stat: Stat.Score?, bool: Bool) {
-        let views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
-        let stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
         if let index = stats.firstIndex(of: stat), let view = views[index] {
             view.isHighlighted = bool
         }
     }
     
     func blinkStatCell(of stat: Stat.Score?, completion: @escaping (Bool)->Void) {
-        let views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
-        let stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
         if let index = stats.firstIndex(of: stat), let view = views[index] {
             self.isUserInteractionEnabled = false
             view.animateBlink { bool in

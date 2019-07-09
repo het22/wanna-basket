@@ -146,7 +146,7 @@ extension GameView: GameViewProtocol {
         playerTableView?.highlightCell(at: index, bool: bool)
     }
     
-    func highlightStatsCell(of stat: Stat.Score?, bool: Bool) {
+    func highlightStatCell(of stat: Stat.Score?, bool: Bool) {
         statSelectView.highlightCell(of: stat, bool: bool)
     }
     
@@ -181,7 +181,11 @@ extension GameView: QuarterSelectViewDelegate {
 
 extension GameView: StatSelectViewDelegate {
     
-    func didStatSelect(stat: Stat.Score?) {
+    func didStatSelect(stat: Stat.Score) {
         presenter?.didStatSelect(stat: stat)
+    }
+    
+    func didUndoSelect() {
+        presenter?.didUndoSelect()
     }
 }

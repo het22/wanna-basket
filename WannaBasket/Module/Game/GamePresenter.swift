@@ -36,7 +36,7 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didBenchButtonTap(of home: Bool) {
-        
+        print("bench")
     }
     
     func didQuarterLabelTap() {
@@ -99,12 +99,16 @@ class GamePresenter: GamePresenterProtocol {
         game.timeManager.resetShotClock(24.0)
     }
     
-    func didStatSelect(stat: Stat.Score?) {
+    func didStatSelect(stat: Stat.Score) {
         if let current = game.currentStat, current == stat {
             game.currentStat = nil
         } else {
             game.currentStat = stat
         }
+    }
+    
+    func didUndoSelect() {
+        print("undo")
     }
 }
 
@@ -120,16 +124,16 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?) {
+    func didCurrentStatSet(oldStat: Stat.Score?, newStat: Stat.Score?) {
         if let oldStat = oldStat {
-            view?.highlightStatsCell(of: oldStat, bool: false)
+            view?.highlightStatCell(of: oldStat, bool: false)
         }
         if let newStat = newStat {
-            view?.highlightStatsCell(of: newStat, bool: true)
+            view?.highlightStatCell(of: newStat, bool: true)
         }
     }
     
-    func didSelectPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+    func didPlayerAndStatSet(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
         game.addRecords()
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
