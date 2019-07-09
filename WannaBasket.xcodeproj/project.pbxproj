@@ -53,6 +53,7 @@
 		CBC6F06222D32DDE0021A11D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06122D32DDE0021A11D /* UIView+Extension.swift */; };
 		CBC6F06522D39EF10021A11D /* TimeManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06422D39EF10021A11D /* TimeManagerTest.swift */; };
 		CBC6F06722D3A1470021A11D /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06622D3A1470021A11D /* TimeTest.swift */; };
+		CBC6F06922D416B70021A11D /* Quarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06822D416B70021A11D /* Quarter.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -134,6 +135,7 @@
 		CBC6F06122D32DDE0021A11D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CBC6F06422D39EF10021A11D /* TimeManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTest.swift; sourceTree = "<group>"; };
 		CBC6F06622D3A1470021A11D /* TimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
+		CBC6F06822D416B70021A11D /* Quarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -222,6 +224,8 @@
 			children = (
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
 				CBC6F05222CF063B0021A11D /* Stat.swift */,
+				CBC6F05422CF2C2B0021A11D /* Time.swift */,
+				CBC6F06822D416B70021A11D /* Quarter.swift */,
 				CBC6F05F22D03DAB0021A11D /* ClockControl.swift */,
 			);
 			path = Enum;
@@ -421,7 +425,6 @@
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
 				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
-				CBC6F05422CF2C2B0021A11D /* Time.swift */,
 				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
 			);
 			path = Model;
@@ -657,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC6F06922D416B70021A11D /* Quarter.swift in Sources */,
 				CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */,
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,

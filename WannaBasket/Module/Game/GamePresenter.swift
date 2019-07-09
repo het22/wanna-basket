@@ -24,7 +24,7 @@ class GamePresenter: GamePresenterProtocol {
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarter: game.timeManager.currentQuarter)
+        view?.updateQuarterLabel(game.timeManager.currentQuarter)
     }
     
     func didPlayerCellTap(at index: Int, of home: Bool) {
@@ -46,7 +46,7 @@ class GamePresenter: GamePresenterProtocol {
                                     bool: true)
     }
     
-    func didQuarterSelect(quarterType: Time.Quarter) {
+    func didQuarterSelect(quarterType: Quarter) {
         game.timeManager.updateQuarter(quarter: quarterType)
         view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
                                     overtimeQuarterCount: 0,
@@ -142,16 +142,16 @@ extension GamePresenter: GameDelegate {
 
 extension GamePresenter: GameTimeDelegate {
     
-    func didQuarterUpdate(quarter: Time.Quarter) {
-        view?.updateQuarter(quarter: quarter)
+    func didQuarterUpdate(quarter: Quarter) {
+        view?.updateQuarterLabel(quarter)
     }
     
     func didGameClockUpdate(gameClock: Float, isRunning: Bool) {
-        view?.updateGameClock(gameClock, isRunning: isRunning)
+        view?.updateGameClockLabel(gameClock, isRunning: isRunning)
     }
     
     func didShotClockUpdate(shotClock: Float, isRunning: Bool) {
-        view?.updateShotClock(shotClock, isRunning: isRunning)
+        view?.updateShotClockLabel(shotClock, isRunning: isRunning)
     }
 }
 

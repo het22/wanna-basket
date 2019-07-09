@@ -77,7 +77,7 @@ class GameView: UIViewController {
     private var backgroundView: UIView?
     private var quarterSelectView: QuarterSelectView?
     private var isShowingQuaterSelectView: Bool = false
-    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Time.Quarter, bool: Bool) {
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool) {
         if bool == isShowingQuaterSelectView { return }
         isShowingQuaterSelectView = bool
         if bool {
@@ -127,24 +127,18 @@ extension GameView: GameViewProtocol {
         awayPlayerTableView.reloadData(with: team.players)
     }
     
-    func updateGameClock(_ gameClock: Float, isRunning: Bool) {
-        if gameClock >= 60.0 {
-            let min = Int(gameClock) / 60
-            let sec = Int(gameClock) % 60
-            gameClockLabel.text = gameClockFormat.string(from: NSNumber(integerLiteral: min))! + ":" + gameClockFormat.string(from: NSNumber(integerLiteral: sec))!
-        } else {
-            gameClockLabel.text = shotClockFormat.string(from: NSNumber(value: gameClock))
-        }
+    func updateQuarterLabel(_ quarter: Quarter) {
+        quarterLabel.text = "\(quarter)"
+    }
+    
+    func updateGameClockLabel(_ gameClock: Float, isRunning: Bool) {
+        gameClockLabel.text = "\(Time.Description.GameClock(gameClock))"
         gameClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     
-    func updateShotClock(_ shotClock: Float, isRunning: Bool) {
-        shotClockLabel.text = shotClockFormat.string(from: NSNumber(value: shotClock))
+    func updateShotClockLabel(_ shotClock: Float, isRunning: Bool) {
+        shotClockLabel.text = "\(Time.Description.ShotClock(shotClock))"
         shotClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
-    }
-    
-    func updateQuarter(quarter: Time.Quarter) {
-        quarterLabel.text = quarter.description
     }
     
     func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool) {
@@ -176,7 +170,7 @@ extension GameView: PlayerTableViewDelegate {
 
 extension GameView: QuarterSelectViewDelegate {
     
-    func didQuarterSelect(quarterType: Time.Quarter) {
+    func didQuarterSelect(quarterType: Quarter) {
         presenter?.didQuarterSelect(quarterType: quarterType)
     }
     

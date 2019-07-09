@@ -39,7 +39,7 @@ protocol GamePresenterProtocol: class {
     func didBenchButtonTap(of home: Bool)
     
     func didQuarterLabelTap()
-    func didQuarterSelect(quarterType: Time.Quarter)
+    func didQuarterSelect(quarterType: Quarter)
     func didExitSelect()
     
     func didGameClockLabelTap()
@@ -61,10 +61,10 @@ protocol GameViewProtocol: class {
     func updateHomeTeam(_ team: Team)
     func updateAwayTeam(_ team: Team)
     
-    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Time.Quarter, bool: Bool)
-    func updateQuarter(quarter: Time.Quarter)
-    func updateGameClock(_ gameClock: Float, isRunning: Bool)
-    func updateShotClock(_ shotClock: Float, isRunning: Bool)
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool)
+    func updateQuarterLabel(_ quarter: Quarter)
+    func updateGameClockLabel(_ gameClock: Float, isRunning: Bool)
+    func updateShotClockLabel(_ shotClock: Float, isRunning: Bool)
     
     func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool)
     func highlightStatsCell(of stat: Stat.Score?, bool: Bool)

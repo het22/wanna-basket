@@ -17,13 +17,13 @@ class TimeTest: XCTestCase {
     
     override func setUp() {
         timeA = Time(quarter: .Regular(1),
-                     gameClock: 600.0,
+                     gameClock: 562.0,
                      shotClock: 24.0)
         timeB = Time(quarter: .Regular(1),
-                     gameClock: 600.0,
+                     gameClock: 562.0,
                      shotClock: 24.0)
         timeC = Time(quarter: .Overtime(1),
-                     gameClock: 600.0,
+                     gameClock: 22.0,
                      shotClock: 24.0)
     }
     
@@ -35,5 +35,25 @@ class TimeTest: XCTestCase {
     func testTimeEquatable() {
         XCTAssertEqual(timeA, timeB)
         XCTAssertNotEqual(timeA, timeC)
+    }
+    
+    func testGameClockDescription() {
+        let testDesc1 = Time.Description.GameClock(562.0)
+        let resultDesc1  = "09:22"
+        XCTAssertEqual("\(testDesc1)", resultDesc1)
+        
+        let testDesc2 = Time.Description.GameClock(14.0)
+        let resultDesc2  = "14.0"
+        XCTAssertEqual("\(testDesc2)", resultDesc2)
+    }
+    
+    func testShotClockDescription() {
+        let testDesc1 = Time.Description.ShotClock(14.0)
+        let resultDesc1  = "14.0"
+        XCTAssertEqual("\(testDesc1)", resultDesc1)
+        
+        let testDesc2 = Time.Description.ShotClock(14.0333)
+        let resultDesc2  = "14.0"
+        XCTAssertEqual("\(testDesc2)", resultDesc2)
     }
 }

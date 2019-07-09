@@ -35,14 +35,14 @@ class TimeManagerTest: XCTestCase {
     }
 
     func testUpdateQuarter() {
-        XCTAssertEqual(manager.currentQuarter, Time.Quarter.Regular(1))
+        XCTAssertEqual(manager.currentQuarter, Quarter.Regular(1))
         manager.updateQuarter(quarter: .Regular(2))
-        XCTAssertEqual(manager.currentQuarter, Time.Quarter.Regular(2))
+        XCTAssertEqual(manager.currentQuarter, Quarter.Regular(2))
         manager.updateQuarter(quarter: .Regular(-1))
-        XCTAssertEqual(manager.currentQuarter, Time.Quarter.Regular(2))
+        XCTAssertEqual(manager.currentQuarter, Quarter.Regular(2))
         manager.updateQuarter(quarter: .Regular(10))
-        XCTAssertEqual(manager.currentQuarter, Time.Quarter.Regular(2))
+        XCTAssertEqual(manager.currentQuarter, Quarter.Regular(2))
         manager.updateQuarter(quarter: .Overtime(1))
-        XCTAssertEqual(manager.currentQuarter, Time.Quarter.Regular(2))
+        XCTAssertEqual(manager.currentQuarter, Quarter.Regular(2))
     }
 }
