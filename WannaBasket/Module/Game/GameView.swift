@@ -34,8 +34,6 @@ class GameView: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        
-        updateTeamScoreLabel(score: 22, of: true)
     }
     
     @IBAction func quarterLabelTapped() {

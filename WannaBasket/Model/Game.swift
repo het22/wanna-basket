@@ -23,8 +23,8 @@ class Game {
     var scores: (home: Int, away: Int) {
         return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
             let score = record.stat.rawValue
-            let isHome = (record.team == self.teams.home)
-            return isHome ? (scores.0 + score, scores.1) : (scores.0, scores.1 + score)
+            let home = record.home
+            return home ? (scores.0 + score, scores.1) : (scores.0, scores.1 + score)
         }
     }
     

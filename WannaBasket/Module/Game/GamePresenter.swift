@@ -148,7 +148,10 @@ extension GamePresenter: GameDelegate {
     }
     
     func didAddRecord(record: RecordModel) {
-        
+        // 레코드의 스탯 열거형이 점수일 경우 다음과 같이 실행
+        let home = record.home
+        let score = home ? game.scores.home : game.scores.away
+        view?.updateTeamScoreLabel(score: score, of: home)
     }
 }
 
