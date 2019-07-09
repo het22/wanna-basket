@@ -59,8 +59,9 @@ protocol GameViewProtocol: class {
     // PRESENTER -> VIEW
     func dismiss(animated flag: Bool, completion: (() -> Void)?)
     
-    func updateHomeTeam(_ team: Team)
-    func updateAwayTeam(_ team: Team)
+    func updatePlayerTableView(players: [Player], of home: Bool)
+    func updateTeamNameLabel(name: String, of home: Bool)
+    func updateTeamScoreLabel(score: Int, of home: Bool)
     
     func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool)
     func updateQuarterLabel(_ quarter: Quarter)

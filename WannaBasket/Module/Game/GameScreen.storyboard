@@ -510,12 +510,12 @@
                     </view>
                     <connections>
                         <outlet property="awayPlayerTableView" destination="AeC-fn-OG7" id="CZh-AC-LwX"/>
-                        <outlet property="awayScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
-                        <outlet property="awayTeamLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
+                        <outlet property="awayTeamNameLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
+                        <outlet property="awayTeamScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
                         <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
                         <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
-                        <outlet property="homeScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
-                        <outlet property="homeTeamLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
+                        <outlet property="homeTeamNameLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
+                        <outlet property="homeTeamScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
                         <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
                         <outlet property="statSelectView" destination="h9f-qz-HO8" id="yqi-9X-eVP"/>

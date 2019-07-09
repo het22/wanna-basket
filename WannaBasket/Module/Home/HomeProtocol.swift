@@ -54,7 +54,7 @@ protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
-    func updateTeams(_ teams: [Team])
+    func updateTeamTableView(with teams: [Team])
     func updateHomeTeam(_ team: Team?)
     func updateAwayTeam(_ team: Team?)
     

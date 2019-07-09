@@ -12,6 +12,7 @@ protocol GameDelegate {
     func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
     func didSetCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score)
+    func didAddRecord(record: RecordModel)
 }
 
 class Game {
@@ -57,6 +58,6 @@ class Game {
                             player: team.players[playerTuple.index],
                             stat: stat)
         records.append(record)
-        print(record)
+        delegate?.didAddRecord(record: record)
     }
 }

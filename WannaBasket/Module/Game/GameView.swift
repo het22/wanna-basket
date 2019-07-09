@@ -18,15 +18,12 @@ class GameView: UIViewController {
     @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
         didSet { awayPlayerTableView._delegate = self }
     }
-    
-    @IBOutlet weak var homeTeamLabel: UILabel!
-    @IBOutlet weak var awayTeamLabel: UILabel!
-    
-    @IBOutlet weak var homeScoreLabel: UILabel!
-    @IBOutlet weak var awayScoreLabel: UILabel!
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var homeTeamScoreLabel: UILabel!
+    @IBOutlet weak var awayTeamScoreLabel: UILabel!
     
     @IBOutlet weak var quarterLabel: UILabel!
-    
     @IBOutlet weak var gameClockLabel: UILabel!
     @IBOutlet weak var shotClockLabel: UILabel!
     
@@ -117,14 +114,19 @@ class GameView: UIViewController {
 
 extension GameView: GameViewProtocol {
     
-    func updateHomeTeam(_ team: Team) {
-        homeTeamLabel.text = team.name
-        homePlayerTableView.reloadData(with: team.players)
+    func updatePlayerTableView(players: [Player], of home: Bool) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
+        playerTableView?.reloadData(with: players)
     }
     
-    func updateAwayTeam(_ team: Team) {
-        awayTeamLabel.text = team.name
-        awayPlayerTableView.reloadData(with: team.players)
+    func updateTeamNameLabel(name: String, of home: Bool) {
+        let teamNameLabel = home ? homeTeamNameLabel : awayTeamNameLabel
+        teamNameLabel?.text = name
+    }
+    
+    func updateTeamScoreLabel(score: Int, of home: Bool) {
+        let teamScoreLabel = home ? homeTeamScoreLabel : awayTeamScoreLabel
+        teamScoreLabel?.text = "\(score)"
     }
     
     func updateQuarterLabel(_ quarter: Quarter) {
