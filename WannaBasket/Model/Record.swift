@@ -11,7 +11,7 @@ import Foundation
 // 나중에 수정할 것: 팀과 선수의 사본이 아니라 키 값을 가져야 한다.
 
 protocol RecordModel {
-    var quarter: Quarter { get set }
+    var quarter: Time { get set }
     var home: Bool { get set }
     var team: Team { get set }
     var player: Player { get set }
@@ -19,7 +19,7 @@ protocol RecordModel {
 }
 
 struct Record: RecordModel, CustomStringConvertible {
-    var quarter: Quarter
+    var quarter: Time
     var home: Bool
     var team: Team
     var player: Player

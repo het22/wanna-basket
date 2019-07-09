@@ -77,14 +77,14 @@ class GameView: UIViewController {
     private var backgroundView: UIView?
     private var quarterSelectView: QuarterSelectView?
     private var isShowingQuaterSelectView: Bool = false
-    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarterNum: Int, bool: Bool) {
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Time.Quarter, bool: Bool) {
         if bool == isShowingQuaterSelectView { return }
         isShowingQuaterSelectView = bool
         if bool {
             let dismissGesture = UITapGestureRecognizerWithClosure {
                 self.showQuarterSelectView(maxRegularQuarterNum: maxRegularQuarterNum,
                                            overtimeQuarterCount: overtimeQuarterCount,
-                                           currentQuarterNum: currentQuarterNum,
+                                           currentQuarter: currentQuarter,
                                            bool: false)
             }
             dismissGesture.numberOfTapsRequired = 1
@@ -98,7 +98,7 @@ class GameView: UIViewController {
             quarterSelectView!.delegate = self
             quarterSelectView!.setup(maxRegularQuarterNum: maxRegularQuarterNum,
                                      overtimeQuarterCount: overtimeQuarterCount,
-                                     currentQuarterNum: currentQuarterNum)
+                                     currentQuarter: currentQuarter)
             self.view.addSubview(quarterSelectView!)
             
             quarterSelectView!.translatesAutoresizingMaskIntoConstraints = false
@@ -143,9 +143,8 @@ extension GameView: GameViewProtocol {
         shotClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     
-    func updateQuarter(quarterNum: Int) {
-        let quarterDescription = (quarterNum < 4) ? "\(quarterNum+1)쿼터" : "연장\(quarterNum-3)차"
-        quarterLabel.text = quarterDescription
+    func updateQuarter(quarter: Time.Quarter) {
+        quarterLabel.text = quarter.description
     }
     
     func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool) {
@@ -177,8 +176,12 @@ extension GameView: PlayerTableViewDelegate {
 
 extension GameView: QuarterSelectViewDelegate {
     
-    func didQuarterSelect(quarterNum: Int?) {
-        presenter?.didQuarterSelect(quarterNum: quarterNum)
+    func didQuarterSelect(quarterType: Time.Quarter) {
+        presenter?.didQuarterSelect(quarterType: quarterType)
+    }
+    
+    func didExitSelect() {
+        presenter?.didExitSelect()
     }
 }
 

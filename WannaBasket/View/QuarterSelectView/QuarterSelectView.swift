@@ -9,7 +9,8 @@
 import UIKit
 
 protocol QuarterSelectViewDelegate {
-    func didQuarterSelect(quarterNum: Int?)
+    func didQuarterSelect(quarterType: Time.Quarter)
+    func didExitSelect()
 }
 
 class QuarterSelectView: UIView, NibLoadable {
@@ -39,26 +40,29 @@ class QuarterSelectView: UIView, NibLoadable {
         hStack.spacing = 5
     }
     
-    func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarterNum: Int) {
+    func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarter: Time.Quarter) {
         
-        var firstView: UIView?
-        for i in 0...maxRegularQuarterNum {
+        let exitView: ToggleView = {
             let view = ToggleView(frame: CGRect.zero)
-            view.setup(name: (i==maxRegularQuarterNum) ? "나가기" : "\(i+1)쿼터",
-                highlightColor: (i==maxRegularQuarterNum) ? Constants.Color.Silver : Constants.Color.Black)
-            view.isHighlighted = (i==currentQuarterNum)
+            view.setup(name: "나가기", highlightColor: Constants.Color.Silver)
             hStack.addArrangedSubview(view)
-            
-            let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didQuarterSelect(quarterNum: (i==maxRegularQuarterNum) ? nil : i)
-            }
-            gesture.numberOfTapsRequired = 1
+            let gesture = UITapGestureRecognizerWithClosure { self.delegate?.didExitSelect() }
             view.addGestureRecognizer(gesture)
-            
-            if i==0 { firstView = view }
-            else {
-                view.widthAnchor.constraint(equalTo: firstView!.widthAnchor, multiplier: 1.0).isActive = true
+            return view
+        }()
+        
+        for i in 1...maxRegularQuarterNum {
+            let quarterType = Time.Quarter.Regular(i)
+            let quarterView = ToggleView(frame: CGRect.zero)
+            quarterView.setup(name: quarterType.description,
+                              highlightColor: Constants.Color.Black)
+            quarterView.isHighlighted = (currentQuarter == Time.Quarter.Regular(i))
+            hStack.insertArrangedSubview(quarterView, at: i-1)
+            let gesture = UITapGestureRecognizerWithClosure {
+                self.delegate?.didQuarterSelect(quarterType: quarterType)
             }
+            quarterView.addGestureRecognizer(gesture)
+            quarterView.widthAnchor.constraint(equalTo: exitView.widthAnchor, multiplier: 1.0).isActive = true
         }
     }
 }

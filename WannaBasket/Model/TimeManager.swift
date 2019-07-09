@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GameTimeDelegate {
-    func didQuarterUpdate()
+    func didQuarterUpdate(quarter: Time.Quarter)
     func didGameClockUpdate(gameClock: Float, isRunning: Bool)
     func didShotClockUpdate(shotClock: Float, isRunning: Bool)
 }
@@ -34,7 +34,15 @@ class TimeManager {
     }
     
     var times: [Time] = []
-    var currentQuarter: Time.Quarter = .Regular(1)
+    var currentQuarter: Time.Quarter = .Regular(1) {
+        didSet {
+            delegate?.didQuarterUpdate(quarter: currentQuarter)
+            isGameClockRunning = false
+            delegate?.didGameClockUpdate(gameClock: currentTime.gameClock, isRunning: false)
+            isShotClockRunning = false
+            delegate?.didShotClockUpdate(shotClock: currentTime.shotClock, isRunning: false)
+        }
+    }
     var currentTime: Time {
         get {
             switch currentQuarter {

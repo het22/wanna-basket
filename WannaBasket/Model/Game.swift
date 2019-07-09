@@ -9,8 +9,7 @@
 import Foundation
 
 protocol GameDelegate {
-    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?,
-                                  newTuple: (home: Bool, index: Int)?)
+    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
     func didCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
     func didSelectPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score)
 }
@@ -22,9 +21,12 @@ class Game {
     var homeTeam: Team
     var awayTeam: Team
     
-    var time: GameTime = GameTime(maxRegularQuarterNum: 4)
+    init(homeTeam: Team, awayTeam: Team) {
+        self.homeTeam = homeTeam
+        self.awayTeam = awayTeam
+    }
     
-    var records: [RecordModel] = []
+    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     
     var currentPlayerTuple: (home: Bool, index: Int)? {
         didSet(oldTuple) {
@@ -43,17 +45,13 @@ class Game {
         }
     }
     
-    init(homeTeam: Team, awayTeam: Team) {
-        self.homeTeam = homeTeam
-        self.awayTeam = awayTeam
-    }
-    
+    var records: [RecordModel] = []
     func addRecords() {
         guard let playerTuple = currentPlayerTuple, let stat = currentStat else {
             return
         }
         let team = playerTuple.home ? homeTeam : awayTeam
-        let record = Record(quarter: time.currentQuarter,
+        let record = Record(quarter: timeManager.currentTime,
                             home: playerTuple.home,
                             team: team,
                             player: team.players[playerTuple.index],

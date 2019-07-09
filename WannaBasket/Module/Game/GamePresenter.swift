@@ -17,14 +17,14 @@ class GamePresenter: GamePresenterProtocol {
     var game: Game! {
         didSet {
             game.delegate = self
-            game.time.delegate = self
+            game.timeManager.delegate = self
         }
     }
     
     func viewDidLoad() {
         view?.updateHomeTeam(game.homeTeam)
         view?.updateAwayTeam(game.awayTeam)
-        view?.updateQuarter(quarterNum: game.time.currentQuarterNum)
+        view?.updateQuarter(quarter: game.timeManager.currentQuarter)
     }
     
     func didPlayerCellTap(at index: Int, of home: Bool) {
@@ -40,66 +40,63 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didQuarterLabelTap() {
-        view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
                                     overtimeQuarterCount: 0,
-                                    currentQuarterNum: game.time.currentQuarterNum,
+                                    currentQuarter: game.timeManager.currentQuarter,
                                     bool: true)
     }
     
-    func didQuarterSelect(quarterNum: Int?) {
-        if let quarterNum = quarterNum {
-            if quarterNum != game.time.currentQuarterNum {
-                game.time.updateQuarter(quarterNum: quarterNum)
-                view?.updateQuarter(quarterNum: quarterNum)
-            }
-            view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
-                                        overtimeQuarterCount: 0,
-                                        currentQuarterNum: game.time.currentQuarterNum,
-                                        bool: false)
-        } else {
-            view?.dismiss(animated: true, completion: nil)
-        }
+    func didQuarterSelect(quarterType: Time.Quarter) {
+        game.timeManager.updateQuarter(quarter: quarterType)
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
+                                    overtimeQuarterCount: 0,
+                                    currentQuarter: game.timeManager.currentQuarter,
+                                    bool: false)
+    }
+    
+    func didExitSelect() {
+        view?.dismiss(animated: true, completion: nil)
     }
     
     func didGameClockLabelTap() {
-        game.time.isGameClockRunning = !game.time.isGameClockRunning
+        game.timeManager.isGameClockRunning = !game.timeManager.isGameClockRunning
     }
     
     func didShotClockLabelTap() {
-        game.time.isShotClockRunning = !game.time.isShotClockRunning
+        game.timeManager.isShotClockRunning = !game.timeManager.isShotClockRunning
     }
     
     func didClockControlButtonTap(control: ClockControl) {
         switch control {
         case .GameMinPlus:
-            let bool = (game.time.currentQuarter.gameClock > 60.0)
-            game.time.addGameClock(bool ? 60.0 : 1.0)
+            let bool = (game.timeManager.currentTime.gameClock > 60.0)
+            game.timeManager.addGameClock(bool ? 60.0 : 1.0)
         case .GameMinMinus:
-            let bool = (game.time.currentQuarter.gameClock > 61.0)
-            game.time.addGameClock(bool ? -60.0 : -1.0)
+            let bool = (game.timeManager.currentTime.gameClock > 61.0)
+            game.timeManager.addGameClock(bool ? -60.0 : -1.0)
         case .GameSecPlus:
-            let bool = (game.time.currentQuarter.gameClock >= 60.0)
-            game.time.addGameClock(bool ? 1.0 : 0.1)
+            let bool = (game.timeManager.currentTime.gameClock >= 60.0)
+            game.timeManager.addGameClock(bool ? 1.0 : 0.1)
         case .GameSecMinus:
-            let bool = (game.time.currentQuarter.gameClock > 60.0)
-            game.time.addGameClock(bool ? -1.0 : -0.1)
+            let bool = (game.timeManager.currentTime.gameClock > 60.0)
+            game.timeManager.addGameClock(bool ? -1.0 : -0.1)
         case .ShotSecPlus:
-            game.time.addShotClock(1.0)
+            game.timeManager.addShotClock(1.0)
         case .ShotSecMinus:
-            game.time.addShotClock(-1.0)
+            game.timeManager.addShotClock(-1.0)
         case .ShotPointPlus:
-            game.time.addShotClock(0.1)
+            game.timeManager.addShotClock(0.1)
         case .ShotPointMinus:
-            game.time.addShotClock(-0.1)
+            game.timeManager.addShotClock(-0.1)
         }
     }
     
     func didReset14ButtonTap() {
-        game.time.resetShotClock(14.0)
+        game.timeManager.resetShotClock(14.0)
     }
     
     func didReset24ButtonTap() {
-        game.time.resetShotClock(24.0)
+        game.timeManager.resetShotClock(24.0)
     }
     
     func didStatSelect(stat: Stat.Score?) {
@@ -144,6 +141,10 @@ extension GamePresenter: GameDelegate {
 }
 
 extension GamePresenter: GameTimeDelegate {
+    
+    func didQuarterUpdate(quarter: Time.Quarter) {
+        view?.updateQuarter(quarter: quarter)
+    }
     
     func didGameClockUpdate(gameClock: Float, isRunning: Bool) {
         view?.updateGameClock(gameClock, isRunning: isRunning)
