@@ -139,7 +139,7 @@
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="newHomePlayerButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="vV1-Sx-qUG"/>
+                                                            <action selector="newPlayerButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wbj-Es-Cxk"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -225,7 +225,7 @@
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="newAwayPlayerButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="qN6-FI-9fo"/>
+                                                            <action selector="newPlayerButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8v7-xb-65Y"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -268,11 +268,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="awayPlayerAddButton" destination="iOs-SS-WRo" id="MI7-za-q14"/>
+                        <outlet property="awayPlayerAddButton" destination="iOs-SS-WRo" id="99l-an-Hge"/>
                         <outlet property="awayPlayerTableView" destination="zeg-aO-gAf" id="onp-zJ-VKh"/>
                         <outlet property="awayTeamLabel" destination="YsF-GD-Ayo" id="Jiy-x9-cf2"/>
                         <outlet property="gameStartButton" destination="QE1-Ko-A2j" id="yih-LO-KHc"/>
-                        <outlet property="homePlayerAddButton" destination="sna-UG-52x" id="bjN-nc-3Ku"/>
+                        <outlet property="homePlayerAddButton" destination="sna-UG-52x" id="nR7-is-u2b"/>
                         <outlet property="homePlayerTableView" destination="vCl-QC-0X1" id="INh-a9-Ui8"/>
                         <outlet property="homeTeamLabel" destination="fMm-jb-J4V" id="jau-jI-2o8"/>
                         <outlet property="teamTableView" destination="Ung-lf-Mj9" id="Wgl-Bk-weq"/>

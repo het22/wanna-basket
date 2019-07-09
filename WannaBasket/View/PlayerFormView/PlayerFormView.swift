@@ -9,8 +9,8 @@
 import UIKit
 
 protocol PlayerFormViewDelegate {
-    func didPlayerFormCancelButtonTap()
-    func didPlayerFormCompleteButtonTap(name: String?)
+    func didTapPlayerFormCancelButton()
+    func didTapPlayerFormCompleteButton(name: String?)
 }
 
 class PlayerFormView: UIView, NibLoadable {
@@ -41,10 +41,10 @@ class PlayerFormView: UIView, NibLoadable {
     }
     
     @IBAction func cancelButtonTapped() {
-        delegate?.didPlayerFormCancelButtonTap()
+        delegate?.didTapPlayerFormCancelButton()
     }
     
     @IBAction func completeButtonTapped() {
-        delegate?.didPlayerFormCompleteButtonTap(name: nameTextField.text)
+        delegate?.didTapPlayerFormCompleteButton(name: nameTextField.text)
     }
 }

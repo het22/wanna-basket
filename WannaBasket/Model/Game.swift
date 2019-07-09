@@ -9,9 +9,9 @@
 import Foundation
 
 protocol GameDelegate {
-    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
-    func didCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
-    func didSelectPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score)
+    func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
+    func didSetCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?)
+    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score)
 }
 
 class Game {
@@ -30,17 +30,17 @@ class Game {
     
     var currentPlayerTuple: (home: Bool, index: Int)? {
         didSet(oldTuple) {
-            delegate?.didCurrentPlayerTupleSet(oldTuple: oldTuple, newTuple: currentPlayerTuple)
+            delegate?.didSetCurrentPlayerTuple(oldTuple: oldTuple, newTuple: currentPlayerTuple)
             if let playerTuple = currentPlayerTuple, let stat = currentStat {
-                delegate?.didSelectPlayerAndStat(playerTuple: playerTuple, stat: stat)
+                delegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
             }
         }
     }
     var currentStat: Stat.Score? {
         didSet(oldStat) {
-            delegate?.didCurrentStat(oldStat: oldStat, newStat: currentStat)
+            delegate?.didSetCurrentStat(oldStat: oldStat, newStat: currentStat)
             if let playerTuple = currentPlayerTuple, let stat = currentStat {
-                delegate?.didSelectPlayerAndStat(playerTuple: playerTuple, stat: stat)
+                delegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
             }
         }
     }

@@ -9,8 +9,8 @@
 import UIKit
 
 protocol StatSelectViewDelegate {
-    func didStatSelect(stat: Stat.Score)
-    func didUndoSelect()
+    func didSelectStat(stat: Stat.Score)
+    func didSelectUndo()
 }
 
 class StatSelectView: UIView, NibLoadable {
@@ -44,9 +44,9 @@ class StatSelectView: UIView, NibLoadable {
                             highlightColor: i==0 ? Constants.Color.Steel : highlightColor)
             let gesture = UITapGestureRecognizerWithClosure {
                 if let stat = self.stats[i] {
-                    self.delegate?.didStatSelect(stat: stat)
+                    self.delegate?.didSelectStat(stat: stat)
                 } else {
-                    self.delegate?.didUndoSelect()
+                    self.delegate?.didSelectUndo()
                 }
             }
             gesture.numberOfTapsRequired = 1

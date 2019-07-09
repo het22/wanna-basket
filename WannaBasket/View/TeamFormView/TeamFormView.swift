@@ -9,8 +9,8 @@
 import UIKit
 
 protocol TeamFormViewDelegate {
-    func didTeamFormCancelButtonTap()
-    func didTeamFormCompleteButtonTap(name: String?)
+    func didTapTeamFormCancelButton()
+    func didTapTeamFormCompleteButton(name: String?)
 }
 
 class TeamFormView: UIView, NibLoadable {
@@ -41,10 +41,10 @@ class TeamFormView: UIView, NibLoadable {
     }
     
     @IBAction func cancelButtonTapped() {
-        delegate?.didTeamFormCancelButtonTap()
+        delegate?.didTapTeamFormCancelButton()
     }
     
     @IBAction func completeButtonTapped() {
-        delegate?.didTeamFormCompleteButtonTap(name: nameTextField.text)
+        delegate?.didTapTeamFormCompleteButton(name: nameTextField.text)
     }
 }

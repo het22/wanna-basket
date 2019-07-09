@@ -27,7 +27,7 @@ class GamePresenter: GamePresenterProtocol {
         view?.updateQuarterLabel(game.timeManager.currentQuarter)
     }
     
-    func didPlayerCellTap(at index: Int, of home: Bool) {
+    func didTapPlayerCell(at index: Int, of home: Bool) {
         if let current = game.currentPlayerTuple, current == (home, index) {
             game.currentPlayerTuple = nil
         } else {
@@ -35,18 +35,18 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
-    func didBenchButtonTap(of home: Bool) {
+    func didTapBenchButton(of home: Bool) {
         print("bench")
     }
     
-    func didQuarterLabelTap() {
+    func didTapQuarterLabel() {
         view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
                                     overtimeQuarterCount: 0,
                                     currentQuarter: game.timeManager.currentQuarter,
                                     bool: true)
     }
     
-    func didQuarterSelect(quarterType: Quarter) {
+    func didSelectQuarter(quarterType: Quarter) {
         game.timeManager.updateQuarter(quarter: quarterType)
         view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
                                     overtimeQuarterCount: 0,
@@ -54,19 +54,19 @@ class GamePresenter: GamePresenterProtocol {
                                     bool: false)
     }
     
-    func didExitSelect() {
+    func didSelectExit() {
         view?.dismiss(animated: true, completion: nil)
     }
     
-    func didGameClockLabelTap() {
+    func didTapGameClockLabel() {
         game.timeManager.isGameClockRunning = !game.timeManager.isGameClockRunning
     }
     
-    func didShotClockLabelTap() {
+    func didTapShotClockLabel() {
         game.timeManager.isShotClockRunning = !game.timeManager.isShotClockRunning
     }
     
-    func didClockControlButtonTap(control: ClockControl) {
+    func didTapClockControlButton(control: ClockControl) {
         switch control {
         case .GameMinPlus:
             let bool = (game.timeManager.currentTime.gameClock > 60.0)
@@ -91,15 +91,15 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
-    func didReset14ButtonTap() {
+    func didTapReset14Button() {
         game.timeManager.resetShotClock(14.0)
     }
     
-    func didReset24ButtonTap() {
+    func didTapReset24Button() {
         game.timeManager.resetShotClock(24.0)
     }
     
-    func didStatSelect(stat: Stat.Score) {
+    func didSelectStat(stat: Stat.Score) {
         if let current = game.currentStat, current == stat {
             game.currentStat = nil
         } else {
@@ -107,14 +107,14 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
-    func didUndoSelect() {
+    func didSelectUndo() {
         print("undo")
     }
 }
 
 extension GamePresenter: GameDelegate {
     
-    func didCurrentPlayerTupleSet(oldTuple: (home: Bool, index: Int)?,
+    func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?,
                                   newTuple: (home: Bool, index: Int)?) {
         if let oldTuple = oldTuple {
             view?.highlightPlayerCell(at: oldTuple.index, of: oldTuple.home, bool: false)
@@ -124,7 +124,7 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didCurrentStatSet(oldStat: Stat.Score?, newStat: Stat.Score?) {
+    func didSetCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?) {
         if let oldStat = oldStat {
             view?.highlightStatCell(of: oldStat, bool: false)
         }
@@ -133,7 +133,7 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didPlayerAndStatSet(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
         game.addRecords()
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
@@ -146,15 +146,15 @@ extension GamePresenter: GameDelegate {
 
 extension GamePresenter: GameTimeDelegate {
     
-    func didQuarterUpdate(quarter: Quarter) {
+    func didSetQuarter(quarter: Quarter) {
         view?.updateQuarterLabel(quarter)
     }
     
-    func didGameClockUpdate(gameClock: Float, isRunning: Bool) {
+    func didSetGameClock(gameClock: Float, isRunning: Bool) {
         view?.updateGameClockLabel(gameClock, isRunning: isRunning)
     }
     
-    func didShotClockUpdate(shotClock: Float, isRunning: Bool) {
+    func didSetShotClock(shotClock: Float, isRunning: Bool) {
         view?.updateShotClockLabel(shotClock, isRunning: isRunning)
     }
 }

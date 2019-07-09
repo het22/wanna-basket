@@ -35,21 +35,21 @@ protocol GamePresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     
-    func didPlayerCellTap( at index: Int, of home: Bool)
-    func didBenchButtonTap(of home: Bool)
+    func didTapPlayerCell(at index: Int, of home: Bool)
+    func didTapBenchButton(of home: Bool)
     
-    func didQuarterLabelTap()
-    func didQuarterSelect(quarterType: Quarter)
-    func didExitSelect()
+    func didTapQuarterLabel()
+    func didSelectQuarter(quarterType: Quarter)
+    func didSelectExit()
     
-    func didGameClockLabelTap()
-    func didShotClockLabelTap()
-    func didClockControlButtonTap(control: ClockControl)
-    func didReset14ButtonTap()
-    func didReset24ButtonTap()
+    func didTapGameClockLabel()
+    func didTapShotClockLabel()
+    func didTapClockControlButton(control: ClockControl)
+    func didTapReset14Button()
+    func didTapReset24Button()
     
-    func didStatSelect(stat: Stat.Score)
-    func didUndoSelect()
+    func didSelectStat(stat: Stat.Score)
+    func didSelectUndo()
 }
 
 protocol GameViewProtocol: class {

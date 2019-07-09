@@ -55,11 +55,11 @@ class HomePresenter: HomePresenterProtocol {
         teams.append(Team(name: "화우"))
         teams.append(Team(name: "MSA"))
         
-        view?.updateTeams(teams)
+        view?.updateTeamTableView(with: teams)
         currentTeamIndex = (nil, nil)
     }
     
-    func didStartButtonTap() {
+    func didTapStartButton() {
         guard let homeTeamIndex = currentTeamIndex.home,
                 let awayTeamIndex = currentTeamIndex.away else { return }
         wireframe?.presentModule(source: view!,
@@ -67,30 +67,25 @@ class HomePresenter: HomePresenterProtocol {
                                                                 awayTeam: teams[awayTeamIndex])))
     }
     
-    func didNewTeamButtonTap() {
+    func didTapNewTeamButton() {
         view?.showTeamFormView = true
     }
     
-    func didNewHomePlayerButtonTap() {
-        isAddingHomePlayer = true
+    func didTapNewPlayerButton(of home: Bool) {
+        isAddingHomePlayer = home
         view?.showPlayerFormView = true
     }
     
-    func didNewAwayPlayerButtonTap() {
-        isAddingHomePlayer = false
-        view?.showPlayerFormView = true
-    }
-    
-    func didTeamFormCompleteButtonTap(name: String?) {
+    func didTapTeamFormCompleteButton(name: String?) {
         if let name = name, name != "" {
             let team = Team(name: name)
             teams.append(team)
-            view?.updateTeams(teams)
+            view?.updateTeamTableView(with: teams)
         }
         view?.showTeamFormView = false
     }
     
-    func didPlayerFormCompleteButtonTap(name: String?) {
+    func didTapPlayerFormCompleteButton(name: String?) {
         if let name = name, name != "", let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
             let player = Player(name: name)
             teams[index].players.append(player)
@@ -114,7 +109,7 @@ class HomePresenter: HomePresenterProtocol {
             if index == awayIndex { currentTeamIndex.away = nil }
             if index < awayIndex { currentTeamIndex.away = awayIndex-1 }
         }
-        view?.updateTeams(teams)
+        view?.updateTeamTableView(with: teams)
     }
     
     func didDeletePlayerAction(at index: Int, of home: Bool) {
@@ -130,7 +125,7 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func didTeamCellTap(at index: Int, onLeft: Bool) {
+    func didTapTeamCell(at index: Int, onLeft: Bool) {
         if onLeft {
             currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
         } else {
@@ -138,7 +133,7 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func didTeamCellDequeue() -> (home: Int?, away: Int?) {
+    func didDequeueTeamCell() -> (home: Int?, away: Int?) {
         return currentTeamIndex
     }
 }

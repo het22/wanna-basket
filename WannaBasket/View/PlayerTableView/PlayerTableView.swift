@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol PlayerTableViewDelegate {
     @objc optional func didDeletePlayerAction(at index: Int, of objectIdHash: Int)
-    func didPlayerCellTap(at index: Int, of objectIdHash: Int)
+    func didTapPlayerCell(at index: Int, of objectIdHash: Int)
 }
 
 class PlayerTableView: UITableView {
@@ -80,7 +80,7 @@ extension PlayerTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
-            _delegate?.didPlayerCellTap(at: indexPath.section, of: ObjectIdentifier(self).hashValue)
+            _delegate?.didTapPlayerCell(at: indexPath.section, of: ObjectIdentifier(self).hashValue)
         }
     }
     

@@ -9,8 +9,8 @@
 import UIKit
 
 protocol QuarterSelectViewDelegate {
-    func didQuarterSelect(quarterType: Quarter)
-    func didExitSelect()
+    func didSelectQuarter(quarterType: Quarter)
+    func didSelectExit()
 }
 
 class QuarterSelectView: UIView, NibLoadable {
@@ -46,7 +46,7 @@ class QuarterSelectView: UIView, NibLoadable {
             let view = ToggleView(frame: CGRect.zero)
             view.setup(name: "나가기", highlightColor: Constants.Color.Silver)
             hStack.addArrangedSubview(view)
-            let gesture = UITapGestureRecognizerWithClosure { self.delegate?.didExitSelect() }
+            let gesture = UITapGestureRecognizerWithClosure { self.delegate?.didSelectExit() }
             view.addGestureRecognizer(gesture)
             return view
         }()
@@ -59,7 +59,7 @@ class QuarterSelectView: UIView, NibLoadable {
             quarterView.isHighlighted = (currentQuarter == Quarter.Regular(i))
             hStack.insertArrangedSubview(quarterView, at: i-1)
             let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didQuarterSelect(quarterType: quarterType)
+                self.delegate?.didSelectQuarter(quarterType: quarterType)
             }
             quarterView.addGestureRecognizer(gesture)
             quarterView.widthAnchor.constraint(equalTo: exitView.widthAnchor, multiplier: 1.0).isActive = true

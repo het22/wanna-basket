@@ -35,19 +35,16 @@ class HomeView: UIViewController {
     }
     
     @IBAction func startButtonTapped() {
-        presenter?.didStartButtonTap()
+        presenter?.didTapStartButton()
     }
     
     @IBAction func newTeamButtonTapped() {
-        presenter?.didNewTeamButtonTap()
+        presenter?.didTapNewTeamButton()
     }
     
-    @IBAction func newHomePlayerButtonTapped() {
-        presenter?.didNewHomePlayerButtonTap()
-    }
-    
-    @IBAction func newAwayPlayerButtonTapped() {
-        presenter?.didNewAwayPlayerButtonTap()
+    @IBAction func newPlayerButtonTapped(sender: UIButton) {
+        let home = (sender == homePlayerAddButton)
+        presenter?.didTapNewPlayerButton(of: home)
     }
     
     private var backgroundView: UIView?
@@ -113,7 +110,7 @@ class HomeView: UIViewController {
 
 extension HomeView: HomeViewProtocol {
     
-    func updateTeams(_ teams: [Team]) {
+    func updateTeamTableView(with teams: [Team]) {
         teamTableView.reloadData(with: teams)
     }
     
@@ -149,23 +146,23 @@ extension HomeView: HomeViewProtocol {
 
 extension HomeView: TeamFormViewDelegate {
     
-    func didTeamFormCancelButtonTap() {
+    func didTapTeamFormCancelButton() {
         showTeamFormView = false
     }
     
-    func didTeamFormCompleteButtonTap(name: String?) {
-        presenter?.didTeamFormCompleteButtonTap(name: name)
+    func didTapTeamFormCompleteButton(name: String?) {
+        presenter?.didTapTeamFormCompleteButton(name: name)
     }
 }
 
 extension HomeView: PlayerFormViewDelegate {
     
-    func didPlayerFormCancelButtonTap() {
+    func didTapPlayerFormCancelButton() {
         showPlayerFormView = false
     }
     
-    func didPlayerFormCompleteButtonTap(name: String?) {
-        presenter?.didPlayerFormCompleteButtonTap(name: name)
+    func didTapPlayerFormCompleteButton(name: String?) {
+        presenter?.didTapPlayerFormCompleteButton(name: name)
     }
 }
 
@@ -175,12 +172,12 @@ extension HomeView: TeamTableViewDelegate {
         presenter?.didDeleteTeamAction(at: index)
     }
     
-    func didTeamCellDequeue() -> (home: Int?, away: Int?) {
-        return presenter?.didTeamCellDequeue() ?? (nil, nil)
+    func didDequeueTeamCell() -> (home: Int?, away: Int?) {
+        return presenter?.didDequeueTeamCell() ?? (nil, nil)
     }
     
-    func didTeamCellTap(at index: Int, onLeft: Bool) {
-        presenter?.didTeamCellTap(at: index, onLeft: onLeft)
+    func didTapTeamCell(at index: Int, onLeft: Bool) {
+        presenter?.didTapTeamCell(at: index, onLeft: onLeft)
     }
 }
 
@@ -191,7 +188,7 @@ extension HomeView: PlayerTableViewDelegate {
         presenter?.didDeletePlayerAction(at: index, of: home)
     }
     
-    func didPlayerCellTap(at index: Int, of objectIdHash: Int) {
+    func didTapPlayerCell(at index: Int, of objectIdHash: Int) {
         
     }
 }

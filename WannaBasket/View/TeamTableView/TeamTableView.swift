@@ -10,8 +10,8 @@ import UIKit
 
 protocol TeamTableViewDelegate {
     func didDeleteTeamAction(at index: Int)
-    func didTeamCellTap(at index: Int, onLeft: Bool)
-    func didTeamCellDequeue() -> (home: Int?, away: Int?)
+    func didTapTeamCell(at index: Int, onLeft: Bool)
+    func didDequeueTeamCell() -> (home: Int?, away: Int?)
 }
 
 class TeamTableView: UITableView {
@@ -70,7 +70,7 @@ extension TeamTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = cellForRow(at: indexPath) as? TeamTableViewCell {
-            _delegate?.didTeamCellTap(at: indexPath.section, onLeft: cell.tapOnLeft)
+            _delegate?.didTapTeamCell(at: indexPath.section, onLeft: cell.tapOnLeft)
         }
     }
     
@@ -110,7 +110,7 @@ extension TeamTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamTableViewCell
         cell.setup(name: teamList[indexPath.section].name)
-        if let currentTeamIndex = _delegate?.didTeamCellDequeue() {
+        if let currentTeamIndex = _delegate?.didDequeueTeamCell() {
             if let homeTeamIndex = currentTeamIndex.home {
                 cell.highlightOnLeft = (indexPath.section == homeTeamIndex)
             }

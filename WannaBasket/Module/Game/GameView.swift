@@ -41,37 +41,37 @@ class GameView: UIViewController {
     }
     
     @IBAction func quarterLabelTapped() {
-        presenter?.didQuarterLabelTap()
+        presenter?.didTapQuarterLabel()
     }
     
     @IBAction func gameClockLabelTapped() {
-        presenter?.didGameClockLabelTap()
+        presenter?.didTapGameClockLabel()
     }
     
     @IBAction func shotClockLabelTapped() {
-        presenter?.didShotClockLabelTap()
+        presenter?.didTapShotClockLabel()
     }
     
     @IBAction func clockControlButtonTapped(sender: UIButton) {
         guard let id = sender.accessibilityIdentifier,
               let control = ClockControl(rawValue: id) else { return }
-        presenter?.didClockControlButtonTap(control: control)
+        presenter?.didTapClockControlButton(control: control)
     }
     
     @IBAction func reset14ButtonTapped() {
-        presenter?.didReset14ButtonTap()
+        presenter?.didTapReset14Button()
     }
     
     @IBAction func reset24ButtonTapped() {
-        presenter?.didReset24ButtonTap()
+        presenter?.didTapReset24Button()
     }
     
     @IBAction func homeBenchButtonTapped() {
-        presenter?.didBenchButtonTap(of: true)
+        presenter?.didTapBenchButton(of: true)
     }
     
     @IBAction func awayBenchButtonTapped() {
-        presenter?.didBenchButtonTap(of: false)
+        presenter?.didTapBenchButton(of: false)
     }
     
     private var backgroundView: UIView?
@@ -162,30 +162,30 @@ extension GameView: GameViewProtocol {
 
 extension GameView: PlayerTableViewDelegate {
     
-    func didPlayerCellTap(at index: Int, of objectIdHash: Int) {
+    func didTapPlayerCell(at index: Int, of objectIdHash: Int) {
         let home = (objectIdHash == ObjectIdentifier(homePlayerTableView).hashValue)
-        presenter?.didPlayerCellTap(at: index, of: home)
+        presenter?.didTapPlayerCell(at: index, of: home)
     }
 }
 
 extension GameView: QuarterSelectViewDelegate {
     
-    func didQuarterSelect(quarterType: Quarter) {
-        presenter?.didQuarterSelect(quarterType: quarterType)
+    func didSelectQuarter(quarterType: Quarter) {
+        presenter?.didSelectQuarter(quarterType: quarterType)
     }
     
-    func didExitSelect() {
-        presenter?.didExitSelect()
+    func didSelectExit() {
+        presenter?.didSelectExit()
     }
 }
 
 extension GameView: StatSelectViewDelegate {
     
-    func didStatSelect(stat: Stat.Score) {
-        presenter?.didStatSelect(stat: stat)
+    func didSelectStat(stat: Stat.Score) {
+        presenter?.didSelectStat(stat: stat)
     }
     
-    func didUndoSelect() {
-        presenter?.didUndoSelect()
+    func didSelectUndo() {
+        presenter?.didSelectUndo()
     }
 }

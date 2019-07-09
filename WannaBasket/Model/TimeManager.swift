@@ -9,9 +9,9 @@
 import Foundation
 
 protocol GameTimeDelegate {
-    func didQuarterUpdate(quarter: Quarter)
-    func didGameClockUpdate(gameClock: Float, isRunning: Bool)
-    func didShotClockUpdate(shotClock: Float, isRunning: Bool)
+    func didSetQuarter(quarter: Quarter)
+    func didSetGameClock(gameClock: Float, isRunning: Bool)
+    func didSetShotClock(shotClock: Float, isRunning: Bool)
 }
 
 class TimeManager {
@@ -36,11 +36,11 @@ class TimeManager {
     var times: [Time] = []
     var currentQuarter: Quarter = .Regular(1) {
         didSet {
-            delegate?.didQuarterUpdate(quarter: currentQuarter)
+            delegate?.didSetQuarter(quarter: currentQuarter)
             isGameClockRunning = false
             isShotClockRunning = false
-            delegate?.didGameClockUpdate(gameClock: currentTime.gameClock, isRunning: false)
-            delegate?.didShotClockUpdate(shotClock: currentTime.shotClock, isRunning: false)
+            delegate?.didSetGameClock(gameClock: currentTime.gameClock, isRunning: false)
+            delegate?.didSetShotClock(shotClock: currentTime.shotClock, isRunning: false)
         }
     }
     var currentTime: Time {
@@ -85,7 +85,7 @@ class TimeManager {
         } else if currentTime.gameClock >= maxGameClock {
             currentTime.gameClock = maxGameClock
         }
-        delegate?.didGameClockUpdate(gameClock: currentTime.gameClock, isRunning: isGameClockRunning)
+        delegate?.didSetGameClock(gameClock: currentTime.gameClock, isRunning: isGameClockRunning)
     }
     
     func addShotClock(_ amount: Float) {
@@ -96,7 +96,7 @@ class TimeManager {
         } else if currentTime.shotClock >= maxShotClock {
             currentTime.shotClock = maxShotClock
         }
-        delegate?.didShotClockUpdate(shotClock: currentTime.shotClock, isRunning: isShotClockRunning)
+        delegate?.didSetShotClock(shotClock: currentTime.shotClock, isRunning: isShotClockRunning)
     }
     
     func resetGameClock(_ gameClock: Float) {
@@ -124,7 +124,7 @@ class TimeManager {
                                                       repeats: true)
             } else {
                 gameClockTimer?.invalidate()
-                delegate?.didGameClockUpdate(gameClock: currentTime.gameClock, isRunning: false)
+                delegate?.didSetGameClock(gameClock: currentTime.gameClock, isRunning: false)
             }
         }
     }
@@ -134,7 +134,7 @@ class TimeManager {
             currentTime.gameClock = 0.0
             isGameClockRunning = false
         }
-        delegate?.didGameClockUpdate(gameClock: currentTime.gameClock, isRunning: isGameClockRunning)
+        delegate?.didSetGameClock(gameClock: currentTime.gameClock, isRunning: isGameClockRunning)
     }
     
     private var shotClockTimer: Timer?
@@ -152,7 +152,7 @@ class TimeManager {
                                                       repeats: true)
             } else {
                 shotClockTimer?.invalidate()
-                delegate?.didShotClockUpdate(shotClock: currentTime.shotClock, isRunning: false)
+                delegate?.didSetShotClock(shotClock: currentTime.shotClock, isRunning: false)
             }
         }
     }
@@ -162,6 +162,6 @@ class TimeManager {
             currentTime.shotClock = 0.0
             isShotClockRunning = false
         }
-        delegate?.didShotClockUpdate(shotClock: currentTime.shotClock, isRunning: isShotClockRunning)
+        delegate?.didSetShotClock(shotClock: currentTime.shotClock, isRunning: isShotClockRunning)
     }
 }

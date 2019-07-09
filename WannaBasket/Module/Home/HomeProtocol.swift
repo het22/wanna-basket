@@ -36,18 +36,17 @@ protocol HomePresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     
-    func didStartButtonTap()
-    func didNewTeamButtonTap()
-    func didNewHomePlayerButtonTap()
-    func didNewAwayPlayerButtonTap()
+    func didTapStartButton()
+    func didTapNewTeamButton()
+    func didTapNewPlayerButton(of home: Bool)
     
-    func didTeamFormCompleteButtonTap(name: String?)
-    func didPlayerFormCompleteButtonTap(name: String?)
+    func didTapTeamFormCompleteButton(name: String?)
+    func didTapPlayerFormCompleteButton(name: String?)
     
     func didDeleteTeamAction(at index: Int)
     func didDeletePlayerAction(at index: Int, of home: Bool)
-    func didTeamCellDequeue() -> (home: Int?, away: Int?)
-    func didTeamCellTap(at index: Int, onLeft: Bool)
+    func didDequeueTeamCell() -> (home: Int?, away: Int?)
+    func didTapTeamCell(at index: Int, onLeft: Bool)
 }
 
 protocol HomeViewProtocol: class {
