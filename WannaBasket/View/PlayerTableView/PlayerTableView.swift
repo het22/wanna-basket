@@ -11,11 +11,14 @@ import UIKit
 @objc protocol PlayerTableViewDelegate {
     @objc optional func didDeletePlayerAction(at index: Int, of objectIdHash: Int)
     func didTapPlayerCell(at index: Int, of objectIdHash: Int)
+    @objc optional func didDeletePlayerAction(at index: Int, of home: Bool)
+    func didTapPlayerCell(at index: Int, of home: Bool)
 }
 
 class PlayerTableView: UITableView {
     
     var _delegate: PlayerTableViewDelegate?
+    var home = true
     
     @IBInspectable var placeholderNoTeam: String = "팀을 선택하세요"
     @IBInspectable var placeholderNoPlayer: String = "선수를 생성하세요"
@@ -80,7 +83,7 @@ extension PlayerTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
-            _delegate?.didTapPlayerCell(at: indexPath.section, of: ObjectIdentifier(self).hashValue)
+            _delegate?.didTapPlayerCell(at: indexPath.section, of: home)
         }
     }
     
@@ -89,7 +92,7 @@ extension PlayerTableView: UITableViewDelegate {
             return []
         }
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (UITableViewRowAction, IndexPath) in
-            didDeletePlayerAction(indexPath.section, ObjectIdentifier(self).hashValue)
+            didDeletePlayerAction(indexPath.section, self.home)
         }
         deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]

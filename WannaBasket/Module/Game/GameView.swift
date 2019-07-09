@@ -13,10 +13,16 @@ class GameView: UIViewController {
 	var presenter: GamePresenterProtocol?
     
     @IBOutlet weak var homePlayerTableView: PlayerTableView! {
-        didSet { homePlayerTableView._delegate = self }
+        didSet {
+            homePlayerTableView._delegate = self
+            homePlayerTableView.home = true
+        }
     }
     @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
-        didSet { awayPlayerTableView._delegate = self }
+        didSet {
+            awayPlayerTableView._delegate = self
+            awayPlayerTableView.home = false
+        }
     }
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var awayTeamNameLabel: UILabel!
@@ -168,8 +174,7 @@ extension GameView: GameViewProtocol {
 
 extension GameView: PlayerTableViewDelegate {
     
-    func didTapPlayerCell(at index: Int, of objectIdHash: Int) {
-        let home = (objectIdHash == ObjectIdentifier(homePlayerTableView).hashValue)
+    func didTapPlayerCell(at index: Int, of home: Bool) {
         presenter?.didTapPlayerCell(at: index, of: home)
     }
 }
