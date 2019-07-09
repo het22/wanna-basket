@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToggleView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
                 <outlet property="nameLabel" destination="eqc-cI-YfD" id="nFK-SF-PgN"/>
-                <outlet property="view" destination="xeh-yV-3xc" id="4AL-BY-Yo3"/>
+                <outlet property="underBarView" destination="m6u-j7-fsR" id="sNx-O9-Paq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -32,15 +32,24 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-j7-fsR">
+                    <rect key="frame" x="0.0" y="195" width="200" height="5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="ehR-NL-V6w"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="eqc-cI-YfD" firstAttribute="centerY" secondItem="xeh-yV-3xc" secondAttribute="centerY" id="3PM-VC-baz"/>
+                <constraint firstAttribute="trailing" secondItem="m6u-j7-fsR" secondAttribute="trailing" id="FCZ-0Z-Gr0"/>
                 <constraint firstItem="eqc-cI-YfD" firstAttribute="centerX" secondItem="xeh-yV-3xc" secondAttribute="centerX" id="VSz-xx-1ff"/>
+                <constraint firstAttribute="bottom" secondItem="m6u-j7-fsR" secondAttribute="bottom" id="Z5i-u4-Lm4"/>
+                <constraint firstItem="m6u-j7-fsR" firstAttribute="leading" secondItem="xeh-yV-3xc" secondAttribute="leading" id="h8O-yB-uNf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="iSl-lz-0Zt"/>
-            <point key="canvasLocation" x="210" y="-48"/>
+            <point key="canvasLocation" x="-42" y="-4"/>
         </view>
     </objects>
 </document>

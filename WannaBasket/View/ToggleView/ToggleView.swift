@@ -10,7 +10,7 @@ import UIKit
 
 class ToggleView: UIView, NibLoadable {
     
-    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var underBarView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -34,17 +34,19 @@ class ToggleView: UIView, NibLoadable {
         self.highlightColor = highlightColor
     }
     
-    private var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+    private var highlightColor: UIColor = Constants.Color.Black {
         didSet(oldVal) {
             layer.borderColor = highlightColor.cgColor
             nameLabel.textColor = highlightColor
+            underBarView.backgroundColor = highlightColor
         }
     }
     var isHighlighted: Bool = false {
         willSet(newVal) {
             if newVal == isHighlighted { return }
-            view.backgroundColor = newVal ? highlightColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            nameLabel.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : highlightColor
+            backgroundColor = newVal ? highlightColor : Constants.Color.White
+            nameLabel.textColor = newVal ? Constants.Color.White : highlightColor
+            underBarView.backgroundColor = newVal ? Constants.Color.White : highlightColor
         }
     }
 }

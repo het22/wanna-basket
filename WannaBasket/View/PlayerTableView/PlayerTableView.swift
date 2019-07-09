@@ -9,8 +9,6 @@
 import UIKit
 
 @objc protocol PlayerTableViewDelegate {
-    @objc optional func didDeletePlayerAction(at index: Int, of objectIdHash: Int)
-    func didTapPlayerCell(at index: Int, of objectIdHash: Int)
     @objc optional func didDeletePlayerAction(at index: Int, of home: Bool)
     func didTapPlayerCell(at index: Int, of home: Bool)
 }
@@ -124,7 +122,11 @@ extension PlayerTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
-        cell.setup(name: playerList![indexPath.section].name, highlightColor: highlightColor)
+        let player = playerList![indexPath.section]
+        cell.setup(home: home,
+                   name: player.name,
+                   number: player.number,
+                   highlightColor: highlightColor)
         return cell
     }
 }
