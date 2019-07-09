@@ -22,10 +22,10 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func viewDidLoad() {
-        let homeTeam = game.homeTeam
+        let homeTeam = game.teams.home
         view?.updatePlayerTableView(players: homeTeam.players, of: true)
         view?.updateTeamNameLabel(name: homeTeam.name, of: true)
-        let awayTeam = game.awayTeam
+        let awayTeam = game.teams.away
         view?.updatePlayerTableView(players: awayTeam.players, of: false)
         view?.updateTeamNameLabel(name: awayTeam.name, of: false)
         view?.updateQuarterLabel(game.timeManager.currentQuarter)
@@ -138,7 +138,7 @@ extension GamePresenter: GameDelegate {
     }
     
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
-        game.addRecords()
+        game.addRecords(playerTuple: playerTuple, stat: stat)
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
         }

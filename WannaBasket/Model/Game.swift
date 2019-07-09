@@ -19,12 +19,17 @@ class Game {
     
     var delegate: GameDelegate?
     
-    var homeTeam: Team
-    var awayTeam: Team
+    var teams: (home: Team, away: Team)
+    var scores: (home: Int, away: Int) {
+        return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
+            let score = record.stat.rawValue
+            let isHome = (record.team == self.teams.home)
+            return isHome ? (scores.0 + score, scores.1) : (scores.0, scores.1 + score)
+        }
+    }
     
     init(homeTeam: Team, awayTeam: Team) {
-        self.homeTeam = homeTeam
-        self.awayTeam = awayTeam
+        self.teams = (homeTeam, awayTeam)
     }
     
     var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
@@ -47,11 +52,8 @@ class Game {
     }
     
     var records: [RecordModel] = []
-    func addRecords() {
-        guard let playerTuple = currentPlayerTuple, let stat = currentStat else {
-            return
-        }
-        let team = playerTuple.home ? homeTeam : awayTeam
+    func addRecords(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+        let team = playerTuple.home ? teams.home : teams.away
         let record = Record(quarter: timeManager.currentTime,
                             home: playerTuple.home,
                             team: team,

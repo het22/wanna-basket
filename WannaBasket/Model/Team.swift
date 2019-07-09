@@ -14,7 +14,7 @@ protocol TeamModel {
     var players: [Player] {get set}
 }
 
-class Team: TeamModel {
+class Team: TeamModel, Equatable {
     var uuid: String
     var name: String
     var players: [Player]
@@ -23,5 +23,9 @@ class Team: TeamModel {
         self.uuid = ""
         self.name = name
         players = []
+    }
+
+    static func == (lhs: Team, rhs: Team) -> Bool {
+        return lhs.name == rhs.name
     }
 }

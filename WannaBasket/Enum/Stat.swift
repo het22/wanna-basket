@@ -9,10 +9,10 @@
 import Foundation
 
 enum Stat {
-    enum Score {
-        case One
-        case Two
-        case Three
+    enum Score: Int {
+        case One = 1
+        case Two = 2
+        case Three = 3
     }
     case Assist
     case Block
