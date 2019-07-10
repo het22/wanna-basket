@@ -81,12 +81,12 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapNewTeamButton() {
-        view?.showTeamFormView = true
+        view?.isShowingTeamFormView = true
     }
     
     func didTapNewPlayerButton(of home: Bool) {
         isAddingHomePlayer = home
-        view?.showPlayerFormView = true
+        view?.isShowingPlayerFormView = true
     }
     
     func didTapTeamFormCompleteButton(name: String?) {
@@ -95,7 +95,7 @@ class HomePresenter: HomePresenterProtocol {
             teams.append(team)
             view?.updateTeamTableView(teams: teams)
         }
-        view?.showTeamFormView = false
+        view?.isShowingTeamFormView = false
     }
     
     func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
@@ -113,7 +113,7 @@ class HomePresenter: HomePresenterProtocol {
                 view?.updateTeamNameLabel(name: team.name, of: isAddingHomePlayer)
             }
         }
-        view?.showPlayerFormView = false
+        view?.isShowingPlayerFormView = false
     }
     
     func didDeleteTeamAction(at index: Int) {

@@ -49,11 +49,11 @@ class HomeView: UIViewController {
     
     private var backgroundView: UIView?
     private var teamFormView: TeamFormView?
-    var showTeamFormView: Bool = false {
+    var isShowingTeamFormView: Bool = false {
         willSet(newVal) {
-            if newVal == showTeamFormView { return }
+            if newVal == isShowingTeamFormView { return }
             if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.showTeamFormView = false }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingTeamFormView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -78,11 +78,11 @@ class HomeView: UIViewController {
     }
     
     private var playerFormView: PlayerFormView?
-    var showPlayerFormView: Bool = false {
+    var isShowingPlayerFormView: Bool = false {
         willSet(newVal) {
-            if newVal == showPlayerFormView { return }
+            if newVal == isShowingPlayerFormView { return }
             if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.showPlayerFormView = false }
+                let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingPlayerFormView = false }
                 dismissGesture.numberOfTapsRequired = 1
                 
                 backgroundView = UIView(frame: view.bounds)
@@ -148,7 +148,7 @@ extension HomeView: HomeViewProtocol {
 extension HomeView: TeamFormViewDelegate {
     
     func didTapTeamFormCancelButton() {
-        showTeamFormView = false
+        isShowingTeamFormView = false
     }
     
     func didTapTeamFormCompleteButton(name: String?) {
@@ -159,7 +159,7 @@ extension HomeView: TeamFormViewDelegate {
 extension HomeView: PlayerFormViewDelegate {
     
     func didTapPlayerFormCancelButton() {
-        showPlayerFormView = false
+        isShowingPlayerFormView = false
     }
     
     func didTapPlayerFormCompleteButton(name: String?, number: Int?) {

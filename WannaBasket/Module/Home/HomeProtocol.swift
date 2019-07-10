@@ -64,6 +64,6 @@ protocol HomeViewProtocol: class {
     func enableHomePlayerAddButton(bool: Bool)
     func enableAwayPlayerAddButton(bool: Bool)
     
-    var showTeamFormView: Bool { get set }
-    var showPlayerFormView: Bool { get set }
+    var isShowingTeamFormView: Bool { get set }
+    var isShowingPlayerFormView: Bool { get set }
 }
