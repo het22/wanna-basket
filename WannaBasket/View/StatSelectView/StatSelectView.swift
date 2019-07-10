@@ -18,13 +18,12 @@ class StatSelectView: UIView, NibLoadable {
     var delegate: StatSelectViewDelegate?
     
     @IBOutlet weak var undoToggleView: ToggleView!
-    @IBOutlet weak var score1ToggleView: ToggleView!
-    @IBOutlet weak var score2ToggleView: ToggleView!
-    @IBOutlet weak var score3ToggleView: ToggleView!
+    @IBOutlet weak var pt1ToggleView: ToggleView!
+    @IBOutlet weak var pt2ToggleView: ToggleView!
+    @IBOutlet weak var pt3ToggleView: ToggleView!
     
-    lazy var views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
+    lazy var views = [undoToggleView, pt1ToggleView, pt2ToggleView, pt3ToggleView]
     lazy var stats = [nil, Stat.Score(.One), Stat.Score(.Two), Stat.Score(.Three)]
-    lazy var names = ["취소", "1점", "2점", "3점"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +39,7 @@ class StatSelectView: UIView, NibLoadable {
     
     func commonInit() {
         for i in 0...views.count-1 {
-            views[i]?.setup(name: names[i],
+            views[i]?.setup(name: i==0 ? "취소" : (stats[i]?.description ?? ""),
                             highlightColor: i==0 ? Constants.Color.Steel : Constants.Color.Black)
             let gesture = UITapGestureRecognizerWithClosure {
                 if let stat = self.stats[i] {
