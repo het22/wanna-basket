@@ -13,16 +13,10 @@ class GameView: UIViewController {
 	var presenter: GamePresenterProtocol?
     
     @IBOutlet weak var homePlayerTableView: PlayerTableView! {
-        didSet {
-            homePlayerTableView._delegate = self
-            homePlayerTableView.home = true
-        }
+        didSet { homePlayerTableView._delegate = self }
     }
     @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
-        didSet {
-            awayPlayerTableView._delegate = self
-            awayPlayerTableView.home = false
-        }
+        didSet { awayPlayerTableView._delegate = self }
     }
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var awayTeamNameLabel: UILabel!

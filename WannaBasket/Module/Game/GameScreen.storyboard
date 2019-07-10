@@ -125,6 +125,7 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-ZV-p8M" userLabel="Bar">
@@ -457,6 +458,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoTeam" value="팀이 선택되지 않았어요"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="선수를 교체하세요"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-jT-FNH" userLabel="Bar">

@@ -16,10 +16,8 @@ import UIKit
 class PlayerTableView: UITableView {
     
     var _delegate: PlayerTableViewDelegate?
-    var home = true
     
-    @IBInspectable var placeholderNoTeam: String = "Placeholder No Team"
-    @IBInspectable var placeholderNoPlayer: String = "Placeholder No Player"
+    @IBInspectable var ofHome: Bool = true
     @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 5
@@ -37,6 +35,8 @@ class PlayerTableView: UITableView {
         delegate = self
     }
     
+    @IBInspectable var placeholderNoTeam: String = "Placeholder No Team"
+    @IBInspectable var placeholderNoPlayer: String = "Placeholder No Player"
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.textColor = Constants.Color.Silver
@@ -50,12 +50,16 @@ class PlayerTableView: UITableView {
         label.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         return label
     }()
+    func showPlaceholder(with count: Int?) {
+        placeholderLabel.isHidden = (count != nil) && (count != 0)
+        if count == nil { placeholderLabel.text = placeholderNoTeam }
+        if count == 0 { placeholderLabel.text = placeholderNoPlayer }
+    }
     
-    private var playerList: [Player]?
+    private var playerList: [Player]? {
+        didSet { showPlaceholder(with: playerList?.count) }
+    }
     func reloadData(with playerList: [Player]?) {
-        placeholderLabel.isHidden = (playerList != nil) && (playerList?.count != 0)
-        if playerList == nil { placeholderLabel.text = placeholderNoTeam }
-        if playerList?.count == 0 { placeholderLabel.text = placeholderNoPlayer }
         self.playerList = playerList
         reloadData()
     }
@@ -81,7 +85,7 @@ extension PlayerTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
-            _delegate?.didTapPlayerCell(at: indexPath.section, of: home)
+            _delegate?.didTapPlayerCell(at: indexPath.section, of: ofHome)
         }
     }
     
@@ -90,7 +94,7 @@ extension PlayerTableView: UITableViewDelegate {
             return []
         }
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (UITableViewRowAction, IndexPath) in
-            didDeletePlayerAction(indexPath.section, self.home)
+            didDeletePlayerAction(indexPath.section, self.ofHome)
         }
         deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]
@@ -123,7 +127,7 @@ extension PlayerTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
         let player = playerList![indexPath.section]
-        cell.setup(home: home,
+        cell.setup(home: ofHome,
                    name: player.name,
                    number: player.number,
                    highlightColor: highlightColor)
