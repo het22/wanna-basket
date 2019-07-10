@@ -10,12 +10,12 @@ import Foundation
 
 enum Stat: Equatable {
     
-    case Score(_Score)
+    case Score(Point)
     case Assist
     case Block
     case Rebound
     
-    enum _Score: Int {
+    enum Point: Int {
         case One = 1
         case Two = 2
         case Three = 3
