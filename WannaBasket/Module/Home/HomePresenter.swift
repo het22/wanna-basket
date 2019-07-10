@@ -64,7 +64,7 @@ class HomePresenter: HomePresenterProtocol {
         teams.append(Team(name: "MSA"))
         
         view?.updateTeamTableView(with: teams)
-        currentTeamIndex = (nil, nil)
+        currentTeamIndex = (0, 1)
     }
     
     func didTapStartButton() {

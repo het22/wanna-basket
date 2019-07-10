@@ -22,6 +22,8 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
     func commonInit() {
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        rightArrow.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        leftArrow.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         selectionStyle = .none
     }
     
@@ -34,6 +36,7 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
             if newVal == highlightOnLeft { return }
             leftArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             leftArrow.backgroundColor = newVal ? Constants.Color.HomeDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            leftArrow.layer.borderWidth = newVal ? 1 : 0
         }
     }
     
@@ -42,6 +45,7 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
             if newVal == highlightOnRight { return }
             rightArrow.textColor = newVal ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             rightArrow.backgroundColor = newVal ? Constants.Color.AwayDefault : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            rightArrow.layer.borderWidth = newVal ? 1 : 0
         }
     }
 

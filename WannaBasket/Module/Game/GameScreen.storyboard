@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="736" height="22.666666666666668"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-B2-035">
-                                                <rect key="frame" x="0.0" y="0.0" width="31" height="22.666666666666668"/>
+                                                <rect key="frame" x="5" y="0.0" width="31" height="22.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqp-gM-jYK">
-                                                <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="22.666666666666668"/>
+                                                <rect key="frame" x="684.66666666666663" y="0.0" width="46.333333333333371" height="22.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -49,14 +49,14 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="UgP-B2-035" firstAttribute="leading" secondItem="NEm-JM-OMF" secondAttribute="leading" id="8Kg-5C-zd1"/>
+                                            <constraint firstItem="UgP-B2-035" firstAttribute="leading" secondItem="NEm-JM-OMF" secondAttribute="leading" constant="5" id="8Kg-5C-zd1"/>
                                             <constraint firstItem="3e5-JK-aZo" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="AIw-pr-CWx"/>
                                             <constraint firstAttribute="bottom" secondItem="Iqp-gM-jYK" secondAttribute="bottom" id="Aaw-JB-2ST"/>
                                             <constraint firstItem="Iqp-gM-jYK" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="H0b-GT-Cue"/>
                                             <constraint firstItem="UgP-B2-035" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="SfB-v4-GGe"/>
                                             <constraint firstItem="3e5-JK-aZo" firstAttribute="centerX" secondItem="NEm-JM-OMF" secondAttribute="centerX" id="Wc9-W6-gAg"/>
                                             <constraint firstAttribute="bottom" secondItem="UgP-B2-035" secondAttribute="bottom" id="XDk-Of-fvs"/>
-                                            <constraint firstAttribute="trailing" secondItem="Iqp-gM-jYK" secondAttribute="trailing" id="eq8-vr-aAc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iqp-gM-jYK" secondAttribute="trailing" constant="5" id="eq8-vr-aAc"/>
                                             <constraint firstAttribute="bottom" secondItem="3e5-JK-aZo" secondAttribute="bottom" id="tQr-1i-V4T"/>
                                         </constraints>
                                     </view>
@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="22.666666666666664" width="736" height="65.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="65.333333333333329"/>
+                                                <rect key="frame" x="5" y="0.0" width="241.66666666666666" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                                 </connections>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
-                                                <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="65.333333333333329"/>
+                                                <rect key="frame" x="489.33333333333331" y="0.0" width="241.66666666666669" height="65.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -89,12 +89,12 @@
                                         <constraints>
                                             <constraint firstItem="L0I-Kd-rAa" firstAttribute="leading" secondItem="ooT-Wl-SSq" secondAttribute="trailing" id="KaP-WY-oZK"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="centerX" secondItem="P9Z-ej-XiH" secondAttribute="centerX" id="NIO-J9-h6x"/>
-                                            <constraint firstAttribute="trailing" secondItem="L0I-Kd-rAa" secondAttribute="trailing" id="PJL-AV-Ijc"/>
+                                            <constraint firstAttribute="trailing" secondItem="L0I-Kd-rAa" secondAttribute="trailing" constant="5" id="PJL-AV-Ijc"/>
                                             <constraint firstAttribute="bottom" secondItem="Snx-rD-dpQ" secondAttribute="bottom" id="RgM-rh-McU"/>
                                             <constraint firstAttribute="bottom" secondItem="ooT-Wl-SSq" secondAttribute="bottom" id="Rv1-Jp-4wr"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="width" secondItem="P9Z-ej-XiH" secondAttribute="width" multiplier="0.33" id="XOz-tb-0wv"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="ceb-Y5-ee7"/>
-                                            <constraint firstItem="Snx-rD-dpQ" firstAttribute="leading" secondItem="P9Z-ej-XiH" secondAttribute="leading" id="jwy-rY-Av7"/>
+                                            <constraint firstItem="Snx-rD-dpQ" firstAttribute="leading" secondItem="P9Z-ej-XiH" secondAttribute="leading" constant="5" id="jwy-rY-Av7"/>
                                             <constraint firstItem="L0I-Kd-rAa" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="mEu-2t-aBI"/>
                                             <constraint firstItem="Snx-rD-dpQ" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="njE-EC-zls"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="leading" secondItem="Snx-rD-dpQ" secondAttribute="trailing" id="t0q-gU-ewD"/>
@@ -108,7 +108,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="326"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-fK-wdD" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="35" width="164" height="291"/>
+                                                        <rect key="frame" x="5" y="35" width="179" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -123,14 +123,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-ZV-p8M" userLabel="Bar">
-                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="326"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="326"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="15" id="jeB-h8-PII"/>
+                                                            <constraint firstAttribute="width" id="jeB-h8-PII"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm3-cW-Aw7">
-                                                        <rect key="frame" x="20" y="0.0" width="164" height="30"/>
+                                                        <rect key="frame" x="5" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Sd0-Bi-pfQ"/>
@@ -435,7 +435,7 @@
                                                 <rect key="frame" x="552" y="0.0" width="184" height="326"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-fn-OG7" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="35" width="164" height="291"/>
+                                                        <rect key="frame" x="0.0" y="35" width="179" height="291"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -450,14 +450,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-jT-FNH" userLabel="Bar">
-                                                        <rect key="frame" x="169" y="0.0" width="15" height="326"/>
+                                                        <rect key="frame" x="184" y="0.0" width="0.0" height="326"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="15" id="pnH-qT-9gE"/>
+                                                            <constraint firstAttribute="width" id="pnH-qT-9gE"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jB-E3-hk5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="9aw-cm-tm0"/>

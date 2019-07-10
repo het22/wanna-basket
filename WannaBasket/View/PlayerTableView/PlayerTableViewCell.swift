@@ -44,7 +44,7 @@ class PlayerTableViewCell: UITableViewCell, NibLoadable, Reusable {
         get { return _isHighlighted }
         set(newVal) {
             if newVal == _isHighlighted { return }
-            backgroundColor = newVal ? highlightColor : Constants.Color.White
+            nameLabel.backgroundColor = newVal ? highlightColor : Constants.Color.White
             nameLabel.textColor = newVal ? Constants.Color.White: Constants.Color.Black
             _isHighlighted = newVal
         }

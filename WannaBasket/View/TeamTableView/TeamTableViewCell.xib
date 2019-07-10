@@ -23,42 +23,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="476" height="110.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WQ-VL-5C0">
-                        <rect key="frame" x="30" y="0.0" width="416" height="110.5"/>
-                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-jd-s9S">
-                        <rect key="frame" x="0.0" y="0.0" width="30" height="110.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="30" id="8OB-Wx-hyj"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wr-od-7kL">
-                        <rect key="frame" x="446" y="0.0" width="30" height="110.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="30" id="gS5-ZS-eYn"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiX-3u-uKi">
+                        <rect key="frame" x="0.0" y="0.0" width="476" height="110.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-jd-s9S">
+                                <rect key="frame" x="0.0" y="0.0" width="83" height="110.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3fY-jd-s9S" secondAttribute="height" multiplier="0.75" id="NLg-RQ-a5n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WQ-VL-5C0">
+                                <rect key="frame" x="83" y="0.0" width="310" height="110.5"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wr-od-7kL">
+                                <rect key="frame" x="393" y="0.0" width="83" height="110.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0wr-od-7kL" secondAttribute="height" multiplier="0.75" id="e1L-ek-oyE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="0wr-od-7kL" secondAttribute="trailing" id="04d-UV-bdj"/>
-                    <constraint firstAttribute="bottom" secondItem="0wr-od-7kL" secondAttribute="bottom" id="56a-SN-BXw"/>
-                    <constraint firstItem="0WQ-VL-5C0" firstAttribute="top" secondItem="9iO-DH-0yN" secondAttribute="top" id="5X3-VE-umn"/>
-                    <constraint firstItem="3fY-jd-s9S" firstAttribute="leading" secondItem="9iO-DH-0yN" secondAttribute="leading" id="92b-II-Obv"/>
-                    <constraint firstAttribute="bottom" secondItem="3fY-jd-s9S" secondAttribute="bottom" id="EFr-dq-zU6"/>
-                    <constraint firstItem="3fY-jd-s9S" firstAttribute="top" secondItem="9iO-DH-0yN" secondAttribute="top" id="FVb-Vx-qul"/>
-                    <constraint firstItem="0wr-od-7kL" firstAttribute="top" secondItem="9iO-DH-0yN" secondAttribute="top" id="J7Y-GE-W7Y"/>
-                    <constraint firstAttribute="bottom" secondItem="0WQ-VL-5C0" secondAttribute="bottom" id="QSb-Pf-p23"/>
-                    <constraint firstItem="0wr-od-7kL" firstAttribute="leading" secondItem="0WQ-VL-5C0" secondAttribute="trailing" id="sNA-l8-9lU"/>
-                    <constraint firstItem="0WQ-VL-5C0" firstAttribute="leading" secondItem="3fY-jd-s9S" secondAttribute="trailing" id="vkE-zY-n4D"/>
+                    <constraint firstItem="MiX-3u-uKi" firstAttribute="top" secondItem="9iO-DH-0yN" secondAttribute="top" id="4e9-oX-aiK"/>
+                    <constraint firstItem="MiX-3u-uKi" firstAttribute="leading" secondItem="9iO-DH-0yN" secondAttribute="leading" id="86Q-Fx-J1k"/>
+                    <constraint firstAttribute="trailing" secondItem="MiX-3u-uKi" secondAttribute="trailing" id="npo-P8-R3e"/>
+                    <constraint firstAttribute="bottom" secondItem="MiX-3u-uKi" secondAttribute="bottom" id="tig-nb-bMm"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
