@@ -22,8 +22,8 @@ class HomeView: UIViewController {
         didSet { awayPlayerTableView._delegate = self }
     }
     
-    @IBOutlet weak var homeTeamLabel: UILabel!
-    @IBOutlet weak var awayTeamLabel: UILabel!
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
     
     @IBOutlet weak var gameStartButton: UIButton!
     @IBOutlet weak var homePlayerAddButton: UIButton!
@@ -114,19 +114,19 @@ extension HomeView: HomeViewProtocol {
         teamTableView.teamList = teams
     }
     
-    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool) {
-        teamTableView.highlightCell(at: index, onLeft: onLeft, bool: bool)
+    func updatePlayerTableView(players: [Player]?, of home: Bool) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.playerList = players
     }
     
-    func updateHomeTeam(_ team: Team?) {
-        homeTeamLabel.text = team?.name ?? Constants.Text.HomeDefault
-        homePlayerTableView.reloadData(with: team?.players ?? nil)
+    func updateTeamNameLabel(name: String?, of home: Bool) {
+        let teamNameLabel = home ? homeTeamNameLabel : awayTeamNameLabel
+        let defaultName = home ? Constants.Text.HomeDefault : Constants.Text.AwayDefault
+        teamNameLabel?.text = name ?? defaultName
     }
     
-    func updateAwayTeam(_ team: Team?) {
-        awayTeamLabel.text = team?.name ?? Constants.Text.AwayDefault
-        awayPlayerTableView.reloadData(with: team?.players ?? nil)
+    func highlightTeam(at index: Int, onLeft: Bool, bool: Bool) {
+        teamTableView.highlightCell(at: index, onLeft: onLeft, bool: bool)
     }
     
     func enableGameStartButton(bool: Bool) {
