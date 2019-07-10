@@ -115,7 +115,7 @@ extension GameView: GameViewProtocol {
     
     func updatePlayerTableView(players: [Player], of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
-        playerTableView?.reloadData(with: players)
+        playerTableView?.playerList = players
     }
     
     func updateTeamNameLabel(name: String, of home: Bool) {

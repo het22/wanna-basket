@@ -17,8 +17,13 @@ protocol TeamTableViewDelegate {
 class TeamTableView: UITableView {
     
     var _delegate: TeamTableViewDelegate?
+    var teamList: [Team] = [] {
+        didSet {
+            showPlaceholder(count: teamList.count)
+            reloadData()
+        }
+    }
     
-    @IBInspectable var placeholder: String = "Placeholder"
     @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 4.5
     
@@ -35,6 +40,7 @@ class TeamTableView: UITableView {
         delegate = self
     }
     
+    @IBInspectable var placeholder: String = "Placeholder"
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.text = placeholder
@@ -50,11 +56,8 @@ class TeamTableView: UITableView {
         return label
     }()
     
-    private var teamList: [Team] = []
-    func reloadData(with teamList: [Team]) {
-        placeholderLabel.isHidden = (teamList.count != 0)
-        self.teamList = teamList
-        reloadData()
+    func showPlaceholder(count: Int) {
+        placeholderLabel.isHidden = (count != 0)
     }
     
     func highlightCell(at index: Int, onLeft: Bool, bool: Bool) {

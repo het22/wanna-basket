@@ -16,6 +16,12 @@ import UIKit
 class PlayerTableView: UITableView {
     
     var _delegate: PlayerTableViewDelegate?
+    var playerList: [Player]? {
+        didSet {
+            showPlaceholder(with: playerList?.count)
+            reloadData()
+        }
+    }
     
     @IBInspectable var ofHome: Bool = true
     @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -50,18 +56,11 @@ class PlayerTableView: UITableView {
         label.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         return label
     }()
+    
     func showPlaceholder(with count: Int?) {
         placeholderLabel.isHidden = (count != nil) && (count != 0)
         if count == nil { placeholderLabel.text = placeholderNoTeam }
         if count == 0 { placeholderLabel.text = placeholderNoPlayer }
-    }
-    
-    private var playerList: [Player]? {
-        didSet { showPlaceholder(with: playerList?.count) }
-    }
-    func reloadData(with playerList: [Player]?) {
-        self.playerList = playerList
-        reloadData()
     }
     
     func highlightCell(at index: Int, bool: Bool) {

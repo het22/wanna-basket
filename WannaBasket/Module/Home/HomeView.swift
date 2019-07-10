@@ -110,12 +110,13 @@ class HomeView: UIViewController {
 
 extension HomeView: HomeViewProtocol {
     
-    func updateTeamTableView(with teams: [Team]) {
-        teamTableView.reloadData(with: teams)
+    func updateTeamTableView(teams: [Team]) {
+        teamTableView.teamList = teams
     }
     
     func highlightTeam(at index: Int, onLeft: Bool, bool: Bool) {
         teamTableView.highlightCell(at: index, onLeft: onLeft, bool: bool)
+        playerTableView?.playerList = players
     }
     
     func updateHomeTeam(_ team: Team?) {
