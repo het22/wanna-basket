@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StatSelectViewDelegate {
-    func didSelectStat(stat: Stat.Score)
+    func didSelectStat(stat: Stat)
     func didSelectUndo()
 }
 
@@ -23,7 +23,7 @@ class StatSelectView: UIView, NibLoadable {
     @IBOutlet weak var score3ToggleView: ToggleView!
     
     lazy var views = [undoToggleView, score1ToggleView, score2ToggleView, score3ToggleView]
-    lazy var stats = [nil, Stat.Score.One, Stat.Score.Two, Stat.Score.Three]
+    lazy var stats = [nil, Stat.Score(.One), Stat.Score(.Two), Stat.Score(.Three)]
     lazy var names = ["취소", "1점", "2점", "3점"]
     
     override init(frame: CGRect) {
@@ -54,14 +54,14 @@ class StatSelectView: UIView, NibLoadable {
         }
     }
     
-    func highlightCell(of stat: Stat.Score?, bool: Bool) {
-        if let index = stats.firstIndex(of: stat), let view = views[index] {
+    func highlightCell(of stat: Stat?, bool: Bool) {
+        if let index = stats.firstIndex(where: { $0==stat }), let view = views[index] {
             view.isHighlighted = bool
         }
     }
     
-    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?) {
-        if let index = stats.firstIndex(of: stat), let view = views[index] {
+    func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?) {
+        if let index = stats.firstIndex(where: { $0==stat }), let view = views[index] {
             self.isUserInteractionEnabled = false
             view.animateBlink { bool in
                 completion?(bool)

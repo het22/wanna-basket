@@ -103,7 +103,7 @@ class GamePresenter: GamePresenterProtocol {
         game.timeManager.resetShotClock(24.0)
     }
     
-    func didSelectStat(stat: Stat.Score) {
+    func didSelectStat(stat: Stat) {
         if let current = game.currentStat, current == stat {
             game.currentStat = nil
         } else {
@@ -128,7 +128,7 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didSetCurrentStat(oldStat: Stat.Score?, newStat: Stat.Score?) {
+    func didSetCurrentStat(oldStat: Stat?, newStat: Stat?) {
         if let oldStat = oldStat {
             view?.highlightStatCell(of: oldStat, bool: false)
         }
@@ -137,7 +137,7 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat.Score) {
+    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat) {
         game.addRecord(playerTuple: playerTuple, stat: stat)
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil

@@ -15,7 +15,7 @@ protocol RecordModel {
     var home: Bool { get set }
     var team: Team { get set }
     var player: Player { get set }
-    var stat: Stat.Score { get set }
+    var stat: Stat { get set }
 }
 
 struct Record: RecordModel, CustomStringConvertible {
@@ -23,7 +23,7 @@ struct Record: RecordModel, CustomStringConvertible {
     var home: Bool
     var team: Team
     var player: Player
-    var stat: Stat.Score
+    var stat: Stat
     
     var description: String {
         get {

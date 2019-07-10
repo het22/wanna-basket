@@ -147,7 +147,7 @@ extension GameView: GameViewProtocol {
         playerTableView?.highlightCell(at: index, bool: bool)
     }
     
-    func highlightStatCell(of stat: Stat.Score?, bool: Bool) {
+    func highlightStatCell(of stat: Stat?, bool: Bool) {
         statSelectView.highlightCell(of: stat, bool: bool)
     }
     
@@ -161,7 +161,7 @@ extension GameView: GameViewProtocol {
         playerTableView?.blinkCell(at: index, completion: completion)
     }
     
-    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?) {
+    func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?) {
         statSelectView.blinkStatCell(of: stat, completion: completion)
     }
 }
@@ -186,7 +186,7 @@ extension GameView: QuarterSelectViewDelegate {
 
 extension GameView: StatSelectViewDelegate {
     
-    func didSelectStat(stat: Stat.Score) {
+    func didSelectStat(stat: Stat) {
         presenter?.didSelectStat(stat: stat)
     }
     

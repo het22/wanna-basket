@@ -48,7 +48,7 @@ protocol GamePresenterProtocol: class {
     func didTapReset14Button()
     func didTapReset24Button()
     
-    func didSelectStat(stat: Stat.Score)
+    func didSelectStat(stat: Stat)
     func didSelectUndo()
 }
 
@@ -69,9 +69,9 @@ protocol GameViewProtocol: class {
     func updateShotClockLabel(_ shotClock: Float, isRunning: Bool)
     
     func highlightPlayerCell(at index: Int, of home: Bool, bool: Bool)
-    func highlightStatCell(of stat: Stat.Score?, bool: Bool)
+    func highlightStatCell(of stat: Stat?, bool: Bool)
     
     func blinkScoreLabel(of home: Bool, completion: ((Bool)->Void)?)
     func blinkPlayerCell(at index: Int, of home: Bool, completion: ((Bool)->Void)?)
-    func blinkStatCell(of stat: Stat.Score?, completion: ((Bool)->Void)?)
+    func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?)
 }

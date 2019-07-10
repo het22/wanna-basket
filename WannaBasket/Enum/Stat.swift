@@ -8,13 +8,16 @@
 
 import Foundation
 
-enum Stat {
-    enum Score: Int {
+enum Stat: Equatable {
+    
+    case Score(_Score)
+    case Assist
+    case Block
+    case Rebound
+    
+    enum _Score: Int {
         case One = 1
         case Two = 2
         case Three = 3
     }
-    case Assist
-    case Block
-    case Rebound
 }
