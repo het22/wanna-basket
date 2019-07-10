@@ -21,14 +21,7 @@ enum Stat: Equatable, CustomStringConvertible {
         case Three = 3
         
         var description: String {
-            switch self {
-            case .One:
-                return "1점"
-            case .Two:
-                return "2점"
-            case .Three:
-                return "3점"
-            }
+            return "\(self.rawValue)점"
         }
     }
     
