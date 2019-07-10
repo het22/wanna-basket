@@ -18,15 +18,14 @@ class TeamTableView: UITableView {
     
     var _delegate: TeamTableViewDelegate?
     
-    @IBInspectable var placeholder: String = "팀을 생성하세요"
-    @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    @IBInspectable var spacing: CGFloat = 5
+    @IBInspectable var placeholder: String = "Placeholder"
+    @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 4.5
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: spacing, right: 0)
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: cellSpacing, right: 0)
         alwaysBounceVertical = true
         showsVerticalScrollIndicator = false
         separatorStyle = .none
@@ -99,11 +98,11 @@ extension TeamTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section==0 ? 0 : spacing
+        return section==0 ? 0 : cellSpacing
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellHeight = bounds.height / cellCount - spacing
+        let cellHeight = bounds.height / cellCount - cellSpacing
         return cellHeight
     }
     
