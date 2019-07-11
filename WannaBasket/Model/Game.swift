@@ -13,6 +13,8 @@ protocol GameDelegate {
     func didSetCurrentStat(oldStat: Stat?, newStat: Stat?)
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat)
     
+    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool)
+    
     func didAddRecord(record: RecordModel)
     func didRemoveLastRecord(record: RecordModel)
 }
@@ -21,6 +23,7 @@ class Game {
     
     var delegate: GameDelegate?
     
+    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     var teams: (home: Team, away: Team)
     var scores: (home: Int, away: Int) {
         return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
@@ -37,8 +40,6 @@ class Game {
         self.teams = (homeTeam, awayTeam)
     }
     
-    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
-    
     var currentPlayerTuple: (home: Bool, index: Int)? {
         didSet(oldTuple) {
             delegate?.didSetCurrentPlayerTuple(oldTuple: oldTuple, newTuple: currentPlayerTuple)
@@ -54,6 +55,23 @@ class Game {
                 delegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
             }
         }
+    }
+    
+    let maxFloorPlayerCount = 5
+    var floorPlayerIndexes: (home: [Int], away: [Int]) = ([],[])
+    func substitutePlayer(index: Int, of home: Bool) {
+        var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
+        if let i = indexes.firstIndex(of: index) {
+            indexes.remove(at: i)
+            delegate?.didSubstitutePlayer(index: index, of: home, floor: false)
+        } else {
+            if indexes.count <= maxFloorPlayerCount {
+                indexes.append(index)
+                delegate?.didSubstitutePlayer(index: index, of: home, floor: true)
+            }
+        }
+        if home { floorPlayerIndexes.home = indexes }
+        else { floorPlayerIndexes.away = indexes }
     }
     
     var records: [RecordModel] = []
