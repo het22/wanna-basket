@@ -11,6 +11,7 @@ import Foundation
 let gameClockFormat: NumberFormatter = {
     let format = NumberFormatter()
     format.numberStyle = .decimal
+    format.minimumIntegerDigits = 2
     format.maximumIntegerDigits = 2
     return format
 }()
