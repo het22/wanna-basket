@@ -18,6 +18,9 @@ class TeamFormView: UIView, NibLoadable {
     var delegate: TeamFormViewDelegate?
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var leftArrowLabel: UILabel!
+    @IBOutlet weak var rightArrowLabel: UILabel!
+    @IBOutlet weak var buttonView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,12 +35,11 @@ class TeamFormView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        layer.borderColor = Constants.Color.Steel.cgColor
-        layer.borderWidth = 1
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
-        
-        nameTextField.becomeFirstResponder()
+        nameTextField.delegate = self
+        [self, buttonView].forEach {
+            $0?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            $0?.layer.borderWidth = 1
+        }
     }
     
     @IBAction func cancelButtonTapped() {
@@ -46,5 +48,13 @@ class TeamFormView: UIView, NibLoadable {
     
     @IBAction func completeButtonTapped() {
         delegate?.didTapTeamFormCompleteButton(name: nameTextField.text)
+    }
+}
+
+extension TeamFormView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        delegate?.didTapTeamFormCompleteButton(name: textField.text)
+        return true
     }
 }

@@ -17,69 +17,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamFormView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
-                <outlet property="nameTextField" destination="6aw-UK-b7J" id="GDj-hl-bkt"/>
+                <outlet property="buttonView" destination="K5l-V0-eDk" id="x6P-4g-Vme"/>
+                <outlet property="leftArrowLabel" destination="vC1-ig-3re" id="BkD-pj-wee"/>
+                <outlet property="nameTextField" destination="ZOi-Zz-yNh" id="QZJ-gc-IXg"/>
+                <outlet property="rightArrowLabel" destination="maC-iH-yBT" id="mgL-dQ-txa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="AddTeamView" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="451" height="186"/>
+            <rect key="frame" x="0.0" y="0.0" width="451" height="130"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eUu-VP-1n2">
-                    <rect key="frame" x="0.0" y="0.0" width="451" height="186"/>
+                    <rect key="frame" x="0.0" y="0.0" width="451" height="130"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-Au-EdV" userLabel="Up">
-                            <rect key="frame" x="0.0" y="0.0" width="451" height="133"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="186-X6-e9G">
+                            <rect key="frame" x="0.0" y="0.0" width="451" height="74.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-oL-sqD">
-                                    <rect key="frame" x="90" y="21.5" width="271" height="90"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 팀 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bni-az-gNv">
-                                            <rect key="frame" x="0.0" y="0.0" width="271" height="40"/>
-                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-JZ-aYa">
-                                            <rect key="frame" x="0.0" y="60" width="61" height="30"/>
-                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="새로운 팀 이름" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-UK-b7J">
-                                            <rect key="frame" x="71" y="60" width="200" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="200" id="wox-GS-cL4"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vC1-ig-3re">
+                                    <rect key="frame" x="0.0" y="0.0" width="55.5" height="74.5"/>
                                     <constraints>
-                                        <constraint firstItem="bni-az-gNv" firstAttribute="leading" secondItem="FDd-oL-sqD" secondAttribute="leading" id="Etx-hK-kjl"/>
-                                        <constraint firstItem="Iyb-JZ-aYa" firstAttribute="leading" secondItem="FDd-oL-sqD" secondAttribute="leading" id="G1r-Ym-Tex"/>
-                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="top" secondItem="bni-az-gNv" secondAttribute="bottom" constant="20" id="HNc-xa-RVU"/>
-                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="leading" secondItem="Iyb-JZ-aYa" secondAttribute="trailing" constant="10" id="LQH-c2-ZPT"/>
-                                        <constraint firstAttribute="trailing" secondItem="6aw-UK-b7J" secondAttribute="trailing" id="Mhd-Hl-Nyd"/>
-                                        <constraint firstAttribute="bottom" secondItem="6aw-UK-b7J" secondAttribute="bottom" id="NgQ-4V-6rN"/>
-                                        <constraint firstItem="bni-az-gNv" firstAttribute="top" secondItem="FDd-oL-sqD" secondAttribute="top" id="OwO-Qz-yz5"/>
-                                        <constraint firstAttribute="trailing" secondItem="bni-az-gNv" secondAttribute="trailing" id="UFC-PO-PaV"/>
-                                        <constraint firstItem="6aw-UK-b7J" firstAttribute="height" secondItem="Iyb-JZ-aYa" secondAttribute="height" id="WVp-Ls-zaF"/>
-                                        <constraint firstAttribute="bottom" secondItem="Iyb-JZ-aYa" secondAttribute="bottom" id="rbg-b5-GBp"/>
+                                        <constraint firstAttribute="width" secondItem="vC1-ig-3re" secondAttribute="height" multiplier="0.75" id="pxX-lJ-hin"/>
                                     </constraints>
-                                </view>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="팀 이름 입력" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZOi-Zz-yNh">
+                                    <rect key="frame" x="55.5" y="0.0" width="340" height="74.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done" textContentType="name"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-iH-yBT">
+                                    <rect key="frame" x="395.5" y="0.0" width="55.5" height="74.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="maC-iH-yBT" secondAttribute="height" multiplier="0.75" id="DpS-J3-ROI"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="FDd-oL-sqD" firstAttribute="centerX" secondItem="yHt-Au-EdV" secondAttribute="centerX" id="6wY-Ve-6re"/>
-                                <constraint firstItem="FDd-oL-sqD" firstAttribute="centerY" secondItem="yHt-Au-EdV" secondAttribute="centerY" id="Ozo-YT-IP3"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-V0-eDk" userLabel="Down">
-                            <rect key="frame" x="0.0" y="133" width="451" height="53"/>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5l-V0-eDk" userLabel="Button View">
+                            <rect key="frame" x="0.0" y="74.5" width="451" height="55.5"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-FW-5Qp">
-                                    <rect key="frame" x="0.0" y="0.0" width="225.5" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="55.5"/>
                                     <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                     <state key="normal" title="취소">
@@ -90,7 +75,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-6U-y9A">
-                                    <rect key="frame" x="225.5" y="0.0" width="225.5" height="53"/>
+                                    <rect key="frame" x="226" y="0.0" width="225" height="55.5"/>
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                     <state key="normal" title="완료">
@@ -101,7 +86,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="1eS-FW-5Qp" secondAttribute="bottom" id="0TM-we-mXs"/>
                                 <constraint firstItem="1eS-FW-5Qp" firstAttribute="top" secondItem="K5l-V0-eDk" secondAttribute="top" id="VbA-mY-aOJ"/>
@@ -110,12 +95,12 @@
                                 <constraint firstAttribute="trailing" secondItem="WkK-6U-y9A" secondAttribute="trailing" id="aff-rN-7zT"/>
                                 <constraint firstItem="1eS-FW-5Qp" firstAttribute="leading" secondItem="K5l-V0-eDk" secondAttribute="leading" id="eLz-Ml-pcm"/>
                                 <constraint firstAttribute="bottom" secondItem="WkK-6U-y9A" secondAttribute="bottom" id="hbj-l2-a6b"/>
-                                <constraint firstItem="WkK-6U-y9A" firstAttribute="leading" secondItem="1eS-FW-5Qp" secondAttribute="trailing" id="nO9-cs-4a3"/>
+                                <constraint firstItem="WkK-6U-y9A" firstAttribute="leading" secondItem="1eS-FW-5Qp" secondAttribute="trailing" constant="1" id="nO9-cs-4a3"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="K5l-V0-eDk" firstAttribute="height" secondItem="yHt-Au-EdV" secondAttribute="height" multiplier="0.4" id="iJt-tz-khN"/>
+                        <constraint firstItem="K5l-V0-eDk" firstAttribute="height" secondItem="186-X6-e9G" secondAttribute="height" multiplier="0.75" id="U0i-5z-Nmd"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -128,7 +113,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="96.5625" y="-203.75"/>
+            <point key="canvasLocation" x="96.5625" y="-238.75"/>
         </view>
     </objects>
 </document>
