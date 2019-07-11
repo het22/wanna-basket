@@ -59,6 +59,11 @@ class Game {
     
     let maxFloorPlayerCount = 5
     var floorPlayerIndexes: (home: [Int], away: [Int]) = ([],[])
+    var floorPlayers: (home: [Player], away: [Player]) {
+        let homeFloorPlayers = teams.home.getPlayers(with: floorPlayerIndexes.home)
+        let awayFloorPlayers = teams.away.getPlayers(with: floorPlayerIndexes.away)
+        return (homeFloorPlayers, awayFloorPlayers)
+    }
     func substitutePlayer(index: Int, of home: Bool) {
         var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
         if let i = indexes.firstIndex(of: index) {
