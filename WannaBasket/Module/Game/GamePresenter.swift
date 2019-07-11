@@ -45,20 +45,27 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func viewDidLoad() {
-        let homeTeam = game.teams.home
-        view?.updatePlayerTableView(players: homeTeam.players, of: true)
-        view?.updateTeamNameLabel(name: homeTeam.name, of: true)
-        let awayTeam = game.teams.away
-        view?.updatePlayerTableView(players: awayTeam.players, of: false)
-        view?.updateTeamNameLabel(name: awayTeam.name, of: false)
+        view?.updateTeamNameLabel(name: game.teams.home.name, of: true)
+        view?.updateTeamNameLabel(name: game.teams.away.name, of: false)
+        view?.updatePlayerTableView(players: game.floorPlayers.home, of: true)
+        view?.updatePlayerTableView(players: game.floorPlayers.away, of: false)
         view?.updateQuarterLabel(game.timeManager.currentQuarter)
     }
     
-    func didTapPlayerCell(at index: Int, of home: Bool) {
-        if let current = game.currentPlayerTuple, current == (home, index) {
-            game.currentPlayerTuple = nil
+    func didDequeuePlayerCell(of home: Bool) -> [Int] {
+        let isSbsting = home ? isSubstituting.home : isSubstituting.away
+        if isSbsting {
+            return home ? game.floorPlayerIndexes.home : game.floorPlayerIndexes.away
         } else {
-            game.currentPlayerTuple = (home, index)
+//            if let index = game.currentPlayerTuple?.index {
+//                return [index]
+//            } else {
+//                return []
+//            }
+            return []
+        }
+    }
+    
     func didTapSubstituteButton(of home: Bool) {
         if let currentPlayerHome = game.currentPlayerTuple?.home, currentPlayerHome == home {
             game.currentPlayerTuple = nil
