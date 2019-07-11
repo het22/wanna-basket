@@ -191,4 +191,8 @@ extension HomeView: PlayerTableViewDelegate {
     func didTapPlayerCell(at index: Int, of home: Bool) {
         
     }
+    
+    func didDequeuePlayerCell(of home: Bool) -> [Int] {
+        return []
+    }
 }

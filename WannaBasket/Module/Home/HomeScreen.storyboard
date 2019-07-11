@@ -132,9 +132,10 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
-                                                                <real key="value" value="4.5"/>
+                                                                <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-UG-52x">
@@ -175,7 +176,7 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
-                                                                <real key="value" value="4.5"/>
+                                                                <real key="value" value="5.5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
@@ -228,9 +229,10 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
-                                                                <real key="value" value="4.5"/>
+                                                                <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-SS-WRo">
