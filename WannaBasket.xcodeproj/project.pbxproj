@@ -11,6 +11,7 @@
 		3826D846CFF9B74130DA5907 /* Pods_WannaBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEED1CBA0688A1F70F232AF /* Pods_WannaBasket.framework */; };
 		94017A0DF400F7160CABE054 /* Pods_WannaBasketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19B4D980A9D39271B31F6A6 /* Pods_WannaBasketUITests.framework */; };
 		CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0652D722B9B99200330DD7 /* Wireframe.storyboard */; };
+		CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -95,6 +96,7 @@
 		31D37E559C1328722D7FB561 /* Pods-WannaBasketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketTests/Pods-WannaBasketTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6CD3CA312644EA1D6F143EA /* Pods-WannaBasketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketUITests/Pods-WannaBasketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0652D722B9B99200330DD7 /* Wireframe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wireframe.storyboard; sourceTree = "<group>"; };
+		CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */,
 				CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */,
 				CBC6F06122D32DDE0021A11D /* UIView+Extension.swift */,
+				CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */,
 				CBFA01A622B89E7C00F71C7B /* Module.swift in Sources */,
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
+				CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
 				CBC6F03D22CDEC8A0021A11D /* PlayerTableView.swift in Sources */,
 				CBC6F05322CF063B0021A11D /* Stat.swift in Sources */,
