@@ -72,10 +72,8 @@ class GameView: UIViewController {
     
     private var backgroundView: UIView?
     private var quarterSelectView: QuarterSelectView?
-    private var isShowingQuaterSelectView: Bool = false
     func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool) {
-        if bool == isShowingQuaterSelectView { return }
-        isShowingQuaterSelectView = bool
+        if bool == (quarterSelectView != nil) { return }
         if bool {
             let dismissGesture = UITapGestureRecognizerWithClosure {
                 self.showQuarterSelectView(maxRegularQuarterNum: maxRegularQuarterNum,
