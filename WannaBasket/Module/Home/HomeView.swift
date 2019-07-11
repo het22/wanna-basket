@@ -66,9 +66,11 @@ class HomeView: UIViewController {
                 teamFormView?.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(teamFormView!)
                 
+                let centerYConstraint = teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+                teamFormView?.centerYConstraint = centerYConstraint
                 NSLayoutConstraint.activate([
                     teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0),
+                    centerYConstraint,
                     teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                     teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
             } else {
@@ -96,11 +98,13 @@ class HomeView: UIViewController {
                 playerFormView?.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(playerFormView!)
                 
+                let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+                playerFormView!.centerYConstraint = centerYConstraint
                 NSLayoutConstraint.activate([
                     playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0),
-                    playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-                    playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)])
+                    centerYConstraint,
+                    playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.55),
+                    playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)])
             } else {
                 backgroundView?.removeFromSuperview()
                 playerFormView?.removeFromSuperview()
@@ -125,6 +129,7 @@ extension HomeView: HomeViewProtocol {
         let teamNameLabel = home ? homeTeamNameLabel : awayTeamNameLabel
         let defaultName = home ? Constants.Text.HomeDefault : Constants.Text.AwayDefault
         teamNameLabel?.text = name ?? defaultName
+        teamNameLabel?.alpha = (name==nil) ? 0.5 : 1.0
     }
     
     func highlightTeam(at index: Int, onLeft: Bool, bool: Bool) {
