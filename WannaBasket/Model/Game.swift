@@ -35,7 +35,6 @@ class Game {
             return scores
         }
     }
-    
     init(homeTeam: Team, awayTeam: Team) {
         self.teams = (homeTeam, awayTeam)
     }
@@ -70,7 +69,7 @@ class Game {
             indexes.remove(at: i)
             delegate?.didSubstitutePlayer(index: index, of: home, floor: false)
         } else {
-            if indexes.count <= maxFloorPlayerCount {
+            if indexes.count < maxFloorPlayerCount {
                 indexes.append(index)
                 delegate?.didSubstitutePlayer(index: index, of: home, floor: true)
             }
