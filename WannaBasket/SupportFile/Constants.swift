@@ -23,5 +23,7 @@ enum Constants {
     enum Text {
         static let HomeDefault = "홈팀"
         static let AwayDefault = "원정팀"
+        static let Substitute = "교체"
+        static let SubstituteComplete = "교체 완료"
     }
 }
