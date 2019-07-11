@@ -22,6 +22,9 @@ class GameView: UIViewController {
     @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var homeTeamScoreLabel: UILabel!
     @IBOutlet weak var awayTeamScoreLabel: UILabel!
+    @IBOutlet weak var homeSubstituteButton: UIButton!
+    @IBOutlet weak var awaySubstituteButton: UIButton!
+    
     
     @IBOutlet weak var quarterLabel: UILabel!
     @IBOutlet weak var gameClockLabel: UILabel!
@@ -62,12 +65,9 @@ class GameView: UIViewController {
         presenter?.didTapReset24Button()
     }
     
-    @IBAction func homeBenchButtonTapped() {
-        presenter?.didTapBenchButton(of: true)
-    }
-    
-    @IBAction func awayBenchButtonTapped() {
-        presenter?.didTapBenchButton(of: false)
+    @IBAction func substituteButtonTapped(sender: UIButton) {
+        let home = (sender == homeSubstituteButton)
+        presenter?.didTapSubstituteButton(of: home)
     }
     
     private var backgroundView: UIView?
@@ -126,6 +126,11 @@ extension GameView: GameViewProtocol {
         teamScoreLabel?.text = scoreFormat.string(from: NSNumber(value: score))!
     }
     
+    func updateSubstituteButton(bool: Bool, of home: Bool) {
+        let button = home ? homeSubstituteButton : awaySubstituteButton
+        button?.setTitle(bool ? "교체 완료" : "교체", for: .normal)
+    }
+    
     func updateQuarterLabel(_ quarter: Quarter) {
         quarterLabel.text = "\(quarter)"
     }
@@ -162,12 +167,21 @@ extension GameView: GameViewProtocol {
     func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?) {
         statSelectView.blinkStatCell(of: stat, completion: completion)
     }
+    
+    func enableScrollingPlayerTableView(of home: Bool, bool: Bool) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
+        playerTableView?.isCustomScrollEnabled = bool
+    }
 }
 
 extension GameView: PlayerTableViewDelegate {
     
     func didTapPlayerCell(at index: Int, of home: Bool) {
         presenter?.didTapPlayerCell(at: index, of: home)
+    }
+    
+    func didDequeuePlayerCell(of home: Bool) -> [Int] {
+        return presenter?.didDequeuePlayerCell(of: home) ?? []
     }
 }
 
