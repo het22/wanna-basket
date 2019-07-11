@@ -32,12 +32,8 @@ class QuarterSelectView: UIView, NibLoadable {
     }
     
     func commonInit() {
-        layer.borderColor = Constants.Color.Steel.cgColor
+        layer.borderColor = Constants.Color.Black.cgColor
         layer.borderWidth = 1
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
-        
-        hStack.spacing = 5
     }
     
     func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarter: Quarter) {
