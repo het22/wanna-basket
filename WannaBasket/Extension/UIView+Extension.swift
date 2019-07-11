@@ -12,8 +12,7 @@ extension UIView {
     
     func animateBlink(completion: ((Bool)->Void)?) {
         let duration = 0.4
-        let delay = 0.0
-        UIView.animate(withDuration: duration/4, delay: delay, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: duration/4, delay: 0.0, options: [.repeat, .autoreverse], animations: {
             self.alpha = 0.5
         }, completion: { bool in
             self.alpha = 1.0
@@ -22,6 +21,19 @@ extension UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + (duration)) {
             self.layer.removeAllAnimations()
         }
+    }
+    
+    func animateShake(completion: ((Bool)->Void)?) {
+        let midX = self.center.x
+        let midY = self.center.y
+        let offset: CGFloat = 8
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 2
+        animation.fromValue = CGPoint(x: midX - offset, y: midY)
+        animation.toValue = CGPoint(x: midX + offset, y: midY)
+        animation.autoreverses = true
+        layer.add(animation, forKey: "animateShake")
     }
     
     func animateGradient(completion: ((Bool)->Void)?) {
