@@ -35,8 +35,9 @@ protocol GamePresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     
+    func didDequeuePlayerCell(of home: Bool) -> [Int]
     func didTapPlayerCell(at index: Int, of home: Bool)
-    func didTapBenchButton(of home: Bool)
+    func didTapSubstituteButton(of home: Bool)
     
     func didTapQuarterLabel()
     func didSelectQuarter(quarterType: Quarter)
@@ -62,6 +63,7 @@ protocol GameViewProtocol: class {
     func updatePlayerTableView(players: [Player], of home: Bool)
     func updateTeamNameLabel(name: String, of home: Bool)
     func updateTeamScoreLabel(score: Int, of home: Bool)
+    func updateSubstituteButton(bool: Bool, of home: Bool)
     
     func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool)
     func updateQuarterLabel(_ quarter: Quarter)
@@ -74,4 +76,6 @@ protocol GameViewProtocol: class {
     func blinkScoreLabel(of home: Bool, completion: ((Bool)->Void)?)
     func blinkPlayerCell(at index: Int, of home: Bool, completion: ((Bool)->Void)?)
     func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?)
+    
+    func enableScrollingPlayerTableView(of home: Bool, bool: Bool)
 }
