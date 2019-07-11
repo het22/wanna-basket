@@ -24,6 +24,16 @@ class Team: TeamModel, Equatable {
         self.name = name
         players = []
     }
+    
+    func getPlayers(with indexes: [Int]) -> [Player] {
+        var players = [Player]()
+        indexes.forEach {
+            if let player = self.players[safe: $0] {
+                players.append(player)
+            }
+        }
+        return players
+    }
 
     static func == (lhs: Team, rhs: Team) -> Bool {
         return lhs.name == rhs.name
