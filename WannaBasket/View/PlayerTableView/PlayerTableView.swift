@@ -11,6 +11,7 @@ import UIKit
 @objc protocol PlayerTableViewDelegate {
     @objc optional func didDeletePlayerAction(at index: Int, of home: Bool)
     func didTapPlayerCell(at index: Int, of home: Bool)
+    func didDequeuePlayerCell(of home: Bool) -> [Int]
 }
 
 class PlayerTableView: UITableView {
@@ -20,6 +21,18 @@ class PlayerTableView: UITableView {
         didSet {
             showPlaceholder(with: playerList?.count)
             reloadData()
+        }
+    }
+    
+    @IBInspectable var isCustomScrollEnabled: Bool = false {
+        didSet(oldVal) {
+            if oldVal == isCustomScrollEnabled { return }
+            cellCount += (isCustomScrollEnabled ? 0.5 : -0.5)
+            isScrollEnabled = isCustomScrollEnabled
+            reloadInputViews()
+            if let _ = cellForRow(at: IndexPath(row: 0, section: 0)) {
+                scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            }
         }
     }
     
@@ -65,7 +78,7 @@ class PlayerTableView: UITableView {
     
     func highlightCell(at index: Int, bool: Bool) {
         if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? PlayerTableViewCell {
-            cell.isHighlighted = bool
+            cell.isCustomHighlighted = bool
         }
     }
     
@@ -130,6 +143,7 @@ extension PlayerTableView: UITableViewDataSource {
                    name: player.name,
                    number: player.number,
                    highlightColor: highlightColor)
+        cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
         return cell
     }
 }

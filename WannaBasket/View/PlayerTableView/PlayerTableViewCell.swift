@@ -39,14 +39,13 @@ class PlayerTableViewCell: UITableViewCell, NibLoadable, Reusable {
     }
     
     var highlightColor: UIColor = Constants.Color.Black
-    private var _isHighlighted: Bool = false
-    override var isHighlighted: Bool {
-        get { return _isHighlighted }
-        set(newVal) {
-            if newVal == _isHighlighted { return }
-            nameLabel.backgroundColor = newVal ? highlightColor : Constants.Color.White
-            nameLabel.textColor = newVal ? Constants.Color.White: Constants.Color.Black
-            _isHighlighted = newVal
+    var isCustomHighlighted: Bool = false {
+        didSet(oldVal) {
+            if oldVal == isCustomHighlighted { return }
+            nameLabel.backgroundColor = isCustomHighlighted ? highlightColor : Constants.Color.White
+            nameLabel.textColor = isCustomHighlighted ? Constants.Color.White: Constants.Color.Black
+//            numberLabel.textColor = newVal ? highlightColor : Constants.Color.White
+//            numberLabel.backgroundColor = newVal ? Constants.Color.White : highlightColor
         }
     }
 }
