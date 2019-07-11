@@ -63,13 +63,14 @@ class HomeView: UIViewController {
                 
                 teamFormView = TeamFormView(frame: CGRect.zero)
                 teamFormView?.delegate = self
+                teamFormView?.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(teamFormView!)
                 
-                teamFormView!.translatesAutoresizingMaskIntoConstraints = false
-                teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
-                teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-                teamFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+                NSLayoutConstraint.activate([
+                    teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0),
+                    teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                    teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
             } else {
                 backgroundView?.removeFromSuperview()
                 teamFormView?.removeFromSuperview()
@@ -92,13 +93,14 @@ class HomeView: UIViewController {
                 
                 playerFormView = PlayerFormView(frame: CGRect.zero)
                 playerFormView?.delegate = self
+                playerFormView?.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(playerFormView!)
                 
-                playerFormView!.translatesAutoresizingMaskIntoConstraints = false
-                playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
-                playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-                playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+                NSLayoutConstraint.activate([
+                    playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0),
+                    playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+                    playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)])
             } else {
                 backgroundView?.removeFromSuperview()
                 playerFormView?.removeFromSuperview()

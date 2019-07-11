@@ -89,17 +89,18 @@ class GameView: UIViewController {
             self.view.addSubview(backgroundView!)
             
             quarterSelectView = QuarterSelectView(frame: CGRect.zero)
-            quarterSelectView!.delegate = self
-            quarterSelectView!.setup(maxRegularQuarterNum: maxRegularQuarterNum,
+            quarterSelectView?.delegate = self
+            quarterSelectView?.translatesAutoresizingMaskIntoConstraints = false
+            quarterSelectView?.setup(maxRegularQuarterNum: maxRegularQuarterNum,
                                      overtimeQuarterCount: overtimeQuarterCount,
                                      currentQuarter: currentQuarter)
             self.view.addSubview(quarterSelectView!)
             
-            quarterSelectView!.translatesAutoresizingMaskIntoConstraints = false
-            quarterSelectView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            quarterSelectView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
-            quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75).isActive = true
-            quarterSelectView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+            NSLayoutConstraint.activate([
+                quarterSelectView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                quarterSelectView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
+                quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
+                quarterSelectView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)])
         } else {
             backgroundView?.removeFromSuperview()
             backgroundView = nil
@@ -128,7 +129,7 @@ extension GameView: GameViewProtocol {
     
     func updateSubstituteButton(bool: Bool, of home: Bool) {
         let button = home ? homeSubstituteButton : awaySubstituteButton
-        button?.setTitle(bool ? "교체 완료" : "교체", for: .normal)
+        button?.setTitle(bool ? Constants.Text.SubstituteComplete : Constants.Text.Substitute, for: .normal)
     }
     
     func updateQuarterLabel(_ quarter: Quarter) {
