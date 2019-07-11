@@ -21,6 +21,29 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
+    var isSubstituting: (home: Bool, away: Bool) = (false, false) {
+        didSet(oldVal) {
+            if oldVal.home != isSubstituting.home {
+                if isSubstituting.home {
+                    view?.updatePlayerTableView(players: game.teams.home.players, of: true)
+                } else {
+                    view?.updatePlayerTableView(players: game.floorPlayers.home, of: true)
+                }
+                view?.updateSubstituteButton(bool: isSubstituting.home, of: true)
+                view?.enableScrollingPlayerTableView(of: true, bool: isSubstituting.home)
+            }
+            if oldVal.away != isSubstituting.away {
+                if isSubstituting.away {
+                    view?.updatePlayerTableView(players: game.teams.away.players, of: false)
+                } else {
+                    view?.updatePlayerTableView(players: game.floorPlayers.away, of: false)
+                }
+                view?.updateSubstituteButton(bool: isSubstituting.away, of: false)
+                view?.enableScrollingPlayerTableView(of: false, bool: isSubstituting.away)
+            }
+        }
+    }
+    
     func viewDidLoad() {
         let homeTeam = game.teams.home
         view?.updatePlayerTableView(players: homeTeam.players, of: true)
@@ -36,11 +59,25 @@ class GamePresenter: GamePresenterProtocol {
             game.currentPlayerTuple = nil
         } else {
             game.currentPlayerTuple = (home, index)
+    func didTapSubstituteButton(of home: Bool) {
+        if let currentPlayerHome = game.currentPlayerTuple?.home, currentPlayerHome == home {
+            game.currentPlayerTuple = nil
         }
+        if home { isSubstituting.home = !isSubstituting.home }
+        else { isSubstituting.away = !isSubstituting.away }
     }
     
-    func didTapBenchButton(of home: Bool) {
-        print("bench")
+    func didTapPlayerCell(at index: Int, of home: Bool) {
+        let isSbsting = home ? isSubstituting.home : isSubstituting.away
+        if isSbsting {
+            game.substitutePlayer(index: index, of: home)
+        } else {
+            if let current = game.currentPlayerTuple, current == (home, index) {
+                game.currentPlayerTuple = nil
+            } else {
+                game.currentPlayerTuple = (home, index)
+            }
+        }
     }
     
     func didTapQuarterLabel() {
@@ -145,6 +182,10 @@ extension GamePresenter: GameDelegate {
         view?.blinkStatCell(of: stat) { bool in
             self.game.currentStat = nil
         }
+    }
+    
+    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool) {
+        view?.highlightPlayerCell(at: index, of: home, bool: floor)
     }
     
     func didAddRecord(record: RecordModel) {
