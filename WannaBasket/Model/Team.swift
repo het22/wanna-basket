@@ -25,6 +25,12 @@ class Team: TeamModel, Equatable {
         players = []
     }
     
+    var isNumberAssigned: [Bool] {
+        var arr = [Bool].init(repeating: false, count: 101)
+        players.forEach { arr[$0.number] = true }
+        return arr
+    }
+    
     func getPlayers(with indexes: [Int]) -> [Player] {
         var players = [Player]()
         indexes.forEach {
