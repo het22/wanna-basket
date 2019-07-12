@@ -91,8 +91,7 @@ class PlayerFormView: UIView, NibLoadable {
 extension PlayerFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if isNameValid { delegate?.didTapPlayerFormCompleteButton(name: trimmedName, number: nil) }
-        else { animateShake(completion: nil) }
+        completeButtonTapped()
         return true
     }
 }

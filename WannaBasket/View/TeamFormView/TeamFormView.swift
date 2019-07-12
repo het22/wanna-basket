@@ -49,6 +49,15 @@ class TeamFormView: UIView, NibLoadable {
                                                object: nil)
     }
     
+    @IBAction func cancelButtonTapped() {
+        delegate?.didTapTeamFormCancelButton()
+    }
+    
+    @IBAction func completeButtonTapped() {
+        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
+        else { animateShake(completion: nil) }
+    }
+    
     var centerYConstraint: NSLayoutConstraint?
     var moveHeight: CGFloat = 0.0
     @objc func keyboardWillShow(notification: Notification) {
@@ -67,10 +76,6 @@ class TeamFormView: UIView, NibLoadable {
         }
     }
     
-    @IBAction func cancelButtonTapped() {
-        delegate?.didTapTeamFormCancelButton()
-    }
-    
     private var trimmedName: String? {
         return nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -80,17 +85,12 @@ class TeamFormView: UIView, NibLoadable {
         let isValid = predicate.evaluate(with: trimmedName)
         return isValid
     }
-    @IBAction func completeButtonTapped() {
-        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
-        else { animateShake(completion: nil) }
-    }
 }
 
 extension TeamFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
-        else { animateShake(completion: nil) }
+        completeButtonTapped()
         return true
     }
 }
