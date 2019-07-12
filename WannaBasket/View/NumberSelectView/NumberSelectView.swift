@@ -16,6 +16,8 @@ class NumberSelectView: UICollectionView {
     
     var _delegate: NumberSelectViewDelegate?
     var cellSpacing: CGFloat = 5
+    let cellSpacing: CGFloat = 5
+    
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -23,8 +25,8 @@ class NumberSelectView: UICollectionView {
         backgroundColor = Constants.Color.White
         layer.borderColor = Constants.Color.Black.cgColor
         layer.borderWidth = 1
-        contentInset = UIEdgeInsets(top: cellSpacing, left: cellSpacing,
-                                    bottom: cellSpacing, right: cellSpacing)
+        contentInset = UIEdgeInsets(top: cellSpacing*2, left: cellSpacing*2,
+                                    bottom: cellSpacing*2, right: cellSpacing*2)
         
         register(NumberSelectViewCell.self)
         delegate = self
@@ -46,7 +48,7 @@ extension NumberSelectView: UICollectionViewDelegate {
 extension NumberSelectView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.bounds.width - cellSpacing) / 10 - cellSpacing
+        let width = (self.bounds.width - cellSpacing*2) / 10 - cellSpacing*2
         return CGSize(width: width, height: width)
     }
     
