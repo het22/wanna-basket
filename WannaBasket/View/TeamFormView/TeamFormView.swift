@@ -71,15 +71,26 @@ class TeamFormView: UIView, NibLoadable {
         delegate?.didTapTeamFormCancelButton()
     }
     
+    private var trimmedName: String? {
+        return nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    private var isNameValid: Bool {
+        let regex = "[가-힣A-Za-z0-9\\s]{2,6}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: trimmedName)
+        return isValid
+    }
     @IBAction func completeButtonTapped() {
-        delegate?.didTapTeamFormCompleteButton(name: nameTextField.text)
+        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
+        else { animateShake(completion: nil) }
     }
 }
 
 extension TeamFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        delegate?.didTapTeamFormCompleteButton(name: textField.text)
+        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
+        else { animateShake(completion: nil) }
         return true
     }
 }

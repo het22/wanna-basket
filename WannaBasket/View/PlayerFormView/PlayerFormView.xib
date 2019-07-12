@@ -31,14 +31,17 @@
                     <subviews>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZp-GV-lyV">
                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="73.5"/>
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="AZp-GV-lyV" secondAttribute="height" id="ZSm-qm-dEF"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                             <state key="normal" title="00">
-                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="numberButtonTapped" destination="-1" eventType="touchUpInside" id="dLP-a8-s0H"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선수 이름 입력" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="g8l-7g-dBW">
                             <rect key="frame" x="74.5" y="0.0" width="376.5" height="73.5"/>

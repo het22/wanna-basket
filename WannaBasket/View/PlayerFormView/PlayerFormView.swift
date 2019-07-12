@@ -65,21 +65,34 @@ class PlayerFormView: UIView, NibLoadable {
         }
     }
     
+    @IBAction func numberButtonTapped() {
+        nameTextField.resignFirstResponder()
+    }
+    
     @IBAction func cancelButtonTapped() {
         delegate?.didTapPlayerFormCancelButton()
     }
     
+    private var trimmedName: String? {
+        return nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    private var isNameValid: Bool {
+        let regex = "[가-힣A-Za-z0-9\\s]{2,6}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: trimmedName)
+        return isValid
+    }
     @IBAction func completeButtonTapped() {
-        animateShake(completion: nil)
-//        delegate?.didTapPlayerFormCompleteButton(name: nameTextField.text,
-//                                                 number: nil)
+        if isNameValid { delegate?.didTapPlayerFormCompleteButton(name: trimmedName, number: nil) }
+        else { animateShake(completion: nil) }
     }
 }
 
 extension PlayerFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if isNameValid { delegate?.didTapPlayerFormCompleteButton(name: trimmedName, number: nil) }
+        else { animateShake(completion: nil) }
         return true
     }
 }
