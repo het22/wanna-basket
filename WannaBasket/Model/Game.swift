@@ -23,20 +23,33 @@ class Game {
     
     var delegate: GameDelegate?
     
-    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     var teams: (home: Team, away: Team)
-    var scores: (home: Int, away: Int) {
-        return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
-            if case let .Score(Score) = record.stat {
-                let score = Score.rawValue
-                let home = record.home
-                return home ? (scores.0 + score, scores.1) : (scores.0, scores.1 + score)
-            }
-            return scores
-        }
-    }
+    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     init(homeTeam: Team, awayTeam: Team) {
         self.teams = (homeTeam, awayTeam)
+    }
+    
+    let maxFloorPlayerCount = 5
+    var floorPlayerIndexes: (home: [Int], away: [Int]) = ([],[])
+    var floorPlayers: (home: [Player], away: [Player]) {
+        let homeFloorPlayers = teams.home.getPlayers(with: floorPlayerIndexes.home)
+        let awayFloorPlayers = teams.away.getPlayers(with: floorPlayerIndexes.away)
+        return (homeFloorPlayers, awayFloorPlayers)
+    }
+    func substitutePlayer(index: Int, of home: Bool) {
+        if index >= (home ? teams.home.players.count : teams.away.players.count) { return }
+        var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
+        if let i = indexes.firstIndex(of: index) {
+            indexes.remove(at: i)
+            delegate?.didSubstitutePlayer(index: index, of: home, floor: false)
+        } else {
+            if indexes.count < maxFloorPlayerCount {
+                indexes.append(index)
+                delegate?.didSubstitutePlayer(index: index, of: home, floor: true)
+            }
+        }
+        if home { floorPlayerIndexes.home = indexes }
+        else { floorPlayerIndexes.away = indexes }
     }
     
     var currentPlayerTuple: (home: Bool, index: Int)? {
@@ -56,26 +69,15 @@ class Game {
         }
     }
     
-    let maxFloorPlayerCount = 5
-    var floorPlayerIndexes: (home: [Int], away: [Int]) = ([],[])
-    var floorPlayers: (home: [Player], away: [Player]) {
-        let homeFloorPlayers = teams.home.getPlayers(with: floorPlayerIndexes.home)
-        let awayFloorPlayers = teams.away.getPlayers(with: floorPlayerIndexes.away)
-        return (homeFloorPlayers, awayFloorPlayers)
-    }
-    func substitutePlayer(index: Int, of home: Bool) {
-        var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
-        if let i = indexes.firstIndex(of: index) {
-            indexes.remove(at: i)
-            delegate?.didSubstitutePlayer(index: index, of: home, floor: false)
-        } else {
-            if indexes.count < maxFloorPlayerCount {
-                indexes.append(index)
-                delegate?.didSubstitutePlayer(index: index, of: home, floor: true)
+    var scores: (home: Int, away: Int) {
+        return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
+            if case let .Score(Score) = record.stat {
+                let score = Score.rawValue
+                let home = record.home
+                return home ? (scores.0 + score, scores.1) : (scores.0, scores.1 + score)
             }
+            return scores
         }
-        if home { floorPlayerIndexes.home = indexes }
-        else { floorPlayerIndexes.away = indexes }
     }
     
     var records: [RecordModel] = []
