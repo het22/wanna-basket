@@ -77,7 +77,7 @@ class PlayerFormView: UIView, NibLoadable {
         return nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     private var isNameValid: Bool {
-        let regex = "[가-힣A-Za-z0-9\\s]{2,6}"
+        let regex = Constants.Regex.PlayerName
         let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
         let isValid = predicate.evaluate(with: trimmedName)
         return isValid

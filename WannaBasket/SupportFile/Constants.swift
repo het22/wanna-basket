@@ -26,4 +26,9 @@ enum Constants {
         static let Substitute = "교체"
         static let SubstituteComplete = "교체 완료"
     }
+    
+    enum Regex {
+        static let TeamName = "[가-힣A-Za-z0-9\\s]{2,6}"
+        static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,6}"
+    }
 }
