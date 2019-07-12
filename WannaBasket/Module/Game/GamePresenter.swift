@@ -18,6 +18,10 @@ class GamePresenter: GamePresenterProtocol {
         didSet {
             game.delegate = self
             game.timeManager.delegate = self
+            for i in 0...4 {
+                game.substitutePlayer(index: i, of: true)
+                game.substitutePlayer(index: i, of: false)
+            }
         }
     }
     
