@@ -81,8 +81,6 @@ class GameView: UIViewController {
                                            currentQuarter: currentQuarter,
                                            bool: false)
             }
-            dismissGesture.numberOfTapsRequired = 1
-            
             backgroundView = UIView(frame: view.bounds)
             backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
             backgroundView!.addGestureRecognizer(dismissGesture)

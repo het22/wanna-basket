@@ -54,8 +54,6 @@ class HomeView: UIViewController {
             if newVal == isShowingTeamFormView { return }
             if newVal {
                 let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingTeamFormView = false }
-                dismissGesture.numberOfTapsRequired = 1
-                
                 backgroundView = UIView(frame: view.bounds)
                 backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
                 backgroundView!.addGestureRecognizer(dismissGesture)
@@ -86,8 +84,6 @@ class HomeView: UIViewController {
             if newVal == isShowingPlayerFormView { return }
             if newVal {
                 let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingPlayerFormView = false }
-                dismissGesture.numberOfTapsRequired = 1
-                
                 backgroundView = UIView(frame: view.bounds)
                 backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
                 backgroundView!.addGestureRecognizer(dismissGesture)
