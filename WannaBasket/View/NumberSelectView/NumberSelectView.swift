@@ -15,7 +15,7 @@ protocol NumberSelectViewDelegate {
 class NumberSelectView: UICollectionView {
     
     var _delegate: NumberSelectViewDelegate?
-    var cellSpacing: CGFloat = 5
+    var isNumberAssigned = [Bool]()
     let cellSpacing: CGFloat = 5
     
     
@@ -41,7 +41,9 @@ class NumberSelectView: UICollectionView {
 extension NumberSelectView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        _delegate?.didSelectItem(at: indexPath)
+        if !isNumberAssigned[indexPath.row] {
+            _delegate?.didSelectItem(at: indexPath)
+        }
     }
 }
 
@@ -64,12 +66,13 @@ extension NumberSelectView: UICollectionViewDelegateFlowLayout {
 extension NumberSelectView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 101
+        return isNumberAssigned.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as NumberSelectViewCell
         cell.setup(number: indexPath.row)
+        cell.isCustomHighlighted = isNumberAssigned[indexPath.row]
         return cell
     }
 }

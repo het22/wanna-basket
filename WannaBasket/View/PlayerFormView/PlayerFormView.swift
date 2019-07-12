@@ -11,6 +11,7 @@ import UIKit
 protocol PlayerFormViewDelegate {
     func didTapPlayerFormCancelButton()
     func didTapPlayerFormCompleteButton(name: String?, number: Int?)
+    func didTapPlayerNumberButton() -> [Bool]
 }
 
 class PlayerFormView: UIView, NibLoadable {
@@ -64,6 +65,7 @@ class PlayerFormView: UIView, NibLoadable {
                 
                 numberSelectView = NumberSelectView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
                 numberSelectView?._delegate = self
+                numberSelectView?.isNumberAssigned = delegate?.didTapPlayerNumberButton() ?? []
                 numberSelectView?.translatesAutoresizingMaskIntoConstraints = false
                 superview.addSubview(numberSelectView!)
                 

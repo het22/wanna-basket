@@ -90,7 +90,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapTeamFormCompleteButton(name: String?) {
-        if let name = name, name != "" {
+        if let name = name {
             let team = Team(name: name)
             teams.append(team)
             view?.updateTeamTableView(teams: teams)
@@ -102,7 +102,7 @@ class HomePresenter: HomePresenterProtocol {
         if let name = name, let number = number, let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
             let team = teams[index]
             let player = Player(name: name, number: number)
-            team.players.append(player)
+            team.players.insert(player, at: 0)
             if currentTeamIndex.home == currentTeamIndex.away {
                 view?.updatePlayerTableView(players: team.players, of: true)
                 view?.updateTeamNameLabel(name: team.name, of: true)
@@ -114,6 +114,14 @@ class HomePresenter: HomePresenterProtocol {
             }
         }
         view?.isShowingPlayerFormView = false
+    }
+    
+    func didTapPlayerNumberButton() -> [Bool] {
+        if let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away {
+            let team = teams[index]
+            return team.isNumberAssigned
+        }
+        return []
     }
     
     func didDeleteTeamAction(at index: Int) {

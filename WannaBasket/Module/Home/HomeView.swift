@@ -168,6 +168,10 @@ extension HomeView: PlayerFormViewDelegate {
     func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
         presenter?.didTapPlayerFormCompleteButton(name: name, number: number)
     }
+    
+    func didTapPlayerNumberButton() -> [Bool] {
+        return presenter?.didTapPlayerNumberButton() ?? []
+    }
 }
 
 extension HomeView: TeamTableViewDelegate {
