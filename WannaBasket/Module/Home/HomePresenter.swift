@@ -141,8 +141,8 @@ class HomePresenter: HomePresenterProtocol {
                 view?.updatePlayerTableView(players: team.players, of: false)
                 view?.updateTeamNameLabel(name: team.name, of: false)
             } else {
-                view?.updatePlayerTableView(players: team.players, of: isAddingHomePlayer)
-                view?.updateTeamNameLabel(name: team.name, of: isAddingHomePlayer)
+                view?.updatePlayerTableView(players: team.players, of: home)
+                view?.updateTeamNameLabel(name: team.name, of: home)
             }
         }
     }
