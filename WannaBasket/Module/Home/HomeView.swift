@@ -176,6 +176,7 @@ extension HomeView: PlayerFormViewDelegate {
 
 extension HomeView: TeamTableViewDelegate {
     
+    
     func didDeleteTeamAction(at index: Int) {
         presenter?.didDeleteTeamAction(at: index)
     }
@@ -184,8 +185,8 @@ extension HomeView: TeamTableViewDelegate {
         return presenter?.didDequeueTeamCell() ?? (nil, nil)
     }
     
-    func didTapTeamCell(at index: Int, onLeft: Bool) {
-        presenter?.didTapTeamCell(at: index, onLeft: onLeft)
+    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section) {
+        presenter?.didTapTeamCell(at: index, tapSection: tapSection)
     }
 }
 

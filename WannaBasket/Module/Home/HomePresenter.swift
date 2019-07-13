@@ -124,6 +124,25 @@ class HomePresenter: HomePresenterProtocol {
         return []
     }
     
+    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section) {
+        switch tapSection {
+        case .Middle:
+            view?.isShowingTeamFormView = true
+        case .Left:
+            currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
+        case .Right:
+            currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
+        }
+    }
+    
+    func didTapTeamCell(at index: Int, onLeft: Bool) {
+        if onLeft {
+            currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
+        } else {
+            currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
+        }
+    }
+    
     func didDeleteTeamAction(at index: Int) {
         teams.remove(at: index)
         var newTeamIndex: (home: Int?, away: Int?)
@@ -152,14 +171,6 @@ class HomePresenter: HomePresenterProtocol {
                 view?.updatePlayerTableView(players: team.players, of: home)
                 view?.updateTeamNameLabel(name: team.name, of: home)
             }
-        }
-    }
-    
-    func didTapTeamCell(at index: Int, onLeft: Bool) {
-        if onLeft {
-            currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
-        } else {
-            currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
         }
     }
     

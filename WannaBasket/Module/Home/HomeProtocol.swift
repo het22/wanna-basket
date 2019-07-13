@@ -44,10 +44,10 @@ protocol HomePresenterProtocol: class {
     func didTapPlayerFormCompleteButton(name: String?, number: Int?)
     func didTapPlayerNumberButton() -> [Bool]
     
+    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
     func didDeleteTeamAction(at index: Int)
     func didDeletePlayerAction(at index: Int, of home: Bool)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
-    func didTapTeamCell(at index: Int, onLeft: Bool)
 }
 
 protocol HomeViewProtocol: class {

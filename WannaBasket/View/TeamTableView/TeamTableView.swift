@@ -10,7 +10,7 @@ import UIKit
 
 protocol TeamTableViewDelegate {
     func didDeleteTeamAction(at index: Int)
-    func didTapTeamCell(at index: Int, onLeft: Bool)
+    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
 }
 
@@ -72,7 +72,7 @@ extension TeamTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = cellForRow(at: indexPath) as? TeamTableViewCell {
-            _delegate?.didTapTeamCell(at: indexPath.section, onLeft: cell.tapOnLeft)
+            _delegate?.didTapTeamCell(at: indexPath.section, tapSection: cell.tapSection)
         }
     }
     

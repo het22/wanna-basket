@@ -49,10 +49,26 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
         }
     }
 
-    var tapOnLeft: Bool = true
+//    var tapOnLeft: Bool = true
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if let location = touches.first?.location(in: self) {
+//            tapOnLeft = location.x < (self.bounds.width / 2)
+//        }
+//        super.touchesEnded(touches, with: event)
+//    }
+    
+    enum Section {
+        case Left
+        case Middle
+        case Right
+    }
+    var tapSection: Section = .Middle
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let location = touches.first?.location(in: self) {
-            tapOnLeft = location.x < (self.bounds.width / 2)
+            let width = self.bounds.width
+            if 0...width/3 ~= location.x { tapSection = .Left }
+            else if width/3...width*2/3 ~= location.x { tapSection = .Middle }
+            else if width*2/3...width ~= location.x { tapSection = .Right }
         }
         super.touchesEnded(touches, with: event)
     }
