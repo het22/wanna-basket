@@ -28,6 +28,10 @@ class HomeView: UIViewController {
     @IBOutlet weak var gameStartButton: UIButton!
     @IBOutlet weak var homePlayerAddButton: UIButton!
     @IBOutlet weak var awayPlayerAddButton: UIButton!
+    
+    private var backgroundView: UIView?
+    private var teamFormView: TeamFormView?
+    private var playerFormView: PlayerFormView?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,74 +50,6 @@ class HomeView: UIViewController {
         let home = (sender == homePlayerAddButton)
         presenter?.didTapNewPlayerButton(of: home)
     }
-    
-    private var backgroundView: UIView?
-    private var teamFormView: TeamFormView?
-    func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool) {
-        if bool == (teamFormView != nil) { return }
-        if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure {
-                self.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
-            }
-            backgroundView = UIView(frame: view.bounds)
-            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
-            backgroundView!.addGestureRecognizer(dismissGesture)
-            self.view.addSubview(backgroundView!)
-            
-            teamFormView = TeamFormView(frame: CGRect.zero)
-            teamFormView?.delegate = self
-            teamFormView?.translatesAutoresizingMaskIntoConstraints = false
-            teamFormView?.setup(isEditMode: isEditMode, name: name, index: index)
-            view.addSubview(teamFormView!)
-            
-            let centerYConstraint = teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
-            teamFormView?.centerYConstraint = centerYConstraint
-            NSLayoutConstraint.activate([
-                teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                centerYConstraint,
-                teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
-        } else {
-            backgroundView?.removeFromSuperview()
-            teamFormView?.removeFromSuperview()
-            backgroundView = nil
-            teamFormView = nil
-        }
-    }
-    
-    private var playerFormView: PlayerFormView?
-    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool) {
-        if bool == (playerFormView != nil) { return }
-        if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure {
-                self.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
-            }
-            backgroundView = UIView(frame: view.bounds)
-            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
-            backgroundView!.addGestureRecognizer(dismissGesture)
-            self.view.addSubview(backgroundView!)
-            
-            playerFormView = PlayerFormView(frame: CGRect.zero)
-            playerFormView?.delegate = self
-            playerFormView?.translatesAutoresizingMaskIntoConstraints = false
-            playerFormView?.setup(isEditMode: isEditMode, player: player, index: index)
-            view.addSubview(playerFormView!)
-            
-            let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
-            playerFormView?.centerYConstraint = centerYConstraint
-            NSLayoutConstraint.activate([
-                playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                centerYConstraint,
-                playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                playerFormView!.heightAnchor.constraint(equalTo: playerFormView!.widthAnchor, multiplier: 0.3)])
-        } else {
-            backgroundView?.removeFromSuperview()
-            playerFormView?.removeFromSuperview()
-            backgroundView = nil
-            playerFormView = nil
-        }
-    }
-    
 }
 
 extension HomeView: HomeViewProtocol {
@@ -151,6 +87,70 @@ extension HomeView: HomeViewProtocol {
     func enableAwayPlayerAddButton(bool: Bool) {
         awayPlayerAddButton.isEnabled = bool
         awayPlayerAddButton.alpha = bool ? 1.0 : 0.5
+    }
+    
+    func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool) {
+        if bool == (teamFormView != nil) { return }
+        if bool {
+            let dismissGesture = UITapGestureRecognizerWithClosure {
+                self.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
+            }
+            backgroundView = UIView(frame: view.bounds)
+            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.addGestureRecognizer(dismissGesture)
+            self.view.addSubview(backgroundView!)
+            
+            teamFormView = TeamFormView(frame: CGRect.zero)
+            teamFormView?.delegate = self
+            teamFormView?.translatesAutoresizingMaskIntoConstraints = false
+            teamFormView?.setup(isEditMode: isEditMode, name: name, index: index)
+            view.addSubview(teamFormView!)
+            
+            let centerYConstraint = teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+            teamFormView?.setupKeyboard(with: centerYConstraint, spacing: 10.0)
+            NSLayoutConstraint.activate([
+                teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                centerYConstraint,
+                teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
+        } else {
+            backgroundView?.removeFromSuperview()
+            teamFormView?.removeFromSuperview()
+            backgroundView = nil
+            teamFormView = nil
+        }
+    }
+    
+    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool) {
+        if bool == (playerFormView != nil) { return }
+        if bool {
+            let dismissGesture = UITapGestureRecognizerWithClosure {
+                self.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
+            }
+            backgroundView = UIView(frame: view.bounds)
+            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.addGestureRecognizer(dismissGesture)
+            self.view.addSubview(backgroundView!)
+            
+            playerFormView = PlayerFormView(frame: CGRect.zero)
+            playerFormView?.delegate = self
+            playerFormView?.translatesAutoresizingMaskIntoConstraints = false
+            playerFormView?.setup(isEditMode: isEditMode, player: player, index: index)
+            view.addSubview(playerFormView!)
+            
+            let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+            playerFormView?.setupKeyboard(with: centerYConstraint, spacing: 10.0)
+            NSLayoutConstraint.activate([
+                playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                centerYConstraint,
+                playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                playerFormView!.heightAnchor.constraint(equalTo: playerFormView!.widthAnchor, multiplier: 0.3)])
+        } else {
+            backgroundView?.removeFromSuperview()
+            playerFormView?.removeFromSuperview()
+            backgroundView = nil
+            playerFormView = nil
+        }
     }
 }
 
