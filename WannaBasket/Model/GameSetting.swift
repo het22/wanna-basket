@@ -10,10 +10,13 @@ import Foundation
 
 protocol GameSettingDelegate {
     func didSetCurrentTeamIndex(oldVal: (home: Int?, away: Int?), newVal: (home: Int?, away: Int?))
+    
     func didAddTeam()
     func didEditTeam(at index: Int)
     func didRemoveTeam(at index: Int)
+    
     func didAddPlayer(of team: Team)
+    func didEditPlayer(of team: Team)
     func didRemovePlayer(of team: Team)
 }
 
@@ -74,6 +77,15 @@ class GameSetting {
         if teamIndex < teams.count {
             teams[teamIndex].players.append(player)
             delegate?.didAddPlayer(of: teams[teamIndex])
+        }
+    }
+    
+    func editPlayer(at index: Int, teamIndex: Int, editPlayer: Player) {
+        if teamIndex < teams.count, index < teams[teamIndex].players.count {
+            let player = teams[teamIndex].players[index]
+            player.number = editPlayer.number
+            player.name = editPlayer.name
+            delegate?.didEditPlayer(of: teams[teamIndex])
         }
     }
     
