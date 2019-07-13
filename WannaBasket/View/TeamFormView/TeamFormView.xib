@@ -17,11 +17,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamFormView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
-                <outlet property="buttonView" destination="K5l-V0-eDk" id="x6P-4g-Vme"/>
-                <outlet property="leftArrowLabel" destination="vC1-ig-3re" id="BkD-pj-wee"/>
                 <outlet property="leftButton" destination="1eS-FW-5Qp" id="h6p-id-ua6"/>
                 <outlet property="nameTextField" destination="ZOi-Zz-yNh" id="QZJ-gc-IXg"/>
-                <outlet property="rightArrowLabel" destination="maC-iH-yBT" id="mgL-dQ-txa"/>
                 <outlet property="rightButton" destination="WkK-6U-y9A" id="rUt-s6-ng9"/>
             </connections>
         </placeholder>

@@ -97,8 +97,10 @@ class PlayerFormView: UIView, NibLoadable {
     private var isEditMode = false {
         didSet(oldVal) {
             if oldVal == isEditMode { return }
-            leftButton.setTitle(isEditMode ? "삭제" : "취소", for: .normal)
-            rightButton.setTitle(isEditMode ? "수정" : "완료", for: .normal)
+            leftButton.setTitle(isEditMode ? Constants.Text.Delete : Constants.Text.Cancel,
+                                for: .normal)
+            rightButton.setTitle(isEditMode ? Constants.Text.Edit : Constants.Text.Complete,
+                                 for: .normal)
         }
     }
     private var index: Int?

@@ -23,8 +23,14 @@ enum Constants {
     enum Text {
         static let HomeDefault = "홈팀"
         static let AwayDefault = "원정팀"
+        
         static let Substitute = "교체"
         static let SubstituteComplete = "교체 완료"
+        
+        static let Complete = "완료"
+        static let Delete = "삭제"
+        static let Edit = "편집"
+        static let Cancel = "취소"
     }
     
     enum Regex {

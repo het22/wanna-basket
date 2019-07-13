@@ -8,6 +8,9 @@
 
 import UIKit
 
+// --------------------------------------------------
+// MARK: TeamFormView Delegate
+// --------------------------------------------------
 protocol TeamFormViewDelegate {
     func didTapTeamFormCancelButton()
     func didTapTeamFormDeleteButton(index: Int)
@@ -15,6 +18,9 @@ protocol TeamFormViewDelegate {
     func didTapTeamFormEditButton(name: String, index: Int)
 }
 
+// --------------------------------------------------
+// MARK: TeamFormView
+// --------------------------------------------------
 class TeamFormView: UIView, NibLoadable {
     
     var delegate: TeamFormViewDelegate?
@@ -23,9 +29,6 @@ class TeamFormView: UIView, NibLoadable {
     // MARK: IBOutlet Variables
     // --------------------------------------------------
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var leftArrowLabel: UILabel!
-    @IBOutlet weak var rightArrowLabel: UILabel!
-    @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
@@ -93,8 +96,10 @@ class TeamFormView: UIView, NibLoadable {
     private var isEditMode = false {
         didSet(oldVal) {
             if oldVal == isEditMode { return }
-            leftButton.setTitle(isEditMode ? "삭제" : "취소", for: .normal)
-            rightButton.setTitle(isEditMode ? "수정" : "완료", for: .normal)
+            leftButton.setTitle(isEditMode ? Constants.Text.Delete : Constants.Text.Cancel,
+                                for: .normal)
+            rightButton.setTitle(isEditMode ? Constants.Text.Edit : Constants.Text.Complete,
+                                 for: .normal)
         }
     }
     private var index: Int?
@@ -139,6 +144,9 @@ class TeamFormView: UIView, NibLoadable {
     }
 }
 
+// --------------------------------------------------
+// MARK: UITextFieldDelegate
+// --------------------------------------------------
 extension TeamFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
