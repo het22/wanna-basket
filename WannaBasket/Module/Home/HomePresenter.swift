@@ -32,17 +32,19 @@ class HomePresenter: HomePresenterProtocol {
         view?.updateTeamTableView(teams: gameSetting.teams)
         gameSetting.currentTeamIndex = (0, 1)
     }
+    
     func didTapStartButton() {
         guard let homeTeamIndex = gameSetting.currentTeamIndex.home,
                 let awayTeamIndex = gameSetting.currentTeamIndex.away else { return }
-        wireframe?.presentModule(source: view!,
-                                 module: Module.Game(game:
-                                    Game(homeTeam: gameSetting.teams[homeTeamIndex],
-                                         awayTeam: gameSetting.teams[awayTeamIndex])))
+        let game = Game(homeTeam: gameSetting.teams[homeTeamIndex],
+                        awayTeam: gameSetting.teams[awayTeamIndex])
+        wireframe?.presentModule(source: view!, module: Module.Game(game: game))
     }
+    
     func didTapNewTeamButton() {
         view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: true)
     }
+    
     func didTapNewPlayerButton(of home: Bool) {
         isEdittingHome = home
         view?.isShowingPlayerFormView = true
@@ -56,7 +58,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapTeamFormDeleteButton(index: Int) {
-        print(index)
+        gameSetting.removeTeam(at: index)
     }
     
     func didTapTeamFormCompleteButton(name: String) {
@@ -65,7 +67,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapTeamFormEditButton(name: String, index: Int) {
-        print(name, index)
+        gameSetting.editTeam(at: index, editName: name)
     }
     
     // --------------------------------------------------
@@ -163,6 +165,18 @@ extension HomePresenter: GameSettingDelegate {
         view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
     }
     
+    func didEditTeam(at index: Int) {
+        view?.updateTeamTableView(teams: gameSetting.teams)
+        let team = gameSetting.teams[index]
+        if let homeIndex = gameSetting.currentTeamIndex.home, homeIndex == index {
+            view?.updateTeamNameLabel(name: team.name, of: true)
+        }
+        if let awayIndex = gameSetting.currentTeamIndex.away, awayIndex == index {
+            view?.updateTeamNameLabel(name: team.name, of: false)
+        }
+        view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
+    }
+    
     func didRemoveTeam(at index: Int) {
         view?.updateTeamTableView(teams: gameSetting.teams)
         var newIndex: (home: Int?, away: Int?)
@@ -175,6 +189,7 @@ extension HomePresenter: GameSettingDelegate {
             if index < awayIndex { newIndex.away = awayIndex-1 }
         }
         gameSetting.currentTeamIndex = newIndex
+        view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
     }
     
     func didAddPlayer(of team: Team) {
