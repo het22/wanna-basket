@@ -19,8 +19,10 @@
             <connections>
                 <outlet property="buttonView" destination="K5l-V0-eDk" id="x6P-4g-Vme"/>
                 <outlet property="leftArrowLabel" destination="vC1-ig-3re" id="BkD-pj-wee"/>
+                <outlet property="leftButton" destination="1eS-FW-5Qp" id="h6p-id-ua6"/>
                 <outlet property="nameTextField" destination="ZOi-Zz-yNh" id="QZJ-gc-IXg"/>
                 <outlet property="rightArrowLabel" destination="maC-iH-yBT" id="mgL-dQ-txa"/>
+                <outlet property="rightButton" destination="WkK-6U-y9A" id="rUt-s6-ng9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -69,7 +71,7 @@
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="cancelButtonTapped" destination="-1" eventType="touchUpInside" id="kHJ-zs-bPD"/>
+                                <action selector="leftButtonTapped" destination="-1" eventType="touchUpInside" id="kHJ-zs-bPD"/>
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-6U-y9A">
@@ -80,7 +82,7 @@
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="completeButtonTapped" destination="-1" eventType="touchUpInside" id="e5g-WV-Bwt"/>
+                                <action selector="rightButtonTapped" destination="-1" eventType="touchUpInside" id="e5g-WV-Bwt"/>
                             </connections>
                         </button>
                     </subviews>

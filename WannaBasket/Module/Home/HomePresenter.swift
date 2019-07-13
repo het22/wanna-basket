@@ -9,11 +9,17 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
-
+    
+    // --------------------------------------------------
+    // MARK: Connect Module Components
+    // --------------------------------------------------
     weak var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
     var wireframe: HomeWireframeProtocol?
     
+    // --------------------------------------------------
+    // MARK: Manage Game Setting Information
+    // --------------------------------------------------
     var teams: [Team] = []
     var currentTeamIndex: (home: Int?, away: Int?) = (nil, nil) {
         didSet(oldVal) {
@@ -48,6 +54,9 @@ class HomePresenter: HomePresenterProtocol {
     }
     var isAddingHomePlayer: Bool = true
     
+    // --------------------------------------------------
+    // MARK: View Events
+    // --------------------------------------------------
     func viewDidLoad() {
         // Temp Data
         let temp1 = Team(name: "쿠스켓")
@@ -71,7 +80,6 @@ class HomePresenter: HomePresenterProtocol {
         view?.updateTeamTableView(teams: teams)
         currentTeamIndex = (0, 1)
     }
-    
     func didTapStartButton() {
         guard let homeTeamIndex = currentTeamIndex.home,
                 let awayTeamIndex = currentTeamIndex.away else { return }
@@ -79,25 +87,39 @@ class HomePresenter: HomePresenterProtocol {
                                  module: Module.Game(game: Game(homeTeam: teams[homeTeamIndex],
                                                                 awayTeam: teams[awayTeamIndex])))
     }
-    
     func didTapNewTeamButton() {
-        view?.isShowingTeamFormView = true
+        view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: true)
     }
-    
     func didTapNewPlayerButton(of home: Bool) {
         isAddingHomePlayer = home
         view?.isShowingPlayerFormView = true
     }
     
-    func didTapTeamFormCompleteButton(name: String?) {
-        if let name = name {
-            let team = Team(name: name)
-            teams.append(team)
-            view?.updateTeamTableView(teams: teams)
-        }
-        view?.isShowingTeamFormView = false
+    // --------------------------------------------------
+    // MARK: Team Form View Events
+    // --------------------------------------------------
+    func didTapTeamFormCancelButton() {
+        view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
     }
     
+    func didTapTeamFormDeleteButton(index: Int) {
+        print(index)
+    }
+    
+    func didTapTeamFormCompleteButton(name: String) {
+        let team = Team(name: name)
+        teams.append(team)
+        view?.updateTeamTableView(teams: teams)
+        view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
+    }
+    
+    func didTapTeamFormEditButton(name: String, index: Int) {
+        print(name, index)
+    }
+    
+    // --------------------------------------------------
+    // MARK: Player Form View Events
+    // --------------------------------------------------
     func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
         if let name = name, let number = number, let index = isAddingHomePlayer ? currentTeamIndex.home : currentTeamIndex.away  {
             let team = teams[index]
@@ -124,21 +146,17 @@ class HomePresenter: HomePresenterProtocol {
         return []
     }
     
+    // --------------------------------------------------
+    // MARK: Team Table View Events
+    // --------------------------------------------------
     func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section) {
         switch tapSection {
         case .Middle:
-            view?.isShowingTeamFormView = true
+            let team = teams[index]
+            view?.showTeamFormView(isEditMode: true, name: team.name, index: index, bool: true)
         case .Left:
             currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
         case .Right:
-            currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
-        }
-    }
-    
-    func didTapTeamCell(at index: Int, onLeft: Bool) {
-        if onLeft {
-            currentTeamIndex.home = (currentTeamIndex.home==index) ? nil : index
-        } else {
             currentTeamIndex.away = (currentTeamIndex.away==index) ? nil : index
         }
     }
@@ -158,6 +176,13 @@ class HomePresenter: HomePresenterProtocol {
         view?.updateTeamTableView(teams: teams)
     }
     
+    func didDequeueTeamCell() -> (home: Int?, away: Int?) {
+        return currentTeamIndex
+    }
+    
+    // --------------------------------------------------
+    // MARK: Player Table View Events
+    // --------------------------------------------------
     func didDeletePlayerAction(at index: Int, of home: Bool) {
         if let teamIndex = home ? currentTeamIndex.home : currentTeamIndex.away {
             let team = teams[teamIndex]
@@ -172,10 +197,6 @@ class HomePresenter: HomePresenterProtocol {
                 view?.updateTeamNameLabel(name: team.name, of: home)
             }
         }
-    }
-    
-    func didDequeueTeamCell() -> (home: Int?, away: Int?) {
-        return currentTeamIndex
     }
 }
 

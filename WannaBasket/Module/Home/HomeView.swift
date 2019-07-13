@@ -49,32 +49,35 @@ class HomeView: UIViewController {
     
     private var backgroundView: UIView?
     private var teamFormView: TeamFormView?
-    var isShowingTeamFormView: Bool = false {
-        willSet(newVal) {
-            if newVal == isShowingTeamFormView { return }
-            if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingTeamFormView = false }
-                backgroundView = UIView(frame: view.bounds)
-                backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
-                backgroundView!.addGestureRecognizer(dismissGesture)
-                view.addSubview(backgroundView!)
-                
-                teamFormView = TeamFormView(frame: CGRect.zero)
-                teamFormView?.delegate = self
-                teamFormView?.translatesAutoresizingMaskIntoConstraints = false
-                view.addSubview(teamFormView!)
-                
-                let centerYConstraint = teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
-                teamFormView?.centerYConstraint = centerYConstraint
-                NSLayoutConstraint.activate([
-                    teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    centerYConstraint,
-                    teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                    teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
-            } else {
-                backgroundView?.removeFromSuperview()
-                teamFormView?.removeFromSuperview()
+    func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool) {
+        if bool == (teamFormView != nil) { return }
+        if bool {
+            let dismissGesture = UITapGestureRecognizerWithClosure {
+                self.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
             }
+            backgroundView = UIView(frame: view.bounds)
+            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.addGestureRecognizer(dismissGesture)
+            self.view.addSubview(backgroundView!)
+            
+            teamFormView = TeamFormView(frame: CGRect.zero)
+            teamFormView?.delegate = self
+            teamFormView?.translatesAutoresizingMaskIntoConstraints = false
+            teamFormView?.setup(isEditMode: isEditMode, name: name, index: index)
+            view.addSubview(teamFormView!)
+            
+            let centerYConstraint = teamFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+            teamFormView?.centerYConstraint = centerYConstraint
+            NSLayoutConstraint.activate([
+                teamFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                centerYConstraint,
+                teamFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                teamFormView!.heightAnchor.constraint(equalTo: teamFormView!.widthAnchor, multiplier: 0.3)])
+        } else {
+            backgroundView?.removeFromSuperview()
+            teamFormView?.removeFromSuperview()
+            backgroundView = nil
+            teamFormView = nil
         }
     }
     
@@ -151,11 +154,19 @@ extension HomeView: HomeViewProtocol {
 extension HomeView: TeamFormViewDelegate {
     
     func didTapTeamFormCancelButton() {
-        isShowingTeamFormView = false
+        presenter?.didTapTeamFormCancelButton()
     }
     
-    func didTapTeamFormCompleteButton(name: String?) {
+    func didTapTeamFormDeleteButton(index: Int) {
+        presenter?.didTapTeamFormDeleteButton(index: index)
+    }
+    
+    func didTapTeamFormCompleteButton(name: String) {
         presenter?.didTapTeamFormCompleteButton(name: name)
+    }
+    
+    func didTapTeamFormEditButton(name: String, index: Int) {
+        presenter?.didTapTeamFormEditButton(name: name, index: index)
     }
 }
 

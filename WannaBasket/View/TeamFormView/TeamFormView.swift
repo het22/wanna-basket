@@ -10,7 +10,9 @@ import UIKit
 
 protocol TeamFormViewDelegate {
     func didTapTeamFormCancelButton()
-    func didTapTeamFormCompleteButton(name: String?)
+    func didTapTeamFormDeleteButton(index: Int)
+    func didTapTeamFormCompleteButton(name: String)
+    func didTapTeamFormEditButton(name: String, index: Int)
 }
 
 class TeamFormView: UIView, NibLoadable {
@@ -21,6 +23,8 @@ class TeamFormView: UIView, NibLoadable {
     @IBOutlet weak var leftArrowLabel: UILabel!
     @IBOutlet weak var rightArrowLabel: UILabel!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,13 +53,38 @@ class TeamFormView: UIView, NibLoadable {
                                                object: nil)
     }
     
-    @IBAction func cancelButtonTapped() {
-        delegate?.didTapTeamFormCancelButton()
+    var isEditMode = false {
+        didSet(oldVal) {
+            if oldVal == isEditMode { return }
+            leftButton.setTitle(isEditMode ? "삭제" : "취소", for: .normal)
+            rightButton.setTitle(isEditMode ? "수정" : "완료", for: .normal)
+        }
+    }
+    var index: Int?
+    func setup(isEditMode: Bool, name: String?, index: Int?) {
+        self.isEditMode = isEditMode
+        self.nameTextField.text = name
+        self.index = index
     }
     
-    @IBAction func completeButtonTapped() {
-        if isNameValid { delegate?.didTapTeamFormCompleteButton(name: trimmedName) }
-        else { animateShake(completion: nil) }
+    @IBAction func leftButtonTapped() {
+        if isEditMode, let index = index {
+            delegate?.didTapTeamFormDeleteButton(index: index)
+        } else {
+            delegate?.didTapTeamFormCancelButton()
+        }
+    }
+    
+    @IBAction func rightButtonTapped() {
+        if let name = validatedName, let index = index {
+            if isEditMode {
+                delegate?.didTapTeamFormEditButton(name: name, index: index)
+            } else {
+                delegate?.didTapTeamFormCompleteButton(name: name)
+            }
+        } else {
+            animateShake(completion: nil)
+        }
     }
     
     var centerYConstraint: NSLayoutConstraint?
@@ -85,12 +114,16 @@ class TeamFormView: UIView, NibLoadable {
         let isValid = predicate.evaluate(with: trimmedName)
         return isValid
     }
+    private var validatedName: String? {
+        if isNameValid { return trimmedName }
+        else { return nil }
+    }
 }
 
 extension TeamFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        completeButtonTapped()
+        rightButtonTapped()
         return true
     }
 }
