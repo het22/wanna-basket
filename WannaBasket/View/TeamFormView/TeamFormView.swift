@@ -76,9 +76,13 @@ class TeamFormView: UIView, NibLoadable {
     }
     
     @IBAction func rightButtonTapped() {
-        if let name = validatedName, let index = index {
+        if let name = validatedName {
             if isEditMode {
-                delegate?.didTapTeamFormEditButton(name: name, index: index)
+                if let index = index {
+                    delegate?.didTapTeamFormEditButton(name: name, index: index)
+                } else {
+                    animateShake(completion: nil)
+                }
             } else {
                 delegate?.didTapTeamFormCompleteButton(name: name)
             }

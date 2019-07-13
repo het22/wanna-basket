@@ -27,6 +27,8 @@ class HomeWireframe: HomeWireframeProtocol {
             presenter.interactor = interactor
             presenter.wireframe = wireframe
             
+            presenter.gameSetting = GameSetting()
+            
             return view
         }
         return UIViewController()

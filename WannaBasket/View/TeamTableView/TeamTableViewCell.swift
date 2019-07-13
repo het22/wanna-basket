@@ -48,14 +48,6 @@ class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
             rightArrow.layer.borderWidth = newVal ? 1 : 0
         }
     }
-
-//    var tapOnLeft: Bool = true
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let location = touches.first?.location(in: self) {
-//            tapOnLeft = location.x < (self.bounds.width / 2)
-//        }
-//        super.touchesEnded(touches, with: event)
-//    }
     
     enum Section {
         case Left
