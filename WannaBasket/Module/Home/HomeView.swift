@@ -82,32 +82,35 @@ class HomeView: UIViewController {
     }
     
     private var playerFormView: PlayerFormView?
-    var isShowingPlayerFormView: Bool = false {
-        willSet(newVal) {
-            if newVal == isShowingPlayerFormView { return }
-            if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingPlayerFormView = false }
-                backgroundView = UIView(frame: view.bounds)
-                backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
-                backgroundView!.addGestureRecognizer(dismissGesture)
-                view.addSubview(backgroundView!)
-                
-                playerFormView = PlayerFormView(frame: CGRect.zero)
-                playerFormView?.delegate = self
-                playerFormView?.translatesAutoresizingMaskIntoConstraints = false
-                view.addSubview(playerFormView!)
-                
-                let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
-                playerFormView!.centerYConstraint = centerYConstraint
-                NSLayoutConstraint.activate([
-                    playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    centerYConstraint,
-                    playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.55),
-                    playerFormView!.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)])
-            } else {
-                backgroundView?.removeFromSuperview()
-                playerFormView?.removeFromSuperview()
+    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool) {
+        if bool == (playerFormView != nil) { return }
+        if bool {
+            let dismissGesture = UITapGestureRecognizerWithClosure {
+                self.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
             }
+            backgroundView = UIView(frame: view.bounds)
+            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.addGestureRecognizer(dismissGesture)
+            self.view.addSubview(backgroundView!)
+            
+            playerFormView = PlayerFormView(frame: CGRect.zero)
+            playerFormView?.delegate = self
+            playerFormView?.translatesAutoresizingMaskIntoConstraints = false
+            playerFormView?.setup(isEditMode: isEditMode, player: player, index: index)
+            view.addSubview(playerFormView!)
+            
+            let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
+            playerFormView?.centerYConstraint = centerYConstraint
+            NSLayoutConstraint.activate([
+                playerFormView!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                centerYConstraint,
+                playerFormView!.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                playerFormView!.heightAnchor.constraint(equalTo: playerFormView!.widthAnchor, multiplier: 0.3)])
+        } else {
+            backgroundView?.removeFromSuperview()
+            playerFormView?.removeFromSuperview()
+            backgroundView = nil
+            playerFormView = nil
         }
     }
     
@@ -173,11 +176,19 @@ extension HomeView: TeamFormViewDelegate {
 extension HomeView: PlayerFormViewDelegate {
     
     func didTapPlayerFormCancelButton() {
-        isShowingPlayerFormView = false
+        presenter?.didTapPlayerFormCancelButton()
     }
     
-    func didTapPlayerFormCompleteButton(name: String?, number: Int?) {
-        presenter?.didTapPlayerFormCompleteButton(name: name, number: number)
+    func didTapPlayerFormDeleteButton(index: Int) {
+        presenter?.didTapPlayerFormDeleteButton(index: index)
+    }
+    
+    func didTapPlayerFormCompleteButton(player: Player) {
+        presenter?.didTapPlayerFormCompleteButton(player: player)
+    }
+    
+    func didTapPlayerFormEditButton(player: Player, index: Int) {
+        presenter?.didTapPlayerFormEditButton(player: player, index: index)
     }
     
     func didTapPlayerNumberButton() -> [Bool] {
@@ -186,7 +197,6 @@ extension HomeView: PlayerFormViewDelegate {
 }
 
 extension HomeView: TeamTableViewDelegate {
-    
     
     func didDeleteTeamAction(at index: Int) {
         presenter?.didDeleteTeamAction(at: index)
@@ -207,11 +217,11 @@ extension HomeView: PlayerTableViewDelegate {
         presenter?.didDeletePlayerAction(at: index, of: home)
     }
     
-    func didTapPlayerCell(at index: Int, of home: Bool) {
-        
-    }
-    
     func didDequeuePlayerCell(of home: Bool) -> [Int] {
         return []
+    }
+    
+    func didTapPlayerCell(at index: Int, of home: Bool) {
+        presenter?.didTapPlayerCell(at: index, of: home)
     }
 }

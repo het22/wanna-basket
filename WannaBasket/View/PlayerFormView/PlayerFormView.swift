@@ -10,7 +10,9 @@ import UIKit
 
 protocol PlayerFormViewDelegate {
     func didTapPlayerFormCancelButton()
-    func didTapPlayerFormCompleteButton(name: String?, number: Int?)
+    func didTapPlayerFormDeleteButton(index: Int)
+    func didTapPlayerFormCompleteButton(player: Player)
+    func didTapPlayerFormEditButton(player: Player, index: Int)
     func didTapPlayerNumberButton() -> [Bool]
 }
 
@@ -20,7 +22,8 @@ class PlayerFormView: UIView, NibLoadable {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberButton: UIButton!
-    var number: Int?
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +50,32 @@ class PlayerFormView: UIView, NibLoadable {
                                                selector: #selector(self.keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+    }
+    
+    var isEditMode = false {
+        didSet(oldVal) {
+            if oldVal == isEditMode { return }
+            leftButton.setTitle(isEditMode ? "삭제" : "취소", for: .normal)
+            rightButton.setTitle(isEditMode ? "수정" : "완료", for: .normal)
+        }
+    }
+    var index: Int?
+    var playerName: String? {
+        didSet { nameTextField.text = playerName }
+    }
+    var playerNumber: Int? {
+        didSet {
+            if let playerNumber = playerNumber {
+                numberButton.setTitle((playerNumber==100) ? "00" : "\(playerNumber)", for: .normal)
+                numberButton.setTitleColor(Constants.Color.Black, for: .normal)
+            }
+        }
+    }
+    func setup(isEditMode: Bool, player: Player?, index: Int?) {
+        self.isEditMode = isEditMode
+        self.index = index
+        self.playerName = player?.name
+        self.playerNumber = player?.number
     }
     
     private var backgroundView: UIView?
@@ -88,13 +117,29 @@ class PlayerFormView: UIView, NibLoadable {
         isShowingNumberSelectView = true
     }
     
-    @IBAction func cancelButtonTapped() {
-        delegate?.didTapPlayerFormCancelButton()
+    @IBAction func leftButtonTapped() {
+        if isEditMode, let index = index {
+            delegate?.didTapPlayerFormDeleteButton(index: index)
+        } else {
+            delegate?.didTapPlayerFormCancelButton()
+        }
     }
     
-    @IBAction func completeButtonTapped() {
-        if isNameValid { delegate?.didTapPlayerFormCompleteButton(name: trimmedName, number: number) }
-        else { animateShake(completion: nil) }
+    @IBAction func rightButtonTapped() {
+        if let name = validatedName, let number = playerNumber {
+            let player = Player(name: name, number: number)
+            if isEditMode {
+                if let index = index {
+                    delegate?.didTapPlayerFormEditButton(player: player, index: index)
+                } else {
+                    animateShake(completion: nil)
+                }
+            } else {
+                delegate?.didTapPlayerFormCompleteButton(player: player)
+            }
+        } else {
+            animateShake(completion: nil)
+        }
     }
     
     var centerYConstraint: NSLayoutConstraint?
@@ -124,12 +169,16 @@ class PlayerFormView: UIView, NibLoadable {
         let isValid = predicate.evaluate(with: trimmedName)
         return isValid
     }
+    private var validatedName: String? {
+        if isNameValid { return trimmedName }
+        else { return nil }
+    }
 }
 
 extension PlayerFormView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        completeButtonTapped()
+        rightButtonTapped()
         return true
     }
 }
@@ -137,9 +186,7 @@ extension PlayerFormView: UITextFieldDelegate {
 extension PlayerFormView: NumberSelectViewDelegate {
     
     func didSelectItem(at indexPath: IndexPath) {
-        number = indexPath.row
-        numberButton.setTitle((number==100) ? "00" : "\(number!)", for: .normal)
-        numberButton.setTitleColor(Constants.Color.Black, for: .normal)
+        playerNumber = indexPath.row
         isShowingNumberSelectView = false
     }
 }

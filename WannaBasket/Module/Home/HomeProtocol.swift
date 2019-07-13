@@ -44,13 +44,17 @@ protocol HomePresenterProtocol: class {
     func didTapTeamFormCompleteButton(name: String)
     func didTapTeamFormEditButton(name: String, index: Int)
     
-    func didTapPlayerFormCompleteButton(name: String?, number: Int?)
+    func didTapPlayerFormCancelButton()
+    func didTapPlayerFormDeleteButton(index: Int)
+    func didTapPlayerFormCompleteButton(player: Player)
+    func didTapPlayerFormEditButton(player: Player, index: Int)
     func didTapPlayerNumberButton() -> [Bool]
     
     func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
     func didDeleteTeamAction(at index: Int)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
     
+    func didTapPlayerCell(at index: Int, of home: Bool)
     func didDeletePlayerAction(at index: Int, of home: Bool)
 }
 
@@ -70,6 +74,5 @@ protocol HomeViewProtocol: class {
     func enableAwayPlayerAddButton(bool: Bool)
     
     func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool)
-    
-    var isShowingPlayerFormView: Bool { get set }
+    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool)
 }
