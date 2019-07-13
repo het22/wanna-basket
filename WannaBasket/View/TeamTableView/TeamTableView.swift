@@ -113,12 +113,8 @@ extension TeamTableView: UITableViewDataSource {
         let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamTableViewCell
         cell.setup(name: teamList[indexPath.section].name)
         if let currentTeamIndex = _delegate?.didDequeueTeamCell() {
-            if let homeTeamIndex = currentTeamIndex.home {
-                cell.highlightOnLeft = (indexPath.section == homeTeamIndex)
-            }
-            if let awayTeamIndex = currentTeamIndex.away {
-                cell.highlightOnRight = (indexPath.section == awayTeamIndex)
-            }
+            cell.highlightOnLeft = (indexPath.section == currentTeamIndex.home)
+            cell.highlightOnRight = (indexPath.section == currentTeamIndex.away)
         }
         return cell
     }
