@@ -33,7 +33,7 @@ protocol RecordPresenterProtocol: class {
     var interactor: RecordInteractorInputProtocol? { get set }
     
     // VIEW -> PRESENTER
-    
+    func viewDidLoad()
 }
 
 protocol RecordViewProtocol: class {

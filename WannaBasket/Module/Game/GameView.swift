@@ -33,6 +33,8 @@ class GameView: UIViewController {
         didSet { statSelectView.delegate = self }
     }
     
+    deinit { print( "Deinit: ", self) }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()

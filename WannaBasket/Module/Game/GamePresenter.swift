@@ -83,7 +83,8 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didSelectExit() {
-        view?.dismiss(animated: true) {}
+        
+        wireframe?.presentModule(source: view!, module: Module.Record(records: game!.records))
     }
     
     // --------------------------------------------------
@@ -217,7 +218,7 @@ extension GamePresenter: GameDelegate {
         view?.highlightPlayerCell(at: index, of: home, bool: floor)
     }
     
-    func didAddRecord(record: RecordModel) {
+    func didAddRecord(record: Record) {
         switch record.stat {
         case .Score(_):
             let home = record.home
@@ -233,7 +234,7 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didRemoveLastRecord(record: RecordModel) {
+    func didRemoveLastRecord(record: Record) {
         switch record.stat {
         case .Score(_):
             let home = record.home

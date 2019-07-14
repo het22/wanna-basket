@@ -11,11 +11,15 @@ import UIKit
 class RecordView: UIViewController {
 
 	var presenter: RecordPresenterProtocol?
-
+    
+    deinit { print( "Deinit: ", self) }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 
+    
 }
 
 extension RecordView: RecordViewProtocol {

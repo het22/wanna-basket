@@ -15,8 +15,8 @@ protocol GameDelegate: class {
     
     func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool)
     
-    func didAddRecord(record: RecordModel)
-    func didRemoveLastRecord(record: RecordModel)
+    func didAddRecord(record: Record)
+    func didRemoveLastRecord(record: Record)
 }
 
 class Game {
@@ -80,7 +80,7 @@ class Game {
         }
     }
     
-    var records: [RecordModel] = []
+    var records: [Record] = []
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat) {
         let team = playerTuple.home ? teams.home : teams.away
         let record = Record(quarter: time.currentTime,

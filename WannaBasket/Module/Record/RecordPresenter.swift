@@ -16,6 +16,10 @@ class RecordPresenter: RecordPresenterProtocol {
     
     var records: [Record]!
     
+    func viewDidLoad() {
+        records.forEach { print($0) }
+    }
+    
 }
 
 extension RecordPresenter: RecordInteractorOutputProtocol {
