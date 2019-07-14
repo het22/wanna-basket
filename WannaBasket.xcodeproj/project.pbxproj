@@ -22,6 +22,7 @@
 		CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5B22DB0BBC00871C2B /* RecordView.swift */; };
 		CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */; };
 		CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */; };
+		CB5C1C6522DB5AEB00871C2B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -117,6 +118,7 @@
 		CB5C1C5B22DB0BBC00871C2B /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProtocol.swift; sourceTree = "<group>"; };
 		CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
+		CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */,
 				CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */,
 				CBC6F06122D32DDE0021A11D /* UIView+Extension.swift */,
+				CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */,
 				CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */,
 			);
 			path = Extension;
@@ -757,6 +760,7 @@
 				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,
 				CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */,
 				CBFA01A622B89E7C00F71C7B /* Module.swift in Sources */,
+				CB5C1C6522DB5AEB00871C2B /* UIScrollView+Extension.swift in Sources */,
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
 				CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
