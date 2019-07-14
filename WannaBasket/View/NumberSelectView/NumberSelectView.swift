@@ -18,7 +18,6 @@ class NumberSelectView: UICollectionView {
     var isNumberAssigned = [Bool]()
     let cellSpacing: CGFloat = 5
     
-    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         showsVerticalScrollIndicator = false
@@ -50,7 +49,7 @@ extension NumberSelectView: UICollectionViewDelegate {
 extension NumberSelectView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.bounds.width - cellSpacing*2) / 10 - cellSpacing*2
+        let width = (self.bounds.width - cellSpacing*2) / 10 - cellSpacing
         return CGSize(width: width, height: width)
     }
     
