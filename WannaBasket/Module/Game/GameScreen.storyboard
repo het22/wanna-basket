@@ -415,7 +415,7 @@
                                                                     <constraint firstItem="417-Pg-fCx" firstAttribute="leading" secondItem="Y8p-u8-SYU" secondAttribute="trailing" constant="5" id="yaZ-Jy-H1Y"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" userLabel="Control" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="232" width="348" height="89"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>

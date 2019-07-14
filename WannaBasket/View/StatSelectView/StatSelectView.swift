@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol StatSelectViewDelegate {
+protocol StatSelectViewDelegate: class {
     func didSelectStat(stat: Stat)
     func didSelectUndo()
 }
 
 class StatSelectView: UIView, NibLoadable {
     
-    var delegate: StatSelectViewDelegate?
+    weak var delegate: StatSelectViewDelegate?
     
     @IBOutlet weak var undoToggleView: ToggleView!
     @IBOutlet weak var pt1ToggleView: ToggleView!
@@ -41,11 +41,11 @@ class StatSelectView: UIView, NibLoadable {
         for i in 0...views.count-1 {
             views[i]?.setup(name: i==0 ? "취소" : (stats[i]?.description ?? ""),
                             highlightColor: i==0 ? Constants.Color.Steel : Constants.Color.Black)
-            let gesture = UITapGestureRecognizerWithClosure {
-                if let stat = self.stats[i] {
-                    self.delegate?.didSelectStat(stat: stat)
+            let gesture = UITapGestureRecognizerWithClosure { [weak self] in
+                if let stat = self?.stats[i] {
+                    self?.delegate?.didSelectStat(stat: stat)
                 } else {
-                    self.delegate?.didSelectUndo()
+                    self?.delegate?.didSelectUndo()
                 }
             }
             gesture.numberOfTapsRequired = 1

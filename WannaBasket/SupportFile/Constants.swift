@@ -29,8 +29,9 @@ enum Constants {
         
         static let Complete = "완료"
         static let Delete = "삭제"
-        static let Edit = "편집"
+        static let Edit = "수정"
         static let Cancel = "취소"
+        static let Exit = "나가기"
     }
     
     enum Regex {

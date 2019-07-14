@@ -26,7 +26,7 @@ class HomePresenter: HomePresenterProtocol {
     var isEdittingHome: Bool = true
     
     // --------------------------------------------------
-    // MARK: View Events
+    // MARK: Home View Events
     // --------------------------------------------------
     func viewDidLoad() {
         view?.updateTeamTableView(teams: gameSetting.teams)

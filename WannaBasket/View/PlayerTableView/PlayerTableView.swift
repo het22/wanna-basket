@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol PlayerTableViewDelegate {
+@objc protocol PlayerTableViewDelegate: class {
     @objc optional func didDeletePlayerAction(at index: Int, of home: Bool)
     func didTapPlayerCell(at index: Int, of home: Bool)
     func didDequeuePlayerCell(of home: Bool) -> [Int]
@@ -16,7 +16,7 @@ import UIKit
 
 class PlayerTableView: UITableView {
     
-    var _delegate: PlayerTableViewDelegate?
+    weak var _delegate: PlayerTableViewDelegate?
     var playerList: [Player]? {
         didSet {
             showPlaceholder(with: playerList?.count)

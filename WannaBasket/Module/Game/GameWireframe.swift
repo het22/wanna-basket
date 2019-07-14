@@ -33,4 +33,11 @@ class GameWireframe: GameWireframeProtocol {
         }
         return UIViewController()
     }
+    
+    func presentModule(source: GameViewProtocol, module: Module) {
+        if let sourceView = source as? UIViewController {
+            let destinationView = module.view
+            sourceView.present(destinationView, animated: true, completion: nil)
+        }
+    }
 }

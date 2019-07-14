@@ -32,7 +32,7 @@ class HomeView: UIViewController {
     private var backgroundView: UIView?
     private var teamFormView: TeamFormView?
     private var playerFormView: PlayerFormView?
-
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
@@ -92,8 +92,8 @@ extension HomeView: HomeViewProtocol {
     func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool) {
         if bool == (teamFormView != nil) { return }
         if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure {
-                self.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
+            let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                self?.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
             backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
@@ -124,8 +124,8 @@ extension HomeView: HomeViewProtocol {
     func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool) {
         if bool == (playerFormView != nil) { return }
         if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure {
-                self.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
+            let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                self?.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
             backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameTimeDelegate {
+protocol GameTimeDelegate: class {
     func didSetQuarter(quarter: Quarter)
     func didSetGameClock(gameClock: Float, isRunning: Bool)
     func didSetShotClock(shotClock: Float, isRunning: Bool)
@@ -16,7 +16,7 @@ protocol GameTimeDelegate {
 
 class TimeManager {
 
-    var delegate: GameTimeDelegate?
+    weak var delegate: GameTimeDelegate?
     
     let maxGameClock: Float = 600.0
     let maxOverTimeClock: Float = 300.0

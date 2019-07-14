@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PlayerFormViewDelegate {
+protocol PlayerFormViewDelegate: class {
     func didTapPlayerFormCancelButton()
     func didTapPlayerFormDeleteButton(index: Int)
     func didTapPlayerFormCompleteButton(player: Player)
@@ -18,7 +18,7 @@ protocol PlayerFormViewDelegate {
 
 class PlayerFormView: UIView, NibLoadable {
     
-    var delegate: PlayerFormViewDelegate?
+    weak var delegate: PlayerFormViewDelegate?
     
     // --------------------------------------------------
     // MARK: IBOutlet Variables
@@ -166,7 +166,9 @@ class PlayerFormView: UIView, NibLoadable {
             if newVal == isShowingNumberSelectView { return }
             guard let superview = superview else { return }
             if newVal {
-                let dismissGesture = UITapGestureRecognizerWithClosure { self.isShowingNumberSelectView = false }
+                let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                    self?.isShowingNumberSelectView = false
+                }
                 
                 backgroundView = UIView(frame: superview.bounds)
                 backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)

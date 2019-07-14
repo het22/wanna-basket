@@ -11,7 +11,7 @@ import UIKit
 // --------------------------------------------------
 // MARK: TeamFormView Delegate
 // --------------------------------------------------
-protocol TeamFormViewDelegate {
+protocol TeamFormViewDelegate: class {
     func didTapTeamFormCancelButton()
     func didTapTeamFormDeleteButton(index: Int)
     func didTapTeamFormCompleteButton(name: String)
@@ -23,7 +23,7 @@ protocol TeamFormViewDelegate {
 // --------------------------------------------------
 class TeamFormView: UIView, NibLoadable {
     
-    var delegate: TeamFormViewDelegate?
+    weak var delegate: TeamFormViewDelegate?
     
     // --------------------------------------------------
     // MARK: IBOutlet Variables

@@ -25,7 +25,6 @@ class GameView: UIViewController {
     @IBOutlet weak var homeSubstituteButton: UIButton!
     @IBOutlet weak var awaySubstituteButton: UIButton!
     
-    
     @IBOutlet weak var quarterLabel: UILabel!
     @IBOutlet weak var gameClockLabel: UILabel!
     @IBOutlet weak var shotClockLabel: UILabel!
@@ -72,11 +71,11 @@ class GameView: UIViewController {
     
     private var backgroundView: UIView?
     private var quarterSelectView: QuarterSelectView?
-    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int,currentQuarter: Quarter, bool: Bool) {
+    func showQuarterSelectView(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarter: Quarter, bool: Bool) {
         if bool == (quarterSelectView != nil) { return }
         if bool {
-            let dismissGesture = UITapGestureRecognizerWithClosure {
-                self.showQuarterSelectView(maxRegularQuarterNum: maxRegularQuarterNum,
+            let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                self?.showQuarterSelectView(maxRegularQuarterNum: maxRegularQuarterNum,
                                            overtimeQuarterCount: overtimeQuarterCount,
                                            currentQuarter: currentQuarter,
                                            bool: false)

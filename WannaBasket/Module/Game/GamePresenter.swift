@@ -10,21 +10,26 @@ import UIKit
 
 class GamePresenter: GamePresenterProtocol {
 
+    // --------------------------------------------------
+    // MARK: Connect Module Components
+    // --------------------------------------------------
     weak var view: GameViewProtocol?
     var interactor: GameInteractorInputProtocol?
     var wireframe: GameWireframeProtocol?
     
+    // --------------------------------------------------
+    // MARK: Manage Game Informations
+    // --------------------------------------------------
     var game: Game! {
         didSet {
             game.delegate = self
-            game.timeManager.delegate = self
+            game.time.delegate = self
             for i in 0...4 {
                 game.substitutePlayer(index: i, of: true)
                 game.substitutePlayer(index: i, of: false)
             }
         }
     }
-    
     var isSubstituting: (home: Bool, away: Bool) = (false, false) {
         didSet(oldVal) {
             if oldVal.home != isSubstituting.home {
@@ -48,34 +53,108 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
+    // --------------------------------------------------
+    // MARK: Game View Events
+    // --------------------------------------------------
     func viewDidLoad() {
         view?.updateTeamNameLabel(name: game.teams.home.name, of: true)
         view?.updateTeamNameLabel(name: game.teams.away.name, of: false)
         view?.updatePlayerTableView(players: game.floorPlayers.home, of: true)
         view?.updatePlayerTableView(players: game.floorPlayers.away, of: false)
-        view?.updateQuarterLabel(game.timeManager.currentQuarter)
+        view?.updateQuarterLabel(game.time.currentQuarter)
     }
     
+    // --------------------------------------------------
+    // MARK: Quarter View Events
+    // --------------------------------------------------
+    func didTapQuarterLabel() {
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+                                    overtimeQuarterCount: 0,
+                                    currentQuarter: game.time.currentQuarter,
+                                    bool: true)
+    }
+    
+    func didSelectQuarter(quarterType: Quarter) {
+        game.time.updateQuarter(quarter: quarterType)
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+                                    overtimeQuarterCount: 0,
+                                    currentQuarter: game.time.currentQuarter,
+                                    bool: false)
+    }
+    
+    func didSelectExit() {
+        view?.dismiss(animated: true) {}
+    }
+    
+    // --------------------------------------------------
+    // MARK: Clock View Events
+    // --------------------------------------------------
+    func didTapGameClockLabel() {
+        game.time.isGameClockRunning = !game.time.isGameClockRunning
+    }
+    
+    func didTapShotClockLabel() {
+        game.time.isShotClockRunning = !game.time.isShotClockRunning
+    }
+    
+    func didTapReset14Button() {
+        game.time.resetShotClock(14.0)
+    }
+    
+    func didTapReset24Button() {
+        game.time.resetShotClock(24.0)
+    }
+    
+    func didTapClockControlButton(control: ClockControl) {
+        switch control {
+        case .GameMinPlus:
+            let bool = (game.time.currentTime.gameClock > 60.0)
+            game.time.addGameClock(bool ? 60.0 : 1.0)
+        case .GameMinMinus:
+            let bool = (game.time.currentTime.gameClock > 61.0)
+            game.time.addGameClock(bool ? -60.0 : -1.0)
+        case .GameSecPlus:
+            let bool = (game.time.currentTime.gameClock >= 60.0)
+            game.time.addGameClock(bool ? 1.0 : 0.1)
+        case .GameSecMinus:
+            let bool = (game.time.currentTime.gameClock > 60.0)
+            game.time.addGameClock(bool ? -1.0 : -0.1)
+        case .ShotSecPlus:
+            game.time.addShotClock(1.0)
+        case .ShotSecMinus:
+            game.time.addShotClock(-1.0)
+        case .ShotPointPlus:
+            game.time.addShotClock(0.1)
+        case .ShotPointMinus:
+            game.time.addShotClock(-0.1)
+        }
+    }
+    
+    // --------------------------------------------------
+    // MARK: Stat View Events
+    // --------------------------------------------------
+    func didSelectStat(stat: Stat) {
+        if let current = game.currentStat, current == stat {
+            game.currentStat = nil
+        } else {
+            game.currentStat = stat
+        }
+    }
+    
+    func didSelectUndo() {
+        game.removeLastRecord()
+    }
+    
+    // --------------------------------------------------
+    // MARK: Player Table View Events
+    // --------------------------------------------------
     func didDequeuePlayerCell(of home: Bool) -> [Int] {
         let isSbsting = home ? isSubstituting.home : isSubstituting.away
         if isSbsting {
             return home ? game.floorPlayerIndexes.home : game.floorPlayerIndexes.away
         } else {
-//            if let index = game.currentPlayerTuple?.index {
-//                return [index]
-//            } else {
-//                return []
-//            }
             return []
         }
-    }
-    
-    func didTapSubstituteButton(of home: Bool) {
-        if let currentPlayerHome = game.currentPlayerTuple?.home, currentPlayerHome == home {
-            game.currentPlayerTuple = nil
-        }
-        if home { isSubstituting.home = !isSubstituting.home }
-        else { isSubstituting.away = !isSubstituting.away }
     }
     
     func didTapPlayerCell(at index: Int, of home: Bool) {
@@ -91,79 +170,18 @@ class GamePresenter: GamePresenterProtocol {
         }
     }
     
-    func didTapQuarterLabel() {
-        view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
-                                    overtimeQuarterCount: 0,
-                                    currentQuarter: game.timeManager.currentQuarter,
-                                    bool: true)
-    }
-    
-    func didSelectQuarter(quarterType: Quarter) {
-        game.timeManager.updateQuarter(quarter: quarterType)
-        view?.showQuarterSelectView(maxRegularQuarterNum: game.timeManager.maxRegularQuarterNum,
-                                    overtimeQuarterCount: 0,
-                                    currentQuarter: game.timeManager.currentQuarter,
-                                    bool: false)
-    }
-    
-    func didSelectExit() {
-        view?.dismiss(animated: true, completion: nil)
-    }
-    
-    func didTapGameClockLabel() {
-        game.timeManager.isGameClockRunning = !game.timeManager.isGameClockRunning
-    }
-    
-    func didTapShotClockLabel() {
-        game.timeManager.isShotClockRunning = !game.timeManager.isShotClockRunning
-    }
-    
-    func didTapClockControlButton(control: ClockControl) {
-        switch control {
-        case .GameMinPlus:
-            let bool = (game.timeManager.currentTime.gameClock > 60.0)
-            game.timeManager.addGameClock(bool ? 60.0 : 1.0)
-        case .GameMinMinus:
-            let bool = (game.timeManager.currentTime.gameClock > 61.0)
-            game.timeManager.addGameClock(bool ? -60.0 : -1.0)
-        case .GameSecPlus:
-            let bool = (game.timeManager.currentTime.gameClock >= 60.0)
-            game.timeManager.addGameClock(bool ? 1.0 : 0.1)
-        case .GameSecMinus:
-            let bool = (game.timeManager.currentTime.gameClock > 60.0)
-            game.timeManager.addGameClock(bool ? -1.0 : -0.1)
-        case .ShotSecPlus:
-            game.timeManager.addShotClock(1.0)
-        case .ShotSecMinus:
-            game.timeManager.addShotClock(-1.0)
-        case .ShotPointPlus:
-            game.timeManager.addShotClock(0.1)
-        case .ShotPointMinus:
-            game.timeManager.addShotClock(-0.1)
+    func didTapSubstituteButton(of home: Bool) {
+        if let currentPlayerHome = game.currentPlayerTuple?.home, currentPlayerHome == home {
+            game.currentPlayerTuple = nil
         }
-    }
-    
-    func didTapReset14Button() {
-        game.timeManager.resetShotClock(14.0)
-    }
-    
-    func didTapReset24Button() {
-        game.timeManager.resetShotClock(24.0)
-    }
-    
-    func didSelectStat(stat: Stat) {
-        if let current = game.currentStat, current == stat {
-            game.currentStat = nil
-        } else {
-            game.currentStat = stat
-        }
-    }
-    
-    func didSelectUndo() {
-        game.removeLastRecord()
+        if home { isSubstituting.home = !isSubstituting.home }
+        else { isSubstituting.away = !isSubstituting.away }
     }
 }
 
+// --------------------------------------------------
+// MARK: Game Delegate
+// --------------------------------------------------
 extension GamePresenter: GameDelegate {
     
     func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?,
@@ -233,6 +251,9 @@ extension GamePresenter: GameDelegate {
     }
 }
 
+// --------------------------------------------------
+// MARK: Game Time Delegate
+// --------------------------------------------------
 extension GamePresenter: GameTimeDelegate {
     
     func didSetQuarter(quarter: Quarter) {
@@ -248,6 +269,9 @@ extension GamePresenter: GameTimeDelegate {
     }
 }
 
+// --------------------------------------------------
+// MARK: Game Interactor Output Protocol
+// --------------------------------------------------
 extension GamePresenter: GameInteractorOutputProtocol {
     
 }

@@ -16,6 +16,12 @@
 		CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */; };
 		CB5C1C5422D878FF00871C2B /* NumberSelectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */; };
 		CB5C1C5622D9961D00871C2B /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5522D9961D00871C2B /* GameSetting.swift */; };
+		CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */; };
+		CB5C1C5F22DB0BBC00871C2B /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */; };
+		CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */; };
+		CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5B22DB0BBC00871C2B /* RecordView.swift */; };
+		CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */; };
+		CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -105,6 +111,12 @@
 		CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectViewCell.swift; sourceTree = "<group>"; };
 		CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberSelectViewCell.xib; sourceTree = "<group>"; };
 		CB5C1C5522D9961D00871C2B /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
+		CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordScreen.storyboard; sourceTree = "<group>"; };
+		CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
+		CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractor.swift; sourceTree = "<group>"; };
+		CB5C1C5B22DB0BBC00871C2B /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProtocol.swift; sourceTree = "<group>"; };
+		CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -226,6 +238,19 @@
 				CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */,
 			);
 			path = NumberSelectView;
+			sourceTree = "<group>";
+		};
+		CB5C1C5722DB0BA700871C2B /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */,
+				CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */,
+				CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */,
+				CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */,
+				CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */,
+				CB5C1C5B22DB0BBC00871C2B /* RecordView.swift */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
@@ -439,6 +464,7 @@
 			children = (
 				CBFA01A322B89E2300F71C7B /* Home */,
 				CBB9B30522C49D62004C50B3 /* Game */,
+				CB5C1C5722DB0BA700871C2B /* Record */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -610,6 +636,7 @@
 				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
 				CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */,
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
+				CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
 				CBC6F03622CDEC8A0021A11D /* PlayerFormView.xib in Resources */,
 			);
@@ -696,12 +723,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBC6F06922D416B70021A11D /* Quarter.swift in Sources */,
+				CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */,
 				CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */,
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
 				CBB9B32122C4D3BD004C50B3 /* Game.swift in Sources */,
 				CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */,
 				CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */,
+				CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */,
 				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */,
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
@@ -719,6 +748,7 @@
 				CBC6F05922CFA08B0021A11D /* QuarterSelectView.swift in Sources */,
 				CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */,
 				CBC6F04522CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift in Sources */,
+				CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
 				CBC6F04222CDEC8A0021A11D /* NumberFormatter.swift in Sources */,
@@ -730,11 +760,13 @@
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
 				CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
+				CB5C1C5F22DB0BBC00871C2B /* RecordPresenter.swift in Sources */,
 				CBC6F03D22CDEC8A0021A11D /* PlayerTableView.swift in Sources */,
 				CBC6F05322CF063B0021A11D /* Stat.swift in Sources */,
 				CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */,
 				CBC6F03B22CDEC8A0021A11D /* ToggleView.swift in Sources */,
 				CBC6F04422CDEC8A0021A11D /* Reusable.swift in Sources */,
+				CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */,
 				CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */,
 				CBC6F03822CDEC8A0021A11D /* TeamFormView.swift in Sources */,
 				CBC6F03722CDEC8A0021A11D /* PlayerFormView.swift in Sources */,

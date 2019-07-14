@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TeamTableViewDelegate {
+protocol TeamTableViewDelegate: class {
     func didDeleteTeamAction(at index: Int)
     func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
@@ -16,7 +16,7 @@ protocol TeamTableViewDelegate {
 
 class TeamTableView: UITableView {
     
-    var _delegate: TeamTableViewDelegate?
+    weak var _delegate: TeamTableViewDelegate?
     var teamList: [Team] = [] {
         didSet {
             showPlaceholder(count: teamList.count)

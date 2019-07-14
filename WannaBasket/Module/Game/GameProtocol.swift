@@ -10,6 +10,7 @@ import UIKit
 
 protocol GameWireframeProtocol: class {
     static func createModule(with game: Game) -> UIViewController
+    func presentModule(source: GameViewProtocol, module: Module)
 }
 
 protocol GameInteractorInputProtocol: class {
@@ -35,22 +36,22 @@ protocol GamePresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     
-    func didDequeuePlayerCell(of home: Bool) -> [Int]
-    func didTapPlayerCell(at index: Int, of home: Bool)
-    func didTapSubstituteButton(of home: Bool)
-    
     func didTapQuarterLabel()
     func didSelectQuarter(quarterType: Quarter)
     func didSelectExit()
     
     func didTapGameClockLabel()
     func didTapShotClockLabel()
-    func didTapClockControlButton(control: ClockControl)
     func didTapReset14Button()
     func didTapReset24Button()
+    func didTapClockControlButton(control: ClockControl)
     
     func didSelectStat(stat: Stat)
     func didSelectUndo()
+    
+    func didDequeuePlayerCell(of home: Bool) -> [Int]
+    func didTapPlayerCell(at index: Int, of home: Bool)
+    func didTapSubstituteButton(of home: Bool)
 }
 
 protocol GameViewProtocol: class {
@@ -58,8 +59,6 @@ protocol GameViewProtocol: class {
     var presenter: GamePresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
-    func dismiss(animated flag: Bool, completion: (() -> Void)?)
-    
     func updatePlayerTableView(players: [Player], of home: Bool)
     func updateTeamNameLabel(name: String, of home: Bool)
     func updateTeamScoreLabel(score: Int, of home: Bool)
@@ -78,4 +77,6 @@ protocol GameViewProtocol: class {
     func blinkStatCell(of stat: Stat?, completion: ((Bool)->Void)?)
     
     func enableScrollingPlayerTableView(of home: Bool, bool: Bool)
+    
+    func dismiss(animated flag: Bool, completion: (() -> Void)?)
 }

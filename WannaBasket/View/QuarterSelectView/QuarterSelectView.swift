@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol QuarterSelectViewDelegate {
+protocol QuarterSelectViewDelegate: class {
     func didSelectQuarter(quarterType: Quarter)
     func didSelectExit()
 }
 
 class QuarterSelectView: UIView, NibLoadable {
     
-    var delegate: QuarterSelectViewDelegate?
+    weak var delegate: QuarterSelectViewDelegate?
     
     @IBOutlet weak var hStack: UIStackView!
     
@@ -40,13 +40,15 @@ class QuarterSelectView: UIView, NibLoadable {
         
         let exitView: ToggleView = {
             let view = ToggleView(frame: CGRect.zero)
-            view.setup(name: "나가기", highlightColor: Constants.Color.Steel)
+            view.setup(name: Constants.Text.Exit, highlightColor: Constants.Color.Steel)
             hStack.addArrangedSubview(view)
-            let gesture = UITapGestureRecognizerWithClosure { self.delegate?.didSelectExit() }
+            let gesture = UITapGestureRecognizerWithClosure { [weak self] in
+                self?.delegate?.didSelectExit()
+            }
             view.addGestureRecognizer(gesture)
             return view
         }()
-        
+
         for i in 1...maxRegularQuarterNum {
             let quarterType = Quarter.Regular(i)
             let quarterView = ToggleView(frame: CGRect.zero)
@@ -54,11 +56,11 @@ class QuarterSelectView: UIView, NibLoadable {
                               highlightColor: Constants.Color.Black)
             quarterView.isHighlighted = (currentQuarter == Quarter.Regular(i))
             hStack.insertArrangedSubview(quarterView, at: i-1)
-            let gesture = UITapGestureRecognizerWithClosure {
-                self.delegate?.didSelectQuarter(quarterType: quarterType)
+            let gesture = UITapGestureRecognizerWithClosure { [weak self] in
+                self?.delegate?.didSelectQuarter(quarterType: quarterType)
             }
             quarterView.addGestureRecognizer(gesture)
             quarterView.widthAnchor.constraint(equalTo: exitView.widthAnchor, multiplier: 1.0).isActive = true
-        }
+            }
     }
 }

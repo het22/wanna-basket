@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameDelegate {
+protocol GameDelegate: class {
     func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
     func didSetCurrentStat(oldStat: Stat?, newStat: Stat?)
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat)
@@ -21,10 +21,10 @@ protocol GameDelegate {
 
 class Game {
     
-    var delegate: GameDelegate?
+    weak var delegate: GameDelegate?
     
+    var time: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     var teams: (home: Team, away: Team)
-    var timeManager: TimeManager = TimeManager(maxRegularQuarterNum: 4)
     init(homeTeam: Team, awayTeam: Team) {
         self.teams = (homeTeam, awayTeam)
     }
@@ -83,7 +83,7 @@ class Game {
     var records: [RecordModel] = []
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat) {
         let team = playerTuple.home ? teams.home : teams.away
-        let record = Record(quarter: timeManager.currentTime,
+        let record = Record(quarter: time.currentTime,
                             home: playerTuple.home,
                             team: team,
                             player: team.players[playerTuple.index],

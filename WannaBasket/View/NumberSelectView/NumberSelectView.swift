@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol NumberSelectViewDelegate {
+protocol NumberSelectViewDelegate: class {
     func didSelectItem(at indexPath: IndexPath)
 }
 
 class NumberSelectView: UICollectionView {
     
-    var _delegate: NumberSelectViewDelegate?
+    weak var _delegate: NumberSelectViewDelegate?
     var isNumberAssigned = [Bool]()
     let cellSpacing: CGFloat = 5
     
