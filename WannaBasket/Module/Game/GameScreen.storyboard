@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="736" height="20.666666666666668"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-B2-035">
-                                                <rect key="frame" x="5" y="0.0" width="31" height="20.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="20.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqp-gM-jYK">
-                                                <rect key="frame" x="684.66666666666663" y="0.0" width="46.333333333333371" height="20.666666666666668"/>
+                                                <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="20.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -49,14 +49,14 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="UgP-B2-035" firstAttribute="leading" secondItem="NEm-JM-OMF" secondAttribute="leading" constant="5" id="8Kg-5C-zd1"/>
+                                            <constraint firstItem="UgP-B2-035" firstAttribute="leading" secondItem="NEm-JM-OMF" secondAttribute="leading" id="8Kg-5C-zd1"/>
                                             <constraint firstItem="3e5-JK-aZo" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="AIw-pr-CWx"/>
                                             <constraint firstAttribute="bottom" secondItem="Iqp-gM-jYK" secondAttribute="bottom" id="Aaw-JB-2ST"/>
                                             <constraint firstItem="Iqp-gM-jYK" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="H0b-GT-Cue"/>
                                             <constraint firstItem="UgP-B2-035" firstAttribute="top" secondItem="NEm-JM-OMF" secondAttribute="top" id="SfB-v4-GGe"/>
                                             <constraint firstItem="3e5-JK-aZo" firstAttribute="centerX" secondItem="NEm-JM-OMF" secondAttribute="centerX" id="Wc9-W6-gAg"/>
                                             <constraint firstAttribute="bottom" secondItem="UgP-B2-035" secondAttribute="bottom" id="XDk-Of-fvs"/>
-                                            <constraint firstAttribute="trailing" secondItem="Iqp-gM-jYK" secondAttribute="trailing" constant="5" id="eq8-vr-aAc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iqp-gM-jYK" secondAttribute="trailing" id="eq8-vr-aAc"/>
                                             <constraint firstAttribute="bottom" secondItem="3e5-JK-aZo" secondAttribute="bottom" id="tQr-1i-V4T"/>
                                         </constraints>
                                     </view>
@@ -64,23 +64,23 @@
                                         <rect key="frame" x="0.0" y="20.666666666666671" width="736" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
-                                                <rect key="frame" x="5" y="0.0" width="241.66666666666666" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="62"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿼터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooT-Wl-SSq">
                                                 <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="62"/>
                                                 <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <nil key="highlightedColor"/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="W5d-cc-aM2" appends="YES" id="xAo-g3-oIo"/>
                                                 </connections>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
-                                                <rect key="frame" x="489.33333333333331" y="0.0" width="241.66666666666669" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="62"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -89,12 +89,12 @@
                                         <constraints>
                                             <constraint firstItem="L0I-Kd-rAa" firstAttribute="leading" secondItem="ooT-Wl-SSq" secondAttribute="trailing" id="KaP-WY-oZK"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="centerX" secondItem="P9Z-ej-XiH" secondAttribute="centerX" id="NIO-J9-h6x"/>
-                                            <constraint firstAttribute="trailing" secondItem="L0I-Kd-rAa" secondAttribute="trailing" constant="5" id="PJL-AV-Ijc"/>
+                                            <constraint firstAttribute="trailing" secondItem="L0I-Kd-rAa" secondAttribute="trailing" id="PJL-AV-Ijc"/>
                                             <constraint firstAttribute="bottom" secondItem="Snx-rD-dpQ" secondAttribute="bottom" id="RgM-rh-McU"/>
                                             <constraint firstAttribute="bottom" secondItem="ooT-Wl-SSq" secondAttribute="bottom" id="Rv1-Jp-4wr"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="width" secondItem="P9Z-ej-XiH" secondAttribute="width" multiplier="0.33" id="XOz-tb-0wv"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="ceb-Y5-ee7"/>
-                                            <constraint firstItem="Snx-rD-dpQ" firstAttribute="leading" secondItem="P9Z-ej-XiH" secondAttribute="leading" constant="5" id="jwy-rY-Av7"/>
+                                            <constraint firstItem="Snx-rD-dpQ" firstAttribute="leading" secondItem="P9Z-ej-XiH" secondAttribute="leading" id="jwy-rY-Av7"/>
                                             <constraint firstItem="L0I-Kd-rAa" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="mEu-2t-aBI"/>
                                             <constraint firstItem="Snx-rD-dpQ" firstAttribute="top" secondItem="P9Z-ej-XiH" secondAttribute="top" id="njE-EC-zls"/>
                                             <constraint firstItem="ooT-Wl-SSq" firstAttribute="leading" secondItem="Snx-rD-dpQ" secondAttribute="trailing" id="t0q-gU-ewD"/>

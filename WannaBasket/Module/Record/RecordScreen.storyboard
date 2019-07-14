@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DoHyeon-Regular.ttf">
+            <string>DoHyeon-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Record View-->
         <scene sceneID="tne-QT-ifu">
@@ -18,23 +23,145 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5U-aE-5tg">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgh-tc-D2p">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfF-c8-TdM" userLabel="Back Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="245.33333333333334" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                        <state key="normal" title="&lt; 경기로 돌아가기">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="bum-1i-mD9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqH-np-8UX" userLabel="Save Button">
+                                        <rect key="frame" x="245.33333333333331" y="0.0" width="245.33333333333331" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                        <state key="normal" title="기록을 이미지로 저장">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMs-sT-DoR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spQ-s0-Ono" userLabel="Exit Button">
+                                        <rect key="frame" x="490.66666666666669" y="0.0" width="245.33333333333331" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                        <state key="normal" title="경기 종료하기 &gt;">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exitButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fO-Cr-Zaf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="spQ-s0-Ono" firstAttribute="top" secondItem="Qgh-tc-D2p" secondAttribute="top" id="5IW-pX-gtR"/>
+                                    <constraint firstItem="yfF-c8-TdM" firstAttribute="top" secondItem="Qgh-tc-D2p" secondAttribute="top" id="EVp-VJ-ApF"/>
+                                    <constraint firstItem="WqH-np-8UX" firstAttribute="top" secondItem="Qgh-tc-D2p" secondAttribute="top" id="MlH-ow-yL0"/>
+                                    <constraint firstAttribute="bottom" secondItem="yfF-c8-TdM" secondAttribute="bottom" id="O8A-as-dZd"/>
+                                    <constraint firstAttribute="bottom" secondItem="WqH-np-8UX" secondAttribute="bottom" id="TE1-cg-o5Z"/>
+                                    <constraint firstItem="WqH-np-8UX" firstAttribute="width" secondItem="yfF-c8-TdM" secondAttribute="width" id="UVh-yd-ptc"/>
+                                    <constraint firstAttribute="bottom" secondItem="spQ-s0-Ono" secondAttribute="bottom" id="ZQ1-65-nJN"/>
+                                    <constraint firstItem="spQ-s0-Ono" firstAttribute="width" secondItem="WqH-np-8UX" secondAttribute="width" id="hQL-Bd-b1A"/>
+                                </constraints>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5U-aE-5tg">
+                                <rect key="frame" x="0.0" y="31" width="736" height="383"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="736" placeholderIntrinsicHeight="907" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-IJ-53T">
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="974"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-gQ-xDp">
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="67"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-8r-TnX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="67"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                        <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000:000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
+                                                        <rect key="frame" x="239.33333333333334" y="0.0" width="257.33333333333326" height="67"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
+                                                        <rect key="frame" x="496.66666666666669" y="0.0" width="239.33333333333331" height="67"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                        <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="6zh-UQ-Oo2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YM1-K7-gfS" secondAttribute="bottom" id="8F1-Ux-FtH"/>
+                                                    <constraint firstItem="YM1-K7-gfS" firstAttribute="width" secondItem="qaN-8r-TnX" secondAttribute="width" id="dah-9O-lWT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="plc-Td-5HR" secondAttribute="bottom" id="esf-Em-cjP"/>
+                                                    <constraint firstItem="qaN-8r-TnX" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="ewk-HM-dEo"/>
+                                                    <constraint firstItem="YM1-K7-gfS" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="mPa-81-vEe"/>
+                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="width" secondItem="JNh-gQ-xDp" secondAttribute="width" multiplier="0.35" id="nmR-UR-rgK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qaN-8r-TnX" secondAttribute="bottom" id="ogj-CX-pAq"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glc-pM-TtR" userLabel="Down">
+                                                <rect key="frame" x="0.0" y="67" width="736" height="907"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="907" id="msp-Tw-cI1"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="top" secondItem="S5U-aE-5tg" secondAttribute="top" id="Cbb-7I-9bR"/>
+                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="width" secondItem="S5U-aE-5tg" secondAttribute="width" id="LMH-L6-0nl"/>
+                                    <constraint firstAttribute="trailing" secondItem="lfC-IJ-53T" secondAttribute="trailing" id="N2u-ln-ob0"/>
+                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.175" id="Qgq-SR-I0T"/>
+                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="leading" secondItem="S5U-aE-5tg" secondAttribute="leading" id="QpG-uX-DJe"/>
+                                    <constraint firstAttribute="bottom" secondItem="lfC-IJ-53T" secondAttribute="bottom" id="wnO-St-OAb"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="S5U-aE-5tg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2lC-WD-U2Z"/>
-                            <constraint firstItem="S5U-aE-5tg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LFy-HS-qg8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S5U-aE-5tg" secondAttribute="trailing" id="qWs-AN-mLm"/>
-                            <constraint firstAttribute="bottom" secondItem="S5U-aE-5tg" secondAttribute="bottom" id="yiw-K0-IOV"/>
+                            <constraint firstItem="S5U-aE-5tg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="509-Vk-OPs"/>
+                            <constraint firstItem="Qgh-tc-D2p" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="LGT-h0-8Hc"/>
+                            <constraint firstItem="Qgh-tc-D2p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U1m-wS-tKb"/>
+                            <constraint firstItem="S5U-aE-5tg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WP3-IJ-5xh"/>
+                            <constraint firstItem="Qgh-tc-D2p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="haT-bQ-bWh"/>
+                            <constraint firstItem="S5U-aE-5tg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="klP-nn-Jbf"/>
+                            <constraint firstItem="S5U-aE-5tg" firstAttribute="top" secondItem="Qgh-tc-D2p" secondAttribute="bottom" id="zJL-Vz-y8P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qgh-tc-D2p" secondAttribute="trailing" id="zlm-cT-Qzw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="S5U-aE-5tg" id="aP6-ai-838"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="-413"/>
+            <point key="canvasLocation" x="43.206521739130437" y="-413.04347826086962"/>
         </scene>
     </scenes>
 </document>

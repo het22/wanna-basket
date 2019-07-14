@@ -30,13 +30,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="736" height="20.666666666666668"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-Lh-zpH">
-                                                <rect key="frame" x="5" y="0.0" width="31" height="20.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="20.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-p5-QGB">
-                                                <rect key="frame" x="684.66666666666663" y="0.0" width="46.333333333333371" height="20.666666666666668"/>
+                                                <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="20.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -50,11 +50,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="y4j-Lh-zpH" firstAttribute="top" secondItem="GRN-45-XRF" secondAttribute="top" id="8Nd-Kr-nnw"/>
-                                            <constraint firstItem="y4j-Lh-zpH" firstAttribute="leading" secondItem="GRN-45-XRF" secondAttribute="leading" constant="5" id="AMZ-ih-lsO"/>
+                                            <constraint firstItem="y4j-Lh-zpH" firstAttribute="leading" secondItem="GRN-45-XRF" secondAttribute="leading" id="AMZ-ih-lsO"/>
                                             <constraint firstAttribute="bottom" secondItem="y4j-Lh-zpH" secondAttribute="bottom" id="I7Y-7a-Hbe"/>
                                             <constraint firstAttribute="bottom" secondItem="keb-im-vRk" secondAttribute="bottom" id="IZh-zn-Qkx"/>
                                             <constraint firstItem="BSc-p5-QGB" firstAttribute="top" secondItem="GRN-45-XRF" secondAttribute="top" id="MO2-ed-daA"/>
-                                            <constraint firstAttribute="trailing" secondItem="BSc-p5-QGB" secondAttribute="trailing" constant="5" id="MkK-Zz-Ios"/>
+                                            <constraint firstAttribute="trailing" secondItem="BSc-p5-QGB" secondAttribute="trailing" id="MkK-Zz-Ios"/>
                                             <constraint firstAttribute="bottom" secondItem="BSc-p5-QGB" secondAttribute="bottom" id="aML-Am-Cut"/>
                                             <constraint firstItem="keb-im-vRk" firstAttribute="top" secondItem="GRN-45-XRF" secondAttribute="top" id="nwf-51-bFh"/>
                                             <constraint firstItem="keb-im-vRk" firstAttribute="centerX" secondItem="GRN-45-XRF" secondAttribute="centerX" id="rMu-7h-2Pd"/>
@@ -65,20 +65,20 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fMm-jb-J4V">
                                                 <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YsF-GD-Ayo">
                                                 <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Ko-A2j" userLabel="Start Game Button">
                                                 <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="62"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="70"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                 <state key="normal" title="경기시작">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
