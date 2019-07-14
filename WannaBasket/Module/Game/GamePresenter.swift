@@ -83,7 +83,6 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didSelectExit() {
-        
         wireframe?.presentModule(source: view!, module: Module.Record(records: game!.records))
     }
     

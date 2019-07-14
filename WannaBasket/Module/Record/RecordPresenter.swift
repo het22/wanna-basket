@@ -17,9 +17,23 @@ class RecordPresenter: RecordPresenterProtocol {
     var records: [Record]!
     
     func viewDidLoad() {
-        records.forEach { print($0) }
+        
     }
     
+    func didTapSaveButton() {
+        view?.saveImageToAlbum()
+    }
+    
+    func didTapBackButton() {
+        view?.dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapExitButton() {
+        let gameView = (self.view as? UIViewController)?.presentingViewController
+        view?.dismiss(animated: true) {
+            gameView?.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 extension RecordPresenter: RecordInteractorOutputProtocol {

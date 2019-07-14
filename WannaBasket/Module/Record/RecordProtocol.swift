@@ -34,6 +34,10 @@ protocol RecordPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
+    
+    func didTapSaveButton()
+    func didTapBackButton()
+    func didTapExitButton()
 }
 
 protocol RecordViewProtocol: class {
@@ -41,5 +45,7 @@ protocol RecordViewProtocol: class {
     var presenter: RecordPresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
+    func saveImageToAlbum()
     
+    func dismiss(animated flag: Bool, completion: (() -> Void)?)
 }
