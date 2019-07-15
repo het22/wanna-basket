@@ -12,7 +12,7 @@ enum Module {
     
     case Home
     case Game(game: Game)
-    case Record(records: [Record])
+    case Record(record: GameRecord)
     
     var view: UIViewController {
         switch self {
@@ -20,8 +20,8 @@ enum Module {
             return HomeWireframe.createModule()
         case .Game(let game):
             return GameWireframe.createModule(with: game)
-        case .Record(let records):
-            return RecordWireframe.createModule(with: records)
+        case .Record(let record):
+            return RecordWireframe.createModule(with: record)
         }
     }
 }

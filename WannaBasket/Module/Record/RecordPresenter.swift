@@ -14,7 +14,7 @@ class RecordPresenter: RecordPresenterProtocol {
     var interactor: RecordInteractorInputProtocol?
     var wireframe: RecordWireframeProtocol?
     
-    var records: [Record]!
+    var record: GameRecord!
     
     func viewDidLoad() {
         
