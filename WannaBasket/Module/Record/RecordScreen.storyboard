@@ -31,7 +31,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                         <state key="normal" title="&lt; 경기로 돌아가기">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                         <state key="normal" title="경기 종료하기 &gt;">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,26 +85,26 @@
                                 <rect key="frame" x="0.0" y="31" width="736" height="383"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="736" placeholderIntrinsicHeight="907" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-IJ-53T">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="974"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="457.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-gQ-xDp">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="67"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="57.333333333333336"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-8r-TnX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="67"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="57.333333333333336"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                         <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000:000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
-                                                        <rect key="frame" x="239.33333333333334" y="0.0" width="257.33333333333326" height="67"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000 : 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
+                                                        <rect key="frame" x="239.33333333333334" y="0.0" width="257.33333333333326" height="57.333333333333336"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
-                                                        <rect key="frame" x="496.66666666666669" y="0.0" width="239.33333333333331" height="67"/>
+                                                        <rect key="frame" x="496.66666666666669" y="0.0" width="239.33333333333331" height="57.333333333333336"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                         <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,11 +122,11 @@
                                                     <constraint firstAttribute="bottom" secondItem="qaN-8r-TnX" secondAttribute="bottom" id="ogj-CX-pAq"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glc-pM-TtR" userLabel="Down">
-                                                <rect key="frame" x="0.0" y="67" width="736" height="907"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glc-pM-TtR">
+                                                <rect key="frame" x="0.0" y="57.333333333333314" width="736" height="400"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="907" id="msp-Tw-cI1"/>
+                                                    <constraint firstAttribute="height" constant="400" id="msp-Tw-cI1"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -136,7 +136,7 @@
                                     <constraint firstItem="lfC-IJ-53T" firstAttribute="top" secondItem="S5U-aE-5tg" secondAttribute="top" id="Cbb-7I-9bR"/>
                                     <constraint firstItem="lfC-IJ-53T" firstAttribute="width" secondItem="S5U-aE-5tg" secondAttribute="width" id="LMH-L6-0nl"/>
                                     <constraint firstAttribute="trailing" secondItem="lfC-IJ-53T" secondAttribute="trailing" id="N2u-ln-ob0"/>
-                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.175" id="Qgq-SR-I0T"/>
+                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.15" id="Qgq-SR-I0T"/>
                                     <constraint firstItem="lfC-IJ-53T" firstAttribute="leading" secondItem="S5U-aE-5tg" secondAttribute="leading" id="QpG-uX-DJe"/>
                                     <constraint firstAttribute="bottom" secondItem="lfC-IJ-53T" secondAttribute="bottom" id="wnO-St-OAb"/>
                                 </constraints>
@@ -156,6 +156,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="awayTeamNameLabel" destination="YM1-K7-gfS" id="biC-CP-Ga0"/>
+                        <outlet property="heightConstraint" destination="msp-Tw-cI1" id="oPN-L1-nvw"/>
+                        <outlet property="homeTeamNameLabel" destination="qaN-8r-TnX" id="k3F-vC-XRc"/>
+                        <outlet property="scoreLabel" destination="plc-Td-5HR" id="Bm2-me-Lxu"/>
                         <outlet property="scrollView" destination="S5U-aE-5tg" id="aP6-ai-838"/>
                     </connections>
                 </viewController>

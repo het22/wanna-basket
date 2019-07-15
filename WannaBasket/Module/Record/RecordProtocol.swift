@@ -45,6 +45,8 @@ protocol RecordViewProtocol: class {
     var presenter: RecordPresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
+    func updateTeamNameLabel(name: String, of home: Bool)
+    func updateScoreLabel(home: Int, away: Int)
     func saveImageToAlbum()
     
     func dismiss(animated flag: Bool, completion: (() -> Void)?)

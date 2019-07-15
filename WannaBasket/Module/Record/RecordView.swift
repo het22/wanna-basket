@@ -12,9 +12,12 @@ class RecordView: UIViewController {
 
 	var presenter: RecordPresenterProtocol?
     
-    @IBOutlet weak var scrollView: UIScrollView! {
-        didSet { scrollView.contentSize = scrollView.bounds.size }
-    }
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     
     deinit { print( "Deinit: ", self) }
     
@@ -37,6 +40,24 @@ class RecordView: UIViewController {
 }
 
 extension RecordView: RecordViewProtocol {
+    
+    func updateTeamNameLabel(name: String, of home: Bool) {
+        let teamNameLabel = home ? homeTeamNameLabel : awayTeamNameLabel
+        teamNameLabel?.text = name
+    }
+    
+    func updateScoreLabel(home: Int, away: Int) {
+        let homeText = scoreFormat.string(from: NSNumber(value: home))!
+        let awayText = scoreFormat.string(from: NSNumber(value: away))!
+        let mutableString = NSMutableAttributedString(string: "\(homeText) : \(awayText)")
+        mutableString.addAttribute(.foregroundColor,
+                                   value: Constants.Color.HomeDefault,
+                                   range: NSRange(location: 0, length: 3))
+        mutableString.addAttribute(.foregroundColor,
+                                   value: Constants.Color.AwayDefault,
+                                   range: NSRange(location: 6, length: 3))
+        scoreLabel.attributedText = mutableString
+    }
     
     func saveImageToAlbum() {
         if let image = scrollView.toImage() {

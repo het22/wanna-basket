@@ -40,7 +40,7 @@ class QuarterSelectView: UIView, NibLoadable {
         
         let exitView: ToggleView = {
             let view = ToggleView(frame: CGRect.zero)
-            view.setup(name: Constants.Text.Exit, highlightColor: Constants.Color.Steel)
+            view.setup(name: "기록 보기", highlightColor: Constants.Color.Steel)
             hStack.addArrangedSubview(view)
             let gesture = UITapGestureRecognizerWithClosure { [weak self] in
                 self?.delegate?.didSelectExit()
