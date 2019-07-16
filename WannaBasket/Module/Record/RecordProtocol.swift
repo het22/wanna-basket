@@ -46,8 +46,11 @@ protocol RecordViewProtocol: class {
 
     // PRESENTER -> VIEW
     func updateTeamNameLabel(name: String, of home: Bool)
-    func updateScoreLabel(home: Int, away: Int)
-    func saveImageToAlbum()
+    func updateScoreLabel(score: (home: Int, away: Int))
+    func updateViewHeight(cellCount: Int)
     
+    func updatePlayerTableView(players: [Player], of home: Bool)
+    
+    func saveImageToAlbum()
     func dismiss(animated flag: Bool, completion: (() -> Void)?)
 }

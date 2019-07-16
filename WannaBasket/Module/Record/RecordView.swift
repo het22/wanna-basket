@@ -18,6 +18,10 @@ class RecordView: UIViewController {
     @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var homePlayerTableView: PlayerTableView!
+    @IBOutlet weak var awayPlayerTableView: PlayerTableView!
+    
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     deinit { print( "Deinit: ", self) }
     
@@ -46,9 +50,9 @@ extension RecordView: RecordViewProtocol {
         teamNameLabel?.text = name
     }
     
-    func updateScoreLabel(home: Int, away: Int) {
-        let homeText = scoreFormat.string(from: NSNumber(value: home))!
-        let awayText = scoreFormat.string(from: NSNumber(value: away))!
+    func updateScoreLabel(score: (home: Int, away: Int)) {
+        let homeText = scoreFormat.string(from: NSNumber(value: score.home))!
+        let awayText = scoreFormat.string(from: NSNumber(value: score.away))!
         let mutableString = NSMutableAttributedString(string: "\(homeText) : \(awayText)")
         mutableString.addAttribute(.foregroundColor,
                                    value: Constants.Color.HomeDefault,
@@ -59,6 +63,16 @@ extension RecordView: RecordViewProtocol {
         scoreLabel.attributedText = mutableString
     }
     
+    func updateViewHeight(cellCount: Int) {
+        let size = homePlayerTableView.cellSize + homePlayerTableView.cellSpacing
+        heightConstraint.constant = size * CGFloat(cellCount)
+    }
+    
+    func updatePlayerTableView(players: [Player], of home: Bool) {
+        let playerTableView = home ? homePlayerTableView : awayPlayerTableView
+        playerTableView?.playerList = players
+    }
+    
     func saveImageToAlbum() {
         if let image = scrollView.toImage() {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
@@ -66,7 +80,7 @@ extension RecordView: RecordViewProtocol {
     }
     @objc func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if error == nil {
-            let ac = UIAlertController(title: "저장 완료", message: "기록지를 앨범에서 확인하세요", preferredStyle: .alert)
+            let ac = UIAlertController(title: "저장 완료", message: "기록을 앨범에서 확인하세요", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
         } else {

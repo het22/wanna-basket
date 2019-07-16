@@ -40,6 +40,8 @@ class PlayerTableView: UITableView {
     @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 5
+    @IBInspectable var cellSize: CGFloat = 0
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -132,7 +134,7 @@ extension PlayerTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellHeight = bounds.height / cellCount - cellSpacing
+        let cellHeight = (cellCount == 0) ? cellSize : (bounds.height / cellCount - cellSpacing)
         return cellHeight
     }
     
