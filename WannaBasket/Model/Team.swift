@@ -17,7 +17,9 @@ protocol TeamModel {
 class Team: TeamModel, Equatable {
     var uuid: String
     var name: String
-    var players: [Player]
+    var players: [Player] {
+        didSet { players.sort { return $0.number < $1.number } }
+    }
     
     init(name: String) {
         self.uuid = ""
