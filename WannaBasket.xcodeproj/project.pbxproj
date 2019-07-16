@@ -23,6 +23,12 @@
 		CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */; };
 		CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */; };
 		CB5C1C6522DB5AEB00871C2B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */; };
+		CB8E36A122DDB6CE00735C2D /* PlayerRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36A022DDB6CE00735C2D /* PlayerRecordTableViewCell.swift */; };
+		CB8E36A322DDB6D800735C2D /* PlayerRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8E36A222DDB6D800735C2D /* PlayerRecordTableViewCell.xib */; };
+		CB8E36A522DDBE8200735C2D /* QuarterScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36A422DDBE8200735C2D /* QuarterScoreView.swift */; };
+		CB8E36A822DDBE9300735C2D /* QuarterScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8E36A722DDBE9300735C2D /* QuarterScoreView.xib */; };
+		CB8E36AA22DDCAE400735C2D /* QuarterScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36A922DDCAE400735C2D /* QuarterScoreCell.swift */; };
+		CB8E36AC22DDCB5E00735C2D /* QuarterScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8E36AB22DDCB5E00735C2D /* QuarterScoreCell.xib */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -119,6 +125,12 @@
 		CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProtocol.swift; sourceTree = "<group>"; };
 		CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
 		CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		CB8E36A022DDB6CE00735C2D /* PlayerRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRecordTableViewCell.swift; sourceTree = "<group>"; };
+		CB8E36A222DDB6D800735C2D /* PlayerRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRecordTableViewCell.xib; sourceTree = "<group>"; };
+		CB8E36A422DDBE8200735C2D /* QuarterScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterScoreView.swift; sourceTree = "<group>"; };
+		CB8E36A722DDBE9300735C2D /* QuarterScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuarterScoreView.xib; sourceTree = "<group>"; };
+		CB8E36A922DDCAE400735C2D /* QuarterScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterScoreCell.swift; sourceTree = "<group>"; };
+		CB8E36AB22DDCB5E00735C2D /* QuarterScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuarterScoreCell.xib; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -255,6 +267,17 @@
 			path = Record;
 			sourceTree = "<group>";
 		};
+		CB8E36A622DDBE8A00735C2D /* QuarterScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				CB8E36A422DDBE8200735C2D /* QuarterScoreView.swift */,
+				CB8E36A722DDBE9300735C2D /* QuarterScoreView.xib */,
+				CB8E36A922DDCAE400735C2D /* QuarterScoreCell.swift */,
+				CB8E36AB22DDCB5E00735C2D /* QuarterScoreCell.xib */,
+			);
+			path = QuarterScoreView;
+			sourceTree = "<group>";
+		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +311,7 @@
 				CB5C1C4E22D8021600871C2B /* NumberSelectView */,
 				CBC6F05A22CFA0F50021A11D /* StatSelectView */,
 				CBC6F04922CDF96C0021A11D /* QuarterSelectView */,
+				CB8E36A622DDBE8A00735C2D /* QuarterScoreView */,
 				CBC6F02622CDEC8A0021A11D /* PlayerTableView */,
 				CBC6F02A22CDEC8A0021A11D /* TeamTableView */,
 			);
@@ -327,6 +351,8 @@
 				CBC6F02822CDEC8A0021A11D /* PlayerTableView.swift */,
 				CBC6F02922CDEC8A0021A11D /* PlayerTableViewCell.swift */,
 				CBC6F02722CDEC8A0021A11D /* PlayerTableViewCell.xib */,
+				CB8E36A022DDB6CE00735C2D /* PlayerRecordTableViewCell.swift */,
+				CB8E36A222DDB6D800735C2D /* PlayerRecordTableViewCell.xib */,
 			);
 			path = PlayerTableView;
 			sourceTree = "<group>";
@@ -628,8 +654,10 @@
 			files = (
 				CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */,
 				CBC6F03C22CDEC8A0021A11D /* PlayerTableViewCell.xib in Resources */,
+				CB8E36AC22DDCB5E00735C2D /* QuarterScoreCell.xib in Resources */,
 				CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */,
 				CBC6F03A22CDEC8A0021A11D /* ToggleView.xib in Resources */,
+				CB8E36A822DDBE9300735C2D /* QuarterScoreView.xib in Resources */,
 				CB5C1C5422D878FF00871C2B /* NumberSelectViewCell.xib in Resources */,
 				CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */,
 				CBC6F03F22CDEC8A0021A11D /* TeamTableViewCell.xib in Resources */,
@@ -641,6 +669,7 @@
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
 				CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
+				CB8E36A322DDB6D800735C2D /* PlayerRecordTableViewCell.xib in Resources */,
 				CBC6F03622CDEC8A0021A11D /* PlayerFormView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,11 +767,13 @@
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
 				CBC6F04122CDEC8A0021A11D /* TeamTableViewCell.swift in Sources */,
+				CB8E36AA22DDCAE400735C2D /* QuarterScoreCell.swift in Sources */,
 				CBC6F04822CDEC8A0021A11D /* UITableView+Extension.swift in Sources */,
 				CBC6F06222D32DDE0021A11D /* UIView+Extension.swift in Sources */,
 				CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */,
 				CB5C1C5622D9961D00871C2B /* PlayerTeamManager.swift in Sources */,
 				CBC6F04022CDEC8A0021A11D /* TeamTableView.swift in Sources */,
+				CB8E36A522DDBE8200735C2D /* QuarterScoreView.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
 				CBFA01AD22B8B99800F71C7B /* Player.swift in Sources */,
@@ -754,6 +785,7 @@
 				CBDD243222DC7E4700592B15 /* Game.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
+				CB8E36A122DDB6CE00735C2D /* PlayerRecordTableViewCell.swift in Sources */,
 				CBC6F04222CDEC8A0021A11D /* NumberFormat.swift in Sources */,
 				CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */,
 				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,

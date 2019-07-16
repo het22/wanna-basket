@@ -27,21 +27,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEm-JM-OMF" userLabel="Up">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="20.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-B2-035">
-                                                <rect key="frame" x="0.0" y="0.0" width="31" height="20.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e5-JK-aZo">
-                                                <rect key="frame" x="352.66666666666669" y="0.0" width="31" height="20.666666666666668"/>
+                                                <rect key="frame" x="352.66666666666669" y="0.0" width="31" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqp-gM-jYK">
-                                                <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="20.666666666666668"/>
+                                                <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9Z-ej-XiH" userLabel="Middle">
-                                        <rect key="frame" x="0.0" y="20.666666666666671" width="736" height="62"/>
+                                        <rect key="frame" x="0.0" y="31" width="736" height="62"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="62"/>
@@ -102,13 +102,13 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZu-k9-acy" userLabel="Down">
-                                        <rect key="frame" x="0.0" y="82.666666666666657" width="736" height="331.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="93" width="736" height="321"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-ty-sJw" userLabel="Home Team">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="331.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="321"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-fK-wdD" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="35" width="179" height="296.33333333333331"/>
+                                                        <rect key="frame" x="5" y="35" width="179" height="286"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -127,7 +127,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-ZV-p8M" userLabel="Bar">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="331.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="321"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" id="jeB-h8-PII"/>
@@ -163,19 +163,19 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWg-O4-WHd" userLabel="Game Control">
-                                                <rect key="frame" x="184" y="0.0" width="368" height="331.33333333333331"/>
+                                                <rect key="frame" x="184" y="0.0" width="368" height="321"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FeF-RO-gm6">
-                                                        <rect key="frame" x="10" y="0.0" width="348" height="326.33333333333331"/>
+                                                        <rect key="frame" x="10" y="0.0" width="348" height="316"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="GameClock">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="113"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="109.33333333333333"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Dx-m5r" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="113"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="109.33333333333333"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Game Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="55.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -187,7 +187,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Game Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="57.666666666666671" width="43.333333333333336" height="55.333333333333329"/>
+                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -211,7 +211,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
-                                                                        <rect key="frame" x="45.333333333333343" y="0.0" width="257.33333333333326" height="113"/>
+                                                                        <rect key="frame" x="43.666666666666657" y="0.0" width="260.66666666666674" height="109.33333333333333"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="85"/>
@@ -222,10 +222,10 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
-                                                                        <rect key="frame" x="304.66666666666669" y="0.0" width="43.333333333333314" height="113"/>
+                                                                        <rect key="frame" x="306.33333333333331" y="0.0" width="41.666666666666686" height="109.33333333333333"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Game Sec Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="55.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -237,7 +237,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Game Sec Minus Button">
-                                                                                <rect key="frame" x="0.0" y="57.666666666666671" width="43.333333333333336" height="55.333333333333329"/>
+                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -277,13 +277,13 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="ShotClock">
-                                                                <rect key="frame" x="0.0" y="118" width="348" height="113"/>
+                                                                <rect key="frame" x="0.0" y="114.33333333333334" width="348" height="109.33333333333334"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-QG-jto" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="113"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="109.33333333333333"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-tw-RBM" userLabel="Shot Sec Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="55.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -295,7 +295,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-bo-PI8" userLabel="Shot Sec Minus Button">
-                                                                                <rect key="frame" x="0.0" y="57.666666666666657" width="43.333333333333336" height="55.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -319,7 +319,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-aU-1s1">
-                                                                        <rect key="frame" x="45.333333333333343" y="0.0" width="257.33333333333326" height="67.666666666666671"/>
+                                                                        <rect key="frame" x="43.666666666666657" y="0.0" width="260.66666666666674" height="65.666666666666671"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
@@ -330,7 +330,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
-                                                                        <rect key="frame" x="48.333333333333336" y="69.666666666666657" width="123.33333333333331" height="43.333333333333343"/>
+                                                                        <rect key="frame" x="46.666666666666657" y="67.666666666666657" width="125" height="41.666666666666657"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="14초">
@@ -341,7 +341,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
-                                                                        <rect key="frame" x="176.66666666666669" y="69.666666666666657" width="123" height="43.333333333333343"/>
+                                                                        <rect key="frame" x="176.66666666666669" y="67.666666666666657" width="124.66666666666669" height="41.666666666666657"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <state key="normal" title="24초">
@@ -352,10 +352,10 @@
                                                                         </connections>
                                                                     </button>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtT-Xp-zbi" userLabel="Right">
-                                                                        <rect key="frame" x="304.66666666666669" y="0.0" width="43.333333333333314" height="113"/>
+                                                                        <rect key="frame" x="306.33333333333331" y="0.0" width="41.666666666666686" height="109.33333333333333"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-uv-lpU" userLabel="Shot Point Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="55.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotPointPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -367,7 +367,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7x-Ic-NeC" userLabel="Shot Point Minus Button">
-                                                                                <rect key="frame" x="0.0" y="57.666666666666657" width="43.333333333333336" height="55.333333333333343"/>
+                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="ShotPointMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
@@ -416,7 +416,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="236.00000000000003" width="348" height="90.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="228.66666666666671" width="348" height="87.333333333333343"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -436,10 +436,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbD-ql-D04" userLabel="Away Team">
-                                                <rect key="frame" x="552" y="0.0" width="184" height="331.33333333333331"/>
+                                                <rect key="frame" x="552" y="0.0" width="184" height="321"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-fn-OG7" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="35" width="179" height="296.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="35" width="179" height="286"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
@@ -458,7 +458,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-jT-FNH" userLabel="Bar">
-                                                        <rect key="frame" x="184" y="0.0" width="0.0" height="331.33333333333331"/>
+                                                        <rect key="frame" x="184" y="0.0" width="0.0" height="321"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" id="pnH-qT-9gE"/>
@@ -502,7 +502,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="P9Z-ej-XiH" firstAttribute="height" secondItem="CvP-FW-Eng" secondAttribute="height" multiplier="0.15" id="Oab-BN-wut"/>
-                                    <constraint firstItem="NEm-JM-OMF" firstAttribute="height" secondItem="CvP-FW-Eng" secondAttribute="height" multiplier="0.05" id="osd-Hi-2Qo"/>
+                                    <constraint firstItem="NEm-JM-OMF" firstAttribute="height" secondItem="CvP-FW-Eng" secondAttribute="height" multiplier="0.075" id="osd-Hi-2Qo"/>
                                 </constraints>
                             </stackView>
                         </subviews>
