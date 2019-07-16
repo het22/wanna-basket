@@ -38,6 +38,7 @@ protocol GamePresenterProtocol: class {
     
     func didTapQuarterLabel()
     func didSelectQuarter(quarterType: Quarter)
+    func didSelectRecord()
     func didSelectExit()
     
     func didTapGameClockLabel()

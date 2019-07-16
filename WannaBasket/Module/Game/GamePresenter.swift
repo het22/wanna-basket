@@ -81,12 +81,18 @@ class GamePresenter: GamePresenterProtocol {
                                     bool: false)
     }
     
-    func didSelectExit() {
+    func didSelectRecord() {
+        game.time.isGameClockRunning = false
+        game.time.isShotClockRunning = false
         view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
                                     overtimeQuarterCount: 0,
                                     currentQuarter: game.time.currentQuarter,
                                     bool: false)
         wireframe?.presentModule(source: view!, module: Module.Record(game: game as! Game))
+    }
+    
+    func didSelectExit() {
+        view?.dismiss(animated: true) {}
     }
     
     // --------------------------------------------------

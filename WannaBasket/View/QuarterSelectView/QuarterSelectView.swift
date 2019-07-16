@@ -10,6 +10,7 @@ import UIKit
 
 protocol QuarterSelectViewDelegate: class {
     func didSelectQuarter(quarterType: Quarter)
+    func didSelectRecord()
     func didSelectExit()
 }
 
@@ -36,19 +37,17 @@ class QuarterSelectView: UIView, NibLoadable {
         layer.borderWidth = 1
     }
     
+    @IBAction func recordButtonTapped() {
+        delegate?.didSelectRecord()
+    }
+    
+    @IBAction func exitButtonTapped() {
+        delegate?.didSelectExit()
+    }
+    
     func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarter: Quarter) {
         
-        let exitView: ToggleView = {
-            let view = ToggleView(frame: CGRect.zero)
-            view.setup(name: "기록 보기", highlightColor: Constants.Color.Steel)
-            hStack.addArrangedSubview(view)
-            let gesture = UITapGestureRecognizerWithClosure { [weak self] in
-                self?.delegate?.didSelectExit()
-            }
-            view.addGestureRecognizer(gesture)
-            return view
-        }()
-
+        var firstView: ToggleView?
         for i in 1...maxRegularQuarterNum {
             let quarterType = Quarter.Regular(i)
             let quarterView = ToggleView(frame: CGRect.zero)
@@ -60,7 +59,11 @@ class QuarterSelectView: UIView, NibLoadable {
                 self?.delegate?.didSelectQuarter(quarterType: quarterType)
             }
             quarterView.addGestureRecognizer(gesture)
-            quarterView.widthAnchor.constraint(equalTo: exitView.widthAnchor, multiplier: 1.0).isActive = true
+            if let firstView = firstView {
+                quarterView.widthAnchor.constraint(equalTo: firstView.widthAnchor, multiplier: 1.0).isActive = true
+            } else {
+                firstView = quarterView
             }
+        }
     }
 }

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DoHyeon-Regular.ttf">
+            <string>DoHyeon-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuarterSelectView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
@@ -20,19 +25,73 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5S9-SC-wnx">
-                    <rect key="frame" x="10" y="10" width="580" height="180"/>
-                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eq-xr-RZv" userLabel="Button View">
+                    <rect key="frame" x="0.0" y="158" width="600" height="42"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEC-18-Exa">
+                            <rect key="frame" x="0.0" y="0.0" width="299.66666666666669" height="42"/>
+                            <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                            <state key="normal" title="경기 종료">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="exitButtonTapped" destination="-1" eventType="touchUpInside" id="KwQ-hK-2Fw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-C7-xag">
+                            <rect key="frame" x="300.66666666666674" y="0.0" width="299.33333333333326" height="42"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                            <state key="normal" title="기록 확인">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="recordButtonTapped" destination="-1" eventType="touchUpInside" id="Ktm-Ma-dvh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dEC-18-Exa" secondAttribute="bottom" id="1RF-M8-HI2"/>
+                        <constraint firstItem="dEC-18-Exa" firstAttribute="top" secondItem="3eq-xr-RZv" secondAttribute="top" id="CxY-K0-mGK"/>
+                        <constraint firstAttribute="bottom" secondItem="Sxo-C7-xag" secondAttribute="bottom" id="ZJu-Rc-IO2"/>
+                        <constraint firstItem="Sxo-C7-xag" firstAttribute="top" secondItem="3eq-xr-RZv" secondAttribute="top" id="d4t-cG-Fex"/>
+                        <constraint firstItem="Sxo-C7-xag" firstAttribute="width" secondItem="dEC-18-Exa" secondAttribute="width" id="hna-Rf-fmt"/>
+                        <constraint firstItem="dEC-18-Exa" firstAttribute="leading" secondItem="3eq-xr-RZv" secondAttribute="leading" id="kmY-lb-a3C"/>
+                        <constraint firstItem="Sxo-C7-xag" firstAttribute="leading" secondItem="dEC-18-Exa" secondAttribute="trailing" constant="1" id="wmX-oX-FaQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Sxo-C7-xag" secondAttribute="trailing" id="xzL-Fr-PYB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-cj-8fg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="157"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5S9-SC-wnx">
+                            <rect key="frame" x="10" y="10" width="580" height="137"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5S9-SC-wnx" secondAttribute="trailing" constant="10" id="YX5-oW-00i"/>
+                        <constraint firstAttribute="bottom" secondItem="5S9-SC-wnx" secondAttribute="bottom" constant="10" id="b2q-YN-dHs"/>
+                        <constraint firstItem="5S9-SC-wnx" firstAttribute="top" secondItem="nPj-cj-8fg" secondAttribute="top" constant="10" id="gUD-V0-SHJ"/>
+                        <constraint firstItem="5S9-SC-wnx" firstAttribute="leading" secondItem="nPj-cj-8fg" secondAttribute="leading" constant="10" id="pSi-dx-HCQ"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="5S9-SC-wnx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Dxv-0Z-JiP"/>
-                <constraint firstAttribute="bottom" secondItem="5S9-SC-wnx" secondAttribute="bottom" constant="10" id="fi5-aF-wDV"/>
-                <constraint firstItem="5S9-SC-wnx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="qcz-UE-YQG"/>
-                <constraint firstAttribute="trailing" secondItem="5S9-SC-wnx" secondAttribute="trailing" constant="10" id="t3N-R8-7HJ"/>
+                <constraint firstItem="nPj-cj-8fg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QiW-Wk-4ri"/>
+                <constraint firstItem="3eq-xr-RZv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SWu-Vl-xos"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3eq-xr-RZv" secondAttribute="bottom" id="VVK-jh-bAu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nPj-cj-8fg" secondAttribute="trailing" id="WSf-Rd-5LL"/>
+                <constraint firstItem="3eq-xr-RZv" firstAttribute="top" secondItem="nPj-cj-8fg" secondAttribute="bottom" constant="1" id="fep-fT-kGp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3eq-xr-RZv" secondAttribute="trailing" id="iYx-pa-8fs"/>
+                <constraint firstItem="nPj-cj-8fg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xle-wD-9aA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-75.362318840579718" y="-45.652173913043484"/>
         </view>
     </objects>
 </document>

@@ -16,6 +16,7 @@ enum Constants {
         static let Silver = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         static let Mercury = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         static let White = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        static let Background = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
         static let HomeDefault = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
         static let AwayDefault = #colorLiteral(red: 1, green: 0.3195095657, blue: 0.4566315059, alpha: 1)
     }

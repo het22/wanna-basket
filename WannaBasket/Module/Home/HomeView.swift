@@ -96,7 +96,7 @@ extension HomeView: HomeViewProtocol {
                 self?.showTeamFormView(isEditMode: isEditMode, name: name, index: index, bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
-            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.backgroundColor = Constants.Color.Background
             backgroundView!.addGestureRecognizer(dismissGesture)
             self.view.addSubview(backgroundView!)
             
@@ -128,7 +128,7 @@ extension HomeView: HomeViewProtocol {
                 self?.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
-            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.backgroundColor = Constants.Color.Background
             backgroundView!.addGestureRecognizer(dismissGesture)
             self.view.addSubview(backgroundView!)
             

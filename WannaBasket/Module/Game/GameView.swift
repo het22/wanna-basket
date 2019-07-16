@@ -83,7 +83,7 @@ class GameView: UIViewController {
                                            bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
-            backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+            backgroundView!.backgroundColor = Constants.Color.Background
             backgroundView!.addGestureRecognizer(dismissGesture)
             self.view.addSubview(backgroundView!)
             
@@ -98,8 +98,8 @@ class GameView: UIViewController {
             NSLayoutConstraint.activate([
                 quarterSelectView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 quarterSelectView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
-                quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
-                quarterSelectView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)])
+                quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.65),
+                quarterSelectView!.heightAnchor.constraint(equalTo: quarterSelectView!.widthAnchor, multiplier: 0.35)])
         } else {
             backgroundView?.removeFromSuperview()
             backgroundView = nil
@@ -189,6 +189,10 @@ extension GameView: QuarterSelectViewDelegate {
     
     func didSelectQuarter(quarterType: Quarter) {
         presenter?.didSelectQuarter(quarterType: quarterType)
+    }
+    
+    func didSelectRecord() {
+        presenter?.didSelectRecord()
     }
     
     func didSelectExit() {
