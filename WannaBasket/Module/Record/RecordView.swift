@@ -18,6 +18,8 @@ class RecordView: UIViewController {
     @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var quarterScoreView: QuarterScoreView!
+    
     @IBOutlet weak var homePlayerTableView: PlayerTableView!
     @IBOutlet weak var awayPlayerTableView: PlayerTableView!
     
@@ -60,12 +62,16 @@ extension RecordView: RecordViewProtocol {
         mutableString.addAttribute(.foregroundColor,
                                    value: Constants.Color.AwayDefault,
                                    range: NSRange(location: 6, length: 3))
-        scoreLabel.attributedText = mutableString
+//        scoreLabel.attributedText = mutableString
+    }
+    
+    func updateQuarterScoreView(name: (home: String, away: String), scores: [(quarter: Quarter, home: Int, away: Int)]) {
+        quarterScoreView.setup(name: name, scores: scores)
     }
     
     func updateViewHeight(cellCount: Int) {
         let size = homePlayerTableView.cellSize + homePlayerTableView.cellSpacing
-        heightConstraint.constant = size * CGFloat(cellCount)
+        heightConstraint.constant = size * CGFloat(cellCount) + homePlayerTableView.cellSpacing
     }
     
     func updatePlayerTableView(players: [Player], of home: Bool) {

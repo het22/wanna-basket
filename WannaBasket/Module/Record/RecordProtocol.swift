@@ -47,6 +47,7 @@ protocol RecordViewProtocol: class {
     // PRESENTER -> VIEW
     func updateTeamNameLabel(name: String, of home: Bool)
     func updateScoreLabel(score: (home: Int, away: Int))
+    func updateQuarterScoreView(name: (home: String, away: String), scores: [(quarter: Quarter, home: Int, away: Int)])
     func updateViewHeight(cellCount: Int)
     
     func updatePlayerTableView(players: [Player], of home: Bool)

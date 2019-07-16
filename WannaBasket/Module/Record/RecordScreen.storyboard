@@ -31,7 +31,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                         <state key="normal" title="&lt; 경기로 돌아가기">
-                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                         <state key="normal" title="경기 종료하기 &gt;">
-                                            <color key="titleColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,129 +84,146 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5U-aE-5tg">
                                 <rect key="frame" x="0.0" y="31" width="736" height="383"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="736" placeholderIntrinsicHeight="907" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-IJ-53T">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="457.33333333333331"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBa-fB-HHv">
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="670"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-gQ-xDp">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="57.333333333333336"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="736" placeholderIntrinsicHeight="907" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-IJ-53T">
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="670"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-8r-TnX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="57.333333333333336"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
-                                                        <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000 : 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
-                                                        <rect key="frame" x="239.33333333333334" y="0.0" width="257.33333333333326" height="57.333333333333336"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
-                                                        <rect key="frame" x="496.66666666666669" y="0.0" width="239.33333333333331" height="57.333333333333336"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
-                                                        <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="6zh-UQ-Oo2"/>
-                                                    <constraint firstAttribute="bottom" secondItem="YM1-K7-gfS" secondAttribute="bottom" id="8F1-Ux-FtH"/>
-                                                    <constraint firstItem="YM1-K7-gfS" firstAttribute="width" secondItem="qaN-8r-TnX" secondAttribute="width" id="dah-9O-lWT"/>
-                                                    <constraint firstAttribute="bottom" secondItem="plc-Td-5HR" secondAttribute="bottom" id="esf-Em-cjP"/>
-                                                    <constraint firstItem="qaN-8r-TnX" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="ewk-HM-dEo"/>
-                                                    <constraint firstItem="YM1-K7-gfS" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="mPa-81-vEe"/>
-                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="width" secondItem="JNh-gQ-xDp" secondAttribute="width" multiplier="0.35" id="nmR-UR-rgK"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qaN-8r-TnX" secondAttribute="bottom" id="ogj-CX-pAq"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9n-Hm-oMN">
-                                                <rect key="frame" x="0.0" y="57.333333333333314" width="736" height="400"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJ8-Lo-TuY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="368" height="400"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-gQ-xDp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="736" height="76.666666666666671"/>
                                                         <subviews>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-cJ-h4Q" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="0.0" width="358" height="400"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-8r-TnX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="239.33333333333334" height="76.666666666666671"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                                                        <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
-                                                                        <real key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
-                                                                        <real key="value" value="0.0"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
-                                                                        <real key="value" value="50"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </tableView>
+                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친선전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
+                                                                <rect key="frame" x="239.33333333333334" y="0.0" width="257.33333333333326" height="76.666666666666671"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
+                                                                <rect key="frame" x="496.66666666666669" y="0.0" width="239.33333333333331" height="76.666666666666671"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                                <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="VIY-cJ-h4Q" secondAttribute="trailing" constant="5" id="FQR-VG-vCv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="VIY-cJ-h4Q" secondAttribute="bottom" id="b0h-As-ZJE"/>
-                                                            <constraint firstItem="VIY-cJ-h4Q" firstAttribute="top" secondItem="fJ8-Lo-TuY" secondAttribute="top" id="pE1-u6-89R"/>
-                                                            <constraint firstItem="VIY-cJ-h4Q" firstAttribute="leading" secondItem="fJ8-Lo-TuY" secondAttribute="leading" constant="5" id="vuo-rT-eEA"/>
+                                                            <constraint firstItem="plc-Td-5HR" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="6zh-UQ-Oo2"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YM1-K7-gfS" secondAttribute="bottom" id="8F1-Ux-FtH"/>
+                                                            <constraint firstItem="YM1-K7-gfS" firstAttribute="width" secondItem="qaN-8r-TnX" secondAttribute="width" id="dah-9O-lWT"/>
+                                                            <constraint firstAttribute="bottom" secondItem="plc-Td-5HR" secondAttribute="bottom" id="esf-Em-cjP"/>
+                                                            <constraint firstItem="qaN-8r-TnX" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="ewk-HM-dEo"/>
+                                                            <constraint firstItem="YM1-K7-gfS" firstAttribute="top" secondItem="JNh-gQ-xDp" secondAttribute="top" id="mPa-81-vEe"/>
+                                                            <constraint firstItem="plc-Td-5HR" firstAttribute="width" secondItem="JNh-gQ-xDp" secondAttribute="width" multiplier="0.35" id="nmR-UR-rgK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qaN-8r-TnX" secondAttribute="bottom" id="ogj-CX-pAq"/>
                                                         </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-Sh-6Re" customClass="QuarterScoreView" customModule="WannaBasket" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="77.666666666666671" width="736" height="191.33333333333331"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-5p-y35">
-                                                        <rect key="frame" x="368" y="0.0" width="368" height="400"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9n-Hm-oMN">
+                                                        <rect key="frame" x="0.0" y="270" width="736" height="400"/>
                                                         <subviews>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K8y-GM-eEa" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="0.0" width="358" height="400"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJ8-Lo-TuY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="368" height="400"/>
+                                                                <subviews>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-cJ-h4Q" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="5" width="358" height="395"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
+                                                                                <real key="value" value="50"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </tableView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="NO"/>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                                                        <color key="value" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
-                                                                        <real key="value" value="5"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
-                                                                        <real key="value" value="0.0"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
-                                                                        <real key="value" value="50"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </tableView>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="VIY-cJ-h4Q" secondAttribute="trailing" constant="5" id="FQR-VG-vCv"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="VIY-cJ-h4Q" secondAttribute="bottom" id="b0h-As-ZJE"/>
+                                                                    <constraint firstItem="VIY-cJ-h4Q" firstAttribute="top" secondItem="fJ8-Lo-TuY" secondAttribute="top" constant="5" id="pE1-u6-89R"/>
+                                                                    <constraint firstItem="VIY-cJ-h4Q" firstAttribute="leading" secondItem="fJ8-Lo-TuY" secondAttribute="leading" constant="5" id="vuo-rT-eEA"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-5p-y35">
+                                                                <rect key="frame" x="368" y="0.0" width="368" height="400"/>
+                                                                <subviews>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K8y-GM-eEa" customClass="PlayerTableView" customModule="WannaBasket" customModuleProvider="target">
+                                                                        <rect key="frame" x="5" y="5" width="358" height="395"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ofHome" value="NO"/>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                                                <color key="value" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
+                                                                                <real key="value" value="50"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </tableView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="K8y-GM-eEa" secondAttribute="trailing" constant="5" id="LmG-M2-FD1"/>
+                                                                    <constraint firstItem="K8y-GM-eEa" firstAttribute="top" secondItem="Qnt-5p-y35" secondAttribute="top" constant="5" id="VNH-ZM-dQO"/>
+                                                                    <constraint firstItem="K8y-GM-eEa" firstAttribute="leading" secondItem="Qnt-5p-y35" secondAttribute="leading" constant="5" id="Ved-Ky-Pqa"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="K8y-GM-eEa" secondAttribute="bottom" id="xI1-Uz-ijD"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="K8y-GM-eEa" secondAttribute="trailing" constant="5" id="LmG-M2-FD1"/>
-                                                            <constraint firstItem="K8y-GM-eEa" firstAttribute="top" secondItem="Qnt-5p-y35" secondAttribute="top" id="VNH-ZM-dQO"/>
-                                                            <constraint firstItem="K8y-GM-eEa" firstAttribute="leading" secondItem="Qnt-5p-y35" secondAttribute="leading" constant="5" id="Ved-Ky-Pqa"/>
-                                                            <constraint firstAttribute="bottom" secondItem="K8y-GM-eEa" secondAttribute="bottom" id="xI1-Uz-ijD"/>
+                                                            <constraint firstAttribute="height" constant="400" id="0x1-eN-5tr"/>
+                                                            <constraint firstItem="Qnt-5p-y35" firstAttribute="width" secondItem="fJ8-Lo-TuY" secondAttribute="width" id="XZE-cM-QTV"/>
                                                         </constraints>
-                                                    </view>
+                                                    </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="400" id="0x1-eN-5tr"/>
-                                                    <constraint firstItem="Qnt-5p-y35" firstAttribute="width" secondItem="fJ8-Lo-TuY" secondAttribute="width" id="XZE-cM-QTV"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="lfC-IJ-53T" firstAttribute="leading" secondItem="OBa-fB-HHv" secondAttribute="leading" id="BoY-Gs-aas"/>
+                                            <constraint firstItem="lfC-IJ-53T" firstAttribute="top" secondItem="OBa-fB-HHv" secondAttribute="top" id="FSv-GP-ORw"/>
+                                            <constraint firstAttribute="trailing" secondItem="lfC-IJ-53T" secondAttribute="trailing" id="Icg-kw-rIF"/>
+                                            <constraint firstAttribute="bottom" secondItem="lfC-IJ-53T" secondAttribute="bottom" id="fWR-y2-15s"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="top" secondItem="S5U-aE-5tg" secondAttribute="top" id="Cbb-7I-9bR"/>
-                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="width" secondItem="S5U-aE-5tg" secondAttribute="width" id="LMH-L6-0nl"/>
-                                    <constraint firstAttribute="trailing" secondItem="lfC-IJ-53T" secondAttribute="trailing" id="N2u-ln-ob0"/>
-                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.15" id="Qgq-SR-I0T"/>
-                                    <constraint firstItem="lfC-IJ-53T" firstAttribute="leading" secondItem="S5U-aE-5tg" secondAttribute="leading" id="QpG-uX-DJe"/>
-                                    <constraint firstAttribute="bottom" secondItem="lfC-IJ-53T" secondAttribute="bottom" id="wnO-St-OAb"/>
+                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.2" id="2jG-fn-5Qy"/>
+                                    <constraint firstItem="WXQ-Sh-6Re" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.5" id="VmB-gD-p4k"/>
+                                    <constraint firstItem="OBa-fB-HHv" firstAttribute="top" secondItem="S5U-aE-5tg" secondAttribute="top" id="mnp-6n-eR2"/>
+                                    <constraint firstItem="OBa-fB-HHv" firstAttribute="width" secondItem="S5U-aE-5tg" secondAttribute="width" id="pwX-W5-7mY"/>
+                                    <constraint firstAttribute="trailing" secondItem="OBa-fB-HHv" secondAttribute="trailing" id="sGZ-RI-mNy"/>
+                                    <constraint firstAttribute="bottom" secondItem="OBa-fB-HHv" secondAttribute="bottom" id="slJ-6t-DPq"/>
+                                    <constraint firstItem="OBa-fB-HHv" firstAttribute="leading" secondItem="S5U-aE-5tg" secondAttribute="leading" id="t2f-Ws-oB6"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -229,7 +246,7 @@
                         <outlet property="heightConstraint" destination="0x1-eN-5tr" id="PlB-ST-hxu"/>
                         <outlet property="homePlayerTableView" destination="VIY-cJ-h4Q" id="bqj-S1-zpW"/>
                         <outlet property="homeTeamNameLabel" destination="qaN-8r-TnX" id="k3F-vC-XRc"/>
-                        <outlet property="scoreLabel" destination="plc-Td-5HR" id="Bm2-me-Lxu"/>
+                        <outlet property="quarterScoreView" destination="WXQ-Sh-6Re" id="S37-Oq-HEr"/>
                         <outlet property="scrollView" destination="S5U-aE-5tg" id="aP6-ai-838"/>
                     </connections>
                 </viewController>

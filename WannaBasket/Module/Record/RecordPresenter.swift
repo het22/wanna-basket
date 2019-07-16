@@ -21,6 +21,20 @@ class RecordPresenter: RecordPresenterProtocol {
         view?.updateTeamNameLabel(name: game.team.away.name, of: false)
         view?.updateScoreLabel(score: game.score)
         
+        var scores = [(Quarter, Int, Int)]()
+        for i in 1...4 {
+            let score = game.records.reduce((Quarter.Regular(i),0,0)) {
+                var temp = $0
+                if case $0.0 = $1.time.quarter, case Stat.Score(let Point) = $1.stat {
+                    if $1.home { temp.1 += Point.rawValue }
+                    else { temp.2 += Point.rawValue }
+                }
+                return temp
+            }
+            scores.append(score)
+        }
+        view?.updateQuarterScoreView(name: (game.team.home.name, game.team.away.name), scores: scores)
+        
         let maxCount = max(game.players.home.count, game.players.away.count)
         view?.updateViewHeight(cellCount: maxCount)
         
