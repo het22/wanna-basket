@@ -48,7 +48,7 @@
 		CBC6F03F22CDEC8A0021A11D /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F02B22CDEC8A0021A11D /* TeamTableViewCell.xib */; };
 		CBC6F04022CDEC8A0021A11D /* TeamTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F02C22CDEC8A0021A11D /* TeamTableView.swift */; };
 		CBC6F04122CDEC8A0021A11D /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F02D22CDEC8A0021A11D /* TeamTableViewCell.swift */; };
-		CBC6F04222CDEC8A0021A11D /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F02F22CDEC8A0021A11D /* NumberFormatter.swift */; };
+		CBC6F04222CDEC8A0021A11D /* NumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F02F22CDEC8A0021A11D /* NumberFormat.swift */; };
 		CBC6F04422CDEC8A0021A11D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03122CDEC8A0021A11D /* Reusable.swift */; };
 		CBC6F04522CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03222CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift */; };
 		CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */; };
@@ -143,7 +143,7 @@
 		CBC6F02B22CDEC8A0021A11D /* TeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		CBC6F02C22CDEC8A0021A11D /* TeamTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableView.swift; sourceTree = "<group>"; };
 		CBC6F02D22CDEC8A0021A11D /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
-		CBC6F02F22CDEC8A0021A11D /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		CBC6F02F22CDEC8A0021A11D /* NumberFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormat.swift; sourceTree = "<group>"; };
 		CBC6F03122CDEC8A0021A11D /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		CBC6F03222CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizerWithClosure.swift; sourceTree = "<group>"; };
 		CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -272,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
-				CBC6F05422CF2C2B0021A11D /* Time.swift */,
 				CBC6F06822D416B70021A11D /* Quarter.swift */,
 				CBC6F05222CF063B0021A11D /* Stat.swift */,
 				CBC6F05F22D03DAB0021A11D /* ClockControl.swift */,
@@ -347,7 +346,6 @@
 			children = (
 				CBC6F03122CDEC8A0021A11D /* Reusable.swift */,
 				CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */,
-				CBC6F02F22CDEC8A0021A11D /* NumberFormatter.swift */,
 				CBC6F03222CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift */,
 				CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */,
 				CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */,
@@ -488,6 +486,7 @@
 				CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */,
 				CBDD243122DC7E4700592B15 /* Game.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
+				CBC6F05422CF2C2B0021A11D /* Time.swift */,
 				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
 			);
 			path = Model;
@@ -502,6 +501,7 @@
 				CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */,
 				CBFA016622B89D2A00F71C7B /* AppDelegate.swift */,
 				CBC6F01822CDE0D30021A11D /* Constants.swift */,
+				CBC6F02F22CDEC8A0021A11D /* NumberFormat.swift */,
 				CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */,
 				CB0652D722B9B99200330DD7 /* Wireframe.storyboard */,
 			);
@@ -754,7 +754,7 @@
 				CBDD243222DC7E4700592B15 /* Game.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
-				CBC6F04222CDEC8A0021A11D /* NumberFormatter.swift in Sources */,
+				CBC6F04222CDEC8A0021A11D /* NumberFormat.swift in Sources */,
 				CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */,
 				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,
 				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,

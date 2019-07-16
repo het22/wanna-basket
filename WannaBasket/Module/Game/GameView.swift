@@ -136,12 +136,12 @@ extension GameView: GameViewProtocol {
     }
     
     func updateGameClockLabel(_ gameClock: Float, isRunning: Bool) {
-        gameClockLabel.text = "\(Time.Description.GameClock(gameClock))"
+        gameClockLabel.text = "\(Constants.Format.GameClock(gameClock))"
         gameClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     
     func updateShotClockLabel(_ shotClock: Float, isRunning: Bool) {
-        shotClockLabel.text = "\(Time.Description.ShotClock(shotClock))"
+        shotClockLabel.text = "\(Constants.Format.ShotClock(shotClock))"
         shotClockLabel.textColor = isRunning ? Constants.Color.Black : Constants.Color.Silver
     }
     

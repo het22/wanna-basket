@@ -24,7 +24,7 @@ class NumberSelectViewCell: UICollectionViewCell, Reusable, NibLoadable {
     }
     
     func setup(number: Int) {
-        numberLabel.text = (number==100) ? "00" : "\(number)"
+        numberLabel.text = "\(Constants.Format.PlayerNumber(number))"
     }
     
     var highlightColor: UIColor = Constants.Color.Black

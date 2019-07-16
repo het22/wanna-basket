@@ -38,4 +38,27 @@ enum Constants {
         static let TeamName = "[가-힣A-Za-z0-9\\s]{2,6}"
         static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,6}"
     }
+    
+    enum Format: CustomStringConvertible {
+        case GameClock(Float)
+        case ShotClock(Float)
+        case PlayerNumber(Int)
+        
+        var description: String {
+            switch self {
+            case .GameClock(let clock):
+                if clock >= 60.0 {
+                    let min = Int(clock) / 60
+                    let sec = Int(clock) % 60
+                    return gameClockFormat.string(from: NSNumber(integerLiteral: min))! + ":" + gameClockFormat.string(from: NSNumber(integerLiteral: sec))!
+                } else {
+                    return shotClockFormat.string(from: NSNumber(value: clock))!
+                }
+            case .ShotClock(let clock):
+                return shotClockFormat.string(from: NSNumber(value: clock))!
+            case .PlayerNumber(let num):
+                return (num==100) ? "00" : "\(num)"
+            }
+        }
+    }
 }
