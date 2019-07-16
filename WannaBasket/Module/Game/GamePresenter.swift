@@ -20,21 +20,12 @@ class GamePresenter: GamePresenterProtocol {
     // --------------------------------------------------
     // MARK: Manage Game Informations
     // --------------------------------------------------
-    var game: Game! {
-        didSet {
-            game.delegate = self
-            game.time.delegate = self
-            for i in 0...4 {
-                game.substitutePlayer(index: i, of: true)
-                game.substitutePlayer(index: i, of: false)
-            }
-        }
-    }
+    var game: (GameManageable & GameRecordable)!
     var isSubstituting: (home: Bool, away: Bool) = (false, false) {
         didSet(oldVal) {
             if oldVal.home != isSubstituting.home {
                 if isSubstituting.home {
-                    view?.updatePlayerTableView(players: game.teams.home.players, of: true)
+                    view?.updatePlayerTableView(players: game.team.home.players, of: true)
                 } else {
                     view?.updatePlayerTableView(players: game.floorPlayers.home, of: true)
                 }
@@ -43,7 +34,7 @@ class GamePresenter: GamePresenterProtocol {
             }
             if oldVal.away != isSubstituting.away {
                 if isSubstituting.away {
-                    view?.updatePlayerTableView(players: game.teams.away.players, of: false)
+                    view?.updatePlayerTableView(players: game.team.away.players, of: false)
                 } else {
                     view?.updatePlayerTableView(players: game.floorPlayers.away, of: false)
                 }
@@ -57,8 +48,16 @@ class GamePresenter: GamePresenterProtocol {
     // MARK: Game View Events
     // --------------------------------------------------
     func viewDidLoad() {
-        view?.updateTeamNameLabel(name: game.teams.home.name, of: true)
-        view?.updateTeamNameLabel(name: game.teams.away.name, of: false)
+        game.time.delegate = self
+        game.recordableDelegate = self
+        game.manageableDelegate = self
+        for i in 0...4 {
+            game.substitutePlayer(index: i, of: true)
+            game.substitutePlayer(index: i, of: false)
+        }
+        
+        view?.updateTeamNameLabel(name: game.team.home.name, of: true)
+        view?.updateTeamNameLabel(name: game.team.away.name, of: false)
         view?.updatePlayerTableView(players: game.floorPlayers.home, of: true)
         view?.updatePlayerTableView(players: game.floorPlayers.away, of: false)
         view?.updateQuarterLabel(game.time.currentQuarter)
@@ -83,8 +82,11 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func didSelectExit() {
-        let record = GameRecord(records: game!.records, teams: game!.teams)
-        wireframe?.presentModule(source: view!, module: Module.Record(record: record))
+        view?.showQuarterSelectView(maxRegularQuarterNum: game.time.maxRegularQuarterNum,
+                                    overtimeQuarterCount: 0,
+                                    currentQuarter: game.time.currentQuarter,
+                                    bool: false)
+        wireframe?.presentModule(source: view!, module: Module.Record(game: game as! Game))
     }
     
     // --------------------------------------------------
@@ -181,9 +183,13 @@ class GamePresenter: GamePresenterProtocol {
 }
 
 // --------------------------------------------------
-// MARK: Game Delegate
+// MARK: Game Manageable Delegate
 // --------------------------------------------------
-extension GamePresenter: GameDelegate {
+extension GamePresenter: GameManageableDelegate {
+    
+    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool) {
+        view?.highlightPlayerCell(at: index, of: home, bool: floor)
+    }
     
     func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?,
                                   newTuple: (home: Bool, index: Int)?) {
@@ -205,7 +211,6 @@ extension GamePresenter: GameDelegate {
     }
     
     func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat) {
-        game.addRecord(playerTuple: playerTuple, stat: stat)
         view?.blinkPlayerCell(at: playerTuple.index, of: playerTuple.home) { bool in
             self.game.currentPlayerTuple = nil
         }
@@ -213,16 +218,18 @@ extension GamePresenter: GameDelegate {
             self.game.currentStat = nil
         }
     }
+}
+
+// --------------------------------------------------
+// MARK: Game Recordable Delegate
+// --------------------------------------------------
+extension GamePresenter: GameRecordableDelegate {
     
-    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool) {
-        view?.highlightPlayerCell(at: index, of: home, bool: floor)
-    }
-    
-    func didAddRecord(record: Record) {
+    func didAddRecord(record: Record, score: (home: Int, away: Int)) {
         switch record.stat {
         case .Score(_):
             let home = record.home
-            let score = home ? game.scores.home : game.scores.away
+            let score = home ? score.home : score.away
             view?.updateTeamScoreLabel(score: score, of: home)
             view?.blinkScoreLabel(of: home, completion: nil)
         case .Assist :
@@ -234,11 +241,11 @@ extension GamePresenter: GameDelegate {
         }
     }
     
-    func didRemoveLastRecord(record: Record) {
+    func didRemoveLastRecord(record: Record, score: (home: Int, away: Int)) {
         switch record.stat {
         case .Score(_):
             let home = record.home
-            let score = home ? game.scores.home : game.scores.away
+            let score = home ? score.home : score.away
             view?.updateTeamScoreLabel(score: score, of: home)
             view?.blinkScoreLabel(of: home, completion: nil)
             view?.blinkStatCell(of: nil, completion: nil)
