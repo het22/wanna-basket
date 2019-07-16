@@ -15,7 +15,7 @@
 		CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */; };
 		CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */; };
 		CB5C1C5422D878FF00871C2B /* NumberSelectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */; };
-		CB5C1C5622D9961D00871C2B /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5522D9961D00871C2B /* GameSetting.swift */; };
+		CB5C1C5622D9961D00871C2B /* PlayerTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */; };
 		CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */; };
 		CB5C1C5F22DB0BBC00871C2B /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */; };
 		CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */; };
@@ -23,7 +23,6 @@
 		CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */; };
 		CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */; };
 		CB5C1C6522DB5AEB00871C2B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */; };
-		CBA2A19322DC163400D743D9 /* GameRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2A19222DC163400D743D9 /* GameRecord.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -33,7 +32,6 @@
 		CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30922C49D7A004C50B3 /* GameView.swift */; };
 		CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */; };
 		CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */; };
-		CBB9B32122C4D3BD004C50B3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B32022C4D3BD004C50B3 /* Game.swift */; };
 		CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B32222C4EA3D004C50B3 /* Record.swift */; };
 		CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */; };
 		CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F00D22CD6E430021A11D /* TimeManager.swift */; };
@@ -68,6 +66,7 @@
 		CBC6F06722D3A1470021A11D /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06622D3A1470021A11D /* TimeTest.swift */; };
 		CBC6F06922D416B70021A11D /* Quarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06822D416B70021A11D /* Quarter.swift */; };
 		CBC6F06C22D44F6E0021A11D /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F06B22D44F6E0021A11D /* GameTest.swift */; };
+		CBDD243222DC7E4700592B15 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDD243122DC7E4700592B15 /* Game.swift */; };
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
@@ -112,7 +111,7 @@
 		CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
 		CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectViewCell.swift; sourceTree = "<group>"; };
 		CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberSelectViewCell.xib; sourceTree = "<group>"; };
-		CB5C1C5522D9961D00871C2B /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
+		CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamManager.swift; sourceTree = "<group>"; };
 		CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordScreen.storyboard; sourceTree = "<group>"; };
 		CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
 		CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractor.swift; sourceTree = "<group>"; };
@@ -120,14 +119,12 @@
 		CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProtocol.swift; sourceTree = "<group>"; };
 		CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
 		CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
-		CBA2A19222DC163400D743D9 /* GameRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRecord.swift; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
 		CBB9B30922C49D7A004C50B3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWireframe.swift; sourceTree = "<group>"; };
-		CBB9B32022C4D3BD004C50B3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CBB9B32222C4EA3D004C50B3 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		CBC411F022C8ED0B0048BFDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBC411F222C8ED410048BFDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -164,6 +161,7 @@
 		CBC6F06622D3A1470021A11D /* TimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
 		CBC6F06822D416B70021A11D /* Quarter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
 		CBC6F06B22D44F6E0021A11D /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		CBDD243122DC7E4700592B15 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CBFA016322B89D2A00F71C7B /* WannaBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
@@ -487,10 +485,9 @@
 			children = (
 				CBFA01AC22B8B99800F71C7B /* Player.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
-				CB5C1C5522D9961D00871C2B /* GameSetting.swift */,
-				CBB9B32022C4D3BD004C50B3 /* Game.swift */,
+				CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */,
+				CBDD243122DC7E4700592B15 /* Game.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
-				CBA2A19222DC163400D743D9 /* GameRecord.swift */,
 				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
 			);
 			path = Model;
@@ -733,12 +730,10 @@
 				CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */,
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
-				CBB9B32122C4D3BD004C50B3 /* Game.swift in Sources */,
 				CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */,
 				CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */,
 				CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */,
 				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
-				CBA2A19322DC163400D743D9 /* GameRecord.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */,
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
@@ -746,7 +741,7 @@
 				CBC6F04822CDEC8A0021A11D /* UITableView+Extension.swift in Sources */,
 				CBC6F06222D32DDE0021A11D /* UIView+Extension.swift in Sources */,
 				CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */,
-				CB5C1C5622D9961D00871C2B /* GameSetting.swift in Sources */,
+				CB5C1C5622D9961D00871C2B /* PlayerTeamManager.swift in Sources */,
 				CBC6F04022CDEC8A0021A11D /* TeamTableView.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
 				CBB9B30D22C49D7A004C50B3 /* GamePresenter.swift in Sources */,
@@ -756,6 +751,7 @@
 				CBB9B30E22C49D7A004C50B3 /* GameInteractor.swift in Sources */,
 				CBC6F04522CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift in Sources */,
 				CB5C1C6222DB0BBC00871C2B /* RecordProtocol.swift in Sources */,
+				CBDD243222DC7E4700592B15 /* Game.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerTableViewCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
 				CBC6F04222CDEC8A0021A11D /* NumberFormatter.swift in Sources */,

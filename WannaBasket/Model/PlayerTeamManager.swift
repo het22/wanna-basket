@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameSettingDelegate: class {
+protocol PlayerTeamManagerDelegate: class {
     func didSetCurrentTeamIndex(oldVal: (home: Int?, away: Int?), newVal: (home: Int?, away: Int?))
     
     func didAddTeam()
@@ -20,9 +20,9 @@ protocol GameSettingDelegate: class {
     func didRemovePlayer(of team: Team)
 }
 
-class GameSetting {
+class PlayerTeamManager {
     
-    weak var delegate: GameSettingDelegate?
+    weak var delegate: PlayerTeamManagerDelegate?
     
     var teams: [Team] = []
     var currentTeamIndex: (home: Int?, away: Int?) = (nil, nil) {
