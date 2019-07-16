@@ -13,7 +13,13 @@ enum Stat: Equatable, CustomStringConvertible {
     case Score(Point)
     case Assist
     case Block
-    case Rebound
+    case Rebound(Situation)
+    case Foul(Situation)
+    
+    enum Situation {
+        case Offense
+        case Defense
+    }
     
     enum Point: Int, CustomStringConvertible {
         case One = 1
@@ -35,6 +41,8 @@ enum Stat: Equatable, CustomStringConvertible {
             return "블락"
         case .Rebound:
             return "리바운드"
+        case .Foul:
+            return "파울"
         }
     }
 }

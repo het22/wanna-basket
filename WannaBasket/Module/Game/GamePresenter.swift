@@ -244,6 +244,8 @@ extension GamePresenter: GameRecordableDelegate {
             break
         case .Rebound :
             break
+        case .Foul:
+            break
         }
     }
     
@@ -260,6 +262,8 @@ extension GamePresenter: GameRecordableDelegate {
         case .Block :
             break
         case .Rebound :
+            break
+        case .Foul:
             break
         }
     }
