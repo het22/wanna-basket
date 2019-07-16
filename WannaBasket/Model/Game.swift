@@ -137,8 +137,12 @@ protocol GameManageable {
 extension Game: GameManageable {
     
     var floorPlayers: (home: [Player], away: [Player]) {
-        let home = players.home.filter(indexes: floorPlayerIndexes.home)
-        let away = players.away.filter(indexes: floorPlayerIndexes.away)
+        let home = players.home
+            .filter(indexes: floorPlayerIndexes.home)
+            .sorted { $0.number < $1.number }
+        let away = players.away
+            .filter(indexes: floorPlayerIndexes.away)
+            .sorted { $0.number < $1.number }
         return (home, away)
     }
     
