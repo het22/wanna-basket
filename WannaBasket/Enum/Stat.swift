@@ -39,10 +39,14 @@ enum Stat: Equatable, CustomStringConvertible {
             return "어시스트"
         case .Block:
             return "블락"
-        case .Rebound:
-            return "리바운드"
-        case .Foul:
-            return "파울"
+        case .Rebound(.Offense):
+            return "공격 리바운드"
+        case .Rebound(.Defense):
+            return "수비 리바운드"
+        case .Foul(.Offense):
+            return "공격자 파울"
+        case .Foul(.Defense):
+            return "수비자 파울"
         }
     }
 }
