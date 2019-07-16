@@ -14,7 +14,7 @@ class RecordWireframe: RecordWireframeProtocol {
         return UIStoryboard(name: "RecordScreen", bundle: Bundle.main)
     }
     
-    static func createModule(with record: GameRecord) -> UIViewController {
+    static func createModule(with game: Game) -> UIViewController {
         let viewController = mainStoryboard.instantiateInitialViewController()
         if let view = viewController as? RecordView {
             let interactor  = RecordInteractor()
@@ -27,7 +27,7 @@ class RecordWireframe: RecordWireframeProtocol {
             presenter.interactor = interactor
             presenter.wireframe = wireframe
             
-            presenter.record = record
+            presenter.game = game
             
             return view
         }

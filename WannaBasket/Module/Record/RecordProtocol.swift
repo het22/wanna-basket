@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RecordWireframeProtocol: class {
-    static func createModule(with record: GameRecord) -> UIViewController
+    static func createModule(with game: Game) -> UIViewController
 }
 
 protocol RecordInteractorInputProtocol: class {
