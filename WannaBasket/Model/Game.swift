@@ -1,75 +1,178 @@
 //
-//  GameModel.swift
+//  Game.swift
 //  WannaBasket
 //
-//  Created by Het Song on 27/06/2019.
+//  Created by Het Song on 15/07/2019.
 //  Copyright © 2019 Het Song. All rights reserved.
 //
 
 import Foundation
 
-protocol GameDelegate: class {
-    func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
-    func didSetCurrentStat(oldStat: Stat?, newStat: Stat?)
-    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat)
-    
-    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool)
-    
-    func didAddRecord(record: Record)
-    func didRemoveLastRecord(record: Record)
+// --------------------------------------------------
+// MARK: Game Model Protocol
+// --------------------------------------------------
+protocol GameModel {
+    var team: (home: Team, away: Team) { get set }
+    var players: (home: [Player], away: [Player]) { get set }
+    var records: [Record] { get set }
 }
 
-class Game {
+// --------------------------------------------------
+// MARK: Game Class
+// --------------------------------------------------
+class Game: GameModel {
     
-    weak var delegate: GameDelegate?
+    // --------------------------------------------------
+    // MARK: Game Model
+    // --------------------------------------------------
+    var team: (home: Team, away: Team)
+    var players: (home: [Player], away: [Player]) = ([],[])
+    var records: [Record] = []
+    
+    init(home: Team, away: Team) {
+        self.team.home = home
+        self.team.away = away
+    }
+    
+    // --------------------------------------------------
+    // MARK: Game Configurable
+    // --------------------------------------------------
+    weak var congifureDelegate: GameConfigurableDelegate?
+    
+    var maxFloorPlayerCount: Int = 5
+    var maxRegularQuarterCount: Int = 4
+    var maxOverTimeQuarterCount: Int = 0
+    
+    // --------------------------------------------------
+    // MARK: Game Manageable
+    // --------------------------------------------------
+    weak var manageableDelegate: GameManageableDelegate?
     
     var time: TimeManager = TimeManager(maxRegularQuarterNum: 4)
-    var teams: (home: Team, away: Team)
-    init(homeTeam: Team, awayTeam: Team) {
-        self.teams = (homeTeam, awayTeam)
-    }
     
-    let maxFloorPlayerCount = 5
     var floorPlayerIndexes: (home: [Int], away: [Int]) = ([],[])
-    var floorPlayers: (home: [Player], away: [Player]) {
-        let homeFloorPlayers = teams.home.getPlayers(with: floorPlayerIndexes.home)
-        let awayFloorPlayers = teams.away.getPlayers(with: floorPlayerIndexes.away)
-        return (homeFloorPlayers, awayFloorPlayers)
-    }
-    func substitutePlayer(index: Int, of home: Bool) {
-        if index >= (home ? teams.home.players.count : teams.away.players.count) { return }
-        var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
-        if let i = indexes.firstIndex(of: index) {
-            indexes.remove(at: i)
-            delegate?.didSubstitutePlayer(index: index, of: home, floor: false)
-        } else {
-            if indexes.count < maxFloorPlayerCount {
-                indexes.append(index)
-                delegate?.didSubstitutePlayer(index: index, of: home, floor: true)
-            }
-        }
-        if home { floorPlayerIndexes.home = indexes }
-        else { floorPlayerIndexes.away = indexes }
-    }
     
     var currentPlayerTuple: (home: Bool, index: Int)? {
         didSet(oldTuple) {
-            delegate?.didSetCurrentPlayerTuple(oldTuple: oldTuple, newTuple: currentPlayerTuple)
+            manageableDelegate?.didSetCurrentPlayerTuple(oldTuple: oldTuple, newTuple: currentPlayerTuple)
             if let playerTuple = currentPlayerTuple, let stat = currentStat {
-                delegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
+                addRecord(playerTuple: playerTuple, stat: stat)
+                manageableDelegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
             }
         }
     }
     var currentStat: Stat? {
         didSet(oldStat) {
-            delegate?.didSetCurrentStat(oldStat: oldStat, newStat: currentStat)
+            manageableDelegate?.didSetCurrentStat(oldStat: oldStat, newStat: currentStat)
             if let playerTuple = currentPlayerTuple, let stat = currentStat {
-                delegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
+                addRecord(playerTuple: playerTuple, stat: stat)
+                manageableDelegate?.didSetPlayerAndStat(playerTuple: playerTuple, stat: stat)
             }
         }
     }
     
-    var scores: (home: Int, away: Int) {
+    // --------------------------------------------------
+    // MARK: Game Recordable
+    // --------------------------------------------------
+    var recordableDelegate: GameRecordableDelegate?
+}
+
+
+
+// --------------------------------------------------
+// MARK: Game Configurable Protocol & Extension
+// --------------------------------------------------
+protocol GameConfigurableDelegate: class { }
+
+protocol GameConfigurable {
+    var congifureDelegate: GameConfigurableDelegate? { get set }
+    
+    var maxFloorPlayerCount: Int { get set }
+    var maxRegularQuarterCount: Int { get set }
+    var maxOverTimeQuarterCount: Int { get set }
+}
+
+extension Game: GameConfigurable {
+    
+}
+
+
+
+// --------------------------------------------------
+// MARK: Game Manageable Protocol & Extension
+// --------------------------------------------------
+protocol GameManageableDelegate: class {
+    func didSubstitutePlayer(index: Int, of home: Bool, floor: Bool)
+    
+    func didSetCurrentPlayerTuple(oldTuple: (home: Bool, index: Int)?, newTuple: (home: Bool, index: Int)?)
+    func didSetCurrentStat(oldStat: Stat?, newStat: Stat?)
+    func didSetPlayerAndStat(playerTuple: (home: Bool, index: Int), stat: Stat)
+}
+
+protocol GameManageable {
+    var manageableDelegate: GameManageableDelegate? { get set }
+    
+    var time: TimeManager { get set }
+    var team: (home: Team, away: Team) { get }
+    var players: (home: [Player], away: [Player]) { get }
+    
+    var floorPlayerIndexes: (home: [Int], away: [Int]) { get set }
+    var floorPlayers: (home: [Player], away: [Player]) { get }
+    func substitutePlayer(index: Int, of home: Bool)
+    
+    var currentPlayerTuple: (home: Bool, index: Int)? { get set }
+    var currentStat: Stat? { get set }
+}
+
+extension Game: GameManageable {
+    
+    var floorPlayers: (home: [Player], away: [Player]) {
+        let homeFloorPlayers = team.home.getPlayers(with: floorPlayerIndexes.home)
+        let awayFloorPlayers = team.away.getPlayers(with: floorPlayerIndexes.away)
+        return (homeFloorPlayers, awayFloorPlayers)
+    }
+    
+    func substitutePlayer(index: Int, of home: Bool) {
+        if index >= (home ? team.home.players.count : team.away.players.count) { return }
+        var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
+        if let i = indexes.firstIndex(of: index) {
+            indexes.remove(at: i)
+            manageableDelegate?.didSubstitutePlayer(index: index, of: home, floor: false)
+        } else {
+            if indexes.count < maxFloorPlayerCount {
+                indexes.append(index)
+                manageableDelegate?.didSubstitutePlayer(index: index, of: home, floor: true)
+            }
+        }
+        if home { floorPlayerIndexes.home = indexes }
+        else { floorPlayerIndexes.away = indexes }
+    }
+}
+
+
+
+// --------------------------------------------------
+// MARK: Game Recordable Protocol & Extension
+// --------------------------------------------------
+protocol GameRecordableDelegate: class {
+    func didAddRecord(record: Record, score: (home: Int, away: Int))
+    func didRemoveLastRecord(record: Record, score: (home: Int, away: Int))
+}
+
+protocol GameRecordable {
+    var recordableDelegate: GameRecordableDelegate? { get set }
+    
+    var team: (home: Team, away: Team) { get }
+    var records: [Record]  { get set }
+    func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat)
+    func removeLastRecord()
+    
+    var score: (home: Int, away: Int)  { get }
+}
+
+extension Game: GameRecordable {
+    
+    var score: (home: Int, away: Int) {
         return records.reduce((0,0)) { (scores, record) -> (Int, Int) in
             if case let .Score(Score) = record.stat {
                 let score = Score.rawValue
@@ -80,22 +183,23 @@ class Game {
         }
     }
     
-    var records: [Record] = []
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat) {
-        let team = playerTuple.home ? teams.home : teams.away
+        let team = playerTuple.home ? self.team.home : self.team.away
         let record = Record(quarter: time.currentTime,
                             home: playerTuple.home,
                             team: team,
                             player: team.players[playerTuple.index],
                             stat: stat)
         records.append(record)
-        delegate?.didAddRecord(record: record)
+        recordableDelegate?.didAddRecord(record: record, score: score)
     }
     
     func removeLastRecord() {
         if records.count > 0 {
             let record = records.removeLast()
-            delegate?.didRemoveLastRecord(record: record)
+            recordableDelegate?.didRemoveLastRecord(record: record, score: score)
         }
     }
 }
+
+
