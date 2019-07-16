@@ -9,18 +9,9 @@
 import Foundation
 
 // --------------------------------------------------
-// MARK: Game Model Protocol
-// --------------------------------------------------
-protocol GameModel {
-    var team: (home: Team, away: Team) { get set }
-    var players: (home: [Player], away: [Player]) { get set }
-    var records: [Record] { get set }
-}
-
-// --------------------------------------------------
 // MARK: Game Class
 // --------------------------------------------------
-class Game: GameModel {
+class Game {
     
     // --------------------------------------------------
     // MARK: Game Model
@@ -32,6 +23,8 @@ class Game: GameModel {
     init(home: Team, away: Team) {
         self.team.home = home
         self.team.away = away
+        self.players.home = home.players
+        self.players.away = away.players
     }
     
     // --------------------------------------------------
@@ -75,6 +68,23 @@ class Game: GameModel {
     // MARK: Game Recordable
     // --------------------------------------------------
     var recordableDelegate: GameRecordableDelegate?
+    
+}
+
+
+
+// --------------------------------------------------
+// MARK: Game Model Protocol & Extension
+// --------------------------------------------------
+protocol GameModel {
+    var team: (home: Team, away: Team) { get }
+    var players: (home: [Player], away: [Player]) { get }
+    var score: (home: Int, away: Int)  { get }
+    var records: [Record] { get }
+}
+
+extension Game: GameModel {
+    
 }
 
 
@@ -112,7 +122,7 @@ protocol GameManageableDelegate: class {
 protocol GameManageable {
     var manageableDelegate: GameManageableDelegate? { get set }
     
-    var time: TimeManager { get set }
+    var time: TimeManager { get }
     var team: (home: Team, away: Team) { get }
     var players: (home: [Player], away: [Player]) { get }
     
@@ -127,13 +137,13 @@ protocol GameManageable {
 extension Game: GameManageable {
     
     var floorPlayers: (home: [Player], away: [Player]) {
-        let homeFloorPlayers = team.home.getPlayers(with: floorPlayerIndexes.home)
-        let awayFloorPlayers = team.away.getPlayers(with: floorPlayerIndexes.away)
-        return (homeFloorPlayers, awayFloorPlayers)
+        let home = players.home.filter(indexes: floorPlayerIndexes.home)
+        let away = players.away.filter(indexes: floorPlayerIndexes.away)
+        return (home, away)
     }
     
     func substitutePlayer(index: Int, of home: Bool) {
-        if index >= (home ? team.home.players.count : team.away.players.count) { return }
+        if index >= (home ? players.home.count : players.away.count) { return }
         var indexes = home ? floorPlayerIndexes.home : floorPlayerIndexes.away
         if let i = indexes.firstIndex(of: index) {
             indexes.remove(at: i)
@@ -163,7 +173,7 @@ protocol GameRecordable {
     var recordableDelegate: GameRecordableDelegate? { get set }
     
     var team: (home: Team, away: Team) { get }
-    var records: [Record]  { get set }
+    var records: [Record]  { get }
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat)
     func removeLastRecord()
     

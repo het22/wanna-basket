@@ -272,9 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				CBFA01A522B89E7C00F71C7B /* Module.swift */,
-				CBC6F05222CF063B0021A11D /* Stat.swift */,
 				CBC6F05422CF2C2B0021A11D /* Time.swift */,
 				CBC6F06822D416B70021A11D /* Quarter.swift */,
+				CBC6F05222CF063B0021A11D /* Stat.swift */,
 				CBC6F05F22D03DAB0021A11D /* ClockControl.swift */,
 			);
 			path = Enum;
