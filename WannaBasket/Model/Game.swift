@@ -16,6 +16,9 @@ class Game {
     // --------------------------------------------------
     // MARK: Game Model
     // --------------------------------------------------
+    var name: String = ""
+    var data: Date = Date(timeIntervalSinceNow: TimeInterval.init())
+    
     var team: (home: Team, away: Team)
     var players: (home: [Player], away: [Player]) = ([],[])
     var records: [Record] = []
@@ -77,10 +80,15 @@ class Game {
 // MARK: Game Model Protocol & Extension
 // --------------------------------------------------
 protocol GameModel {
+    var name: String { get }
+    var data: Date { get }
+    
     var team: (home: Team, away: Team) { get }
     var players: (home: [Player], away: [Player]) { get }
-    var score: (home: Int, away: Int)  { get }
+    var score: (home: Int, away: Int) { get }
     var records: [Record] { get }
+    
+    var maxRegularQuarterCount: Int { get }
 }
 
 extension Game: GameModel {
@@ -199,7 +207,7 @@ extension Game: GameRecordable {
     
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat) {
         let team = playerTuple.home ? self.team.home : self.team.away
-        let record = Record(quarter: time.currentTime,
+        let record = Record(time: time.currentTime,
                             home: playerTuple.home,
                             team: team,
                             player: team.players[playerTuple.index],

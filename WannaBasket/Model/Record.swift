@@ -9,7 +9,7 @@
 import Foundation
 
 struct Record: CustomStringConvertible {
-    var quarter: Time
+    var time: Time
     var home: Bool
     var team: Team
     var player: Player
@@ -17,7 +17,7 @@ struct Record: CustomStringConvertible {
     
     var description: String {
         get {
-            return "\(quarter) | \(home ? "홈팀" : "원정팀")(\(team.name)) | \(player.name) \(stat)"
+            return "\(time) | \(home ? "홈팀" : "원정팀")(\(team.name)) | \(player.name) \(stat)"
         }
     }
 }
