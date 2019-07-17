@@ -154,6 +154,7 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
                                                                                 <real key="value" value="50"/>
                                                                             </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRecordEnabled" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </tableView>
                                                                 </subviews>
@@ -187,6 +188,7 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
                                                                                 <real key="value" value="50"/>
                                                                             </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRecordEnabled" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </tableView>
                                                                 </subviews>

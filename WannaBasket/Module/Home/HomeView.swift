@@ -60,7 +60,7 @@ extension HomeView: HomeViewProtocol {
     
     func updatePlayerTableView(players: [Player]?, of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
-        playerTableView?.playerList = players
+        playerTableView?.playerTuples = players?.compactMap{ return ($0, []) }
     }
     
     func updateTeamNameLabel(name: String?, of home: Bool) {

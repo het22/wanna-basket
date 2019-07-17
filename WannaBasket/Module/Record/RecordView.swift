@@ -74,9 +74,9 @@ extension RecordView: RecordViewProtocol {
         heightConstraint.constant = size * CGFloat(cellCount) + homePlayerTableView.cellSpacing
     }
     
-    func updatePlayerTableView(players: [Player], of home: Bool) {
+    func updatePlayerTableView(playerTuples: [(player: Player, records: [Record])], of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
-        playerTableView?.playerList = players
+        playerTableView?.playerTuples = playerTuples
     }
     
     func saveImageToAlbum() {

@@ -23,14 +23,15 @@ class RecordPresenter: RecordPresenterProtocol {
         
         var scores = [(Quarter, Int, Int)]()
         for i in 1...4 {
-            let score = game.records.reduce((Quarter.Regular(i),0,0)) {
-                var temp = $0
-                if case $0.0 = $1.time.quarter, case Stat.Score(let Point) = $1.stat {
-                    if $1.home { temp.1 += Point.rawValue }
-                    else { temp.2 += Point.rawValue }
+            let score = game.records
+                .reduce((Quarter.Regular(i),0,0)) {
+                    var temp = $0
+                    if case $0.0 = $1.time.quarter, case Stat.Score(let Point) = $1.stat {
+                        if $1.home { temp.1 += Point.rawValue }
+                        else { temp.2 += Point.rawValue }
+                    }
+                    return temp
                 }
-                return temp
-            }
             scores.append(score)
         }
         view?.updateQuarterScoreView(name: (game.team.home.name, game.team.away.name), scores: scores)
@@ -38,8 +39,19 @@ class RecordPresenter: RecordPresenterProtocol {
         let maxCount = max(game.players.home.count, game.players.away.count)
         view?.updateViewHeight(cellCount: maxCount)
         
-        view?.updatePlayerTableView(players: game.players.home, of: true)
-        view?.updatePlayerTableView(players: game.players.away, of: false)
+        let homePlayerTuples = game.players.home
+            .compactMap { player -> (Player, [Record]) in
+                let records = game.records.filter { $0.player == player }
+                return (player, records)
+            }
+        view?.updatePlayerTableView(playerTuples: homePlayerTuples, of: true)
+        
+        let awayPlayerTuples = game.players.away
+            .compactMap { player -> (Player, [Record]) in
+                let records = game.records.filter { $0.player == player }
+                return (player, records)
+            }
+        view?.updatePlayerTableView(playerTuples: awayPlayerTuples, of: false)
     }
     
     func didTapSaveButton() {
