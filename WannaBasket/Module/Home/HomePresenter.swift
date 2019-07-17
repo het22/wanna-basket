@@ -112,7 +112,7 @@ class HomePresenter: HomePresenterProtocol {
     // --------------------------------------------------
     // MARK: Team Table View Events
     // --------------------------------------------------
-    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section) {
+    func didTapTeamCell(at index: Int, tapSection: TeamCell.Section) {
         switch tapSection {
         case .Middle:
             let team = manager.teams[index]

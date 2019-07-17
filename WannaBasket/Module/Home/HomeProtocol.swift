@@ -50,7 +50,7 @@ protocol HomePresenterProtocol: class {
     func didTapPlayerFormEditButton(player: Player, index: Int)
     func didTapPlayerNumberButton() -> [Bool]
     
-    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
+    func didTapTeamCell(at index: Int, tapSection: TeamCell.Section)
     func didDeleteTeamAction(at index: Int)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
     

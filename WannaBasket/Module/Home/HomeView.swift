@@ -202,7 +202,7 @@ extension HomeView: TeamTableViewDelegate {
         return presenter?.didDequeueTeamCell() ?? (nil, nil)
     }
     
-    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section) {
+    func didTapTeamCell(at index: Int, tapSection: TeamCell.Section) {
         presenter?.didTapTeamCell(at: index, tapSection: tapSection)
     }
 }
