@@ -17,9 +17,9 @@ import UIKit
 class PlayerTableView: UITableView {
     
     weak var _delegate: PlayerTableViewDelegate?
-    var playerList: [Player]? {
+    var playerTuples: [(player: Player, records: [Record])]? {
         didSet {
-            showPlaceholder(with: playerList?.count)
+            showPlaceholder(with: playerTuples?.count)
             reloadData()
         }
     }
@@ -35,12 +35,17 @@ class PlayerTableView: UITableView {
             }
         }
     }
-    
+    @IBInspectable var isRecordEnabled: Bool = false {
+        didSet(oldVal) {
+            if oldVal == isRecordEnabled { return }
+            reloadData()
+        }
+    }
     @IBInspectable var ofHome: Bool = true
-    @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 5
     @IBInspectable var cellSize: CGFloat = 0
+    @IBInspectable var highlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     
     override func awakeFromNib() {
@@ -52,6 +57,7 @@ class PlayerTableView: UITableView {
         separatorStyle = .none
         
         register(PlayerTableViewCell.self)
+        register(PlayerRecordTableViewCell.self)
         dataSource = self
         delegate = self
     }
@@ -118,7 +124,7 @@ extension PlayerTableView: UITableViewDelegate {
 extension PlayerTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return playerList?.count ?? 0
+        return playerTuples?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,13 +145,22 @@ extension PlayerTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
-        let player = playerList![indexPath.section]
-        cell.setup(home: ofHome,
-                   name: player.name,
-                   number: player.number,
-                   highlightColor: highlightColor)
-        cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
-        return cell
+        let playerTuple = playerTuples![indexPath.section]
+        if isRecordEnabled {
+            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerRecordTableViewCell
+            cell.setup(home: ofHome,
+                       player: playerTuple.player,
+                       records: playerTuple.records,
+                       highlightColor: highlightColor)
+            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
+            return cell
+        } else {
+            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
+            cell.setup(home: ofHome,
+                       player: playerTuple.player,
+                       highlightColor: highlightColor)
+            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
+            return cell
+        }
     }
 }
