@@ -41,7 +41,7 @@ class RecordPresenter: RecordPresenterProtocol {
         
         let homePlayerTuples = game.players.home
             .compactMap { player -> (Player, [Record]) in
-                let records = game.records.filter { $0.player == player }
+                let records = game.records.filter { ($0.player == player) && $0.home }
                 return (player, records)
             }
             .sorted { first, second -> Bool in
@@ -65,7 +65,7 @@ class RecordPresenter: RecordPresenterProtocol {
         
         let awayPlayerTuples = game.players.away
             .compactMap { player -> (Player, [Record]) in
-                let records = game.records.filter { $0.player == player }
+                let records = game.records.filter { ($0.player == player) && !$0.home }
                 return (player, records)
             }
             .sorted { first, second -> Bool in
