@@ -14,7 +14,8 @@ protocol PlayerModel {
     var number: Int {get set}
 }
 
-class Player: PlayerModel {
+class Player: PlayerModel, Equatable {
+    
     var uuid: String
     var name: String
     var number: Int
@@ -23,5 +24,9 @@ class Player: PlayerModel {
         self.uuid = ""
         self.name = name
         self.number = number
+    }
+    
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.name==rhs.name && lhs.number==rhs.number
     }
 }
