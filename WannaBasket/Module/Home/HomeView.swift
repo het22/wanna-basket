@@ -79,14 +79,10 @@ extension HomeView: HomeViewProtocol {
         gameStartButton.alpha = bool ? 1.0 : 0.5
     }
     
-    func enableHomePlayerAddButton(bool: Bool) {
-        homePlayerAddButton.isEnabled = bool
-        homePlayerAddButton.alpha = bool ? 1.0 : 0.5
-    }
-    
-    func enableAwayPlayerAddButton(bool: Bool) {
-        awayPlayerAddButton.isEnabled = bool
-        awayPlayerAddButton.alpha = bool ? 1.0 : 0.5
+    func enablePlayerAddButton(bool: Bool, of home: Bool) {
+        let playerAddButton = home ? homePlayerAddButton : awayPlayerAddButton
+        playerAddButton?.isEnabled = bool
+        playerAddButton?.alpha = bool ? 1.0 : 0.5
     }
     
     func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool) {

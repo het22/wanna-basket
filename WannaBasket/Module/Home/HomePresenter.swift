@@ -30,7 +30,11 @@ class HomePresenter: HomePresenterProtocol {
     // --------------------------------------------------
     func viewDidLoad() {
         view?.updateTeamTableView(teams: manager.teams)
-        manager.currentTeamIndex = (0, 1)
+        view?.enableGameStartButton(bool: false)
+        view?.enablePlayerAddButton(bool: false, of: true)
+        view?.enablePlayerAddButton(bool: false, of: false)
+        view?.updateTeamNameLabel(name: nil, of: true)
+        view?.updateTeamNameLabel(name: nil, of: false)
     }
     
     func didTapStartButton() {
@@ -156,8 +160,8 @@ class HomePresenter: HomePresenterProtocol {
 extension HomePresenter: PlayerTeamManagerDelegate {
     
     func didSetCurrentTeamIndex(oldVal: (home: Int?, away: Int?), newVal: (home: Int?, away: Int?)) {
-        view?.enableHomePlayerAddButton(bool: (newVal.home == nil) ? false : true)
-        view?.enableAwayPlayerAddButton(bool: (newVal.away == nil) ? false : true)
+        view?.enablePlayerAddButton(bool: (newVal.home != nil), of: true)
+        view?.enablePlayerAddButton(bool: (newVal.away != nil), of: false)
         view?.enableGameStartButton(bool: (newVal.home == nil || newVal.away == nil) ? false : true)
         
         if let oldIndex = oldVal.home {
