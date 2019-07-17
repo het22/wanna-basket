@@ -10,7 +10,7 @@ import UIKit
 
 protocol TeamTableViewDelegate: class {
     func didDeleteTeamAction(at index: Int)
-    func didTapTeamCell(at index: Int, tapSection: TeamTableViewCell.Section)
+    func didTapTeamCell(at index: Int, tapSection: TeamCell.Section)
     func didDequeueTeamCell() -> (home: Int?, away: Int?)
 }
 
@@ -35,7 +35,7 @@ class TeamTableView: UITableView {
         showsVerticalScrollIndicator = false
         separatorStyle = .none
         
-        register(TeamTableViewCell.self)
+        register(TeamCell.self)
         dataSource = self
         delegate = self
     }
@@ -61,7 +61,7 @@ class TeamTableView: UITableView {
     }
     
     func highlightCell(at index: Int, onLeft: Bool, bool: Bool) {
-        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? TeamTableViewCell {
+        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? TeamCell {
             if onLeft { cell.highlightOnLeft = bool }
             else { cell.highlightOnRight = bool }
         }
@@ -71,7 +71,7 @@ class TeamTableView: UITableView {
 extension TeamTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = cellForRow(at: indexPath) as? TeamTableViewCell {
+        if let cell = cellForRow(at: indexPath) as? TeamCell {
             _delegate?.didTapTeamCell(at: indexPath.section, tapSection: cell.tapSection)
         }
     }
@@ -110,7 +110,7 @@ extension TeamTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamTableViewCell
+        let cell = dequeueReusableCell(forIndexPath: indexPath) as TeamCell
         cell.setup(name: teamList[indexPath.section].name)
         if let currentTeamIndex = _delegate?.didDequeueTeamCell() {
             cell.highlightOnLeft = (indexPath.section == currentTeamIndex.home)

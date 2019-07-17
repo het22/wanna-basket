@@ -1,5 +1,5 @@
 //
-//  TeamTableViewCell.swift
+//  TeamCell.swift
 //  WannaBasket
 //
 //  Created by Het Song on 24/06/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell, NibLoadable, Reusable {
+class TeamCell: UITableViewCell, NibLoadable, Reusable {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rightArrow: UILabel!

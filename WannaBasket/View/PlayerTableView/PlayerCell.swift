@@ -1,5 +1,5 @@
 //
-//  PlayerTableViewCell.swift
+//  PlayerCell.swift
 //  WannaBasket
 //
 //  Created by Het Song on 25/06/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerTableViewCell: UITableViewCell, NibLoadable, Reusable {
+class PlayerCell: UITableViewCell, NibLoadable, Reusable {
     
     @IBOutlet weak var hStack: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!

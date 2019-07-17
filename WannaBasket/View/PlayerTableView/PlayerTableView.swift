@@ -41,7 +41,7 @@ class PlayerTableView: UITableView {
             reloadData()
         }
     }
-    @IBInspectable var ofHome: Bool = true
+    @IBInspectable var home: Bool = true
     @IBInspectable var cellSpacing: CGFloat = 5
     @IBInspectable var cellCount: CGFloat = 5
     @IBInspectable var cellSize: CGFloat = 0
@@ -56,8 +56,8 @@ class PlayerTableView: UITableView {
         showsVerticalScrollIndicator = false
         separatorStyle = .none
         
-        register(PlayerTableViewCell.self)
-        register(PlayerRecordTableViewCell.self)
+        register(PlayerCell.self)
+        register(PlayerRecordCell.self)
         dataSource = self
         delegate = self
     }
@@ -85,7 +85,7 @@ class PlayerTableView: UITableView {
     }
     
     func highlightCell(at index: Int, bool: Bool) {
-        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? PlayerTableViewCell {
+        if let cell = cellForRow(at: IndexPath(row: 0, section: index)) as? PlayerCell {
             cell.isCustomHighlighted = bool
         }
     }
@@ -104,8 +104,8 @@ class PlayerTableView: UITableView {
 extension PlayerTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let _ = cellForRow(at: indexPath) as? PlayerTableViewCell {
-            _delegate?.didTapPlayerCell(at: indexPath.section, of: ofHome)
+        if let _ = cellForRow(at: indexPath) as? PlayerCell {
+            _delegate?.didTapPlayerCell(at: indexPath.section, of: home)
         }
     }
     
@@ -114,7 +114,7 @@ extension PlayerTableView: UITableViewDelegate {
             return []
         }
         let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { (UITableViewRowAction, IndexPath) in
-            didDeletePlayerAction(indexPath.section, self.ofHome)
+            didDeletePlayerAction(indexPath.section, self.home)
         }
         deleteAction.backgroundColor = Constants.Color.AwayDefault
         return [deleteAction]
@@ -147,19 +147,19 @@ extension PlayerTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let playerTuple = playerTuples![indexPath.section]
         if isRecordEnabled {
-            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerRecordTableViewCell
-            cell.setup(home: ofHome,
+            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerRecordCell
+            cell.setup(home: home,
                        player: playerTuple.player,
                        records: playerTuple.records,
                        highlightColor: highlightColor)
-            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
+            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: home).contains(indexPath.section) ?? false
             return cell
         } else {
-            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerTableViewCell
-            cell.setup(home: ofHome,
+            let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerCell
+            cell.setup(home: home,
                        player: playerTuple.player,
                        highlightColor: highlightColor)
-            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: ofHome).contains(indexPath.section) ?? false
+            cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: home).contains(indexPath.section) ?? false
             return cell
         }
     }
