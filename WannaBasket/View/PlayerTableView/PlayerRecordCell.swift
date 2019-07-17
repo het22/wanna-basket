@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct PlayerRecordModel {
+    var home: Home
+    var player: Player
+    var records: [Record]
+    var color: UIColor
+}
+
 class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
     
     @IBOutlet weak var hStack: UIStackView!
@@ -27,18 +34,18 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
         selectionStyle = .none
     }
     
-    func setup(home: Bool, player: Player, records: [Record], highlightColor: UIColor) {
-        if !home {
+    func setup(with model: PlayerRecordModel) {
+        if !model.home {
             hStack.removeArrangedSubview(numberLabel)
             hStack.removeArrangedSubview(nameLabel)
             hStack.addArrangedSubview(nameLabel)
             hStack.addArrangedSubview(numberLabel)
         }
-        self.highlightColor = highlightColor
-        nameLabel.text = player.name
-        numberLabel.text = "\(player.number)"
+        self.highlightColor = model.color
+        nameLabel.text = model.player.name
+        numberLabel.text = "\(model.player.number)"
         
-        let score = records.reduce(0) {
+        let score = model.records.reduce(0) {
             var point = 0
             if case Stat.Score(let Point) = $1.stat {
                 point += Point.rawValue
@@ -48,7 +55,7 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
         scoreLabel.text = "\(score)점"
         
         var pt1 = 0, pt2 = 0, pt3 = 0
-        records.forEach {
+        model.records.forEach {
             if case Stat.Score(let Point) = $0.stat {
                 switch Point {
                 case .One: pt1 += 1
@@ -64,9 +71,7 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
     }
     
     var highlightColor: UIColor = Constants.Color.Black {
-        didSet {
-            numberLabel.backgroundColor = highlightColor
-        }
+        didSet { numberLabel.backgroundColor = highlightColor }
     }
     var isCustomHighlighted: Bool = false {
         didSet(oldVal) {

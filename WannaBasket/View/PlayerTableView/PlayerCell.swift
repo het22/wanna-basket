@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct PlayerCellModel {
+    var home: Home
+    var player: Player
+    var color: UIColor
+}
+
 class PlayerCell: UITableViewCell, NibLoadable, Reusable {
     
     @IBOutlet weak var hStack: UIStackView!
@@ -19,28 +25,24 @@ class PlayerCell: UITableViewCell, NibLoadable, Reusable {
         commonInit()
     }
     
-    func commonInit() {
+    private func commonInit() {
         layer.borderWidth = 1
         layer.borderColor = Constants.Color.Black.cgColor
-        numberLabel.layer.borderWidth = 1
-        numberLabel.layer.borderColor = Constants.Color.Black.cgColor
         selectionStyle = .none
     }
     
-    func setup(home: Bool, player: Player, highlightColor: UIColor) {
-        if !home {
+    func setup(with model: PlayerCellModel) {
+        if !model.home {
             hStack.removeArrangedSubview(numberLabel)
             hStack.addArrangedSubview(numberLabel)
         }
-        nameLabel.text = player.name
-        numberLabel.text = "\(player.number)"
-        self.highlightColor = highlightColor
+        nameLabel.text = model.player.name
+        numberLabel.text = "\(model.player.number)"
+        self.highlightColor = model.color
     }
     
-    var highlightColor: UIColor = Constants.Color.Black {
-        didSet {
-            numberLabel.backgroundColor = highlightColor
-        }
+    private var highlightColor: UIColor = Constants.Color.Black {
+        didSet { numberLabel.backgroundColor = highlightColor }
     }
     var isCustomHighlighted: Bool = false {
         didSet(oldVal) {

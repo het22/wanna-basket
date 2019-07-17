@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="319" height="110.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6F-sM-PCH">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="C6F-sM-PCH">
                         <rect key="frame" x="0.0" y="0.0" width="319" height="110.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edo-1a-hpn">
@@ -37,7 +37,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmZ-JH-IDU">
-                                <rect key="frame" x="83" y="0.0" width="236" height="110.5"/>
+                                <rect key="frame" x="84" y="0.0" width="235" height="110.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,12 +53,13 @@
                     <constraint firstAttribute="trailing" secondItem="C6F-sM-PCH" secondAttribute="trailing" id="xJB-gD-O9C"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="hStack" destination="C6F-sM-PCH" id="hVu-of-77S"/>
                 <outlet property="nameLabel" destination="XmZ-JH-IDU" id="DMO-Ux-hQf"/>
                 <outlet property="numberLabel" destination="edo-1a-hpn" id="SEj-4L-e0G"/>
             </connections>
-            <point key="canvasLocation" x="0.7246376811594204" y="100.78125"/>
+            <point key="canvasLocation" x="211" y="51"/>
         </tableViewCell>
     </objects>
 </document>

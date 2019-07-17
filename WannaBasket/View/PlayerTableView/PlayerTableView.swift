@@ -148,17 +148,19 @@ extension PlayerTableView: UITableViewDataSource {
         let playerTuple = playerTuples![indexPath.section]
         if isRecordEnabled {
             let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerRecordCell
-            cell.setup(home: home,
-                       player: playerTuple.player,
-                       records: playerTuple.records,
-                       highlightColor: highlightColor)
+            let model = PlayerRecordModel(home: home,
+                                          player: playerTuple.player,
+                                          records: playerTuple.records,
+                                          color: highlightColor)
+            cell.setup(with: model)
             cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: home).contains(indexPath.section) ?? false
             return cell
         } else {
             let cell = dequeueReusableCell(forIndexPath: indexPath) as PlayerCell
-            cell.setup(home: home,
-                       player: playerTuple.player,
-                       highlightColor: highlightColor)
+            let model = PlayerCellModel(home: home,
+                                        player: playerTuple.player,
+                                        color: highlightColor)
+            cell.setup(with: model)
             cell.isCustomHighlighted = _delegate?.didDequeuePlayerCell(of: home).contains(indexPath.section) ?? false
             return cell
         }
