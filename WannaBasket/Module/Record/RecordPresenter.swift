@@ -44,6 +44,23 @@ class RecordPresenter: RecordPresenterProtocol {
                 let records = game.records.filter { $0.player == player }
                 return (player, records)
             }
+            .sorted { first, second -> Bool in
+                let point1 = first.1.reduce(0) {
+                    var point = 0
+                    if case Stat.Score(let Point) = $1.stat {
+                        point += Point.rawValue
+                    }
+                    return $0 + point
+                }
+                let point2 = second.1.reduce(0) {
+                    var point = 0
+                    if case Stat.Score(let Point) = $1.stat {
+                        point += Point.rawValue
+                    }
+                    return $0 + point
+                }
+                return point1 > point2
+            }
         view?.updatePlayerTableView(playerTuples: homePlayerTuples, of: true)
         
         let awayPlayerTuples = game.players.away
@@ -51,6 +68,23 @@ class RecordPresenter: RecordPresenterProtocol {
                 let records = game.records.filter { $0.player == player }
                 return (player, records)
             }
+            .sorted { first, second -> Bool in
+                let point1 = first.1.reduce(0) {
+                    var point = 0
+                    if case Stat.Score(let Point) = $1.stat {
+                        point += Point.rawValue
+                    }
+                    return $0 + point
+                }
+                let point2 = second.1.reduce(0) {
+                    var point = 0
+                    if case Stat.Score(let Point) = $1.stat {
+                        point += Point.rawValue
+                    }
+                    return $0 + point
+                }
+                return point1 > point2
+        }
         view?.updatePlayerTableView(playerTuples: awayPlayerTuples, of: false)
     }
     
