@@ -14,10 +14,3 @@ class RealmDB {
         print("Realm Database Initialized.")
     }
 }
-
-extension RealmDB: PlayerDB {
-    
-    func updatePlayer() -> Bool {
-        return false
-    }
-}

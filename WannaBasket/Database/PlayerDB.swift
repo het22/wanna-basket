@@ -6,9 +6,33 @@
 //  Copyright © 2019 Het Song. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
 protocol PlayerDB {
+    func read(with uuid: String) -> RealmPlayer?
+    func update(realmPlayer: RealmPlayer)
+    func delete(realmPlayer: RealmPlayer)
+}
+
+extension RealmDB: PlayerDB {
     
-    func updatePlayer() -> Bool
+    func read(with uuid: String) -> RealmPlayer? {
+        let realm = try! Realm()
+        let realmPlayer = realm.objects(RealmPlayer.self).filter{$0.uuid==uuid}.first
+        return realmPlayer
+    }
+    
+    func update(realmPlayer: RealmPlayer) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(realmPlayer, update: true)
+        }
+    }
+    
+    func delete(realmPlayer: RealmPlayer) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(realmPlayer)
+        }
+    }
 }
