@@ -32,7 +32,7 @@ class PlayerTeamManager {
     }
     
     init() {
-        let temp1 = Team(name: "쿠스켓")
+        var temp1 = Team(name: "쿠스켓")
         temp1.players.append(contentsOf: [Player(name: "유현석", number: 10),
                                           Player(name: "정상빈", number: 8),
                                           Player(name: "이재원", number: 2),
@@ -42,7 +42,7 @@ class PlayerTeamManager {
                                           Player(name: "김태희", number: 66),
                                           Player(name: "안정우", number: 34),
                                           Player(name: "김남규", number: 30)])
-        let temp2 = Team(name: "마하맨")
+        var temp2 = Team(name: "마하맨")
         temp2.players.append(contentsOf: [Player(name: "송호철", number: 22),
                                           Player(name: "백승희", number: 23),
                                           Player(name: "박건", number: 9),
@@ -82,9 +82,8 @@ class PlayerTeamManager {
     
     func editPlayer(at index: Int, teamIndex: Int, editPlayer: Player) {
         if teamIndex < teams.count, index < teams[teamIndex].players.count {
-            let player = teams[teamIndex].players[index]
-            player.number = editPlayer.number
-            player.name = editPlayer.name
+            teams[teamIndex].players[index].number = editPlayer.number
+            teams[teamIndex].players[index].name = editPlayer.name
             delegate?.didEditPlayer(of: teams[teamIndex])
         }
     }

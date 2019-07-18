@@ -37,6 +37,7 @@
 		CB8E36BA22DFF4B200735C2D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B922DFF4B200735C2D /* String+Extension.swift */; };
 		CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */; };
 		CB8E36BE22DFFE7100735C2D /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BD22DFFE7100735C2D /* RealmObject.swift */; };
+		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -147,6 +148,7 @@
 		CB8E36B922DFF4B200735C2D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		CB8E36BD22DFFE7100735C2D /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 				CB8E36B722DF11E600735C2D /* RealmTeam.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		CB8E36BF22DFFFCB00735C2D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
@@ -495,6 +505,7 @@
 		CBFA017D22B89D2B00F71C7B /* WannaBasketTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB8E36BF22DFFFCB00735C2D /* Database */,
 				CBC6F06D22D44F7F0021A11D /* Enum */,
 				CBC6F06322D39EE50021A11D /* Model */,
 				CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */,
@@ -884,6 +895,7 @@
 			files = (
 				CBC6F06522D39EF10021A11D /* TimeManagerTest.swift in Sources */,
 				CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */,
+				CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */,
 				CBC6F06722D3A1470021A11D /* TimeTest.swift in Sources */,
 				CBC6F06C22D44F6E0021A11D /* GameTest.swift in Sources */,
 			);

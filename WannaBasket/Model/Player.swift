@@ -14,7 +14,7 @@ protocol PlayerModel {
     var number: Int {get set}
 }
 
-class Player: PlayerModel, Equatable {
+struct Player: PlayerModel, Equatable {
     
     var uuid: String
     var name: String

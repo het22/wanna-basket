@@ -14,7 +14,7 @@ protocol TeamModel {
     var players: [Player] {get set}
 }
 
-class Team: TeamModel, Equatable {
+struct Team: TeamModel, Equatable {
     var uuid: String
     var name: String
     var players: [Player] {

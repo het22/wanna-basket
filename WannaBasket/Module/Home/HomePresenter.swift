@@ -233,6 +233,10 @@ extension HomePresenter: PlayerTeamManagerDelegate {
     
     func didEditPlayer(of team: Team) {
         view?.updatePlayerTableView(players: team.players, of: isEdittingHome)
+        let currentTeamIndex = manager.currentTeamIndex
+        if currentTeamIndex.home == currentTeamIndex.away {
+            view?.updatePlayerTableView(players: team.players, of: !isEdittingHome)
+        }
         view?.showPlayerFormView(isEditMode: true, player: nil, index: nil, bool: false)
     }
     
