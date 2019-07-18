@@ -207,10 +207,11 @@ extension Game: GameRecordable {
     
     func addRecord(playerTuple: (home: Bool, index: Int), stat: Stat) {
         let team = playerTuple.home ? self.team.home : self.team.away
+        let players = playerTuple.home ? floorPlayers.home : floorPlayers.away
         let record = Record(time: time.currentTime,
                             home: playerTuple.home,
                             team: team,
-                            player: team.players[playerTuple.index],
+                            player: players[playerTuple.index],
                             stat: stat)
         records.append(record)
         recordableDelegate?.didAddRecord(record: record, score: score)
