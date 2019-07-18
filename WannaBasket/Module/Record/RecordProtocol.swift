@@ -50,7 +50,7 @@ protocol RecordViewProtocol: class {
     func updateQuarterScoreView(name: (home: String, away: String), scores: [(quarter: Quarter, home: Int, away: Int)])
     func updateViewHeight(cellCount: Int)
     
-    func updatePlayerTableView(playerTuples: [(player: Player, records: [Record])], of home: Bool)
+    func updatePlayerTableView(playerTuples: [(player: PlayerOfTeam, records: [Record])], of home: Bool)
     
     func saveImageToAlbum()
     func dismiss(animated flag: Bool, completion: (() -> Void)?)

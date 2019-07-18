@@ -67,7 +67,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didTapTeamFormCompleteButton(name: String) {
-        let team = Team(name: name)
+        let team = Team(uuid: name ,name: name)
         manager.addTeam(team: team)
     }
     
@@ -88,15 +88,15 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func didTapPlayerFormCompleteButton(player: Player) {
+    func didTapPlayerFormCompleteButton(player: PlayerOfTeam) {
         if let teamIndex = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away  {
             manager.addPlayer(player: player, teamIndex: teamIndex)
         }
     }
     
-    func didTapPlayerFormEditButton(player: Player, index: Int) {
+    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int) {
         if let teamIndex = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away  {
-            manager.editPlayer(at: index, teamIndex: teamIndex, editPlayer: player)
+            manager.editPlayer(at: index, teamIndex: teamIndex, player: player)
         }
     }
     

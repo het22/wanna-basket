@@ -46,8 +46,8 @@ protocol HomePresenterProtocol: class {
     
     func didTapPlayerFormCancelButton()
     func didTapPlayerFormDeleteButton(index: Int)
-    func didTapPlayerFormCompleteButton(player: Player)
-    func didTapPlayerFormEditButton(player: Player, index: Int)
+    func didTapPlayerFormCompleteButton(player: PlayerOfTeam)
+    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int)
     func didTapPlayerNumberButton() -> [Bool]
     
     func didTapTeamCell(at index: Int, tapSection: TeamCell.Section)
@@ -64,7 +64,7 @@ protocol HomeViewProtocol: class {
 
     // PRESENTER -> VIEW
     func updateTeamTableView(teams: [Team])
-    func updatePlayerTableView(players: [Player]?, of home: Bool)
+    func updatePlayerTableView(players: [PlayerOfTeam]?, of home: Bool)
     func updateTeamNameLabel(name: String?, of home: Bool)
     
     func highlightTeam(at index: Int, onLeft: Bool, bool: Bool)
@@ -73,5 +73,5 @@ protocol HomeViewProtocol: class {
     func enablePlayerAddButton(bool: Bool, of home: Bool)
     
     func showTeamFormView(isEditMode: Bool, name: String?, index: Int?, bool: Bool)
-    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool)
+    func showPlayerFormView(isEditMode: Bool, player: PlayerOfTeam?, index: Int?, bool: Bool)
 }

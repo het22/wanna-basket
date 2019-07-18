@@ -111,7 +111,7 @@ class GameView: UIViewController {
 
 extension GameView: GameViewProtocol {
     
-    func updatePlayerTableView(players: [Player], of home: Bool) {
+    func updatePlayerTableView(players: [PlayerOfTeam], of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.playerTuples = players.compactMap{ return ($0, []) }
     }

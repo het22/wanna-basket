@@ -20,7 +20,7 @@ class Game {
     var data: Date = Date(timeIntervalSinceNow: TimeInterval.init())
     
     var team: (home: Team, away: Team)
-    var players: (home: [Player], away: [Player]) = ([],[])
+    var players: (home: [PlayerOfTeam], away: [PlayerOfTeam]) = ([],[])
     var records: [Record] = []
     
     init(home: Team, away: Team) {
@@ -84,7 +84,7 @@ protocol GameModel {
     var data: Date { get }
     
     var team: (home: Team, away: Team) { get }
-    var players: (home: [Player], away: [Player]) { get }
+    var players: (home: [PlayerOfTeam], away: [PlayerOfTeam]) { get }
     var score: (home: Int, away: Int) { get }
     var records: [Record] { get }
     
@@ -132,10 +132,10 @@ protocol GameManageable {
     
     var time: TimeManager { get }
     var team: (home: Team, away: Team) { get }
-    var players: (home: [Player], away: [Player]) { get }
+    var players: (home: [PlayerOfTeam], away: [PlayerOfTeam]) { get }
     
     var floorPlayerIndexes: (home: [Int], away: [Int]) { get set }
-    var floorPlayers: (home: [Player], away: [Player]) { get }
+    var floorPlayers: (home: [PlayerOfTeam], away: [PlayerOfTeam]) { get }
     func substitutePlayer(index: Int, of home: Bool)
     
     var currentPlayerTuple: (home: Bool, index: Int)? { get set }
@@ -144,7 +144,7 @@ protocol GameManageable {
 
 extension Game: GameManageable {
     
-    var floorPlayers: (home: [Player], away: [Player]) {
+    var floorPlayers: (home: [PlayerOfTeam], away: [PlayerOfTeam]) {
         let home = players.home
             .filter(indexes: floorPlayerIndexes.home)
             .sorted { $0.number < $1.number }

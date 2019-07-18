@@ -8,30 +8,45 @@
 
 import Foundation
 
-protocol TeamModel {
-    var uuid: String {get set}
-    var name: String {get set}
-    var players: [Player] {get set}
-}
-
-struct Team: TeamModel, Equatable {
+struct Team {
+    
     var uuid: String
     var name: String
-    var players: [Player] {
-        didSet { players.sort { return $0.number < $1.number } }
+    var playerInfors: [Int:Player]
+    
+    init(uuid: String, name: String) {
+        self.uuid = uuid
+        self.name = name
+        playerInfors = [:]
     }
     
-    init(name: String) {
-        self.uuid = ""
-        self.name = name
-        players = []
+    var players: [PlayerOfTeam] {
+        return playerInfors
+            .map{ return PlayerOfTeam(player: $0.value, teamID: self.uuid, number: $0.key) }
+            .sorted{ return $0.number < $1.number }
     }
     
     var isNumberAssigned: [Bool] {
         var arr = [Bool].init(repeating: false, count: 101)
-        players.forEach { arr[$0.number] = true }
+        playerInfors.forEach{ arr[$0.key] = true }
         return arr
     }
+}
+
+extension Team {
+    
+    mutating func register(player: Player, number: Int) {
+        var player = player
+        player.teamInfors[self.uuid] = number
+        self.playerInfors[number] = player
+    }
+    
+    mutating func eject(numbers: Int...) {
+        numbers.forEach { playerInfors[$0] = nil }
+    }
+}
+
+extension Team: Equatable {
     
     static func == (lhs: Team, rhs: Team) -> Bool {
         return lhs.name == rhs.name

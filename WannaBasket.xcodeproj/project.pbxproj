@@ -38,6 +38,8 @@
 		CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */; };
 		CB8E36BE22DFFE7100735C2D /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BD22DFFE7100735C2D /* RealmObject.swift */; };
 		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
+		CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2637E22E05A9700E664EF /* TeamTest.swift */; };
+		CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638022E06CC800E664EF /* PlayerTest.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -149,6 +151,8 @@
 		CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		CB8E36BD22DFFE7100735C2D /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
+		CBB2637E22E05A9700E664EF /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
+		CBB2638022E06CC800E664EF /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -324,6 +328,15 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		CB8E36C222E0034800735C2D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */,
+				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +466,8 @@
 			children = (
 				CBC6F06422D39EF10021A11D /* TimeManagerTest.swift */,
 				CBC6F06B22D44F6E0021A11D /* GameTest.swift */,
+				CBB2637E22E05A9700E664EF /* TeamTest.swift */,
+				CBB2638022E06CC800E664EF /* PlayerTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +512,7 @@
 				CB8E36AF22DF0D7600735C2D /* Database */,
 				CBFA01A922B8B89400F71C7B /* Model */,
 				CBB9B32D22C5F66A004C50B3 /* Enum */,
+				CB8E36C222E0034800735C2D /* Class */,
 				CBFA01A422B89E2B00F71C7B /* Module */,
 			);
 			path = WannaBasket;
@@ -559,11 +575,9 @@
 			children = (
 				CBFA01AC22B8B99800F71C7B /* Player.swift */,
 				CBFA01AE22B8BA7A00F71C7B /* Team.swift */,
-				CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */,
 				CBDD243122DC7E4700592B15 /* Game.swift */,
 				CBB9B32222C4EA3D004C50B3 /* Record.swift */,
 				CBC6F05422CF2C2B0021A11D /* Time.swift */,
-				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -895,6 +909,8 @@
 			files = (
 				CBC6F06522D39EF10021A11D /* TimeManagerTest.swift in Sources */,
 				CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */,
+				CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */,
+				CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */,
 				CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */,
 				CBC6F06722D3A1470021A11D /* TimeTest.swift in Sources */,
 				CBC6F06C22D44F6E0021A11D /* GameTest.swift in Sources */,

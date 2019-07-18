@@ -8,25 +8,43 @@
 
 import Foundation
 
-protocol PlayerModel {
-    var uuid: String {get set}
-    var name: String {get set}
-    var number: Int {get set}
-}
-
-struct Player: PlayerModel, Equatable {
-    
+struct Player: Equatable {
     var uuid: String
     var name: String
-    var number: Int
+    var teamInfors: [String:Int]
     
-    init(name: String, number: Int) {
-        self.uuid = ""
+    init(uuid: String, name: String) {
+        self.uuid = uuid
         self.name = name
-        self.number = number
+        self.teamInfors = [:]
     }
     
     static func == (lhs: Player, rhs: Player) -> Bool {
-        return lhs.name==rhs.name && lhs.number==rhs.number
+        return lhs.uuid == rhs.uuid
+    }
+}
+
+struct PlayerOfTeam: Equatable {
+    var uuid: String
+    var name: String
+    var teamID: String
+    var number: Int
+    
+    init(uuid: String, name: String, teamID: String, number: Int) {
+        self.uuid = uuid
+        self.name = name
+        self.teamID = teamID
+        self.number = number
+    }
+    
+    init(player: Player, teamID: String, number: Int) {
+        self.uuid = player.uuid
+        self.name = player.name
+        self.teamID = teamID
+        self.number = number
+    }
+    
+    static func == (lhs: PlayerOfTeam, rhs: PlayerOfTeam) -> Bool {
+        return lhs.uuid == rhs.uuid
     }
 }

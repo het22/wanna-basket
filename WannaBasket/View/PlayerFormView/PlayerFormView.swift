@@ -11,8 +11,8 @@ import UIKit
 protocol PlayerFormViewDelegate: class {
     func didTapPlayerFormCancelButton()
     func didTapPlayerFormDeleteButton(index: Int)
-    func didTapPlayerFormCompleteButton(player: Player)
-    func didTapPlayerFormEditButton(player: Player, index: Int)
+    func didTapPlayerFormCompleteButton(player: PlayerOfTeam)
+    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int)
     func didTapPlayerNumberButton() -> [Bool]
 }
 
@@ -62,16 +62,17 @@ class PlayerFormView: UIView, NibLoadable {
         }
     }
     @IBAction func rightButtonTapped() {
-        if let name = validatedName, let number = playerNumber {
-            let player = Player(name: name, number: number)
+        if let name = validatedName, self.player != nil {
+            self.player!.uuid = name
+            self.player!.name = name
             if isEditMode {
                 if let index = index {
-                    delegate?.didTapPlayerFormEditButton(player: player, index: index)
+                    delegate?.didTapPlayerFormEditButton(player: self.player!, index: index)
                 } else {
                     animateShake(completion: nil)
                 }
             } else {
-                delegate?.didTapPlayerFormCompleteButton(player: player)
+                delegate?.didTapPlayerFormCompleteButton(player: self.player!)
             }
         } else {
             animateShake(completion: nil)
@@ -104,22 +105,19 @@ class PlayerFormView: UIView, NibLoadable {
         }
     }
     private var index: Int?
-    private var playerName: String? {
-        didSet { nameTextField.text = playerName }
-    }
-    private var playerNumber: Int? {
+    private var player: PlayerOfTeam? {
         didSet {
-            if let playerNumber = playerNumber {
-                numberButton.setTitle((playerNumber==100) ? "00" : "\(playerNumber)", for: .normal)
+            if let player = player {
+                nameTextField.text = player.name
+                numberButton.setTitle((player.number==100) ? "00" : "\(player.number)", for: .normal)
                 numberButton.setTitleColor(Constants.Color.Black, for: .normal)
             }
         }
     }
-    func setup(isEditMode: Bool, player: Player?, index: Int?) {
+    func setup(isEditMode: Bool, player: PlayerOfTeam?, index: Int?) {
         self.isEditMode = isEditMode
         self.index = index
-        self.playerName = player?.name
-        self.playerNumber = player?.number
+        self.player = player
     }
     
     // --------------------------------------------------
@@ -207,7 +205,18 @@ extension PlayerFormView: UITextFieldDelegate {
 extension PlayerFormView: NumberSelectViewDelegate {
     
     func didSelectItem(at indexPath: IndexPath) {
-        playerNumber = indexPath.row
+        if let player = self.player {
+            self.player = PlayerOfTeam(uuid: player.uuid,
+                                       name: player.name,
+                                       teamID: player.teamID,
+                                       number: indexPath.row)
+        } else {
+            let name = nameTextField.text ?? ""
+            player = PlayerOfTeam(uuid: name,
+                                  name: name,
+                                  teamID: "",
+                                  number: indexPath.row)
+        }
         isShowingNumberSelectView = false
     }
 }

@@ -58,7 +58,7 @@ extension HomeView: HomeViewProtocol {
         teamTableView.teamList = teams
     }
     
-    func updatePlayerTableView(players: [Player]?, of home: Bool) {
+    func updatePlayerTableView(players: [PlayerOfTeam]?, of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.playerTuples = players?.compactMap{ return ($0, []) }
     }
@@ -117,7 +117,7 @@ extension HomeView: HomeViewProtocol {
         }
     }
     
-    func showPlayerFormView(isEditMode: Bool, player: Player?, index: Int?, bool: Bool) {
+    func showPlayerFormView(isEditMode: Bool, player: PlayerOfTeam?, index: Int?, bool: Bool) {
         if bool == (playerFormView != nil) { return }
         if bool {
             let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
@@ -179,11 +179,11 @@ extension HomeView: PlayerFormViewDelegate {
         presenter?.didTapPlayerFormDeleteButton(index: index)
     }
     
-    func didTapPlayerFormCompleteButton(player: Player) {
+    func didTapPlayerFormCompleteButton(player: PlayerOfTeam) {
         presenter?.didTapPlayerFormCompleteButton(player: player)
     }
     
-    func didTapPlayerFormEditButton(player: Player, index: Int) {
+    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int) {
         presenter?.didTapPlayerFormEditButton(player: player, index: index)
     }
     

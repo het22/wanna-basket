@@ -10,7 +10,7 @@ import UIKit
 
 struct PlayerCellModel {
     var home: Home
-    var player: Player
+    var player: PlayerOfTeam
     var color: UIColor
 }
 

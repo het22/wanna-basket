@@ -12,7 +12,7 @@ struct Record: CustomStringConvertible {
     var time: Time
     var home: Bool
     var team: Team
-    var player: Player
+    var player: PlayerOfTeam
     var stat: Stat
     
     var description: String {

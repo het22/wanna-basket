@@ -40,7 +40,7 @@ class RecordPresenter: RecordPresenterProtocol {
         view?.updateViewHeight(cellCount: maxCount)
         
         let homePlayerTuples = game.players.home
-            .compactMap { player -> (Player, [Record]) in
+            .compactMap { player -> (PlayerOfTeam, [Record]) in
                 let records = game.records.filter { ($0.player == player) && $0.home }
                 return (player, records)
             }
@@ -64,7 +64,7 @@ class RecordPresenter: RecordPresenterProtocol {
         view?.updatePlayerTableView(playerTuples: homePlayerTuples, of: true)
         
         let awayPlayerTuples = game.players.away
-            .compactMap { player -> (Player, [Record]) in
+            .compactMap { player -> (PlayerOfTeam, [Record]) in
                 let records = game.records.filter { ($0.player == player) && !$0.home }
                 return (player, records)
             }

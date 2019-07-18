@@ -10,7 +10,7 @@ import UIKit
 
 struct PlayerRecordModel {
     var home: Home
-    var player: Player
+    var player: PlayerOfTeam
     var records: [Record]
     var color: UIColor
 }

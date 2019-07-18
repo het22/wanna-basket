@@ -74,7 +74,7 @@ extension RecordView: RecordViewProtocol {
         heightConstraint.constant = size * CGFloat(cellCount) + homePlayerTableView.cellSpacing
     }
     
-    func updatePlayerTableView(playerTuples: [(player: Player, records: [Record])], of home: Bool) {
+    func updatePlayerTableView(playerTuples: [(player: PlayerOfTeam, records: [Record])], of home: Bool) {
         let playerTableView = home ? homePlayerTableView : awayPlayerTableView
         playerTableView?.playerTuples = playerTuples
     }

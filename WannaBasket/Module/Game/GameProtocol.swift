@@ -60,7 +60,7 @@ protocol GameViewProtocol: class {
     var presenter: GamePresenterProtocol?  { get set }
 
     // PRESENTER -> VIEW
-    func updatePlayerTableView(players: [Player], of home: Bool)
+    func updatePlayerTableView(players: [PlayerOfTeam], of home: Bool)
     func updateTeamNameLabel(name: String, of home: Bool)
     func updateTeamScoreLabel(score: Int, of home: Bool)
     func updateSubstituteButton(bool: Bool, of home: Bool)

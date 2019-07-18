@@ -32,25 +32,20 @@ class PlayerTeamManager {
     }
     
     init() {
-        var temp1 = Team(name: "쿠스켓")
-        temp1.players.append(contentsOf: [Player(name: "유현석", number: 10),
-                                          Player(name: "정상빈", number: 8),
-                                          Player(name: "이재원", number: 2),
-                                          Player(name: "송해찬", number: 3),
-                                          Player(name: "박진모", number: 12),
-                                          Player(name: "임민규", number: 21),
-                                          Player(name: "김태희", number: 66),
-                                          Player(name: "안정우", number: 34),
-                                          Player(name: "김남규", number: 30)])
-        var temp2 = Team(name: "마하맨")
-        temp2.players.append(contentsOf: [Player(name: "송호철", number: 22),
-                                          Player(name: "백승희", number: 23),
-                                          Player(name: "박건", number: 9),
-                                          Player(name: "송해찬", number: 49),
-                                          Player(name: "한수흠", number: 12),
-                                          Player(name: "이영한", number: 6),
-                                          Player(name: "한승진", number: 2),
-                                          Player(name: "김범철", number: 8)])
+        var temp1 = Team(uuid: "쿠스켓", name: "쿠스켓")
+        temp1.register(player: Player(uuid: "송해찬", name: "송해찬"), number: 22)
+        temp1.register(player: Player(uuid: "이재원", name: "이재원"), number: 2)
+        temp1.register(player: Player(uuid: "정상빈", name: "정상빈"), number: 8)
+        temp1.register(player: Player(uuid: "유현석", name: "유현석"), number: 9)
+        temp1.register(player: Player(uuid: "박진모", name: "박진모"), number: 3)
+        temp1.register(player: Player(uuid: "김남규", name: "김남규"), number: 10)
+        var temp2 = Team(uuid: "마하맨", name: "마하맨")
+        temp2.register(player: Player(uuid: "송해찬", name: "송해찬"), number: 22)
+        temp2.register(player: Player(uuid: "송호철", name: "송호철"), number: 2)
+        temp2.register(player: Player(uuid: "백승희", name: "백승희"), number: 24)
+        temp2.register(player: Player(uuid: "한수흠", name: "한수흠"), number: 10)
+        temp2.register(player: Player(uuid: "박건", name: "박건"), number: 1)
+        temp2.register(player: Player(uuid: "박희영", name: "박희영"), number: 9)
         teams.append(contentsOf: [temp1, temp2])
     }
     
@@ -73,24 +68,24 @@ class PlayerTeamManager {
         }
     }
     
-    func addPlayer(player: Player, teamIndex: Int) {
-        if teamIndex < teams.count {
-            teams[teamIndex].players.append(player)
-            delegate?.didAddPlayer(of: teams[teamIndex])
-        }
+    func addPlayer(player: PlayerOfTeam, teamIndex: Int) {
+        teams[teamIndex].register(player: Player(uuid: player.uuid, name: player.name), number: player.number)
+        delegate?.didAddPlayer(of: teams[teamIndex])
     }
     
-    func editPlayer(at index: Int, teamIndex: Int, editPlayer: Player) {
-        if teamIndex < teams.count, index < teams[teamIndex].players.count {
-            teams[teamIndex].players[index].number = editPlayer.number
-            teams[teamIndex].players[index].name = editPlayer.name
+    func editPlayer(at index: Int, teamIndex: Int, player: PlayerOfTeam) {
+        if teamIndex < teams.count {
+            let oldPlayer = teams[teamIndex].players[index]
+            teams[teamIndex].eject(numbers: oldPlayer.number)
+            teams[teamIndex].register(player: Player(uuid: player.uuid, name: player.name), number: player.number)
             delegate?.didEditPlayer(of: teams[teamIndex])
         }
     }
     
     func removePlayer(at index: Int, teamIndex: Int) {
-        if teamIndex < teams.count, index < teams[teamIndex].players.count {
-            teams[teamIndex].players.remove(at: index)
+        if teamIndex < teams.count {
+            let player = teams[teamIndex].players[index]
+            teams[teamIndex].eject(numbers: player.number)
             delegate?.didRemovePlayer(of: teams[teamIndex])
         }
     }

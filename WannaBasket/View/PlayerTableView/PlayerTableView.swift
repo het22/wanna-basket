@@ -17,7 +17,7 @@ import UIKit
 class PlayerTableView: UITableView {
     
     weak var _delegate: PlayerTableViewDelegate?
-    var playerTuples: [(player: Player, records: [Record])]? {
+    var playerTuples: [(player: PlayerOfTeam, records: [Record])]? {
         didSet {
             showPlaceholder(with: playerTuples?.count)
             reloadData()

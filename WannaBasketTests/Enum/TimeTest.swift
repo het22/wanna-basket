@@ -38,21 +38,21 @@ class TimeTest: XCTestCase {
     }
     
     func testGameClockDescription() {
-        let testDesc1 = Time.Description.GameClock(562.0)
+        let testDesc1 = Constants.Format.GameClock(562.0)
         let resultDesc1  = "09:22"
         XCTAssertEqual("\(testDesc1)", resultDesc1)
         
-        let testDesc2 = Time.Description.GameClock(14.0)
+        let testDesc2 = Constants.Format.GameClock(14.0)
         let resultDesc2  = "14.0"
         XCTAssertEqual("\(testDesc2)", resultDesc2)
     }
     
     func testShotClockDescription() {
-        let testDesc1 = Time.Description.ShotClock(14.0)
+        let testDesc1 = Constants.Format.ShotClock(14.0)
         let resultDesc1  = "14.0"
         XCTAssertEqual("\(testDesc1)", resultDesc1)
         
-        let testDesc2 = Time.Description.ShotClock(14.0333)
+        let testDesc2 = Constants.Format.ShotClock(14.03)
         let resultDesc2  = "14.0"
         XCTAssertEqual("\(testDesc2)", resultDesc2)
     }

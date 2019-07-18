@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="245.33333333333334" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                        <state key="normal" title="&lt; 경기로 돌아가기">
+                                        <state key="normal" title="&lt; 경기 돌아가기">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled">
@@ -44,7 +44,7 @@
                                         <rect key="frame" x="245.33333333333331" y="0.0" width="245.33333333333331" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                        <state key="normal" title="기록을 이미지로 저장">
+                                        <state key="normal" title="사진첩에 저장하기">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled">
@@ -85,32 +85,32 @@
                                 <rect key="frame" x="0.0" y="31" width="736" height="383"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBa-fB-HHv">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="670"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="689.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="736" placeholderIntrinsicHeight="907" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-IJ-53T">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="670"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="689.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-gQ-xDp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="736" height="76.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="736" height="95.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-8r-TnX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="76.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="95.666666666666671"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69h-z0-I9b">
-                                                                <rect key="frame" x="220.66666666666666" y="0.0" width="294.66666666666674" height="76.666666666666671"/>
+                                                                <rect key="frame" x="220.66666666666666" y="0.0" width="294.66666666666674" height="95.666666666666671"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친선전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="294.66666666666669" height="51"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="294.66666666666669" height="64"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="50"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="55"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019. 07. 17. 수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3vt-YO-ikX">
-                                                                        <rect key="frame" x="0.0" y="51" width="294.66666666666669" height="25.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="63.999999999999993" width="294.66666666666669" height="31.666666666666664"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                         <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
-                                                                <rect key="frame" x="515.33333333333337" y="0.0" width="220.66666666666663" height="76.666666666666671"/>
+                                                                <rect key="frame" x="515.33333333333337" y="0.0" width="220.66666666666663" height="95.666666666666671"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
                                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,11 +146,11 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-Sh-6Re" customClass="QuarterScoreView" customModule="WannaBasket" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="77.666666666666671" width="736" height="191.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="96.666666666666671" width="736" height="191.66666666666663"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9n-Hm-oMN">
-                                                        <rect key="frame" x="0.0" y="270" width="736" height="400"/>
+                                                        <rect key="frame" x="0.0" y="289.33333333333331" width="736" height="399.99999999999994"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJ8-Lo-TuY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="368" height="400"/>
@@ -239,7 +239,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.2" id="2jG-fn-5Qy"/>
+                                    <constraint firstItem="JNh-gQ-xDp" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.25" id="2jG-fn-5Qy"/>
                                     <constraint firstItem="WXQ-Sh-6Re" firstAttribute="height" secondItem="S5U-aE-5tg" secondAttribute="height" multiplier="0.5" id="VmB-gD-p4k"/>
                                     <constraint firstItem="OBa-fB-HHv" firstAttribute="top" secondItem="S5U-aE-5tg" secondAttribute="top" id="mnp-6n-eR2"/>
                                     <constraint firstItem="OBa-fB-HHv" firstAttribute="width" secondItem="S5U-aE-5tg" secondAttribute="width" id="pwX-W5-7mY"/>
