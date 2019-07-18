@@ -10,18 +10,18 @@ import Foundation
 
 extension Dictionary {
     
-    func convertToJson() -> String {
+    func convertToJson() -> String? {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
             if let json = String(data: jsonData, encoding: .utf8) {
                 return json
             } else {
                 print("ConvertToJson Fail: Cannot cast jsonData to jsonString.")
-                return ""
+                return nil
             }
         } catch {
             print("ConvertToJson Fail: \(error.localizedDescription)")
-            return ""
+            return nil
         }
     }
 }
