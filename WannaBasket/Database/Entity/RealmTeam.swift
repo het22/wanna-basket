@@ -38,7 +38,7 @@ extension Team: Persistable {
     
     func realmObject() -> RealmTeam {
         let realmTeam = RealmTeam()
-        realmTeam.uuid = self.uuid
+        if self.uuid != "" { realmTeam.uuid = self.uuid }
         realmTeam.name = self.name
         var playerInfors = [String:Int]()
         self.playerInfors.forEach {

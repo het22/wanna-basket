@@ -28,10 +28,10 @@ extension Player: Persistable {
     }
     
     func realmObject() -> RealmPlayer {
-        let player = RealmPlayer()
-        player.uuid = self.uuid
-        player.name = self.name
-        player.teamInfors = self.teamInfors
-        return player
+        let realmPlayer = RealmPlayer()
+        if self.uuid != "" { realmPlayer.uuid = self.uuid }
+        realmPlayer.name = self.name
+        realmPlayer.teamInfors = self.teamInfors
+        return realmPlayer
     }
 }
