@@ -32,6 +32,10 @@
 		CB8E36AE22DF06AE00735C2D /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36AD22DF06AE00735C2D /* TypeAlias.swift */; };
 		CB8E36B122DF0D9000735C2D /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B022DF0D9000735C2D /* RealmDB.swift */; };
 		CB8E36B322DF0E1D00735C2D /* PlayerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B222DF0E1D00735C2D /* PlayerDB.swift */; };
+		CB8E36B622DF10EE00735C2D /* RealmPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B522DF10EE00735C2D /* RealmPlayer.swift */; };
+		CB8E36B822DF11E600735C2D /* RealmTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B722DF11E600735C2D /* RealmTeam.swift */; };
+		CB8E36BA22DFF4B200735C2D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36B922DFF4B200735C2D /* String+Extension.swift */; };
+		CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -137,6 +141,10 @@
 		CB8E36AD22DF06AE00735C2D /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		CB8E36B022DF0D9000735C2D /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		CB8E36B222DF0E1D00735C2D /* PlayerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDB.swift; sourceTree = "<group>"; };
+		CB8E36B522DF10EE00735C2D /* RealmPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPlayer.swift; sourceTree = "<group>"; };
+		CB8E36B722DF11E600735C2D /* RealmTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTeam.swift; sourceTree = "<group>"; };
+		CB8E36B922DFF4B200735C2D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -289,8 +297,18 @@
 			children = (
 				CB8E36B022DF0D9000735C2D /* RealmDB.swift */,
 				CB8E36B222DF0E1D00735C2D /* PlayerDB.swift */,
+				CB8E36B422DF10D700735C2D /* Entity */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		CB8E36B422DF10D700735C2D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CB8E36B522DF10EE00735C2D /* RealmPlayer.swift */,
+				CB8E36B722DF11E600735C2D /* RealmTeam.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
@@ -393,6 +411,8 @@
 				CBC6F06122D32DDE0021A11D /* UIView+Extension.swift */,
 				CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */,
 				CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */,
+				CB8E36B922DFF4B200735C2D /* String+Extension.swift */,
+				CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -572,6 +592,7 @@
 				CBFA015F22B89D2A00F71C7B /* Sources */,
 				CBFA016022B89D2A00F71C7B /* Frameworks */,
 				CBFA016122B89D2A00F71C7B /* Resources */,
+				7C924670B5DE09C90A886B12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -746,6 +767,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7C924670B5DE09C90A886B12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WannaBasket/Pods-WannaBasket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WannaBasket/Pods-WannaBasket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F8ECDD7ACF6FD2A83F01838F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,7 +814,9 @@
 			files = (
 				CBC6F06922D416B70021A11D /* Quarter.swift in Sources */,
 				CB5C1C6322DB0BBC00871C2B /* RecordWireframe.swift in Sources */,
+				CB8E36B622DF10EE00735C2D /* RealmPlayer.swift in Sources */,
 				CB8E36B322DF0E1D00735C2D /* PlayerDB.swift in Sources */,
+				CB8E36B822DF11E600735C2D /* RealmTeam.swift in Sources */,
 				CBFA01A122B89E0E00F71C7B /* HomeProtocol.swift in Sources */,
 				CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */,
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
@@ -782,6 +825,7 @@
 				CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */,
 				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */,
+				CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */,
 				CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */,
 				CBFA01A222B89E0E00F71C7B /* HomeWireframe.swift in Sources */,
 				CBC6F04122CDEC8A0021A11D /* TeamCell.swift in Sources */,
@@ -825,6 +869,7 @@
 				CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */,
 				CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */,
 				CBC6F03822CDEC8A0021A11D /* TeamFormView.swift in Sources */,
+				CB8E36BA22DFF4B200735C2D /* String+Extension.swift in Sources */,
 				CBC6F03722CDEC8A0021A11D /* PlayerFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

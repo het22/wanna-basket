@@ -6,7 +6,8 @@ target 'WannaBasket' do
   use_frameworks!
 
   # Pods for WannaBasket
-
+  pod 'RealmSwift'
+  
   target 'WannaBasketTests' do
     inherit! :search_paths
     # Pods for testing
