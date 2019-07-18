@@ -40,6 +40,10 @@
 		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
 		CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2637E22E05A9700E664EF /* TeamTest.swift */; };
 		CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638022E06CC800E664EF /* PlayerTest.swift */; };
+		CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638222E0AB6200E664EF /* Persistable.swift */; };
+		CBB2638522E0AF8900E664EF /* TeamDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638422E0AF8900E664EF /* TeamDB.swift */; };
+		CBB2638722E0B02D00E664EF /* RealmTeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638622E0B02D00E664EF /* RealmTeamTest.swift */; };
+		CBB2638922E0C8A300E664EF /* TeamDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638822E0C8A300E664EF /* TeamDBTest.swift */; };
 		CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F122C21B20004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
 		CBB9B2F222C21B21004C50B3 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */; };
@@ -88,7 +92,6 @@
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
 		CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */; };
-		CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */; };
 		CBFA018A22B89D2B00F71C7B /* WannaBasketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */; };
 		CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA019722B89E0E00F71C7B /* HomeScreen.storyboard */; };
 		CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019822B89E0E00F71C7B /* HomePresenter.swift */; };
@@ -153,6 +156,10 @@
 		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
 		CBB2637E22E05A9700E664EF /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		CBB2638022E06CC800E664EF /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
+		CBB2638222E0AB6200E664EF /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		CBB2638422E0AF8900E664EF /* TeamDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDB.swift; sourceTree = "<group>"; };
+		CBB2638622E0B02D00E664EF /* RealmTeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTeamTest.swift; sourceTree = "<group>"; };
+		CBB2638822E0C8A300E664EF /* TeamDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDBTest.swift; sourceTree = "<group>"; };
 		CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
 		CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
@@ -203,7 +210,6 @@
 		CBFA017322B89D2B00F71C7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBFA017522B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBFA017A22B89D2B00F71C7B /* WannaBasketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaBasketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaBasketTests.swift; sourceTree = "<group>"; };
 		CBFA018022B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBFA018522B89D2B00F71C7B /* WannaBasketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaBasketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WannaBasketUITests.swift; sourceTree = "<group>"; };
@@ -305,6 +311,7 @@
 			children = (
 				CB8E36B022DF0D9000735C2D /* RealmDB.swift */,
 				CB8E36B222DF0E1D00735C2D /* PlayerDB.swift */,
+				CBB2638422E0AF8900E664EF /* TeamDB.swift */,
 				CB8E36B422DF10D700735C2D /* Entity */,
 			);
 			path = Database;
@@ -323,7 +330,9 @@
 		CB8E36BF22DFFFCB00735C2D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CBB2638822E0C8A300E664EF /* TeamDBTest.swift */,
 				CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */,
+				CBB2638622E0B02D00E664EF /* RealmTeamTest.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -429,6 +438,7 @@
 		CBC6F02E22CDEC8A0021A11D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CBB2638222E0AB6200E664EF /* Persistable.swift */,
 				CBC6F03122CDEC8A0021A11D /* Reusable.swift */,
 				CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */,
 				CBC6F03222CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift */,
@@ -521,11 +531,10 @@
 		CBFA017D22B89D2B00F71C7B /* WannaBasketTests */ = {
 			isa = PBXGroup;
 			children = (
+				CBFA018022B89D2B00F71C7B /* Info.plist */,
 				CB8E36BF22DFFFCB00735C2D /* Database */,
 				CBC6F06D22D44F7F0021A11D /* Enum */,
 				CBC6F06322D39EE50021A11D /* Model */,
-				CBFA017E22B89D2B00F71C7B /* WannaBasketTests.swift */,
-				CBFA018022B89D2B00F71C7B /* Info.plist */,
 			);
 			path = WannaBasketTests;
 			sourceTree = "<group>";
@@ -852,6 +861,7 @@
 				CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */,
 				CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */,
 				CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */,
+				CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */,
 				CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */,
 				CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */,
 				CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */,
@@ -887,6 +897,7 @@
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
 				CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
+				CBB2638522E0AF8900E664EF /* TeamDB.swift in Sources */,
 				CB5C1C5F22DB0BBC00871C2B /* RecordPresenter.swift in Sources */,
 				CBC6F03D22CDEC8A0021A11D /* PlayerTableView.swift in Sources */,
 				CBC6F05322CF063B0021A11D /* Stat.swift in Sources */,
@@ -907,12 +918,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBB2638922E0C8A300E664EF /* TeamDBTest.swift in Sources */,
 				CBC6F06522D39EF10021A11D /* TimeManagerTest.swift in Sources */,
-				CBFA017F22B89D2B00F71C7B /* WannaBasketTests.swift in Sources */,
 				CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */,
 				CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */,
 				CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */,
 				CBC6F06722D3A1470021A11D /* TimeTest.swift in Sources */,
+				CBB2638722E0B02D00E664EF /* RealmTeamTest.swift in Sources */,
 				CBC6F06C22D44F6E0021A11D /* GameTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

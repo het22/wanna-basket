@@ -17,18 +17,10 @@ class TeamTest: XCTestCase {
     var playerC: Player!
     
     override func setUp() {
-        teamA = Team(name: "MAHAMAN")
-        playerA = Player(name: "HET")
-        playerB = Player(name: "ANT")
-        playerC = Player(name: "CHAN")
-    }
-    
-    func testGetPlayers() {
-        teamA.register(player: playerA, number: 22)
-        teamA.register(player: playerB, number: 2)
-        teamA.register(player: playerC, number: 10)
-        let players = [playerB, playerC, playerA]
-        XCTAssertEqual(players, teamA.players)
+        teamA = Team(uuid: "MAHAMAN", name: "MAHAMAN")
+        playerA = Player(uuid: "HET", name: "HET")
+        playerB = Player(uuid: "ANT", name: "ANT")
+        playerC = Player(uuid: "CHAN", name: "CHAN")
     }
     
     func testGetIsNumberAssigned() {

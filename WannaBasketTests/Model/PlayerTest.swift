@@ -16,8 +16,6 @@ class PlayerTest: XCTestCase {
     var teamB: Team!
     
     override func setUp() {
-        playerA = Player(name: "Het")
-        teamA = Team(name: "MAHAMAN")
-        teamB = Team(name: "KUSKET")
+        
     }
 }
