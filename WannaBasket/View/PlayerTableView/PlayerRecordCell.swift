@@ -52,7 +52,7 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
             }
             return $0 + point
         }
-        scoreLabel.text = "\(score)점"
+        scoreLabel.text = (score==0) ? "-" : "\(score)점"
         
         var pt1 = 0, pt2 = 0, pt3 = 0
         model.records.forEach {
