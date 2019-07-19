@@ -39,6 +39,8 @@
 		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
 		CB9D4D5222E1B9D800D24BD5 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */; };
 		CB9D4D5422E1B9F500D24BD5 /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */; };
+		CB9D4D5622E1CEAA00D24BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */; };
+		CB9D4D5922E2108D00D24BD5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5B22E2108D00D24BD5 /* Localizable.strings */; };
 		CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2637E22E05A9700E664EF /* TeamTest.swift */; };
 		CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638022E06CC800E664EF /* PlayerTest.swift */; };
 		CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638222E0AB6200E664EF /* Persistable.swift */; };
@@ -55,7 +57,6 @@
 		CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */; };
 		CBB9B31122C49D7A004C50B3 /* GameWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */; };
 		CBB9B32322C4EA3D004C50B3 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9B32222C4EA3D004C50B3 /* Record.swift */; };
-		CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */; };
 		CBC6F00E22CD6E430021A11D /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F00D22CD6E430021A11D /* TimeManager.swift */; };
 		CBC6F01922CDE0D30021A11D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6F01822CDE0D30021A11D /* Constants.swift */; };
 		CBC6F03622CDEC8A0021A11D /* PlayerFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC6F01E22CDEC8A0021A11D /* PlayerFormView.xib */; };
@@ -92,7 +93,6 @@
 		CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016622B89D2A00F71C7B /* AppDelegate.swift */; };
 		CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */; };
 		CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017022B89D2B00F71C7B /* Assets.xcassets */; };
-		CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */; };
 		CBFA018A22B89D2B00F71C7B /* WannaBasketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA018922B89D2B00F71C7B /* WannaBasketUITests.swift */; };
 		CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFA019722B89E0E00F71C7B /* HomeScreen.storyboard */; };
 		CBFA019E22B89E0E00F71C7B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFA019822B89E0E00F71C7B /* HomePresenter.swift */; };
@@ -156,6 +156,9 @@
 		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
 		CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
+		CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB9D4D5A22E2108D00D24BD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB9D4D5C22E2111700D24BD5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBB2637E22E05A9700E664EF /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		CBB2638022E06CC800E664EF /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
 		CBB2638222E0AB6200E664EF /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -169,9 +172,6 @@
 		CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWireframe.swift; sourceTree = "<group>"; };
 		CBB9B32222C4EA3D004C50B3 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		CBC411F022C8ED0B0048BFDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CBC411F222C8ED410048BFDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CBC411F322C8ED410048BFDD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBC6F00D22CD6E430021A11D /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		CBC6F01822CDE0D30021A11D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBC6F01E22CDEC8A0021A11D /* PlayerFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerFormView.xib; sourceTree = "<group>"; };
@@ -209,7 +209,6 @@
 		CBFA016622B89D2A00F71C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBFA016E22B89D2A00F71C7B /* WannaBasket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WannaBasket.xcdatamodel; sourceTree = "<group>"; };
 		CBFA017022B89D2B00F71C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CBFA017322B89D2B00F71C7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBFA017522B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBFA017A22B89D2B00F71C7B /* WannaBasketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WannaBasketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFA018022B89D2B00F71C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -608,12 +607,12 @@
 				CBFA017022B89D2B00F71C7B /* Assets.xcassets */,
 				CBFA016D22B89D2A00F71C7B /* WannaBasket.xcdatamodeld */,
 				CBFA017522B89D2B00F71C7B /* Info.plist */,
-				CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */,
+				CB9D4D5B22E2108D00D24BD5 /* Localizable.strings */,
 				CBFA016622B89D2A00F71C7B /* AppDelegate.swift */,
 				CBC6F01822CDE0D30021A11D /* Constants.swift */,
 				CB8E36AD22DF06AE00735C2D /* TypeAlias.swift */,
 				CBC6F02F22CDEC8A0021A11D /* NumberFormat.swift */,
-				CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */,
+				CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */,
 				CB0652D722B9B99200330DD7 /* Wireframe.storyboard */,
 			);
 			path = SupportFile;
@@ -741,17 +740,17 @@
 				CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */,
 				CBC6F03C22CDEC8A0021A11D /* PlayerCell.xib in Resources */,
 				CB8E36AC22DDCB5E00735C2D /* QuarterScoreCell.xib in Resources */,
-				CBFA017422B89D2B00F71C7B /* LaunchScreen.storyboard in Resources */,
 				CBC6F03A22CDEC8A0021A11D /* ToggleView.xib in Resources */,
 				CB8E36A822DDBE9300735C2D /* QuarterScoreView.xib in Resources */,
+				CB9D4D5922E2108D00D24BD5 /* Localizable.strings in Resources */,
 				CB5C1C5422D878FF00871C2B /* NumberSelectViewCell.xib in Resources */,
-				CBC411EF22C8ED0B0048BFDD /* InfoPlist.strings in Resources */,
 				CBC6F03F22CDEC8A0021A11D /* TeamCell.xib in Resources */,
 				CBC6F03922CDEC8A0021A11D /* TeamFormView.xib in Resources */,
 				CBC6F05822CFA08B0021A11D /* QuarterSelectView.xib in Resources */,
 				CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */,
 				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
 				CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */,
+				CB9D4D5622E1CEAA00D24BD5 /* LaunchScreen.storyboard in Resources */,
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
 				CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
@@ -965,22 +964,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CBC411F122C8ED0B0048BFDD /* InfoPlist.strings */ = {
+		CB9D4D5B22E2108D00D24BD5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CBC411F022C8ED0B0048BFDD /* en */,
-				CBC411F322C8ED410048BFDD /* ko */,
+				CB9D4D5A22E2108D00D24BD5 /* en */,
+				CB9D4D5C22E2111700D24BD5 /* ko */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CBFA017222B89D2B00F71C7B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBFA017322B89D2B00F71C7B /* Base */,
-				CBC411F222C8ED410048BFDD /* ko */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
