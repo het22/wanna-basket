@@ -63,7 +63,6 @@ class PlayerFormView: UIView, NibLoadable {
     }
     @IBAction func rightButtonTapped() {
         if let name = validatedName, self.player != nil {
-            self.player!.uuid = name
             self.player!.name = name
             if isEditMode {
                 if let index = index {

@@ -18,13 +18,22 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
     
     // INTERACTOR -> PRESENTER
+    func requestReadAllTeam()
+    func requestUpdateTeam(team: Team)
+    func requestDeleteTeam(team: Team)
+    
+    func requestRegisterPlayer(player: PlayerOfTeam, team: Team)
+    func requestUpdatePlayer(player: PlayerOfTeam)
+    func requestEjectPlayer(player: PlayerOfTeam, team: Team)
     
 }
 
 protocol HomeInteractorOutputProtocol: class {
     
     // PRESENTER -> INTERACTOR
-    
+    func didReadAllTeam(teams: [Team])
+    func didUpdateTeam()
+    func didDeleteTeam()
 }
 
 protocol HomePresenterProtocol: class {

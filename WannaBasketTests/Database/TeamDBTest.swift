@@ -65,10 +65,18 @@ class TeamDBTest: XCTestCase {
         var expectedCount = realm.objects(RealmTeam.self).count
         XCTAssertEqual(expectedCount, 3)
         
-        let team = realm.objects(RealmTeam.self).first!
-        teamDB.delete(realmTeam: team)
+        let realmTeamA = realm.objects(RealmTeam.self).first!
+        teamDB.delete(realmTeam: realmTeamA)
         
         expectedCount = realm.objects(RealmTeam.self).count
         XCTAssertEqual(expectedCount, 2)
+        
+        let realmTeamB = realm.objects(RealmTeam.self).first!
+        let teamB = Team(realmObject: realmTeamB)
+        let convertedRealmTeamB = teamB.realmObject()
+        teamDB.delete(realmTeam: convertedRealmTeamB)
+        
+        expectedCount = realm.objects(RealmTeam.self).count
+        XCTAssertEqual(expectedCount, 1)
     }
 }

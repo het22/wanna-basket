@@ -30,8 +30,6 @@ class HomeWireframe: HomeWireframeProtocol {
             interactor.teamDB = RealmDB.shared
             interactor.playerDB = RealmDB.shared
             
-            presenter.manager = PlayerTeamManager()
-            
             return view
         }
         return UIViewController()

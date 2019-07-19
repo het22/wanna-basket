@@ -31,8 +31,10 @@ extension RealmDB: PlayerDB {
     
     func delete(realmPlayer: RealmPlayer) {
         let realm = try! Realm()
+        let realmPlayer = realm.objects(RealmPlayer.self).filter{$0.uuid==realmPlayer.uuid}.first
+        guard let player = realmPlayer else { return }
         try! realm.write {
-            realm.delete(realmPlayer)
+            realm.delete(player)
         }
     }
 }

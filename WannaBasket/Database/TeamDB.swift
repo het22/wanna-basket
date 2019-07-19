@@ -9,7 +9,7 @@
 import RealmSwift
 
 protocol TeamDB {
-    func readAll() -> Results<RealmTeam>
+    func readAll() -> [RealmTeam]
     func read(with uuid: String) -> RealmTeam?
     func update(realmTeam: RealmTeam)
     func delete(realmTeam: RealmTeam)
@@ -17,9 +17,9 @@ protocol TeamDB {
 
 extension RealmDB: TeamDB {
     
-    func readAll() -> Results<RealmTeam> {
+    func readAll() -> [RealmTeam] {
         let realm = try! Realm()
-        let realmTeams = realm.objects(RealmTeam.self)
+        let realmTeams = Array(realm.objects(RealmTeam.self))
         return realmTeams
     }
     
@@ -38,8 +38,10 @@ extension RealmDB: TeamDB {
     
     func delete(realmTeam: RealmTeam) {
         let realm = try! Realm()
+        let realmTeam = realm.objects(RealmTeam.self).filter{$0.uuid==realmTeam.uuid}.first
+        guard let team = realmTeam else { return }
         try! realm.write {
-            realm.delete(realmTeam)
+            realm.delete(team)
         }
     }
 }

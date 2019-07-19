@@ -18,13 +18,9 @@ class HomePresenter: HomePresenterProtocol {
     var wireframe: HomeWireframeProtocol?
     
     // --------------------------------------------------
-    // MARK: Manage Game Setting
+    // MARK: View Model
     // --------------------------------------------------
-    var manager: PlayerTeamManager! {
-        didSet { manager.delegate = self }
-    }
-    var isEdittingHome: Bool = true
-    
+    /// 팀 목록을 저장하고 뷰에 업데이트한다.
     private var teams: [Team] = [] {
         didSet {
             // 1. 새로운 팀 목록을 받으면 기존에 선택되어있던 팀들의 uuid를 임시 저장한다.
@@ -53,40 +49,101 @@ class HomePresenter: HomePresenterProtocol {
             view?.updateTeamTableView(teams: teams)
         }
     }
-    var currentTeamIndex: Int? {
+    
+    /// 현재 선택한 홈팀과 원정팀의 인덱스를 저장하고 뷰를 업데이트 한다.
+    var currentTeamIndexTuple: (home: Int?, away: Int?) = (nil, nil) {
         didSet {
-            if let index = currentTeamIndex, let team = teams[safe: index] {
-                view?.showTeamFormView(isEditMode: true, name: team.name, index: index, bool: true)
-            } else {
-                view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
+            // 1. 선수 추가 버튼을 활성화/비활성화 한다.
+            view?.enablePlayerAddButton(bool: (currentTeamIndexTuple.home != nil), of: true)
+            view?.enablePlayerAddButton(bool: (currentTeamIndexTuple.away != nil), of: false)
+            
+            // 2. 게임 시작 버튼을 활성화/비활성화 한다.
+            view?.enableGameStartButton(bool: (currentTeamIndexTuple.home == nil || currentTeamIndexTuple.away == nil) ? false : true)
+            
+            // 3. 기존에 선택된 팀이 있다면 비활성화한다.
+            if let oldIndex = oldValue.home {
+                view?.highlightTeam(at: oldIndex, onLeft: true, bool: false)
+                view?.updatePlayerTableView(players: nil, of: true)
+                view?.updateTeamNameLabel(name: nil, of: true)
+            }
+            if let oldIndex = oldValue.away {
+                view?.highlightTeam(at: oldIndex, onLeft: false, bool: false)
+                view?.updatePlayerTableView(players: nil, of: false)
+                view?.updateTeamNameLabel(name: nil, of: false)
+            }
+            
+            // 4. 새로 선택된 팀이 있다면 활성화한다.
+            if let newIndex = currentTeamIndexTuple.home {
+                let team = teams[newIndex]
+                view?.highlightTeam(at: newIndex, onLeft: true, bool: true)
+                view?.updatePlayerTableView(players: team.players, of: true)
+                view?.updateTeamNameLabel(name: team.name, of: true)
+            }
+            if let newIndex = currentTeamIndexTuple.away {
+                let team = teams[newIndex]
+                view?.highlightTeam(at: newIndex, onLeft: false, bool: true)
+                view?.updatePlayerTableView(players: team.players, of: false)
+                view?.updateTeamNameLabel(name: team.name, of: false)
             }
         }
     }
-    var currentPlayerIndexTuple: (index: Int?, home: Home)?
-    var currentTeamIndexTuple: (home: Int?, away: Int?) = (nil, nil) {
-        didSet(oldVal) {
-            didSetCurrentTeamIndex(oldVal: oldVal, newVal: currentTeamIndexTuple)
+    
+    /// TeamFormView에 보여주고 있는 팀의 정보를 저장하고 뷰를 업데이트한다.
+    var currentShowingTeamIndex: Int? {
+        didSet {
+            if let index = currentShowingTeamIndex, let team = teams[safe: index] {
+                view?.showTeamFormView(isEditMode: true, name: team.name, index: index, bool: true)
+            } else {
+                view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
+            }
         }
     }
+    
+    /// PlayerFormView에 보여주고 있는 선수의 정보를 저장하고 뷰를 업데이트한다.
+    var currentShowingPlayerTuple: (index: Int?, home: Home)? {
+        didSet {
+            if let tuple = currentShowingPlayerTuple {
+                if let index = tuple.index {
+                    if let teamIndex = tuple.home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
+                        let player = teams[safe: teamIndex]?.players[safe: index] {
+                        view?.showPlayerFormView(isEditMode: true, player: player, index: index, bool: true)
+                    }
+                } else {
+                    view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: true)
+                }
+            } else {
+                view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: false)
+            }
+        }
+    }
+    
     private var isEdittingHome: Bool = true
     
     // --------------------------------------------------
     // MARK: Home View Events
     // --------------------------------------------------
     func viewDidLoad() {
-        view?.updateTeamTableView(teams: manager.teams)
+        // 1. 뷰를 초기 모습으로 설정
+        view?.updateTeamTableView(teams: [])
+        view?.updatePlayerTableView(players: nil, of: true)
+        view?.updatePlayerTableView(players: nil, of: false)
         view?.enableGameStartButton(bool: false)
         view?.enablePlayerAddButton(bool: false, of: true)
         view?.enablePlayerAddButton(bool: false, of: false)
         view?.updateTeamNameLabel(name: nil, of: true)
         view?.updateTeamNameLabel(name: nil, of: false)
+        view?.updateTeamTableView(teams: [])
+        // 2. 로컬 DB에게 모든 팀 정보 요청
+        interactor?.requestReadAllTeam()
     }
     
     func didTapStartButton() {
-        guard let homeTeamIndex = manager.currentTeamIndex.home,
-                let awayTeamIndex = manager.currentTeamIndex.away else { return }
-        let homeTeam = manager.teams[homeTeamIndex]
-        let awayTeam = manager.teams[awayTeamIndex]
+        guard
+            let homeTeamIndex = currentTeamIndexTuple.home,
+            let awayTeamIndex = currentTeamIndexTuple.away,
+            let homeTeam = teams[safe: homeTeamIndex],
+            let awayTeam = teams[safe: awayTeamIndex] else { return }
+        
         let game: GameConfigurable = Game(home: homeTeam, away: awayTeam)
         wireframe?.presentModule(source: view!, module: Module.Game(game: game as! Game))
     }
@@ -95,61 +152,71 @@ class HomePresenter: HomePresenterProtocol {
         view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: true)
     }
     
-    func didTapNewPlayerButton(of home: Bool) {
-        isEdittingHome = home
-        view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: true)
+    func didTapNewPlayerButton(of home: Home) {
+        currentShowingPlayerTuple = (nil, home)
     }
     
     // --------------------------------------------------
     // MARK: Team Form View Events
     // --------------------------------------------------
     func didTapTeamFormCancelButton() {
-        view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
+        currentShowingTeamIndex = nil
     }
     
     func didTapTeamFormDeleteButton(index: Int) {
-        manager.removeTeam(at: index)
+        if let team = teams[safe: index] {
+            interactor?.requestDeleteTeam(team: team)
+        }
     }
     
     func didTapTeamFormCompleteButton(name: String) {
-        let team = Team(uuid: name ,name: name)
-        manager.addTeam(team: team)
+        let newTeam = Team(uuid: "" ,name: name)
+        interactor?.requestUpdateTeam(team: newTeam)
     }
     
     func didTapTeamFormEditButton(name: String, index: Int) {
-        manager.editTeam(at: index, editName: name)
+        if let team = teams[safe: index] {
+            var editedTeam = team
+            editedTeam.name = name
+            interactor?.requestUpdateTeam(team: editedTeam)
+        }
     }
     
     // --------------------------------------------------
     // MARK: Player Form View Events
     // --------------------------------------------------
     func didTapPlayerFormCancelButton() {
-        view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: false)
+        currentShowingPlayerTuple = nil
     }
     
     func didTapPlayerFormDeleteButton(index: Int) {
-        if let teamIndex = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away  {
-            manager.removePlayer(at: index, teamIndex: teamIndex)
+        if let home = currentShowingPlayerTuple?.home,
+            let teamIndex = home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
+            let team = teams[safe: teamIndex],
+            let player = team.players[safe: index] {
+            interactor?.requestEjectPlayer(player: player, team: team)
         }
     }
     
     func didTapPlayerFormCompleteButton(player: PlayerOfTeam) {
-        if let teamIndex = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away  {
-            manager.addPlayer(player: player, teamIndex: teamIndex)
+        if let home = currentShowingPlayerTuple?.home,
+            let teamIndex = home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
+            let team = teams[safe: teamIndex] {
+            interactor?.requestRegisterPlayer(player: player, team: team)
         }
     }
     
     func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int) {
-        if let teamIndex = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away  {
-            manager.editPlayer(at: index, teamIndex: teamIndex, player: player)
-        }
+        interactor?.requestUpdatePlayer(player: player)
     }
     
     func didTapPlayerNumberButton() -> [Bool] {
-        if let index = isEdittingHome ? manager.currentTeamIndex.home : manager.currentTeamIndex.away {
-            let team = manager.teams[index]
+        if let tuple = currentShowingPlayerTuple,
+            let index = tuple.home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away {
+            let team = teams[index]
             return team.isNumberAssigned
         } else {
+            print("Warning(\(self)): didTapPlayerNumberButton returned an empty collection.")
             return []
         }
     }
@@ -160,142 +227,39 @@ class HomePresenter: HomePresenterProtocol {
     func didTapTeamCell(at index: Int, tapSection: TeamCell.Section) {
         switch tapSection {
         case .Middle:
-            let team = manager.teams[index]
-            view?.showTeamFormView(isEditMode: true, name: team.name, index: index, bool: true)
+            currentShowingTeamIndex = index
         case .Left:
-            let oldIndex = manager.currentTeamIndex.home
-            manager.currentTeamIndex.home = (index == oldIndex) ? nil : index
+            let oldIndex = currentTeamIndexTuple.home
+            currentTeamIndexTuple.home = (index == oldIndex) ? nil : index
         case .Right:
-            let oldIndex = manager.currentTeamIndex.away
-            manager.currentTeamIndex.away = (index == oldIndex) ? nil : index
+            let oldIndex = currentTeamIndexTuple.away
+            currentTeamIndexTuple.away = (index == oldIndex) ? nil : index
         }
     }
     
     func didDeleteTeamAction(at index: Int) {
-        manager.removeTeam(at: index)
+        if let team = teams[safe: index] {
+            interactor?.requestDeleteTeam(team: team)
+        }
     }
     
     func didDequeueTeamCell() -> (home: Int?, away: Int?) {
-        return manager.currentTeamIndex
+        return currentTeamIndexTuple
     }
     
     // --------------------------------------------------
     // MARK: Player Table View Events
     // --------------------------------------------------
-    func didTapPlayerCell(at index: Int, of home: Bool) {
-        isEdittingHome = home
-        if let teamIndex = home ? manager.currentTeamIndex.home : manager.currentTeamIndex.away,
-           let player = manager.teams[teamIndex].players[safe: index] {
-            view?.showPlayerFormView(isEditMode: true, player: player, index: index, bool: true)
-        }
+    func didTapPlayerCell(at index: Int, of home: Home) {
+        currentShowingPlayerTuple = (index, home)
     }
     
-    func didDeletePlayerAction(at index: Int, of home: Bool) {
-        isEdittingHome = home
-        if let teamIndex = home ? manager.currentTeamIndex.home : manager.currentTeamIndex.away {
-            manager.removePlayer(at: index, teamIndex: teamIndex)
+    func didDeletePlayerAction(at index: Int, of home: Home) {
+        if let teamIndex = home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
+            let team = teams[safe: teamIndex],
+            let player = team.players[safe: index] {
+            interactor?.requestEjectPlayer(player: player, team: team)
         }
-    }
-}
-
-
-// --------------------------------------------------
-// MARK: Game Setting Delegate
-// --------------------------------------------------
-extension HomePresenter: PlayerTeamManagerDelegate {
-    
-    func didSetCurrentTeamIndex(oldVal: (home: Int?, away: Int?), newVal: (home: Int?, away: Int?)) {
-        view?.enablePlayerAddButton(bool: (newVal.home != nil), of: true)
-        view?.enablePlayerAddButton(bool: (newVal.away != nil), of: false)
-        view?.enableGameStartButton(bool: (newVal.home == nil || newVal.away == nil) ? false : true)
-        
-        if let oldIndex = oldVal.home {
-            view?.highlightTeam(at: oldIndex, onLeft: true, bool: false)
-            view?.updatePlayerTableView(players: nil, of: true)
-            view?.updateTeamNameLabel(name: nil, of: true)
-        }
-        if let newIndex = newVal.home {
-            let team = manager.teams[newIndex]
-            view?.highlightTeam(at: newIndex, onLeft: true, bool: true)
-            view?.updatePlayerTableView(players: team.players, of: true)
-            view?.updateTeamNameLabel(name: team.name, of: true)
-        }
-        
-        if let oldIndex = oldVal.away {
-            view?.highlightTeam(at: oldIndex, onLeft: false, bool: false)
-            view?.updatePlayerTableView(players: nil, of: false)
-            view?.updateTeamNameLabel(name: nil, of: false)
-        }
-        if let newIndex = newVal.away {
-            let team = manager.teams[newIndex]
-            view?.highlightTeam(at: newIndex, onLeft: false, bool: true)
-            view?.updatePlayerTableView(players: team.players, of: false)
-            view?.updateTeamNameLabel(name: team.name, of: false)
-        }
-    }
-    
-    func didAddTeam() {
-        view?.updateTeamTableView(teams: manager.teams)
-        view?.showTeamFormView(isEditMode: false, name: nil, index: nil, bool: false)
-    }
-    
-    func didEditTeam(at index: Int) {
-        view?.updateTeamTableView(teams: manager.teams)
-        let team = manager.teams[index]
-        if let homeIndex = manager.currentTeamIndex.home, homeIndex == index {
-            view?.updateTeamNameLabel(name: team.name, of: true)
-        }
-        if let awayIndex = manager.currentTeamIndex.away, awayIndex == index {
-            view?.updateTeamNameLabel(name: team.name, of: false)
-        }
-        view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
-    }
-    
-    func didRemoveTeam(at index: Int) {
-        view?.updateTeamTableView(teams: manager.teams)
-        var newIndex: (home: Int?, away: Int?)
-        if let homeIndex = manager.currentTeamIndex.home {
-            if index == homeIndex { newIndex.home = nil }
-            if index < homeIndex { newIndex.home = homeIndex-1 }
-        }
-        if let awayIndex = manager.currentTeamIndex.away {
-            if index == awayIndex { newIndex.away = nil }
-            if index < awayIndex { newIndex.away = awayIndex-1 }
-        }
-        manager.currentTeamIndex = newIndex
-        view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
-    }
-    
-    func didAddPlayer(of team: Team) {
-        if manager.currentTeamIndex.home == manager.currentTeamIndex.away {
-            view?.updatePlayerTableView(players: team.players, of: true)
-            view?.updatePlayerTableView(players: team.players, of: false)
-        } else {
-            view?.updatePlayerTableView(players: team.players, of: isEdittingHome)
-        }
-        view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: false)
-    }
-    
-    func didEditPlayer(of team: Team) {
-        view?.updatePlayerTableView(players: team.players, of: isEdittingHome)
-        let currentTeamIndex = manager.currentTeamIndex
-        if currentTeamIndex.home == currentTeamIndex.away {
-            view?.updatePlayerTableView(players: team.players, of: !isEdittingHome)
-        }
-        view?.showPlayerFormView(isEditMode: true, player: nil, index: nil, bool: false)
-    }
-    
-    func didRemovePlayer(of team: Team) {
-        if manager.currentTeamIndex.home == manager.currentTeamIndex.away {
-            view?.updatePlayerTableView(players: team.players, of: true)
-            view?.updateTeamNameLabel(name: team.name, of: true)
-            view?.updatePlayerTableView(players: team.players, of: false)
-            view?.updateTeamNameLabel(name: team.name, of: false)
-        } else {
-            view?.updatePlayerTableView(players: team.players, of: isEdittingHome)
-            view?.updateTeamNameLabel(name: team.name, of: isEdittingHome)
-        }
-        view?.showPlayerFormView(isEditMode: true, player: nil, index: nil, bool: false)
     }
 }
 
@@ -304,4 +268,18 @@ extension HomePresenter: PlayerTeamManagerDelegate {
 // --------------------------------------------------
 extension HomePresenter: HomeInteractorOutputProtocol {
     
+    func didReadAllTeam(teams: [Team]) {
+        self.teams = teams
+    }
+    
+    func didUpdateTeam() {
+        interactor?.requestReadAllTeam()
+        currentShowingTeamIndex = nil
+        currentShowingPlayerTuple = nil
+    }
+    
+    func didDeleteTeam() {
+        interactor?.requestReadAllTeam()
+        currentShowingTeamIndex = nil
+    }
 }

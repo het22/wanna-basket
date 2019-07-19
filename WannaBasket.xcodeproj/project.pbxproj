@@ -15,7 +15,6 @@
 		CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */; };
 		CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */; };
 		CB5C1C5422D878FF00871C2B /* NumberSelectViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */; };
-		CB5C1C5622D9961D00871C2B /* PlayerTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */; };
 		CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */; };
 		CB5C1C5F22DB0BBC00871C2B /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */; };
 		CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */; };
@@ -131,7 +130,6 @@
 		CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
 		CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectViewCell.swift; sourceTree = "<group>"; };
 		CB5C1C5322D878FF00871C2B /* NumberSelectViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberSelectViewCell.xib; sourceTree = "<group>"; };
-		CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamManager.swift; sourceTree = "<group>"; };
 		CB5C1C5822DB0BBC00871C2B /* RecordScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordScreen.storyboard; sourceTree = "<group>"; };
 		CB5C1C5922DB0BBC00871C2B /* RecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
 		CB5C1C5A22DB0BBC00871C2B /* RecordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractor.swift; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 		CB8E36C222E0034800735C2D /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				CB5C1C5522D9961D00871C2B /* PlayerTeamManager.swift */,
 				CBC6F00D22CD6E430021A11D /* TimeManager.swift */,
 			);
 			path = Class;
@@ -872,7 +869,6 @@
 				CBC6F04822CDEC8A0021A11D /* UITableView+Extension.swift in Sources */,
 				CBC6F06222D32DDE0021A11D /* UIView+Extension.swift in Sources */,
 				CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */,
-				CB5C1C5622D9961D00871C2B /* PlayerTeamManager.swift in Sources */,
 				CBC6F04022CDEC8A0021A11D /* TeamTableView.swift in Sources */,
 				CB8E36A522DDBE8200735C2D /* QuarterScoreView.swift in Sources */,
 				CBFA016722B89D2A00F71C7B /* AppDelegate.swift in Sources */,
