@@ -30,6 +30,11 @@ class HomeInteractor: HomeInteractorInputProtocol {
     
     func requestDeleteTeam(team: Team) {
         let realmTeam = team.realmObject()
+        realmTeam.playerInfors.forEach{
+            if let realmPlayer = playerDB.read(with: $0.key) {
+                playerDB.delete(realmPlayer: realmPlayer)
+            }
+        }
         teamDB.delete(realmTeam: realmTeam)
         presenter?.didDeleteTeam()
     }
