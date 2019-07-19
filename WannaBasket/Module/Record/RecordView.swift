@@ -48,7 +48,41 @@ class RecordView: UIViewController {
     }
     
     @IBAction func exitButtonTapped() {
-        presenter?.didTapExitButton()
+        isShowingWarningView = true
+    }
+    
+    private var backgroundView: UIView?
+    private var warningView: WarningView?
+    private var isShowingWarningView: Bool = false {
+        willSet(newVal) {
+            if newVal == isShowingWarningView { return }
+            if newVal {
+                let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                    self?.isShowingWarningView = false
+                }
+                
+                backgroundView = UIView(frame: self.view.bounds)
+                backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+                backgroundView!.addGestureRecognizer(dismissGesture)
+                self.view.addSubview(backgroundView!)
+                
+                warningView = WarningView(frame: CGRect.zero)
+                warningView?.delegate = self
+                warningView?.translatesAutoresizingMaskIntoConstraints = false
+                self.view.addSubview(warningView!)
+                
+                NSLayoutConstraint.activate([
+                    warningView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                    warningView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
+                    warningView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6),
+                    warningView!.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5)])
+            } else {
+                backgroundView?.removeFromSuperview()
+                warningView?.removeFromSuperview()
+                backgroundView = nil
+                warningView = nil
+            }
+        }
     }
 }
 
@@ -97,6 +131,18 @@ extension RecordView: RecordViewProtocol {
             ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
         }
+    }
+}
+
+extension RecordView: WarningViewDelegate {
+    
+    func didTapBackButton() {
+        isShowingWarningView = false
+    }
+    
+    func didTapExitButton() {
+        isShowingWarningView = false
+        presenter?.didTapExitButton()
     }
 }
 
