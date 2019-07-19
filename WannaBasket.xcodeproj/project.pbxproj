@@ -39,8 +39,8 @@
 		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
 		CB9D4D5222E1B9D800D24BD5 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */; };
 		CB9D4D5422E1B9F500D24BD5 /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */; };
-		CB9D4D5622E1CEAA00D24BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */; };
 		CB9D4D5922E2108D00D24BD5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5B22E2108D00D24BD5 /* Localizable.strings */; };
+		CB9D4D6122E21A6300D24BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5F22E21A6300D24BD5 /* LaunchScreen.storyboard */; };
 		CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2637E22E05A9700E664EF /* TeamTest.swift */; };
 		CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638022E06CC800E664EF /* PlayerTest.swift */; };
 		CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638222E0AB6200E664EF /* Persistable.swift */; };
@@ -156,9 +156,9 @@
 		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
 		CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
-		CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB9D4D5A22E2108D00D24BD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB9D4D5C22E2111700D24BD5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB9D4D6022E21A6300D24BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBB2637E22E05A9700E664EF /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		CBB2638022E06CC800E664EF /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
 		CBB2638222E0AB6200E664EF /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -612,7 +612,7 @@
 				CBC6F01822CDE0D30021A11D /* Constants.swift */,
 				CB8E36AD22DF06AE00735C2D /* TypeAlias.swift */,
 				CBC6F02F22CDEC8A0021A11D /* NumberFormat.swift */,
-				CB9D4D5522E1CEAA00D24BD5 /* LaunchScreen.storyboard */,
+				CB9D4D5F22E21A6300D24BD5 /* LaunchScreen.storyboard */,
 				CB0652D722B9B99200330DD7 /* Wireframe.storyboard */,
 			);
 			path = SupportFile;
@@ -750,7 +750,7 @@
 				CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */,
 				CBFA019D22B89E0E00F71C7B /* HomeScreen.storyboard in Resources */,
 				CBB9B2F022C21B1E004C50B3 /* DoHyeon-Regular.ttf in Resources */,
-				CB9D4D5622E1CEAA00D24BD5 /* LaunchScreen.storyboard in Resources */,
+				CB9D4D6122E21A6300D24BD5 /* LaunchScreen.storyboard in Resources */,
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
 				CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
@@ -971,6 +971,14 @@
 				CB9D4D5C22E2111700D24BD5 /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CB9D4D5F22E21A6300D24BD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9D4D6022E21A6300D24BD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
