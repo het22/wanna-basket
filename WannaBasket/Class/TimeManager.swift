@@ -18,17 +18,17 @@ class TimeManager {
 
     weak var delegate: GameTimeDelegate?
     
-    let maxGameClock: Float = 600.0
-    let maxOverTimeClock: Float = 300.0
+    let maxGameClock: Float = 1200.0
+    let maxRegularTime: Float = 600.0
+    let maxOverTime: Float = 300.0
     let maxShotClock: Float = 24.0
     var maxRegularQuarterNum: Int = 4
     var overtimeQuarterCount: Int = 0
     
     init(maxRegularQuarterNum: Int) {
-//        self.maxRegularQuarterNum = maxRegularQuarterNum
         for i in 1...self.maxRegularQuarterNum {
             times.append(Time(quarter: .Regular(i),
-                                 gameClock: maxGameClock,
+                                 gameClock: maxRegularTime,
                                  shotClock: maxShotClock))
         }
     }

@@ -38,6 +38,8 @@ class Game {
     var maxFloorPlayerCount: Int = 5
     var maxRegularQuarterCount: Int = 4
     var maxOverTimeQuarterCount: Int = 0
+    var maxRegularTime: Float = 600.0
+    var maxOverTime: Float = 300.0
     
     // --------------------------------------------------
     // MARK: Game Manageable
@@ -108,6 +110,8 @@ protocol GameConfigurable {
     var maxFloorPlayerCount: Int { get set }
     var maxRegularQuarterCount: Int { get set }
     var maxOverTimeQuarterCount: Int { get set }
+    var maxRegularTime: Float { get set }
+    var maxOverTime: Float { get set }
 }
 
 extension Game: GameConfigurable {
