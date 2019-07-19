@@ -61,5 +61,27 @@ enum Constants {
                 return (num==100) ? "00" : "\(num)"
             }
         }
+            
+        enum Weekday: Int, CustomStringConvertible {
+            case Sun = 1
+            case Mon = 2
+            case Tue = 3
+            case Wed = 4
+            case Thu = 5
+            case Fri = 6
+            case Sat = 7
+            
+            var description: String {
+                switch self {
+                case .Sun: return "일"
+                case .Mon: return "월"
+                case .Tue: return "화"
+                case .Wed: return "수"
+                case .Thu: return "목"
+                case .Fri: return "금"
+                case .Sat: return "토"
+                }
+            }
+        }
     }
 }
