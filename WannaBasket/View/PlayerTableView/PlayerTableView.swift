@@ -62,8 +62,8 @@ class PlayerTableView: UITableView {
         delegate = self
     }
     
-    @IBInspectable var placeholderNoTeam: String = "Placeholder No Team"
-    @IBInspectable var placeholderNoPlayer: String = "Placeholder No Player"
+    var placeholderSelectTeam: String = Constants.Text.Placeholder.SelectTeam
+    var placeholderAddPlayer: String = Constants.Text.Placeholder.AddPlayer
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.textColor = Constants.Color.Silver
@@ -80,8 +80,8 @@ class PlayerTableView: UITableView {
     
     func showPlaceholder(with count: Int?) {
         placeholderLabel.isHidden = (count != nil) && (count != 0)
-        if count == nil { placeholderLabel.text = placeholderNoTeam }
-        if count == 0 { placeholderLabel.text = placeholderNoPlayer }
+        if count == nil { placeholderLabel.text = placeholderSelectTeam }
+        if count == 0 { placeholderLabel.text = placeholderAddPlayer }
     }
     
     func highlightCell(at index: Int, bool: Bool) {

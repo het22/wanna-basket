@@ -40,10 +40,10 @@ class TeamTableView: UITableView {
         delegate = self
     }
     
-    @IBInspectable var placeholder: String = "Placeholder"
+    var placeholderAddTeam: String = Constants.Text.Placeholder.AddTeam
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
-        label.text = placeholder
+        label.text = placeholderAddTeam
         label.textColor = Constants.Color.Silver
         label.font = UIFont(name: "DoHyeon-Regular", size: 20)
         label.textAlignment = .center

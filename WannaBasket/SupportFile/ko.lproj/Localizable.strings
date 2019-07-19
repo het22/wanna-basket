@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  WannaBasket
+
+  Created by Het Song on 19/07/2019.
+  Copyright © 2019 Het Song. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "비코드";
+
+"GAME" = "경기";
+"SETTING" = "설정";
+"START" = "경기시작";
+
+"HOME" = "홈";
+"AWAY" = "원정";
+"HOME TEAM" = "홈팀";
+"AWAY TEAM" = "원정팀";
+
+"SUB" = "교체";
+"SUB COMPLETE" = "교체 완료";
+
+"COMPLETE" = "완료";
+"DELETE" = "삭제";
+"EDIT" = "수정";
+"CANCEL" = "취소";
+"EXIT" = "나가기";
+
+"SUN" = "일";
+"MON" = "월";
+"TUE" = "화";
+"WED" = "수";
+"THU" = "목";
+"FRI" = "금";
+"SAT" = "토";
+
+"Add New Team" = "팀을 추가하세요";
+"Select Team" = "팀을 선택하세요";
+"Add New Player" = "선수를 추가하세요";
+"Substitute Players" = "선수를 교체하세요";

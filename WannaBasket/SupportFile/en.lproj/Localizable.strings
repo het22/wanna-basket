@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  WannaBasket
+
+  Created by Het Song on 19/07/2019.
+  Copyright © 2019 Het Song. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Becord";
+
+"GAME" = "GAME";
+"SETTING" = "SETTING";
+"START" = "START";
+
+"HOME" = "HOME";
+"AWAY" = "AWAY";
+"HOME TEAM" = "HOME TEAM";
+"AWAY TEAM" = "AWAY TEAM";
+
+"SUB" = "SUB";
+"SUB COMPLETE" = "SUB COMPLETE";
+
+"COMPLETE" = "COMPLETE";
+"DELETE" = "DELETE";
+"EDIT" = "EDIT";
+"CANCEL" = "CANCEL";
+"EXIT" = "EXIT";
+
+"SUN" = "SUN";
+"MON" = "MON";
+"TUE" = "TUE";
+"WED" = "WED";
+"THU" = "THU";
+"FRI" = "FRI";
+"SAT" = "SAT";
+
+"Add New Team" = "Add New Team";
+"Select Team" = "Select Team";
+"Add New Player" = "Add New Player";
+"Substitute Players" = "Substitute Players";
+

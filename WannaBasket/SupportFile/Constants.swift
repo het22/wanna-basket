@@ -22,17 +22,31 @@ enum Constants {
     }
     
     enum Text {
-        static let HomeDefault = "홈팀"
-        static let AwayDefault = "원정팀"
+        static let Game = NSLocalizedString("GAME", comment: "")
+        static let Setting = NSLocalizedString("SETTING", comment: "")
+        static let Start = NSLocalizedString("START", comment: "")
+
+        static let Home = NSLocalizedString("HOME", comment: "")
+        static let Away = NSLocalizedString("AWAY", comment: "")
+        static let HomeTeam = NSLocalizedString("HOME TEAM", comment: "")
+        static let AwayTeam = NSLocalizedString("AWAY TEAM", comment: "")
         
-        static let Substitute = "교체"
-        static let SubstituteComplete = "교체 완료"
+        static let Substitute = NSLocalizedString("SUB", comment: "")
+        static let SubstituteComplete = NSLocalizedString("SUB COMPLETE", comment: "")
         
-        static let Complete = "완료"
-        static let Delete = "삭제"
-        static let Edit = "수정"
-        static let Cancel = "취소"
-        static let Exit = "나가기"
+        static let Complete = NSLocalizedString("COMPLETE", comment: "")
+        static let Delete = NSLocalizedString("DELETE", comment: "")
+        static let Edit = NSLocalizedString("EDIT", comment: "")
+        static let Cancel = NSLocalizedString("CANCEL", comment: "")
+        static let Exit = NSLocalizedString("EXIT", comment: "")
+        
+        enum Placeholder {
+            
+            static let AddTeam = NSLocalizedString("Add New Team", comment: "")
+            static let SelectTeam = NSLocalizedString("Select Team", comment: "")
+            static let AddPlayer = NSLocalizedString("Add New Player", comment: "")
+            static let SubPlayer = NSLocalizedString("Substitute Players", comment: "")
+        }
     }
     
     enum Regex {
@@ -73,13 +87,13 @@ enum Constants {
             
             var description: String {
                 switch self {
-                case .Sun: return "일"
-                case .Mon: return "월"
-                case .Tue: return "화"
-                case .Wed: return "수"
-                case .Thu: return "목"
-                case .Fri: return "금"
-                case .Sat: return "토"
+                case .Sun: return NSLocalizedString("SUN", comment: "")
+                case .Mon: return NSLocalizedString("MON", comment: "")
+                case .Tue: return NSLocalizedString("TUE", comment: "")
+                case .Wed: return NSLocalizedString("WED", comment: "")
+                case .Thu: return NSLocalizedString("THU", comment: "")
+                case .Fri: return NSLocalizedString("FRI", comment: "")
+                case .Sat: return NSLocalizedString("SAT", comment: "")
                 }
             }
         }
