@@ -49,6 +49,6 @@ extension Team {
 extension Team: Equatable {
     
     static func == (lhs: Team, rhs: Team) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.uuid == rhs.uuid
     }
 }
