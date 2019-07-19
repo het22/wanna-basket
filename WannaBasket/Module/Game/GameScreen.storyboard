@@ -117,8 +117,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="선수를 교체하세요"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoTeam" value="팀이 선택되지 않았어요"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -452,8 +450,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoTeam" value="팀이 선택되지 않았어요"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="선수를 교체하세요"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isCustomScrollEnabled" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRecordEnabled" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="home" value="NO"/>

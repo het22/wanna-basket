@@ -169,7 +169,6 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
                                                                                 <real key="value" value="0.0"/>
                                                                             </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
                                                                                 <real key="value" value="60"/>
                                                                             </userDefinedRuntimeAttribute>
@@ -203,7 +202,6 @@
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellCount">
                                                                                 <real key="value" value="0.0"/>
                                                                             </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="경기에 출전한 선수가 없어요"/>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSize">
                                                                                 <real key="value" value="60"/>
                                                                             </userDefinedRuntimeAttribute>

@@ -126,8 +126,6 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
                                                                 <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoTeam" value="팀을 선택하세요"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="선수를 추가하세요"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -172,7 +170,6 @@
                                                         <rect key="frame" x="10" y="35" width="348" height="286"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="팀을 추가하세요"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -224,8 +221,6 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
                                                                 <color key="value" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoTeam" value="팀을 선택하세요"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderNoPlayer" value="선수를 추가하세요"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cellSpacing">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
@@ -288,10 +283,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="awayLabel" destination="BSc-p5-QGB" id="yRg-Rv-UQq"/>
                         <outlet property="awayPlayerAddButton" destination="iOs-SS-WRo" id="99l-an-Hge"/>
                         <outlet property="awayPlayerTableView" destination="zeg-aO-gAf" id="onp-zJ-VKh"/>
                         <outlet property="awayTeamNameLabel" destination="YsF-GD-Ayo" id="Jiy-x9-cf2"/>
+                        <outlet property="gameSettingLabel" destination="keb-im-vRk" id="QAE-SK-V3t"/>
                         <outlet property="gameStartButton" destination="QE1-Ko-A2j" id="yih-LO-KHc"/>
+                        <outlet property="homeLabel" destination="y4j-Lh-zpH" id="1CW-Ms-zaB"/>
                         <outlet property="homePlayerAddButton" destination="sna-UG-52x" id="nR7-is-u2b"/>
                         <outlet property="homePlayerTableView" destination="vCl-QC-0X1" id="INh-a9-Ui8"/>
                         <outlet property="homeTeamNameLabel" destination="fMm-jb-J4V" id="jau-jI-2o8"/>
@@ -300,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.467391304347828" y="-136.23188405797103"/>
+            <point key="canvasLocation" x="-104" y="-136"/>
         </scene>
     </scenes>
 </document>
