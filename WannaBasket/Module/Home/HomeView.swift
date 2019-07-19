@@ -12,6 +12,27 @@ class HomeView: UIViewController {
 
 	var presenter: HomePresenterProtocol?
     
+    // up
+    @IBOutlet weak var homeLabel: UILabel! {
+        didSet { homeLabel.text = Constants.Text.HomeTeam }
+    }
+    @IBOutlet weak var awayLabel: UILabel! {
+        didSet { awayLabel.text = Constants.Text.AwayTeam }
+    }
+    @IBOutlet weak var gameSettingLabel: UILabel! {
+        didSet { gameSettingLabel.text = Constants.Text.Game + " " + Constants.Text.Setting }
+    }
+    
+    // middle
+    @IBOutlet weak var gameStartButton: UIButton! {
+        didSet { gameStartButton.setTitle(Constants.Text.Start, for: .normal) }
+    }
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    
+    // down
+    @IBOutlet weak var homePlayerAddButton: UIButton!
+    @IBOutlet weak var awayPlayerAddButton: UIButton!
     @IBOutlet weak var teamTableView: TeamTableView! {
         didSet { teamTableView._delegate = self }
     }
@@ -21,13 +42,6 @@ class HomeView: UIViewController {
     @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
         didSet { awayPlayerTableView._delegate = self }
     }
-    
-    @IBOutlet weak var homeTeamNameLabel: UILabel!
-    @IBOutlet weak var awayTeamNameLabel: UILabel!
-    
-    @IBOutlet weak var gameStartButton: UIButton!
-    @IBOutlet weak var homePlayerAddButton: UIButton!
-    @IBOutlet weak var awayPlayerAddButton: UIButton!
     
     private var backgroundView: UIView?
     private var teamFormView: TeamFormView?
@@ -65,7 +79,7 @@ extension HomeView: HomeViewProtocol {
     
     func updateTeamNameLabel(name: String?, of home: Bool) {
         let teamNameLabel = home ? homeTeamNameLabel : awayTeamNameLabel
-        let defaultName = home ? Constants.Text.HomeDefault : Constants.Text.AwayDefault
+        let defaultName = home ? Constants.Text.Home : Constants.Text.Away
         teamNameLabel?.text = name ?? defaultName
         teamNameLabel?.alpha = (name==nil) ? 0.5 : 1.0
     }
