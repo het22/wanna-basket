@@ -25,6 +25,51 @@ class HomePresenter: HomePresenterProtocol {
     }
     var isEdittingHome: Bool = true
     
+    private var teams: [Team] = [] {
+        didSet {
+            // 1. 새로운 팀 목록을 받으면 기존에 선택되어있던 팀들의 uuid를 임시 저장한다.
+            var uuid = (home: "", away: "")
+            if let homeIndex = currentTeamIndexTuple.home,
+                let homeTeam = oldValue[safe: homeIndex] {
+                uuid.home = homeTeam.uuid
+            }
+            if let awayIndex = currentTeamIndexTuple.away,
+                let awayTeam = oldValue[safe: awayIndex] {
+                uuid.away = awayTeam.uuid
+            }
+            
+            // 2. 선택되어있는 팀 튜플을 초기화한다.
+            currentTeamIndexTuple = (nil, nil)
+            
+            // 3. 새로운 팀 목록에서 임시저장해둔 uuid를 통해 기존에 선택되어있던 팀들을 찾아 복구한다.
+            if let newHomeIndex = teams.firstIndex(where: {$0.uuid==uuid.home}) {
+                currentTeamIndexTuple.home = newHomeIndex
+            }
+            if let newAwayIndex = teams.firstIndex(where: {$0.uuid==uuid.away}) {
+                currentTeamIndexTuple.away = newAwayIndex
+            }
+            
+            // 4. 뷰에 새로운 팀 목록을 보여준다.
+            view?.updateTeamTableView(teams: teams)
+        }
+    }
+    var currentTeamIndex: Int? {
+        didSet {
+            if let index = currentTeamIndex, let team = teams[safe: index] {
+                view?.showTeamFormView(isEditMode: true, name: team.name, index: index, bool: true)
+            } else {
+                view?.showTeamFormView(isEditMode: true, name: nil, index: nil, bool: false)
+            }
+        }
+    }
+    var currentPlayerIndexTuple: (index: Int?, home: Home)?
+    var currentTeamIndexTuple: (home: Int?, away: Int?) = (nil, nil) {
+        didSet(oldVal) {
+            didSetCurrentTeamIndex(oldVal: oldVal, newVal: currentTeamIndexTuple)
+        }
+    }
+    private var isEdittingHome: Bool = true
+    
     // --------------------------------------------------
     // MARK: Home View Events
     // --------------------------------------------------
