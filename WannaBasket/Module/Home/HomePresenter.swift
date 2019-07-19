@@ -63,14 +63,14 @@ class HomePresenter: HomePresenterProtocol {
             // 3. 기존에 선택된 팀이 있다면 비활성화한다.
             if let oldIndex = oldValue.home {
                 view?.highlightTeam(at: oldIndex, onLeft: true, bool: false)
-                view?.updatePlayerTableView(players: nil, of: true)
-                view?.updateTeamNameLabel(name: nil, of: true)
             }
+            view?.updatePlayerTableView(players: nil, of: true)
+            view?.updateTeamNameLabel(name: nil, of: true)
             if let oldIndex = oldValue.away {
                 view?.highlightTeam(at: oldIndex, onLeft: false, bool: false)
-                view?.updatePlayerTableView(players: nil, of: false)
-                view?.updateTeamNameLabel(name: nil, of: false)
             }
+            view?.updatePlayerTableView(players: nil, of: false)
+            view?.updateTeamNameLabel(name: nil, of: false)
             
             // 4. 새로 선택된 팀이 있다면 활성화한다.
             if let newIndex = currentTeamIndexTuple.home {
@@ -123,17 +123,6 @@ class HomePresenter: HomePresenterProtocol {
     // MARK: Home View Events
     // --------------------------------------------------
     func viewDidLoad() {
-        // 1. 뷰를 초기 모습으로 설정
-        view?.updateTeamTableView(teams: [])
-        view?.updatePlayerTableView(players: nil, of: true)
-        view?.updatePlayerTableView(players: nil, of: false)
-        view?.enableGameStartButton(bool: false)
-        view?.enablePlayerAddButton(bool: false, of: true)
-        view?.enablePlayerAddButton(bool: false, of: false)
-        view?.updateTeamNameLabel(name: nil, of: true)
-        view?.updateTeamNameLabel(name: nil, of: false)
-        view?.updateTeamTableView(teams: [])
-        // 2. 로컬 DB에게 모든 팀 정보 요청
         interactor?.requestReadAllTeam()
     }
     
