@@ -16,8 +16,11 @@ class RecordView: UIViewController {
     
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var awayTeamNameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var gameNameTextField: UITextField! {
+        didSet { gameNameTextField.delegate = self }
+    }
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var quarterScoreView: QuarterScoreView!
     
     @IBOutlet weak var homePlayerTableView: PlayerTableView!
@@ -29,6 +32,10 @@ class RecordView: UIViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+        let gesture = UITapGestureRecognizerWithClosure { [weak self] in
+            self?.gameNameTextField.resignFirstResponder()
+        }
+        self.view.addGestureRecognizer(gesture)
         presenter?.viewDidLoad()
     }
 
@@ -52,17 +59,13 @@ extension RecordView: RecordViewProtocol {
         teamNameLabel?.text = name
     }
     
-    func updateScoreLabel(score: (home: Int, away: Int)) {
-        let homeText = scoreFormat.string(from: NSNumber(value: score.home))!
-        let awayText = scoreFormat.string(from: NSNumber(value: score.away))!
-        let mutableString = NSMutableAttributedString(string: "\(homeText) : \(awayText)")
-        mutableString.addAttribute(.foregroundColor,
-                                   value: Constants.Color.HomeDefault,
-                                   range: NSRange(location: 0, length: 3))
-        mutableString.addAttribute(.foregroundColor,
-                                   value: Constants.Color.AwayDefault,
-                                   range: NSRange(location: 6, length: 3))
-//        scoreLabel.attributedText = mutableString
+    func updateDateLabel(date: Date) {
+        let year = Calendar.current.component(.year, from: date)
+        let month = Calendar.current.component(.month, from: date)
+        let day = Calendar.current.component(.day, from: date)
+        let weekday = Calendar.current.component(.weekday, from: date)
+        let dateText = "\(year). \(month). \(day). \(Constants.Format.Weekday.init(rawValue: weekday)!)"
+        dateLabel.text = dateText
     }
     
     func updateQuarterScoreView(name: (home: String, away: String), scores: [(quarter: Quarter, home: Int, away: Int)]) {
@@ -90,9 +93,17 @@ extension RecordView: RecordViewProtocol {
             ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
         } else {
-            let ac = UIAlertController(title: "저장 실패", message: error?.localizedDescription, preferredStyle: .alert)
+            let ac = UIAlertController(title: "저장 실패", message: "사진 추가 권한을 설정해주세요", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
         }
+    }
+}
+
+extension RecordView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

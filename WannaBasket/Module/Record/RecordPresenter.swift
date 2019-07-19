@@ -17,9 +17,9 @@ class RecordPresenter: RecordPresenterProtocol {
     var game: GameModel!
     
     func viewDidLoad() {
+        view?.updateDateLabel(date: game.date)
         view?.updateTeamNameLabel(name: game.team.home.name, of: true)
         view?.updateTeamNameLabel(name: game.team.away.name, of: false)
-        view?.updateScoreLabel(score: game.score)
         
         var scores = [(Quarter, Int, Int)]()
         for i in 1...4 {

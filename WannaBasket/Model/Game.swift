@@ -17,7 +17,7 @@ class Game {
     // MARK: Game Model
     // --------------------------------------------------
     var name: String = ""
-    var data: Date = Date(timeIntervalSinceNow: TimeInterval.init())
+    var date: Date = Date(timeIntervalSinceNow: TimeInterval.init())
     
     var team: (home: Team, away: Team)
     var players: (home: [PlayerOfTeam], away: [PlayerOfTeam]) = ([],[])
@@ -81,7 +81,7 @@ class Game {
 // --------------------------------------------------
 protocol GameModel {
     var name: String { get }
-    var data: Date { get }
+    var date: Date { get }
     
     var team: (home: Team, away: Team) { get }
     var players: (home: [PlayerOfTeam], away: [PlayerOfTeam]) { get }

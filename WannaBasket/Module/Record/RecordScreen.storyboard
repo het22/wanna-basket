@@ -103,12 +103,12 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69h-z0-I9b">
                                                                 <rect key="frame" x="220.66666666666666" y="0.0" width="294.66666666666674" height="95.666666666666671"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친선전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="plc-Td-5HR">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="경기 이름" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KB3-mA-nNK">
                                                                         <rect key="frame" x="0.0" y="0.0" width="294.66666666666669" height="64"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="55"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019. 07. 17. 수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3vt-YO-ikX">
                                                                         <rect key="frame" x="0.0" y="63.999999999999993" width="294.66666666666669" height="31.666666666666664"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,14 +118,14 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="plc-Td-5HR" secondAttribute="trailing" id="59o-9h-PGE"/>
+                                                                    <constraint firstItem="KB3-mA-nNK" firstAttribute="top" secondItem="69h-z0-I9b" secondAttribute="top" id="C5f-LQ-JNs"/>
+                                                                    <constraint firstItem="3vt-YO-ikX" firstAttribute="top" secondItem="KB3-mA-nNK" secondAttribute="bottom" id="Nln-xW-AR5"/>
+                                                                    <constraint firstItem="KB3-mA-nNK" firstAttribute="leading" secondItem="69h-z0-I9b" secondAttribute="leading" id="P3K-g3-r4b"/>
                                                                     <constraint firstAttribute="trailing" secondItem="3vt-YO-ikX" secondAttribute="trailing" id="X5t-Gs-sNj"/>
-                                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="top" secondItem="69h-z0-I9b" secondAttribute="top" id="ie7-Kd-tDl"/>
-                                                                    <constraint firstItem="3vt-YO-ikX" firstAttribute="height" secondItem="plc-Td-5HR" secondAttribute="height" multiplier="0.5" id="n0F-Og-a45"/>
-                                                                    <constraint firstItem="3vt-YO-ikX" firstAttribute="top" secondItem="plc-Td-5HR" secondAttribute="bottom" id="nRN-cj-uiL"/>
+                                                                    <constraint firstItem="KB3-mA-nNK" firstAttribute="height" secondItem="3vt-YO-ikX" secondAttribute="height" multiplier="2" id="cX0-i6-PS1"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="KB3-mA-nNK" secondAttribute="trailing" id="d87-iV-vPL"/>
                                                                     <constraint firstAttribute="bottom" secondItem="3vt-YO-ikX" secondAttribute="bottom" id="olq-3R-fuy"/>
                                                                     <constraint firstItem="3vt-YO-ikX" firstAttribute="leading" secondItem="69h-z0-I9b" secondAttribute="leading" id="pqe-OZ-9hU"/>
-                                                                    <constraint firstItem="plc-Td-5HR" firstAttribute="leading" secondItem="69h-z0-I9b" secondAttribute="leading" id="uyS-Jx-QXg"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-K7-gfS">
@@ -265,6 +265,8 @@
                     <connections>
                         <outlet property="awayPlayerTableView" destination="K8y-GM-eEa" id="ibY-Lz-4Mg"/>
                         <outlet property="awayTeamNameLabel" destination="YM1-K7-gfS" id="biC-CP-Ga0"/>
+                        <outlet property="dateLabel" destination="3vt-YO-ikX" id="I7y-f4-nGi"/>
+                        <outlet property="gameNameTextField" destination="KB3-mA-nNK" id="k92-Vl-lgn"/>
                         <outlet property="heightConstraint" destination="0x1-eN-5tr" id="PlB-ST-hxu"/>
                         <outlet property="homePlayerTableView" destination="VIY-cJ-h4Q" id="bqj-S1-zpW"/>
                         <outlet property="homeTeamNameLabel" destination="qaN-8r-TnX" id="k3F-vC-XRc"/>
