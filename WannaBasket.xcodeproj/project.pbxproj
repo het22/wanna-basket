@@ -37,6 +37,8 @@
 		CB8E36BC22DFF98900735C2D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */; };
 		CB8E36BE22DFFE7100735C2D /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36BD22DFFE7100735C2D /* RealmObject.swift */; };
 		CB8E36C122DFFFD600735C2D /* PlayerDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */; };
+		CB9D4D5222E1B9D800D24BD5 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */; };
+		CB9D4D5422E1B9F500D24BD5 /* WarningView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */; };
 		CBB2637F22E05A9700E664EF /* TeamTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2637E22E05A9700E664EF /* TeamTest.swift */; };
 		CBB2638122E06CC800E664EF /* PlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638022E06CC800E664EF /* PlayerTest.swift */; };
 		CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB2638222E0AB6200E664EF /* Persistable.swift */; };
@@ -152,6 +154,8 @@
 		CB8E36BB22DFF98900735C2D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		CB8E36BD22DFFE7100735C2D /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 		CB8E36C022DFFFD600735C2D /* PlayerDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDBTest.swift; sourceTree = "<group>"; };
+		CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
+		CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WarningView.xib; sourceTree = "<group>"; };
 		CBB2637E22E05A9700E664EF /* TeamTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTest.swift; sourceTree = "<group>"; };
 		CBB2638022E06CC800E664EF /* PlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTest.swift; sourceTree = "<group>"; };
 		CBB2638222E0AB6200E664EF /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -343,6 +347,15 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		CB9D4D5022E1B9C900D24BD5 /* WarningView */ = {
+			isa = PBXGroup;
+			children = (
+				CB9D4D5122E1B9D800D24BD5 /* WarningView.swift */,
+				CB9D4D5322E1B9F500D24BD5 /* WarningView.xib */,
+			);
+			path = WarningView;
+			sourceTree = "<group>";
+		};
 		CBB9B30522C49D62004C50B3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,11 +387,12 @@
 				CBC6F01D22CDEC8A0021A11D /* PlayerFormView */,
 				CBC6F02022CDEC8A0021A11D /* TeamFormView */,
 				CB5C1C4E22D8021600871C2B /* NumberSelectView */,
-				CBC6F05A22CFA0F50021A11D /* StatSelectView */,
 				CBC6F04922CDF96C0021A11D /* QuarterSelectView */,
-				CB8E36A622DDBE8A00735C2D /* QuarterScoreView */,
+				CB9D4D5022E1B9C900D24BD5 /* WarningView */,
 				CBC6F02622CDEC8A0021A11D /* PlayerTableView */,
 				CBC6F02A22CDEC8A0021A11D /* TeamTableView */,
+				CBC6F05A22CFA0F50021A11D /* StatSelectView */,
+				CB8E36A622DDBE8A00735C2D /* QuarterScoreView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -741,6 +755,7 @@
 				CBB9B30C22C49D7A004C50B3 /* GameScreen.storyboard in Resources */,
 				CB5C1C5E22DB0BBC00871C2B /* RecordScreen.storyboard in Resources */,
 				CBFA017122B89D2B00F71C7B /* Assets.xcassets in Resources */,
+				CB9D4D5422E1B9F500D24BD5 /* WarningView.xib in Resources */,
 				CB8E36A322DDB6D800735C2D /* PlayerRecordCell.xib in Resources */,
 				CBC6F03622CDEC8A0021A11D /* PlayerFormView.xib in Resources */,
 			);
@@ -905,6 +920,7 @@
 				CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */,
 				CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */,
 				CBC6F03822CDEC8A0021A11D /* TeamFormView.swift in Sources */,
+				CB9D4D5222E1B9D800D24BD5 /* WarningView.swift in Sources */,
 				CB8E36BA22DFF4B200735C2D /* String+Extension.swift in Sources */,
 				CBC6F03722CDEC8A0021A11D /* PlayerFormView.swift in Sources */,
 			);

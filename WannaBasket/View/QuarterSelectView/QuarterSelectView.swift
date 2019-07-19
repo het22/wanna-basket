@@ -42,11 +42,10 @@ class QuarterSelectView: UIView, NibLoadable {
     }
     
     @IBAction func exitButtonTapped() {
-        delegate?.didSelectExit()
+        isShowingWarningView = true
     }
     
     func setup(maxRegularQuarterNum: Int, overtimeQuarterCount: Int, currentQuarter: Quarter) {
-        
         var firstView: ToggleView?
         for i in 1...maxRegularQuarterNum {
             let quarterType = Quarter.Regular(i)
@@ -65,5 +64,52 @@ class QuarterSelectView: UIView, NibLoadable {
                 firstView = quarterView
             }
         }
+    }
+    
+    private var backgroundView: UIView?
+    private var warningView: WarningView?
+    private var isShowingWarningView: Bool = false {
+        willSet(newVal) {
+            if newVal == isShowingWarningView { return }
+            guard let superview = superview else { return }
+            if newVal {
+                let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
+                    self?.isShowingWarningView = false
+                }
+                
+                backgroundView = UIView(frame: superview.bounds)
+                backgroundView!.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+                backgroundView!.addGestureRecognizer(dismissGesture)
+                superview.addSubview(backgroundView!)
+                
+                warningView = WarningView(frame: CGRect.zero)
+                warningView?.delegate = self
+                warningView?.translatesAutoresizingMaskIntoConstraints = false
+                superview.addSubview(warningView!)
+                
+                NSLayoutConstraint.activate([
+                    warningView!.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+                    warningView!.centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: 0),
+                    warningView!.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 0.6),
+                    warningView!.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 0.5)])
+            } else {
+                backgroundView?.removeFromSuperview()
+                warningView?.removeFromSuperview()
+                backgroundView = nil
+                warningView = nil
+            }
+        }
+    }
+}
+
+extension QuarterSelectView: WarningViewDelegate {
+    
+    func didTapBackButton() {
+        isShowingWarningView = false
+    }
+    
+    func didTapExitButton() {
+        isShowingWarningView = false
+        delegate?.didSelectExit()
     }
 }

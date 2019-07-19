@@ -25,6 +25,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-cj-8fg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="157"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5S9-SC-wnx">
+                            <rect key="frame" x="10" y="10" width="580" height="137"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5S9-SC-wnx" secondAttribute="trailing" constant="10" id="YX5-oW-00i"/>
+                        <constraint firstAttribute="bottom" secondItem="5S9-SC-wnx" secondAttribute="bottom" constant="10" id="b2q-YN-dHs"/>
+                        <constraint firstItem="5S9-SC-wnx" firstAttribute="top" secondItem="nPj-cj-8fg" secondAttribute="top" constant="10" id="gUD-V0-SHJ"/>
+                        <constraint firstItem="5S9-SC-wnx" firstAttribute="leading" secondItem="nPj-cj-8fg" secondAttribute="leading" constant="10" id="pSi-dx-HCQ"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eq-xr-RZv" userLabel="Button View">
                     <rect key="frame" x="0.0" y="158" width="600" height="42"/>
                     <subviews>
@@ -32,7 +47,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="299.66666666666669" height="42"/>
                             <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                            <state key="normal" title="경기 종료">
+                            <state key="normal" title="경기 나가기">
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -61,21 +76,6 @@
                         <constraint firstItem="dEC-18-Exa" firstAttribute="leading" secondItem="3eq-xr-RZv" secondAttribute="leading" id="kmY-lb-a3C"/>
                         <constraint firstItem="Sxo-C7-xag" firstAttribute="leading" secondItem="dEC-18-Exa" secondAttribute="trailing" constant="1" id="wmX-oX-FaQ"/>
                         <constraint firstAttribute="trailing" secondItem="Sxo-C7-xag" secondAttribute="trailing" id="xzL-Fr-PYB"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPj-cj-8fg">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="157"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5S9-SC-wnx">
-                            <rect key="frame" x="10" y="10" width="580" height="137"/>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="5S9-SC-wnx" secondAttribute="trailing" constant="10" id="YX5-oW-00i"/>
-                        <constraint firstAttribute="bottom" secondItem="5S9-SC-wnx" secondAttribute="bottom" constant="10" id="b2q-YN-dHs"/>
-                        <constraint firstItem="5S9-SC-wnx" firstAttribute="top" secondItem="nPj-cj-8fg" secondAttribute="top" constant="10" id="gUD-V0-SHJ"/>
-                        <constraint firstItem="5S9-SC-wnx" firstAttribute="leading" secondItem="nPj-cj-8fg" secondAttribute="leading" constant="10" id="pSi-dx-HCQ"/>
                     </constraints>
                 </view>
             </subviews>
