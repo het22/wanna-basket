@@ -12,6 +12,11 @@
 "SETTING" = "설정";
 "START" = "경기시작";
 
+"Quarter" = "쿼터";
+"Q" = "쿼터";
+"OverTime" = "연장";
+"OT" = "연장";
+
 "HOME" = "홈";
 "AWAY" = "원정";
 "HOME TEAM" = "홈팀";
@@ -24,7 +29,14 @@
 "DELETE" = "삭제";
 "EDIT" = "수정";
 "CANCEL" = "취소";
+"UNDO" = "취소";
+"BACK" = "돌아가기";
 "EXIT" = "나가기";
+"RECORD" = "기록";
+
+"14S" = "14초";
+"24S" = "24초";
+"PT" = "점";
 
 "SUN" = "일";
 "MON" = "월";
@@ -40,3 +52,5 @@
 "Substitute Players" = "선수를 교체하세요";
 "Enter Team Name" = "팀 이름 입력";
 "Enter Player Name" = "선수 이름 입력";
+"ExitWarning" = "정말 나가시겠어요?";
+"RecordWarning" = "지금까지 작성한 기록이 모두 사라져요.";

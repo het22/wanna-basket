@@ -38,7 +38,10 @@ enum Constants {
         static let Delete = "DELETE".localized
         static let Edit = "EDIT".localized
         static let Cancel = "CANCEL".localized
+        static let Undo = "UNDO".localized
+        static let Back = "BACK".localized
         static let Exit = "EXIT".localized
+        static let Record = "RECORD".localized
         
         enum Placeholder {
             static let AddTeam = "Add New Team".localized
@@ -47,6 +50,8 @@ enum Constants {
             static let SubPlayer = "Substitute Players".localized
             static let EnterTeamName = "Enter Team Name".localized
             static let EnterPlayerName = "Enter Player Name".localized
+            static let ExitWarning = "ExitWarning".localized
+            static let RecordWarning = "RecordWarning".localized
         }
     }
     

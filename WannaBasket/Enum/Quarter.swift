@@ -25,9 +25,9 @@ enum Quarter: CustomStringConvertible, Equatable {
     var description: String {
         switch self {
         case .Regular:
-            return "\(num)쿼터"
+            return "\(num)"+"Q".localized
         case .Overtime:
-            return "연장\(num)쿼터"
+            return "OT".localized + "\(num)" + "Q".localized
         }
     }
 }

@@ -520,11 +520,14 @@
                         <outlet property="awayTeamNameLabel" destination="Iqp-gM-jYK" id="2Sx-NA-0iR"/>
                         <outlet property="awayTeamScoreLabel" destination="L0I-Kd-rAa" id="qej-z4-jXz"/>
                         <outlet property="gameClockLabel" destination="9RH-yp-Zo6" id="OEV-9D-3IM"/>
+                        <outlet property="gameNameLabel" destination="3e5-JK-aZo" id="zpb-LX-hAF"/>
                         <outlet property="homePlayerTableView" destination="S0k-fK-wdD" id="EAd-Y2-cmD"/>
                         <outlet property="homeSubstituteButton" destination="wm3-cW-Aw7" id="zMC-XA-sfL"/>
                         <outlet property="homeTeamNameLabel" destination="UgP-B2-035" id="ZN6-wF-xUS"/>
                         <outlet property="homeTeamScoreLabel" destination="Snx-rD-dpQ" id="FrR-Hm-NKO"/>
                         <outlet property="quarterLabel" destination="ooT-Wl-SSq" id="NJy-Bv-deQ"/>
+                        <outlet property="reset14Button" destination="Y8p-u8-SYU" id="AgN-Y1-vTU"/>
+                        <outlet property="reset24Button" destination="417-Pg-fCx" id="gU3-ui-pD2"/>
                         <outlet property="shotClockLabel" destination="G1P-aU-1s1" id="4rp-gg-XNY"/>
                         <outlet property="statSelectView" destination="h9f-qz-HO8" id="yqi-9X-eVP"/>
                     </connections>

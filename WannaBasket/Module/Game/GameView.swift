@@ -12,23 +12,37 @@ class GameView: UIViewController {
 
 	var presenter: GamePresenterProtocol?
     
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var gameNameLabel: UILabel! {
+        didSet { gameNameLabel.text = Constants.Text.Game }
+    }
+    
+    @IBOutlet weak var homeTeamScoreLabel: UILabel!
+    @IBOutlet weak var awayTeamScoreLabel: UILabel!
+    @IBOutlet weak var quarterLabel: UILabel!
+    
+    @IBOutlet weak var homeSubstituteButton: UIButton! {
+        didSet { homeSubstituteButton.setTitle(Constants.Text.Substitute, for: .normal) }
+    }
+    @IBOutlet weak var awaySubstituteButton: UIButton! {
+        didSet { awaySubstituteButton.setTitle(Constants.Text.Substitute, for: .normal) }
+    }
     @IBOutlet weak var homePlayerTableView: PlayerTableView! {
         didSet { homePlayerTableView._delegate = self }
     }
     @IBOutlet weak var awayPlayerTableView: PlayerTableView! {
         didSet { awayPlayerTableView._delegate = self }
     }
-    @IBOutlet weak var homeTeamNameLabel: UILabel!
-    @IBOutlet weak var awayTeamNameLabel: UILabel!
-    @IBOutlet weak var homeTeamScoreLabel: UILabel!
-    @IBOutlet weak var awayTeamScoreLabel: UILabel!
-    @IBOutlet weak var homeSubstituteButton: UIButton!
-    @IBOutlet weak var awaySubstituteButton: UIButton!
     
-    @IBOutlet weak var quarterLabel: UILabel!
     @IBOutlet weak var gameClockLabel: UILabel!
     @IBOutlet weak var shotClockLabel: UILabel!
-    
+    @IBOutlet weak var reset14Button: UIButton! {
+        didSet { reset14Button.setTitle("14S".localized, for: .normal) }
+    }
+    @IBOutlet weak var reset24Button: UIButton! {
+        didSet { reset24Button.setTitle("24S".localized, for: .normal) }
+    }
     @IBOutlet weak var statSelectView: StatSelectView! {
         didSet { statSelectView.delegate = self }
     }

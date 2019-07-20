@@ -17,7 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuarterSelectView" customModule="WannaBasket" customModuleProvider="target">
             <connections>
+                <outlet property="exitButton" destination="dEC-18-Exa" id="V7v-jv-cCk"/>
                 <outlet property="hStack" destination="5S9-SC-wnx" id="Lr6-9K-iPw"/>
+                <outlet property="recordButton" destination="Sxo-C7-xag" id="sdT-D3-QEZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

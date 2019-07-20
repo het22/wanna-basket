@@ -12,6 +12,11 @@
 "SETTING" = "SETTING";
 "START" = "START";
 
+"Quarter" = "Quarter";
+"Q" = "Q";
+"OverTime" = "OverTime";
+"OT" = "OT";
+
 "HOME" = "HOME";
 "AWAY" = "AWAY";
 "HOME TEAM" = "HOME TEAM";
@@ -24,7 +29,14 @@
 "DELETE" = "DELETE";
 "EDIT" = "EDIT";
 "CANCEL" = "CANCEL";
+"UNDO" = "UNDO";
+"BACK" = "BACK";
 "EXIT" = "EXIT";
+"RECORD" = "RECORD";
+
+"14S" = "14";
+"24S" = "24";
+"PT" = "PT";
 
 "SUN" = "SUN";
 "MON" = "MON";
@@ -40,4 +52,6 @@
 "Substitute Players" = "Substitute Players";
 "Enter Team Name" = "Enter Team Name";
 "Enter Player Name" = "Enter Player Name";
+"ExitWarning" = "Really Wanna Exit Game?";
+"RecordWarning" = "All record will be gone.";
 

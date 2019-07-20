@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_iOS" translatesAutoresizingMaskIntoConstraints="NO" id="M4f-An-gjp">
-                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
+                                <rect key="frame" x="57" y="218" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="M4f-An-gjp" secondAttribute="height" id="4CT-zO-9H1"/>
+                                    <constraint firstAttribute="width" constant="300" id="iqb-oa-ELO"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M4f-An-gjp" firstAttribute="centerX" secondItem="EGK-In-Bk4" secondAttribute="centerX" id="E9C-Wa-8xe"/>
-                            <constraint firstItem="M4f-An-gjp" firstAttribute="width" secondItem="UtC-Cc-j14" secondAttribute="width" id="KS9-2W-szY"/>
                             <constraint firstItem="M4f-An-gjp" firstAttribute="centerY" secondItem="EGK-In-Bk4" secondAttribute="centerY" id="Mhv-B2-EoO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UtC-Cc-j14"/>

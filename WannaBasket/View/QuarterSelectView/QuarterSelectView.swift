@@ -19,6 +19,12 @@ class QuarterSelectView: UIView, NibLoadable {
     weak var delegate: QuarterSelectViewDelegate?
     
     @IBOutlet weak var hStack: UIStackView!
+    @IBOutlet weak var exitButton: UIButton! {
+        didSet { exitButton.setTitle(Constants.Text.Exit, for: .normal) }
+    }
+    @IBOutlet weak var recordButton: UIButton! {
+        didSet { recordButton.setTitle(Constants.Text.Record, for: .normal) }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

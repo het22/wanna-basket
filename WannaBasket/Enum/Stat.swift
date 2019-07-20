@@ -27,7 +27,7 @@ enum Stat: Equatable, CustomStringConvertible {
         case Three = 3
         
         var description: String {
-            return "\(self.rawValue)점"
+            return "\(self.rawValue)"+"PT".localized
         }
     }
     

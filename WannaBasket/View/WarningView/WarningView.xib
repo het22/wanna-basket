@@ -15,7 +15,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WarningView" customModule="WannaBasket" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WarningView" customModule="WannaBasket" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="101-nL-8qa" id="gsg-9B-bsp"/>
+                <outlet property="exitButton" destination="oy1-hv-j8z" id="93b-K2-SHl"/>
+                <outlet property="mainLabel" destination="cvw-sb-dKi" id="5wK-qT-r8U"/>
+                <outlet property="subLabel" destination="kc5-Eb-53r" id="LhN-LG-Wxq"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="444" height="234"/>

@@ -39,7 +39,7 @@ class StatSelectView: UIView, NibLoadable {
     
     func commonInit() {
         for i in 0...views.count-1 {
-            views[i]?.setup(name: i==0 ? "취소" : (stats[i]?.description ?? ""),
+            views[i]?.setup(name: i==0 ? Constants.Text.Undo : (stats[i]?.description ?? ""),
                             highlightColor: i==0 ? Constants.Color.Steel : Constants.Color.Black)
             let gesture = UITapGestureRecognizerWithClosure { [weak self] in
                 if let stat = self?.stats[i] {
