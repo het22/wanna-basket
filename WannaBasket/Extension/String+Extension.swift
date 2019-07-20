@@ -28,4 +28,8 @@ extension String {
             return [:]
         }
     }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

@@ -22,30 +22,31 @@ enum Constants {
     }
     
     enum Text {
-        static let Game = NSLocalizedString("GAME", comment: "")
-        static let Setting = NSLocalizedString("SETTING", comment: "")
-        static let Start = NSLocalizedString("START", comment: "")
+        static let Game = "Game".localized
+        static let Setting = "SETTING".localized
+        static let Start = "START".localized
 
-        static let Home = NSLocalizedString("HOME", comment: "")
-        static let Away = NSLocalizedString("AWAY", comment: "")
-        static let HomeTeam = NSLocalizedString("HOME TEAM", comment: "")
-        static let AwayTeam = NSLocalizedString("AWAY TEAM", comment: "")
+        static let Home = "HOME".localized
+        static let Away = "AWAY".localized
+        static let HomeTeam = "HOME TEAM".localized
+        static let AwayTeam = "AWAY TEAM".localized
         
-        static let Substitute = NSLocalizedString("SUB", comment: "")
-        static let SubstituteComplete = NSLocalizedString("SUB COMPLETE", comment: "")
+        static let Substitute = "SUB".localized
+        static let SubstituteComplete = "SUB COMPLETE".localized
         
-        static let Complete = NSLocalizedString("COMPLETE", comment: "")
-        static let Delete = NSLocalizedString("DELETE", comment: "")
-        static let Edit = NSLocalizedString("EDIT", comment: "")
-        static let Cancel = NSLocalizedString("CANCEL", comment: "")
-        static let Exit = NSLocalizedString("EXIT", comment: "")
+        static let Complete = "COMPLETE".localized
+        static let Delete = "DELETE".localized
+        static let Edit = "EDIT".localized
+        static let Cancel = "CANCEL".localized
+        static let Exit = "EXIT".localized
         
         enum Placeholder {
-            
-            static let AddTeam = NSLocalizedString("Add New Team", comment: "")
-            static let SelectTeam = NSLocalizedString("Select Team", comment: "")
-            static let AddPlayer = NSLocalizedString("Add New Player", comment: "")
-            static let SubPlayer = NSLocalizedString("Substitute Players", comment: "")
+            static let AddTeam = "Add New Team".localized
+            static let SelectTeam = "Select Team".localized
+            static let AddPlayer = "Add New Player".localized
+            static let SubPlayer = "Substitute Players".localized
+            static let EnterTeamName = "Enter Team Name".localized
+            static let EnterPlayerName = "Enter Player Name".localized
         }
     }
     
@@ -87,13 +88,13 @@ enum Constants {
             
             var description: String {
                 switch self {
-                case .Sun: return NSLocalizedString("SUN", comment: "")
-                case .Mon: return NSLocalizedString("MON", comment: "")
-                case .Tue: return NSLocalizedString("TUE", comment: "")
-                case .Wed: return NSLocalizedString("WED", comment: "")
-                case .Thu: return NSLocalizedString("THU", comment: "")
-                case .Fri: return NSLocalizedString("FRI", comment: "")
-                case .Sat: return NSLocalizedString("SAT", comment: "")
+                case .Sun: return "SUN".localized
+                case .Mon: return "MON".localized
+                case .Tue: return "TUE".localized
+                case .Wed: return "WED".localized
+                case .Thu: return "THU".localized
+                case .Fri: return "FRI".localized
+                case .Sat: return "SAT".localized
                 }
             }
         }
