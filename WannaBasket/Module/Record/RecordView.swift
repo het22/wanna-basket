@@ -135,13 +135,21 @@ extension RecordView: RecordViewProtocol {
         }
     }
     @objc func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if error == nil {
-            let ac = UIAlertController(title: "저장 완료", message: "기록을 앨범에서 확인하세요", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        if let error = error {
+            let ac = UIAlertController(title: Constants.Text.Fail,
+                                       message: error.localizedDescription,
+                                       preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: Constants.Text.Confirm,
+                                       style: .default,
+                                       handler: nil))
             present(ac, animated: true, completion: nil)
         } else {
-            let ac = UIAlertController(title: "저장 실패", message: "사진 추가 권한을 설정해주세요", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            let ac = UIAlertController(title: Constants.Text.Complete,
+                                       message: Constants.Text.Placeholder.CheckRecord,
+                                       preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: Constants.Text.Confirm,
+                                       style: .default,
+                                       handler: nil))
             present(ac, animated: true, completion: nil)
         }
     }

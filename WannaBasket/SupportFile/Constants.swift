@@ -35,11 +35,13 @@ enum Constants {
         static let SubstituteComplete = "SUB COMPLETE".localized
         
         static let Complete = "COMPLETE".localized
+        static let Confirm = "CONFIRM".localized
         static let Delete = "DELETE".localized
         static let Edit = "EDIT".localized
         static let Cancel = "CANCEL".localized
         static let Undo = "UNDO".localized
         static let Back = "BACK".localized
+        static let Fail = "FAIL".localized
         static let Exit = "EXIT".localized
         static let Record = "RECORD".localized
         
@@ -55,6 +57,7 @@ enum Constants {
             static let EnterGameName = "EnterGameName".localized
             static let ExitWarning = "ExitWarning".localized
             static let RecordWarning = "RecordWarning".localized
+            static let CheckRecord = "CheckRecord".localized
         }
     }
     

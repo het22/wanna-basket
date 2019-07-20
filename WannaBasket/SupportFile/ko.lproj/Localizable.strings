@@ -26,11 +26,13 @@
 "SUB COMPLETE" = "교체 완료";
 
 "COMPLETE" = "완료";
+"CONFIRM" = "확인";
 "DELETE" = "삭제";
 "EDIT" = "수정";
 "CANCEL" = "취소";
 "UNDO" = "취소";
 "BACK" = "돌아가기";
+"FAIL" = "실패";
 "EXIT" = "나가기";
 "RECORD" = "기록";
 
@@ -60,3 +62,4 @@
 "EnterGameName" = "경기이름";
 "ExitWarning" = "정말 나가시겠어요?";
 "RecordWarning" = "지금까지 작성한 기록이 모두 사라져요.";
+"CheckRecord" = "앨범에서 기록을 확인하세요!";

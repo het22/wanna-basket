@@ -26,11 +26,13 @@
 "SUB COMPLETE" = "SUB COMPLETE";
 
 "COMPLETE" = "COMPLETE";
+"CONFIRM" = "CONFIRM";
 "DELETE" = "DELETE";
 "EDIT" = "EDIT";
 "CANCEL" = "CANCEL";
 "UNDO" = "UNDO";
 "BACK" = "BACK";
+"FAIL" = "FAIL";
 "EXIT" = "EXIT";
 "RECORD" = "RECORD";
 
@@ -60,4 +62,5 @@
 "EnterGameName" = "GAME NAME";
 "ExitWarning" = "Really Wanna Exit Game?";
 "RecordWarning" = "All record will be gone.";
+"CheckRecord" = "Check the record in your album!";
 
