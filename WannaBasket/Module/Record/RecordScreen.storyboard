@@ -263,12 +263,15 @@
                     <connections>
                         <outlet property="awayPlayerTableView" destination="K8y-GM-eEa" id="ibY-Lz-4Mg"/>
                         <outlet property="awayTeamNameLabel" destination="YM1-K7-gfS" id="biC-CP-Ga0"/>
+                        <outlet property="backButton" destination="yfF-c8-TdM" id="WFI-zT-ZPU"/>
                         <outlet property="dateLabel" destination="3vt-YO-ikX" id="I7y-f4-nGi"/>
+                        <outlet property="exitButton" destination="spQ-s0-Ono" id="sGL-tl-la2"/>
                         <outlet property="gameNameTextField" destination="KB3-mA-nNK" id="k92-Vl-lgn"/>
                         <outlet property="heightConstraint" destination="0x1-eN-5tr" id="PlB-ST-hxu"/>
                         <outlet property="homePlayerTableView" destination="VIY-cJ-h4Q" id="bqj-S1-zpW"/>
                         <outlet property="homeTeamNameLabel" destination="qaN-8r-TnX" id="k3F-vC-XRc"/>
                         <outlet property="quarterScoreView" destination="WXQ-Sh-6Re" id="S37-Oq-HEr"/>
+                        <outlet property="saveButton" destination="WqH-np-8UX" id="5zz-wE-fdi"/>
                         <outlet property="scrollView" destination="S5U-aE-5tg" id="aP6-ai-838"/>
                     </connections>
                 </viewController>

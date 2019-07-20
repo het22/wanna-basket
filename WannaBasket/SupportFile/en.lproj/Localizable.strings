@@ -34,9 +34,14 @@
 "EXIT" = "EXIT";
 "RECORD" = "RECORD";
 
+"SaveToAlbum" = "Save as Image";
+
 "14S" = "14";
 "24S" = "24";
+"TOTAL" = "TOTAL";
+"TEAM" = "TEAM";
 "PT" = "PT";
+"FT" = "FT";
 
 "SUN" = "SUN";
 "MON" = "MON";
@@ -52,6 +57,7 @@
 "Substitute Players" = "Substitute Players";
 "Enter Team Name" = "Enter Team Name";
 "Enter Player Name" = "Enter Player Name";
+"EnterGameName" = "GAME NAME";
 "ExitWarning" = "Really Wanna Exit Game?";
 "RecordWarning" = "All record will be gone.";
 

@@ -14,8 +14,14 @@ class QuarterScoreView: UIView, NibLoadable {
     @IBOutlet weak var homeStackView: UIStackView!
     @IBOutlet weak var awayStackView: UIStackView!
     
+    @IBOutlet weak var teamLabel: UILabel! {
+        didSet { teamLabel.text = "TEAM".localized }
+    }
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel! {
+        didSet { totalLabel.text = "TOTAL".localized }
+    }
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
     

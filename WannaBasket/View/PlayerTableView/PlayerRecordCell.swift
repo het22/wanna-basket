@@ -52,7 +52,7 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
             }
             return $0 + point
         }
-        scoreLabel.text = (score==0) ? "-" : "\(score)점"
+        scoreLabel.text = (score==0) ? "-" : "\(score)"+"PT".localized
         
         var pt1 = 0, pt2 = 0, pt3 = 0
         model.records.forEach {
@@ -64,9 +64,9 @@ class PlayerRecordCell: UITableViewCell, NibLoadable, Reusable {
                 }
             }
         }
-        let pt1Text = (pt1==0) ? "" : " 자유투(\(pt1)) "
-        let pt2Text = (pt2==0) ? "" : " 2점(\(pt2)) "
-        let pt3Text = (pt3==0) ? "" : " 3점(\(pt3)) "
+        let pt1Text = (pt1==0) ? "" : " "+"FT".localized+"(\(pt1)) "
+        let pt2Text = (pt2==0) ? "" : " 2" + "PT".localized + "(\(pt2)) "
+        let pt3Text = (pt3==0) ? "" : " 3" + "PT".localized + "(\(pt3)) "
         scoreDetailLabel.text = (pt1==0 && pt2==0 && pt3==0) ? "-" : pt1Text + pt2Text + pt3Text
     }
     

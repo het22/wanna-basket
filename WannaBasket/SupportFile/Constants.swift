@@ -22,7 +22,7 @@ enum Constants {
     }
     
     enum Text {
-        static let Game = "Game".localized
+        static let Game = "GAME".localized
         static let Setting = "SETTING".localized
         static let Start = "START".localized
 
@@ -43,6 +43,8 @@ enum Constants {
         static let Exit = "EXIT".localized
         static let Record = "RECORD".localized
         
+        static let SaveToAlbum = "SaveToAlbum".localized
+        
         enum Placeholder {
             static let AddTeam = "Add New Team".localized
             static let SelectTeam = "Select Team".localized
@@ -50,6 +52,7 @@ enum Constants {
             static let SubPlayer = "Substitute Players".localized
             static let EnterTeamName = "Enter Team Name".localized
             static let EnterPlayerName = "Enter Player Name".localized
+            static let EnterGameName = "EnterGameName".localized
             static let ExitWarning = "ExitWarning".localized
             static let RecordWarning = "RecordWarning".localized
         }

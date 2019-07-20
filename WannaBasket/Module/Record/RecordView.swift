@@ -14,13 +14,26 @@ class RecordView: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var homeTeamNameLabel: UILabel!
-    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton! {
+        didSet { backButton.setTitle("< "+Constants.Text.Back, for: .normal) }
+    }
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet { saveButton.setTitle(Constants.Text.SaveToAlbum, for: .normal) }
+    }
+    @IBOutlet weak var exitButton: UIButton! {
+        didSet { exitButton.setTitle(Constants.Text.Exit+" >", for: .normal) }
+    }
     
     @IBOutlet weak var gameNameTextField: UITextField! {
-        didSet { gameNameTextField.delegate = self }
+        didSet {
+            gameNameTextField.delegate = self
+            gameNameTextField.placeholder = Constants.Text.Placeholder.EnterGameName
+        }
     }
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
     @IBOutlet weak var quarterScoreView: QuarterScoreView!
     
     @IBOutlet weak var homePlayerTableView: PlayerTableView!

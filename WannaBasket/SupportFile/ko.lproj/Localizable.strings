@@ -34,9 +34,14 @@
 "EXIT" = "나가기";
 "RECORD" = "기록";
 
+"SaveToAlbum" = "사진첩에 저장";
+
 "14S" = "14초";
 "24S" = "24초";
+"TOTAL" = "합계";
+"TEAM" = "팀";
 "PT" = "점";
+"FT" = "자유투";
 
 "SUN" = "일";
 "MON" = "월";
@@ -52,5 +57,6 @@
 "Substitute Players" = "선수를 교체하세요";
 "Enter Team Name" = "팀 이름 입력";
 "Enter Player Name" = "선수 이름 입력";
+"EnterGameName" = "경기이름";
 "ExitWarning" = "정말 나가시겠어요?";
 "RecordWarning" = "지금까지 작성한 기록이 모두 사라져요.";

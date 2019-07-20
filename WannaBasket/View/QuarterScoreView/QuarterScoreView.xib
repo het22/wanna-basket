@@ -24,6 +24,8 @@
                 <outlet property="homeScoreLabel" destination="bjc-sz-fqw" id="ide-mo-bWY"/>
                 <outlet property="homeStackView" destination="9XH-bY-XjF" id="7X9-hY-vGf"/>
                 <outlet property="homeTeamNameLabel" destination="yFY-xC-VIf" id="ILF-pE-d6N"/>
+                <outlet property="teamLabel" destination="P8P-iI-qbD" id="ySz-Sg-ndw"/>
+                <outlet property="totalLabel" destination="R6E-cP-bNC" id="Rdn-kL-XBs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -37,8 +39,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-yo-3iV">
                             <rect key="frame" x="0.0" y="0.0" width="349.66666666666669" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀/쿼터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8P-iI-qbD">
-                                    <rect key="frame" x="134.33333333333334" y="10" width="81" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8P-iI-qbD">
+                                    <rect key="frame" x="163" y="10" width="23.333333333333343" height="30"/>
                                     <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
