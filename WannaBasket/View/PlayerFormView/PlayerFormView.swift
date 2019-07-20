@@ -23,7 +23,9 @@ class PlayerFormView: UIView, NibLoadable {
     // --------------------------------------------------
     // MARK: IBOutlet Variables
     // --------------------------------------------------
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet { nameTextField.placeholder = Constants.Text.Placeholder.EnterPlayerName }
+    }
     @IBOutlet weak var numberButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -96,7 +98,6 @@ class PlayerFormView: UIView, NibLoadable {
     // --------------------------------------------------
     private var isEditMode = false {
         didSet(oldVal) {
-            if oldVal == isEditMode { return }
             leftButton.setTitle(isEditMode ? Constants.Text.Delete : Constants.Text.Cancel,
                                 for: .normal)
             rightButton.setTitle(isEditMode ? Constants.Text.Edit : Constants.Text.Complete,
