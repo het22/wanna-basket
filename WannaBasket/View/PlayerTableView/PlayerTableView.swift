@@ -62,8 +62,8 @@ class PlayerTableView: UITableView {
         delegate = self
     }
     
-    var placeholderSelectTeam: String = Constants.Text.Placeholder.SelectTeam
-    var placeholderAddPlayer: String = Constants.Text.Placeholder.AddPlayer
+    var placeholderSelectTeam: String = Constants.Text.Message.SelectTeam
+    var placeholderAddPlayer: String = Constants.Text.Message.AddPlayer
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.textColor = Constants.Color.Silver

@@ -47,7 +47,7 @@ enum Constants {
         
         static let SaveToAlbum = "SaveToAlbum".localized
         
-        enum Placeholder {
+        enum Message {
             static let AddTeam = "Add New Team".localized
             static let SelectTeam = "Select Team".localized
             static let AddPlayer = "Add New Player".localized
@@ -59,11 +59,6 @@ enum Constants {
             static let RecordWarning = "RecordWarning".localized
             static let CheckRecord = "CheckRecord".localized
         }
-    }
-    
-    enum Regex {
-        static let TeamName = "[가-힣A-Za-z0-9\\s]{2,6}"
-        static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,6}"
     }
     
     enum Format: CustomStringConvertible {
@@ -89,6 +84,7 @@ enum Constants {
         }
             
         enum Weekday: Int, CustomStringConvertible {
+            
             case Sun = 1
             case Mon = 2
             case Tue = 3
@@ -109,5 +105,10 @@ enum Constants {
                 }
             }
         }
+    }
+    
+    enum Regex {
+        static let TeamName = "[가-힣A-Za-z0-9\\s]{2,6}"
+        static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,6}"
     }
 }

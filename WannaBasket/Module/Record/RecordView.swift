@@ -27,7 +27,7 @@ class RecordView: UIViewController {
     @IBOutlet weak var gameNameTextField: UITextField! {
         didSet {
             gameNameTextField.delegate = self
-            gameNameTextField.placeholder = Constants.Text.Placeholder.EnterGameName
+            gameNameTextField.placeholder = Constants.Text.Message.EnterGameName
         }
     }
     @IBOutlet weak var dateLabel: UILabel!
@@ -145,7 +145,7 @@ extension RecordView: RecordViewProtocol {
             present(ac, animated: true, completion: nil)
         } else {
             let ac = UIAlertController(title: Constants.Text.Complete,
-                                       message: Constants.Text.Placeholder.CheckRecord,
+                                       message: Constants.Text.Message.CheckRecord,
                                        preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: Constants.Text.Confirm,
                                        style: .default,

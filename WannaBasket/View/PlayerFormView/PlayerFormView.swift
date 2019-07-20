@@ -24,7 +24,7 @@ class PlayerFormView: UIView, NibLoadable {
     // MARK: IBOutlet Variables
     // --------------------------------------------------
     @IBOutlet weak var nameTextField: UITextField! {
-        didSet { nameTextField.placeholder = Constants.Text.Placeholder.EnterPlayerName }
+        didSet { nameTextField.placeholder = Constants.Text.Message.EnterPlayerName }
     }
     @IBOutlet weak var numberButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!

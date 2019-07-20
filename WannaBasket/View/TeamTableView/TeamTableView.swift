@@ -40,7 +40,7 @@ class TeamTableView: UITableView {
         delegate = self
     }
     
-    var placeholderAddTeam: String = Constants.Text.Placeholder.AddTeam
+    var placeholderAddTeam: String = Constants.Text.Message.AddTeam
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.text = placeholderAddTeam

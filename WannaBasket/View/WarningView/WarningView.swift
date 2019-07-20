@@ -18,10 +18,10 @@ class WarningView: UIView, NibLoadable {
     weak var delegate: WarningViewDelegate?
     
     @IBOutlet weak var mainLabel: UILabel! {
-        didSet { mainLabel.text = Constants.Text.Placeholder.ExitWarning }
+        didSet { mainLabel.text = Constants.Text.Message.ExitWarning }
     }
     @IBOutlet weak var subLabel: UILabel! {
-        didSet { subLabel.text = Constants.Text.Placeholder.RecordWarning }
+        didSet { subLabel.text = Constants.Text.Message.RecordWarning }
     }
     
     @IBOutlet weak var exitButton: UIButton! {

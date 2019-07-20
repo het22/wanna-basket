@@ -29,7 +29,7 @@ class TeamFormView: UIView, NibLoadable {
     // MARK: IBOutlet Variables
     // --------------------------------------------------
     @IBOutlet weak var nameTextField: UITextField! {
-        didSet { nameTextField.placeholder = Constants.Text.Placeholder.EnterTeamName }
+        didSet { nameTextField.placeholder = Constants.Text.Message.EnterTeamName }
     }
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
