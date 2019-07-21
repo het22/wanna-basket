@@ -60,7 +60,7 @@
 "Enter Team Name" = "Enter Team Name";
 "Enter Player Name" = "Enter Player Name";
 "EnterGameName" = "GAME NAME";
-"ExitWarning" = "Really Wanna Exit Game?";
-"RecordWarning" = "All record will be gone.";
+"ExitWarning" = "Are you sure to leave?";
+"RecordWarning" = "The records won't be saved.";
 "CheckRecord" = "Check the record in your album!";
 
