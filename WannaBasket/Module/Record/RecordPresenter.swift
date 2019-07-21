@@ -98,7 +98,7 @@ class RecordPresenter: RecordPresenterProtocol {
     
     func didTapExitButton() {
         let gameView = (self.view as? UIViewController)?.presentingViewController
-        view?.dismiss(animated: true) {
+        view?.dismiss(animated: false) {
             gameView?.dismiss(animated: true, completion: nil)
         }
     }
