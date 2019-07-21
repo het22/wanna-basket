@@ -48,12 +48,12 @@ enum Constants {
         static let SaveToAlbum = "SaveToAlbum".localized
         
         enum Message {
-            static let AddTeam = "Add New Team".localized
-            static let SelectTeam = "Select Team".localized
-            static let AddPlayer = "Add New Player".localized
-            static let SubPlayer = "Substitute Players".localized
-            static let EnterTeamName = "Enter Team Name".localized
-            static let EnterPlayerName = "Enter Player Name".localized
+            static let AddTeam = "AddNewTeam".localized
+            static let SelectTeam = "SelectTeam".localized
+            static let AddPlayer = "AddNewPlayer".localized
+            static let SubPlayer = "SubstitutePlayers".localized
+            static let EnterTeamName = "EnterTeamName".localized
+            static let EnterPlayerName = "EnterPlayerName".localized
             static let EnterGameName = "EnterGameName".localized
             static let ExitWarning = "ExitWarning".localized
             static let RecordWarning = "RecordWarning".localized

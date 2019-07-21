@@ -53,12 +53,12 @@
 "FRI" = "FRI";
 "SAT" = "SAT";
 
-"Add New Team" = "Add New Team";
-"Select Team" = "Select Team";
-"Add New Player" = "Add New Player";
-"Substitute Players" = "Substitute Players";
-"Enter Team Name" = "Enter Team Name";
-"Enter Player Name" = "Enter Player Name";
+"AddNewTeam" = "Add New Team";
+"SelectTeam" = "Select Team";
+"AddNewPlayer" = "Add New Player";
+"SubstitutePlayers" = "Substitute Players";
+"EnterTeamName" = "Enter Team Name";
+"EnterPlayerName" = "Enter Player Name";
 "EnterGameName" = "GAME NAME";
 "ExitWarning" = "Are you sure to leave?";
 "RecordWarning" = "The records won't be saved.";
