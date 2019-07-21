@@ -296,6 +296,16 @@
 			path = Record;
 			sourceTree = "<group>";
 		};
+		CB655C5722E4AA2100530E23 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CBB2638222E0AB6200E664EF /* Persistable.swift */,
+				CBC6F03122CDEC8A0021A11D /* Reusable.swift */,
+				CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		CB8E36A622DDBE8A00735C2D /* QuarterScoreView */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,9 +458,6 @@
 		CBC6F02E22CDEC8A0021A11D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CBB2638222E0AB6200E664EF /* Persistable.swift */,
-				CBC6F03122CDEC8A0021A11D /* Reusable.swift */,
-				CBC6F03422CDEC8A0021A11D /* NibLoadable.swift */,
 				CBC6F03222CDEC8A0021A11D /* UITapGestureRecognizerWithClosure.swift */,
 				CBC6F03322CDEC8A0021A11D /* UICollectionView+Extension.swift */,
 				CBC6F03522CDEC8A0021A11D /* UITableView+Extension.swift */,
@@ -528,11 +535,12 @@
 				CBFA01AB22B8B8EC00F71C7B /* SupportFile */,
 				CBFA01A722B8A6C700F71C7B /* Font */,
 				CBC6F02E22CDEC8A0021A11D /* Extension */,
-				CBC6F01C22CDEC8A0021A11D /* View */,
+				CB655C5722E4AA2100530E23 /* Protocol */,
 				CB8E36AF22DF0D7600735C2D /* Database */,
 				CBFA01A922B8B89400F71C7B /* Model */,
 				CBB9B32D22C5F66A004C50B3 /* Enum */,
 				CB8E36C222E0034800735C2D /* Class */,
+				CBC6F01C22CDEC8A0021A11D /* View */,
 				CBFA01A422B89E2B00F71C7B /* Module */,
 			);
 			path = WannaBasket;
