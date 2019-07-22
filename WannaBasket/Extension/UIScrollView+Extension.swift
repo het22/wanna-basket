@@ -25,9 +25,10 @@ extension UIScrollView {
         frame = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height)
         
         let watermarkImageView = UIImageView(image: #imageLiteral(resourceName: "watermark"))
-        let width = contentSize.width
-        watermarkImageView.frame = CGRect(x: 0, y: (contentSize.height-width)/2,
-                                 width: width, height: width)
+        let width = contentSize.width * 0.8
+        watermarkImageView.frame = CGRect(x: (contentSize.width-width)/2,
+                                          y: (contentSize.height-width)/2,
+                                           width: width, height: width)
         watermarkImageView.contentMode = .scaleAspectFit
         watermarkImageView.alpha = 0.1
         self.addSubview(watermarkImageView)
