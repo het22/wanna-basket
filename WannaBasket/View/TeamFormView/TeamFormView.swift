@@ -133,6 +133,7 @@ class TeamFormView: UIView, NibLoadable {
             let centerYConstraint = centerYConstraint {
             let screenHeight = UIScreen.main.bounds.height
             moveHeight = screenHeight - keyboardHeight - self.frame.maxY - spacing
+            if moveHeight > 0 { moveHeight = 0 }
             centerYConstraint.constant += moveHeight
             UIView.animate(withDuration: 0.5) { self.superview?.layoutIfNeeded() }
         }
