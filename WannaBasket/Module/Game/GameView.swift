@@ -113,7 +113,7 @@ class GameView: UIViewController {
                 quarterSelectView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 quarterSelectView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
                 quarterSelectView!.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.65),
-                quarterSelectView!.heightAnchor.constraint(equalTo: quarterSelectView!.widthAnchor, multiplier: 0.35)])
+                quarterSelectView!.heightAnchor.constraint(equalTo: quarterSelectView!.widthAnchor, multiplier: 0.4)])
         } else {
             backgroundView?.removeFromSuperview()
             backgroundView = nil
