@@ -17,28 +17,97 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuarterScoreCell" customModule="WannaBasket" customModuleProvider="target">
             <connections>
-                <outlet property="textLabel" destination="yTS-lB-pOq" id="P36-fh-clo"/>
+                <outlet property="awayScoreLabel" destination="e4S-I1-WlP" id="Taz-MF-bML"/>
+                <outlet property="homeScoreLabel" destination="aXy-7N-Y9i" id="ADE-dm-itM"/>
+                <outlet property="quarterLabel" destination="ucm-vG-4bx" id="xjL-Dr-c4E"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="353" height="271"/>
+        <view contentMode="scaleToFill" id="b6a-56-WEA">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="420"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="텍스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-lB-pOq">
-                    <rect key="frame" x="142" y="120.66666666666669" width="69.333333333333314" height="30"/>
-                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="39k-Jo-9Cv">
+                    <rect key="frame" x="0.0" y="0.0" width="353" height="420"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-z6-Bfq">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="84"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿼터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucm-vG-4bx">
+                                    <rect key="frame" x="161" y="32" width="31" height="20"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ucm-vG-4bx" firstAttribute="centerY" secondItem="G3D-z6-Bfq" secondAttribute="centerY" id="GV1-ff-82c"/>
+                                <constraint firstItem="ucm-vG-4bx" firstAttribute="centerX" secondItem="G3D-z6-Bfq" secondAttribute="centerX" id="Jjz-S6-nlK"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-Td-RyZ">
+                            <rect key="frame" x="0.0" y="85" width="353" height="167"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-7N-Y9i">
+                                    <rect key="frame" x="5" y="5" width="343" height="157"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="aXy-7N-Y9i" secondAttribute="trailing" constant="5" id="K2Y-Mh-lLY"/>
+                                <constraint firstItem="aXy-7N-Y9i" firstAttribute="top" secondItem="E4b-Td-RyZ" secondAttribute="top" constant="5" id="QdW-aA-nyV"/>
+                                <constraint firstItem="aXy-7N-Y9i" firstAttribute="leading" secondItem="E4b-Td-RyZ" secondAttribute="leading" constant="5" id="eQV-4I-mGg"/>
+                                <constraint firstAttribute="bottom" secondItem="aXy-7N-Y9i" secondAttribute="bottom" constant="5" id="vHj-tJ-3rY"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-tw-6Wu">
+                            <rect key="frame" x="0.0" y="253" width="353" height="167"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-I1-WlP">
+                                    <rect key="frame" x="5" y="5" width="343" height="157"/>
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                    <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="e4S-I1-WlP" secondAttribute="trailing" constant="5" id="GJB-J5-eFN"/>
+                                <constraint firstItem="e4S-I1-WlP" firstAttribute="top" secondItem="MfN-tw-6Wu" secondAttribute="top" constant="5" id="RSL-9b-U8x"/>
+                                <constraint firstItem="e4S-I1-WlP" firstAttribute="leading" secondItem="MfN-tw-6Wu" secondAttribute="leading" constant="5" id="TjC-LF-4bv"/>
+                                <constraint firstAttribute="bottom" secondItem="e4S-I1-WlP" secondAttribute="bottom" constant="5" id="p9R-7B-OBg"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="G3D-z6-Bfq" firstAttribute="height" secondItem="39k-Jo-9Cv" secondAttribute="height" multiplier="0.2" id="RJf-1k-dA6"/>
+                        <constraint firstItem="MfN-tw-6Wu" firstAttribute="height" secondItem="E4b-Td-RyZ" secondAttribute="height" id="xwk-e1-tot"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="dQb-w6-131"/>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="yTS-lB-pOq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OOB-Mj-g3h"/>
-                <constraint firstItem="yTS-lB-pOq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xfp-hb-83C"/>
+                <constraint firstAttribute="bottom" secondItem="39k-Jo-9Cv" secondAttribute="bottom" id="5lf-Av-HbB"/>
+                <constraint firstItem="Pdv-1h-inK" firstAttribute="trailing" secondItem="39k-Jo-9Cv" secondAttribute="trailing" id="dId-dN-PXt"/>
+                <constraint firstItem="39k-Jo-9Cv" firstAttribute="leading" secondItem="Pdv-1h-inK" secondAttribute="leading" id="hwB-xj-bN3"/>
+                <constraint firstItem="39k-Jo-9Cv" firstAttribute="top" secondItem="b6a-56-WEA" secondAttribute="top" id="xbI-sQ-Van"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-171.73913043478262" y="97.418478260869577"/>
+            <viewLayoutGuide key="safeArea" id="Pdv-1h-inK"/>
+            <point key="canvasLocation" x="476.08695652173918" y="-140.21739130434784"/>
         </view>
     </objects>
 </document>

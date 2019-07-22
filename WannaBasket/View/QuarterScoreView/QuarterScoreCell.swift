@@ -10,7 +10,9 @@ import UIKit
 
 class QuarterScoreCell: UIView, NibLoadable {
 
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var quarterLabel: UILabel!
+    @IBOutlet weak var homeScoreLabel: UILabel!
+    @IBOutlet weak var awayScoreLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,9 +24,9 @@ class QuarterScoreCell: UIView, NibLoadable {
         loadViewFromNib()
     }
     
-    func setup(text: String, color: UIColor, fontSize: CGFloat) {
-        textLabel.text = text
-        textLabel.textColor = color
-        textLabel.font = UIFont(name: textLabel.font.fontName, size: fontSize)
+    func setup(quarter: Quarter, homeScore: Int, awayScore: Int) {
+        quarterLabel.text = "\(quarter)"
+        homeScoreLabel.text = "\(homeScore)"
+        awayScoreLabel.text = "\(awayScore)"
     }
 }
