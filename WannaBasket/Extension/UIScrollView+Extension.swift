@@ -24,11 +24,21 @@ extension UIScrollView {
         contentOffset = CGPoint.zero
         frame = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height)
         
+        let watermarkImageView = UIImageView(image: #imageLiteral(resourceName: "watermark"))
+        let width = contentSize.width
+        watermarkImageView.frame = CGRect(x: 0, y: (contentSize.height-width)/2,
+                                 width: width, height: width)
+        watermarkImageView.contentMode = .scaleAspectFit
+        watermarkImageView.alpha = 0.1
+        self.addSubview(watermarkImageView)
+        
         var image: UIImage?
         if let context = UIGraphicsGetCurrentContext() {
             layer.render(in: context)
             image = UIGraphicsGetImageFromCurrentImageContext()
         }
+        
+        watermarkImageView.removeFromSuperview()
         
         contentOffset = savedContentOffset
         frame = savedFrame
