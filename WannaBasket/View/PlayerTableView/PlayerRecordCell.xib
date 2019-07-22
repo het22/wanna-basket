@@ -32,16 +32,22 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="T9H-i2-MHg" secondAttribute="height" multiplier="0.75:1" id="vKz-08-YMi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxu-Od-I9o">
                                 <rect key="frame" x="84" y="0.0" width="206.5" height="110.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-gx-xBR">
                                 <rect key="frame" x="291.5" y="0.0" width="309.5" height="110.5"/>
@@ -54,12 +60,18 @@
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FT(-)   2PT(-)   3PT(-)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDx-Ke-Hwj" userLabel="0 FT / 0 2PT / 0 3PT">
                                                 <rect key="frame" x="0.0" y="25" width="131" height="15"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="15"/>
                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -59,7 +59,7 @@
 "SubstitutePlayers" = "Substitute Players";
 "EnterTeamName" = "Enter Team Name";
 "EnterPlayerName" = "Enter Player Name";
-"EnterGameName" = "GAME NAME";
+"EnterGameName" = "NAME";
 "ExitWarning" = "Are you sure to leave?";
 "RecordWarning" = "The records won't be saved.";
 "CheckRecord" = "Check the record in your album!";

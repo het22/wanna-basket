@@ -34,17 +34,26 @@
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-p5-QGB">
                                                 <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경기설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keb-im-vRk">
                                                 <rect key="frame" x="337.33333333333331" y="0.0" width="61.666666666666686" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,26 +74,35 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fMm-jb-J4V">
                                                 <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YsF-GD-Ayo">
                                                 <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Ko-A2j" userLabel="Start Game Button">
                                                 <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="62"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <state key="normal" title="경기시작">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="disabled">
                                                     <color key="titleColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="startButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFt-Yd-luk"/>
                                                 </connections>
@@ -140,10 +158,13 @@
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sna-UG-52x">
                                                         <rect key="frame" x="5" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="newPlayerButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wbj-Es-Cxk"/>
                                                         </connections>
@@ -182,12 +203,17 @@
                                                         <rect key="frame" x="10" y="0.0" width="348" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="eBs-1P-AL5"/>
+                                                            <constraint firstAttribute="height" constant="30" id="eBs-1P-AL5">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                            </constraint>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="newTeamButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="aVp-pS-MgN"/>
                                                         </connections>
@@ -235,10 +261,13 @@
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-SS-WRo">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="newPlayerButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8v7-xb-65Y"/>
                                                         </connections>
@@ -298,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-104" y="-136"/>
+            <point key="canvasLocation" x="-104.34782608695653" y="-136.23188405797103"/>
         </scene>
     </scenes>
 </document>

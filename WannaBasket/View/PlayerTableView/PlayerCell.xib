@@ -32,16 +32,22 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="edo-1a-hpn" secondAttribute="height" multiplier="0.75:1" id="Ltu-RR-s7z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmZ-JH-IDU">
                                 <rect key="frame" x="84" y="0.0" width="235" height="110.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                         </subviews>
                     </stackView>

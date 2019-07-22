@@ -34,17 +34,26 @@
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e5-JK-aZo">
                                                 <rect key="frame" x="352.66666666666669" y="0.0" width="31" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원정팀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqp-gM-jYK">
                                                 <rect key="frame" x="689.66666666666663" y="0.0" width="46.333333333333371" height="31"/>
                                                 <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,24 +74,33 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-rD-dpQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="246.66666666666666" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쿼터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooT-Wl-SSq">
                                                 <rect key="frame" x="246.66666666666669" y="0.0" width="242.66666666666669" height="62"/>
                                                 <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="W5d-cc-aM2" appends="YES" id="xAo-g3-oIo"/>
                                                 </connections>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-Kd-rAa">
                                                 <rect key="frame" x="489.33333333333331" y="0.0" width="246.66666666666669" height="62"/>
-                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="65"/>
+                                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
                                                 <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,12 +154,17 @@
                                                         <rect key="frame" x="5" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="Sd0-Bi-pfQ"/>
+                                                            <constraint firstAttribute="height" constant="30" id="6nI-LV-EFu">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                            </constraint>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                         <state key="normal" title="교체">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="substituteButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="rHq-FP-39z"/>
                                                         </connections>
@@ -168,31 +191,37 @@
                                                         <rect key="frame" x="10" y="0.0" width="348" height="316"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZc-Id-YWD" userLabel="GameClock">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="109.33333333333333"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="109.66666666666667"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4y-Dx-m5r" userLabel="Left">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="109.33333333333333"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="109.66666666666667"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0M-XF-yMU" userLabel="Game Min Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="54"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="nxf-DX-7zp"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-82-5kP" userLabel="Game Min Minus Button">
-                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
+                                                                                <rect key="frame" x="0.0" y="56" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameMinMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Ywu-NG-qie"/>
                                                                                 </connections>
@@ -210,39 +239,48 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-yp-Zo6">
-                                                                        <rect key="frame" x="43.666666666666657" y="0.0" width="260.66666666666674" height="109.33333333333333"/>
+                                                                        <rect key="frame" x="43.666666666666657" y="0.0" width="260.66666666666674" height="109.66666666666667"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="85"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="80"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="120"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <outletCollection property="gestureRecognizers" destination="jWK-l1-VIH" appends="YES" id="0i0-wO-o6k"/>
                                                                         </connections>
                                                                     </label>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iID-oV-Ju2" userLabel="Right">
-                                                                        <rect key="frame" x="306.33333333333331" y="0.0" width="41.666666666666686" height="109.33333333333333"/>
+                                                                        <rect key="frame" x="306.33333333333331" y="0.0" width="41.666666666666686" height="109.66666666666667"/>
                                                                         <subviews>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZP-Ym-QSU" userLabel="Game Sec Plus Button">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="53.666666666666664"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="54"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecPlus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="wWS-kP-Hyg"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Yz-I0k" userLabel="Game Sec Minus Button">
-                                                                                <rect key="frame" x="0.0" y="55.666666666666657" width="41.666666666666664" height="53.666666666666657"/>
+                                                                                <rect key="frame" x="0.0" y="56" width="41.666666666666664" height="53.666666666666657"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <accessibility key="accessibilityConfiguration" identifier="GameSecMinus"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Wlv-F9-IbI"/>
                                                                                 </connections>
@@ -276,7 +314,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-YH-dPv" userLabel="ShotClock">
-                                                                <rect key="frame" x="0.0" y="114.33333333333334" width="348" height="109.33333333333334"/>
+                                                                <rect key="frame" x="0.0" y="114.66666666666666" width="348" height="109.33333333333334"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-QG-jto" userLabel="Left">
                                                                         <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="109.33333333333333"/>
@@ -289,6 +327,9 @@
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="XDA-MI-hXF"/>
                                                                                 </connections>
@@ -301,6 +342,9 @@
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="nFg-gN-XCH"/>
                                                                                 </connections>
@@ -321,9 +365,12 @@
                                                                         <rect key="frame" x="43.666666666666657" y="0.0" width="260.66666666666674" height="65.666666666666671"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <gestureRecognizers/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="60"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="50"/>
                                                                         <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="100"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <outletCollection property="gestureRecognizers" destination="ATi-qN-hep" appends="YES" id="KZr-OK-2Uo"/>
                                                                         </connections>
@@ -331,10 +378,13 @@
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-u8-SYU">
                                                                         <rect key="frame" x="46.666666666666657" y="67.666666666666657" width="125" height="41.666666666666657"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                                         <state key="normal" title="14초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <action selector="reset14ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="ped-ym-6Dm"/>
                                                                         </connections>
@@ -342,10 +392,13 @@
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="417-Pg-fCx">
                                                                         <rect key="frame" x="176.66666666666669" y="67.666666666666657" width="124.66666666666669" height="41.666666666666657"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                                                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                                         <state key="normal" title="24초">
                                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <action selector="reset24ButtonTapped" destination="CiF-JI-gzH" eventType="touchUpInside" id="0E1-pg-bea"/>
                                                                         </connections>
@@ -361,6 +414,9 @@
                                                                                 <state key="normal" title="+">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Tm9-zI-ZcM"/>
                                                                                 </connections>
@@ -373,6 +429,9 @@
                                                                                 <state key="normal" title="-">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                                                </variation>
                                                                                 <connections>
                                                                                     <action selector="clockControlButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="S3s-Zj-N95"/>
                                                                                 </connections>
@@ -415,12 +474,14 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-qz-HO8" customClass="StatSelectView" customModule="WannaBasket" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="228.66666666666671" width="348" height="87.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="229" width="348" height="87"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="h9f-qz-HO8" secondAttribute="height" multiplier="4:1" id="xeY-Go-DNF"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="h9f-qz-HO8" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" multiplier="0.8" id="ODA-Ys-D3t"/>
                                                             <constraint firstItem="P4y-Dx-m5r" firstAttribute="width" secondItem="hYD-QG-jto" secondAttribute="width" id="igT-Ec-HFc"/>
                                                             <constraint firstItem="ic1-YH-dPv" firstAttribute="height" secondItem="XZc-Id-YWD" secondAttribute="height" id="rql-fY-kTj"/>
                                                         </constraints>
@@ -466,12 +527,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="9aw-cm-tm0"/>
+                                                            <constraint firstAttribute="height" constant="30" id="ko0-8V-HVE">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                            </constraint>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                         <state key="normal" title="교체">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <action selector="substituteButtonTappedWithSender:" destination="CiF-JI-gzH" eventType="touchUpInside" id="Wkg-1B-b5C"/>
                                                         </connections>

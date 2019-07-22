@@ -49,17 +49,17 @@ class QuarterScoreView: UIView, NibLoadable {
         
         scores.forEach {
             let barView = QuarterScoreCell(frame: CGRect.zero)
-            barView.setup(text: "\($0.quarter)", color: Constants.Color.Black, fontSize: 30)
+            barView.setup(text: "\($0.quarter)", color: Constants.Color.Black, fontSize: 20)
             barStackView.insertArrangedSubview(barView, at: barStackView.subviews.count-1)
             barView.widthAnchor.constraint(equalTo: barStackView.subviews.first!.widthAnchor, multiplier: 1.0).isActive = true
             
             let homeView = QuarterScoreCell(frame: CGRect.zero)
-            homeView.setup(text: "\($0.home)", color: Constants.Color.HomeDefault, fontSize: 40)
+            homeView.setup(text: "\($0.home)", color: Constants.Color.HomeDefault, fontSize: 30)
             homeStackView.insertArrangedSubview(homeView, at: homeStackView.subviews.count-1)
             homeView.widthAnchor.constraint(equalTo: homeStackView.subviews.first!.widthAnchor, multiplier: 1.0).isActive = true
             
             let awayView = QuarterScoreCell(frame: CGRect.zero)
-            awayView.setup(text: "\($0.away)", color: Constants.Color.AwayDefault, fontSize: 40)
+            awayView.setup(text: "\($0.away)", color: Constants.Color.AwayDefault, fontSize: 30)
             awayStackView.insertArrangedSubview(awayView, at: awayStackView.subviews.count-1)
             awayView.widthAnchor.constraint(equalTo: awayStackView.subviews.first!.widthAnchor, multiplier: 1.0).isActive = true
         }

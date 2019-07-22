@@ -31,24 +31,33 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3fY-jd-s9S" secondAttribute="height" multiplier="0.75" id="NLg-RQ-a5n"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WQ-VL-5C0">
                                 <rect key="frame" x="83" y="0.0" width="310" height="110.5"/>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wr-od-7kL">
                                 <rect key="frame" x="393" y="0.0" width="83" height="110.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0wr-od-7kL" secondAttribute="height" multiplier="0.75" id="e1L-ek-oyE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                </variation>
                             </label>
                         </subviews>
                     </stackView>

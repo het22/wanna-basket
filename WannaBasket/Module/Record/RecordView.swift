@@ -120,6 +120,10 @@ extension RecordView: RecordViewProtocol {
     }
     
     func updateViewHeight(cellCount: Int) {
+        if case .pad = UIDevice.current.userInterfaceIdiom {
+            homePlayerTableView.cellSize = 100
+            awayPlayerTableView.cellSize = 100
+        }
         let size = homePlayerTableView.cellSize + homePlayerTableView.cellSpacing
         heightConstraint.constant = size * CGFloat(cellCount) + homePlayerTableView.cellSpacing
     }

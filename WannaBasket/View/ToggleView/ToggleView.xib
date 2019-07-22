@@ -27,10 +27,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="토글" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqc-cI-YfD">
-                    <rect key="frame" x="80.666666666666671" y="87.666666666666671" width="38.666666666666671" height="25"/>
-                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
+                    <rect key="frame" x="84.666666666666671" y="90" width="31" height="20"/>
+                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                    </variation>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-j7-fsR">
                     <rect key="frame" x="0.0" y="195" width="200" height="5"/>

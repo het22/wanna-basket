@@ -26,8 +26,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="텍스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-lB-pOq">
-                    <rect key="frame" x="130" y="115.66666666666669" width="93" height="40"/>
-                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="40"/>
+                    <rect key="frame" x="142" y="120.66666666666669" width="69.333333333333314" height="30"/>
+                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
