@@ -106,13 +106,13 @@ class HomePresenter: HomePresenterProtocol {
                 if let index = tuple.index {
                     if let teamIndex = tuple.home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
                         let player = teams[safe: teamIndex]?.players[safe: index] {
-                        view?.showPlayerFormView(isEditMode: true, player: player, index: index, bool: true)
+                        view?.showPlayerFormView(player: player, bool: true)
                     }
                 } else {
-                    view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: true)
+                    view?.showPlayerFormView(player: nil, bool: true)
                 }
             } else {
-                view?.showPlayerFormView(isEditMode: false, player: nil, index: nil, bool: false)
+                view?.showPlayerFormView(player: nil, bool: false)
             }
         }
     }
@@ -178,11 +178,10 @@ class HomePresenter: HomePresenterProtocol {
         currentShowingPlayerTuple = nil
     }
     
-    func didTapPlayerFormDeleteButton(index: Int) {
+    func didTapPlayerFormDeleteButton(player: PlayerOfTeam) {
         if let home = currentShowingPlayerTuple?.home,
             let teamIndex = home ? currentTeamIndexTuple.home : currentTeamIndexTuple.away,
-            let team = teams[safe: teamIndex],
-            let player = team.players[safe: index] {
+            let team = teams[safe: teamIndex] {
             interactor?.requestEjectPlayer(player: player, team: team)
         }
     }
@@ -195,7 +194,7 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int) {
+    func didTapPlayerFormEditButton(player: PlayerOfTeam) {
         interactor?.requestUpdatePlayer(player: player)
     }
     

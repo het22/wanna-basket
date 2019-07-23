@@ -8,14 +8,20 @@
 
 import UIKit
 
+// --------------------------------------------------
+// MARK: PlayerFormView Delegate
+// --------------------------------------------------
 protocol PlayerFormViewDelegate: class {
     func didTapPlayerFormCancelButton()
-    func didTapPlayerFormDeleteButton(index: Int)
+    func didTapPlayerFormDeleteButton(player: PlayerOfTeam)
     func didTapPlayerFormCompleteButton(player: PlayerOfTeam)
-    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int)
+    func didTapPlayerFormEditButton(player: PlayerOfTeam)
     func didTapPlayerNumberButton() -> [Bool]
 }
 
+// --------------------------------------------------
+// MARK: PlayerFormView
+// --------------------------------------------------
 class PlayerFormView: UIView, NibLoadable {
     
     weak var delegate: PlayerFormViewDelegate?
@@ -50,51 +56,7 @@ class PlayerFormView: UIView, NibLoadable {
     }
     
     // --------------------------------------------------
-    // MARK: IBActions
-    // --------------------------------------------------
-    @IBAction func numberButtonTapped() {
-        nameTextField.resignFirstResponder()
-        isShowingNumberSelectView = true
-    }
-    @IBAction func leftButtonTapped() {
-        if isEditMode, let index = index {
-            delegate?.didTapPlayerFormDeleteButton(index: index)
-        } else {
-            delegate?.didTapPlayerFormCancelButton()
-        }
-    }
-    @IBAction func rightButtonTapped() {
-        if let name = validatedName, self.player != nil {
-            self.player!.name = name
-            if isEditMode {
-                if let index = index {
-                    delegate?.didTapPlayerFormEditButton(player: self.player!, index: index)
-                } else {
-                    animateShake(completion: nil)
-                }
-            } else {
-                delegate?.didTapPlayerFormCompleteButton(player: self.player!)
-            }
-        } else {
-            animateShake(completion: nil)
-        }
-    }
-    
-    // --------------------------------------------------
-    // MARK: Validate Input Values
-    // --------------------------------------------------
-    private var trimmedName: String? {
-        return nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-    private var validatedName: String? {
-        let regex = Constants.Regex.TeamName
-        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
-        let isValid = predicate.evaluate(with: trimmedName)
-        return isValid ? trimmedName : nil
-    }
-    
-    // --------------------------------------------------
-    // MARK: Setup EditMode
+    // MARK: Setup
     // --------------------------------------------------
     private var isEditMode = false {
         didSet(oldVal) {
@@ -104,20 +66,68 @@ class PlayerFormView: UIView, NibLoadable {
                                  for: .normal)
         }
     }
-    private var index: Int?
-    private var player: PlayerOfTeam? {
+    private var player = PlayerOfTeam(uuid: "", name: "", teamID: "", number: -1)
+    private var name: String? {
+        get { return validatedName }
+        set { nameTextField.text = newValue }
+    }
+    private var number: Int? {
         didSet {
-            if let player = player {
-                nameTextField.text = player.name
-                numberButton.setTitle((player.number==100) ? "00" : "\(player.number)", for: .normal)
-                numberButton.setTitleColor(Constants.Color.Black, for: .normal)
-            }
+            guard let num = number else { return }
+            numberButton.setTitle((num==100) ? "00" : "\(num)", for: .normal)
+            numberButton.setTitleColor(Constants.Color.Black, for: .normal)
         }
     }
-    func setup(isEditMode: Bool, player: PlayerOfTeam?, index: Int?) {
-        self.isEditMode = isEditMode
-        self.index = index
-        self.player = player
+    func setup(player: PlayerOfTeam?) {
+        if let player = player {
+            self.isEditMode = true
+            self.player = player
+            self.name = player.name
+            self.number = player.number
+        } else {
+            self.isEditMode = false
+        }
+    }
+    
+    // --------------------------------------------------
+    // MARK: IBActions
+    // --------------------------------------------------
+    @IBAction func numberButtonTapped() {
+        nameTextField.resignFirstResponder()
+        isShowingNumberSelectView = true
+    }
+    @IBAction func leftButtonTapped() {
+        if isEditMode {
+            delegate?.didTapPlayerFormDeleteButton(player: player)
+        } else {
+            delegate?.didTapPlayerFormCancelButton()
+        }
+    }
+    @IBAction func rightButtonTapped() {
+        if let name = name, let number = number {
+            let editedPlayer = PlayerOfTeam(uuid: player.uuid,
+                                            name: name,
+                                            teamID: player.teamID,
+                                            number: number)
+            if isEditMode {
+                delegate?.didTapPlayerFormEditButton(player: editedPlayer)
+            } else {
+                delegate?.didTapPlayerFormCompleteButton(player: editedPlayer)
+            }
+        } else {
+            animateShake(completion: nil)
+        }
+    }
+    
+    // --------------------------------------------------
+    // MARK: Validate Input Values
+    // --------------------------------------------------
+    private var validatedName: String? {
+        let trimmedName = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let regex = Constants.Regex.PlayerName
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        let isValid = predicate.evaluate(with: trimmedName)
+        return isValid ? trimmedName : nil
     }
     
     // --------------------------------------------------
@@ -195,7 +205,14 @@ class PlayerFormView: UIView, NibLoadable {
     }
 }
 
+// --------------------------------------------------
+// MARK: UITextField Delegate
+// --------------------------------------------------
 extension PlayerFormView: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("textFieldDidEndEditing")
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         rightButtonTapped()
@@ -203,21 +220,13 @@ extension PlayerFormView: UITextFieldDelegate {
     }
 }
 
+// --------------------------------------------------
+// MARK: NumberSelectView Delegate
+// --------------------------------------------------
 extension PlayerFormView: NumberSelectViewDelegate {
     
     func didSelectItem(at indexPath: IndexPath) {
-        if let player = self.player {
-            self.player = PlayerOfTeam(uuid: player.uuid,
-                                       name: player.name,
-                                       teamID: player.teamID,
-                                       number: indexPath.row)
-        } else {
-            let name = nameTextField.text ?? ""
-            player = PlayerOfTeam(uuid: name,
-                                  name: name,
-                                  teamID: "",
-                                  number: indexPath.row)
-        }
+        number = indexPath.row
         isShowingNumberSelectView = false
     }
 }

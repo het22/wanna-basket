@@ -131,11 +131,11 @@ extension HomeView: HomeViewProtocol {
         }
     }
     
-    func showPlayerFormView(isEditMode: Bool, player: PlayerOfTeam?, index: Int?, bool: Bool) {
+    func showPlayerFormView(player: PlayerOfTeam?, bool: Bool) {
         if bool == (playerFormView != nil) { return }
         if bool {
             let dismissGesture = UITapGestureRecognizerWithClosure { [weak self] in
-                self?.showPlayerFormView(isEditMode: isEditMode, player: player, index: index, bool: false)
+                self?.showPlayerFormView(player: player, bool: false)
             }
             backgroundView = UIView(frame: view.bounds)
             backgroundView!.backgroundColor = Constants.Color.Background
@@ -145,7 +145,7 @@ extension HomeView: HomeViewProtocol {
             playerFormView = PlayerFormView(frame: CGRect.zero)
             playerFormView?.delegate = self
             playerFormView?.translatesAutoresizingMaskIntoConstraints = false
-            playerFormView?.setup(isEditMode: isEditMode, player: player, index: index)
+            playerFormView?.setup(player: player)
             view.addSubview(playerFormView!)
             
             let centerYConstraint = playerFormView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
@@ -189,16 +189,16 @@ extension HomeView: PlayerFormViewDelegate {
         presenter?.didTapPlayerFormCancelButton()
     }
     
-    func didTapPlayerFormDeleteButton(index: Int) {
-        presenter?.didTapPlayerFormDeleteButton(index: index)
+    func didTapPlayerFormDeleteButton(player: PlayerOfTeam) {
+        presenter?.didTapPlayerFormDeleteButton(player: player)
     }
     
     func didTapPlayerFormCompleteButton(player: PlayerOfTeam) {
         presenter?.didTapPlayerFormCompleteButton(player: player)
     }
     
-    func didTapPlayerFormEditButton(player: PlayerOfTeam, index: Int) {
-        presenter?.didTapPlayerFormEditButton(player: player, index: index)
+    func didTapPlayerFormEditButton(player: PlayerOfTeam) {
+        presenter?.didTapPlayerFormEditButton(player: player)
     }
     
     func didTapPlayerNumberButton() -> [Bool] {
