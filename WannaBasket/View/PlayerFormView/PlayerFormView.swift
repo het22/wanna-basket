@@ -58,14 +58,6 @@ class PlayerFormView: UIView, NibLoadable {
     // --------------------------------------------------
     // MARK: Setup
     // --------------------------------------------------
-    private var isEditMode = false {
-        didSet(oldVal) {
-            leftButton.setTitle(isEditMode ? Constants.Text.Delete : Constants.Text.Cancel,
-                                for: .normal)
-            rightButton.setTitle(isEditMode ? Constants.Text.Edit : Constants.Text.Complete,
-                                 for: .normal)
-        }
-    }
     private var player = PlayerOfTeam(uuid: "", name: "", teamID: "", number: -1)
     private var name: String? {
         get { return validatedName }
@@ -76,6 +68,14 @@ class PlayerFormView: UIView, NibLoadable {
             guard let num = number else { return }
             numberButton.setTitle((num==100) ? "00" : "\(num)", for: .normal)
             numberButton.setTitleColor(Constants.Color.Black, for: .normal)
+        }
+    }
+    private var isEditMode = false {
+        didSet(oldVal) {
+            leftButton.setTitle(isEditMode ? Constants.Text.Delete : Constants.Text.Cancel,
+                                for: .normal)
+            rightButton.setTitle(isEditMode ? Constants.Text.Edit : Constants.Text.Complete,
+                                 for: .normal)
         }
     }
     func setup(player: PlayerOfTeam?) {
