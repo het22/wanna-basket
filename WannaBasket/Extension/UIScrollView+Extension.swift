@@ -22,7 +22,10 @@ extension UIScrollView {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         contentOffset = CGPoint.zero
-        frame = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height)
+        frame = CGRect(x: savedFrame.origin.x,
+                       y: savedFrame.origin.y,
+                       width: contentSize.width,
+                       height: contentSize.height)
         
         let watermarkImageView = UIImageView(image: #imageLiteral(resourceName: "watermark"))
         let width = contentSize.width * 0.8

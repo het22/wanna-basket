@@ -183,10 +183,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="YAf-wv-H0z" firstAttribute="trailing" secondItem="JnH-20-Mbr" secondAttribute="trailing" id="KWV-Ne-BAr"/>
-                <constraint firstItem="YAf-wv-H0z" firstAttribute="bottom" secondItem="JnH-20-Mbr" secondAttribute="bottom" id="QuN-4J-EMz"/>
-                <constraint firstItem="JnH-20-Mbr" firstAttribute="top" secondItem="YAf-wv-H0z" secondAttribute="top" id="b2X-qx-FdU"/>
-                <constraint firstItem="JnH-20-Mbr" firstAttribute="leading" secondItem="YAf-wv-H0z" secondAttribute="leading" id="dhV-0t-I3V"/>
+                <constraint firstAttribute="trailing" secondItem="JnH-20-Mbr" secondAttribute="trailing" id="KWV-Ne-BAr"/>
+                <constraint firstAttribute="bottom" secondItem="JnH-20-Mbr" secondAttribute="bottom" id="QuN-4J-EMz"/>
+                <constraint firstItem="JnH-20-Mbr" firstAttribute="top" secondItem="oG3-zl-gaU" secondAttribute="top" id="b2X-qx-FdU"/>
+                <constraint firstItem="JnH-20-Mbr" firstAttribute="leading" secondItem="oG3-zl-gaU" secondAttribute="leading" id="dhV-0t-I3V"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="YAf-wv-H0z"/>
