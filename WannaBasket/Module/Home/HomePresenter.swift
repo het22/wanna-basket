@@ -258,6 +258,34 @@ extension HomePresenter: HomeInteractorOutputProtocol {
     
     func didReadAllTeam(teams: [Team]) {
         self.teams = teams
+        
+//        var teamL = Team(uuid: "tl", name: "LeBron")
+//        teamL.register(player: Player(uuid: "h12", name: "Harden"), number: 13)
+//        teamL.register(player: Player(uuid: "d35", name: "Durant"), number: 35)
+//        teamL.register(player: Player(uuid: "i11", name: "Irving"), number: 11)
+//        teamL.register(player: Player(uuid: "l2", name: "Leonard"), number: 2)
+//        teamL.register(player: Player(uuid: "j23", name: "James"), number: 23)
+//        var teamG = Team(uuid: "tg", name: "Giannis")
+//        teamG.register(player: Player(uuid: "a34", name: "Anttkpo"), number: 34)
+//        teamG.register(player: Player(uuid: "c30", name: "Curry"), number: 30)
+//        teamG.register(player: Player(uuid: "e21", name: "Embiid"), number: 21)
+//        teamG.register(player: Player(uuid: "g13", name: "George"), number: 13)
+//        teamG.register(player: Player(uuid: "w15", name: "Walker"), number: 15)
+//        self.teams = [teamL, teamG]
+        
+//        var teamL = Team(uuid: "tl", name: "르브론")
+//        teamL.register(player: Player(uuid: "h12", name: "하든"), number: 13)
+//        teamL.register(player: Player(uuid: "d35", name: "듀란트"), number: 35)
+//        teamL.register(player: Player(uuid: "i11", name: "어빙"), number: 11)
+//        teamL.register(player: Player(uuid: "l2", name: "레너드"), number: 2)
+//        teamL.register(player: Player(uuid: "j23", name: "제임스"), number: 23)
+//        var teamG = Team(uuid: "tg", name: "야니스")
+//        teamG.register(player: Player(uuid: "a34", name: "아테토쿰보"), number: 34)
+//        teamG.register(player: Player(uuid: "c30", name: "커리"), number: 30)
+//        teamG.register(player: Player(uuid: "e21", name: "엠비드"), number: 21)
+//        teamG.register(player: Player(uuid: "g13", name: "조지"), number: 13)
+//        teamG.register(player: Player(uuid: "w15", name: "워커"), number: 15)
+//        self.teams = [teamL, teamG]
     }
     
     func didUpdateTeam() {

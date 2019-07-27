@@ -108,7 +108,7 @@ enum Constants {
     }
     
     enum Regex {
-        static let TeamName = "[가-힣A-Za-z0-9\\s]{2,6}"
-        static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,6}"
+        static let TeamName = "[가-힣A-Za-z0-9\\s]{2,8}"
+        static let PlayerName = "[가-힣A-Za-z0-9\\s]{2,8}"
     }
 }
