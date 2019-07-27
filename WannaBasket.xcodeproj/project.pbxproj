@@ -139,6 +139,7 @@
 		CB5C1C5C22DB0BBC00871C2B /* RecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordProtocol.swift; sourceTree = "<group>"; };
 		CB5C1C5D22DB0BBC00871C2B /* RecordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
 		CB5C1C6422DB5AEB00871C2B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		CB8C539122EC4779008ECBE7 /* BM Font License.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "BM Font License.md"; sourceTree = "<group>"; };
 		CB8E36A022DDB6CE00735C2D /* PlayerRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRecordCell.swift; sourceTree = "<group>"; };
 		CB8E36A222DDB6D800735C2D /* PlayerRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRecordCell.xib; sourceTree = "<group>"; };
 		CB8E36A422DDBE8200735C2D /* QuarterScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterScoreView.swift; sourceTree = "<group>"; };
@@ -593,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				CBFA01A822B8A6E500F71C7B /* DoHyeon-Regular.ttf */,
+				CB8C539122EC4779008ECBE7 /* BM Font License.md */,
 			);
 			path = Font;
 			sourceTree = "<group>";
