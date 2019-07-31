@@ -30,7 +30,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8q-nc-bwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="-1343"/>
+            <point key="canvasLocation" x="-148" y="-898"/>
         </scene>
         <!--TEAM-->
         <scene sceneID="AzF-oy-JMK">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFy-2f-dHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="-1343"/>
+            <point key="canvasLocation" x="613" y="-898"/>
         </scene>
         <!--New Team-->
         <scene sceneID="Bdj-bu-26y">
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKl-Nt-X0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-1700"/>
+            <point key="canvasLocation" x="1384" y="-1255"/>
         </scene>
         <!--Team Name-->
         <scene sceneID="gFo-7p-LnF">
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wz-0h-vNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-990"/>
+            <point key="canvasLocation" x="1384" y="-545"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rIf-EV-aJV">
@@ -263,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="105" id="E6o-4V-iNt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="105" id="E6o-4V-iNt">
                                         <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6o-4V-iNt" id="mwr-QB-HcR">
@@ -283,16 +283,16 @@
                                                             <rect key="frame" x="94.666666666666657" y="0.0" width="285.66666666666674" height="94.666666666666671"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLw-tz-LmQ">
-                                                                    <rect key="frame" x="57.333333333333329" y="15.666666666666668" width="171.33333333333337" height="63.333333333333329"/>
+                                                                    <rect key="frame" x="63.666666666666671" y="20" width="158.33333333333331" height="55"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igs-iK-fIj">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="171.33333333333334" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="158.33333333333334" height="30"/>
                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team A, et al." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuL-By-2TR">
-                                                                            <rect key="frame" x="0.0" y="40" width="171.33333333333334" height="23.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="35" width="158.33333333333334" height="20"/>
                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
                                                                             <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -413,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ql-op-THE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="703" y="80"/>
+            <point key="canvasLocation" x="617" y="526"/>
         </scene>
         <!--Player-->
         <scene sceneID="HBr-ye-mdV">
@@ -430,7 +430,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGb-aD-Awh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59" y="80"/>
+            <point key="canvasLocation" x="-145" y="526"/>
         </scene>
         <!--New Player-->
         <scene sceneID="2WR-pu-nEC">
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="268-gB-4eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-275"/>
+            <point key="canvasLocation" x="1384" y="170"/>
         </scene>
         <!--Player Name-->
         <scene sceneID="U9f-7o-Dbt">
@@ -466,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yye-eh-u0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="434"/>
+            <point key="canvasLocation" x="1384" y="880"/>
         </scene>
         <!--GAME-->
         <scene sceneID="bfP-4N-9jT">
@@ -516,7 +516,7 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="105" id="J6x-Bg-4ci">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="105" id="J6x-Bg-4ci">
                                         <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J6x-Bg-4ci" id="zla-vK-IzN">
@@ -530,22 +530,22 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="404" height="94.666666666666671"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hea-qB-6vR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="94.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="404" height="94.666666666666671"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CId-KV-c1S">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="94.666666666666671"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="94.666666666666671"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xuo-hh-tnJ">
-                                                                                    <rect key="frame" x="0.0" y="17.333333333333329" width="75.666666666666671" height="60"/>
+                                                                                    <rect key="frame" x="0.0" y="17.333333333333329" width="111" height="60"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3W-fp-vYy">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                                             <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2U-3C-qkV">
-                                                                                            <rect key="frame" x="0.0" y="30" width="75.666666666666671" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="30" width="111" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                                             <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -571,27 +571,27 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qk-wR-Tpv">
-                                                                            <rect key="frame" x="75.666666666666671" y="0.0" width="181.66666666666663" height="94.666666666666671"/>
+                                                                            <rect key="frame" x="111" y="0.0" width="182" height="94.666666666666671"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oAs-d2-qZT">
                                                                                     <rect key="frame" x="15.666666666666657" y="7.3333333333333357" width="150.66666666666666" height="80"/>
                                                                                     <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019. 07. 30. TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-lp-sHM">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="150.66666666666666" height="15"/>
+                                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="15"/>
+                                                                                            <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-TX-kNy">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="150.66666666666666" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="20" width="150.66666666666666" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1Q 10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACs-g4-CSa">
-                                                                                            <rect key="frame" x="0.0" y="35" width="150.66666666666666" height="20"/>
-                                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
+                                                                                            <rect key="frame" x="0.0" y="55" width="150.66666666666666" height="25"/>
+                                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="25"/>
                                                                                             <nil key="textColor"/>
-                                                                                            <nil key="highlightedColor"/>
-                                                                                        </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019. 07. 30. TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-lp-sHM">
-                                                                                            <rect key="frame" x="0.0" y="60" width="150.66666666666666" height="20"/>
-                                                                                            <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="20"/>
-                                                                                            <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
@@ -604,19 +604,19 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEi-Pe-9qA">
-                                                                            <rect key="frame" x="257.33333333333331" y="0.0" width="75.666666666666686" height="94.666666666666671"/>
+                                                                            <rect key="frame" x="293" y="0.0" width="111" height="94.666666666666671"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNp-1A-Utt">
-                                                                                    <rect key="frame" x="0.0" y="17.333333333333329" width="75.666666666666671" height="60"/>
+                                                                                    <rect key="frame" x="0.0" y="17.333333333333329" width="111" height="60"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xt-Mt-5z3">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                                             <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqL-zk-668">
-                                                                                            <rect key="frame" x="0.0" y="30" width="75.666666666666671" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="30" width="111" height="30"/>
                                                                                             <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
                                                                                             <color key="textColor" red="1" green="0.3195095657" blue="0.45663150590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -646,15 +646,6 @@
                                                                         <constraint firstItem="bEi-Pe-9qA" firstAttribute="width" secondItem="CId-KV-c1S" secondAttribute="width" id="H4B-T2-OKo"/>
                                                                     </constraints>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록보기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5y-BO-TGu">
-                                                                    <rect key="frame" x="333" y="0.0" width="71" height="94.666666666666671"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="i5y-BO-TGu" secondAttribute="height" multiplier="0.75" id="a1S-5d-RIJ"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="9Qk-wR-Tpv" firstAttribute="width" secondItem="g7X-OQ-j8r" secondAttribute="width" multiplier="0.45" id="rfz-0q-y2Y"/>
@@ -677,6 +668,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="sym-zo-Qlo" secondAttribute="bottom" constant="5" id="cAK-oc-eZf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tkL-pe-XwE" kind="presentation" id="W4H-aa-utN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -694,12 +688,34 @@
                         <viewLayoutGuide key="safeArea" id="ESU-q3-08C"/>
                     </view>
                     <navigationItem key="navigationItem" title="GAME" id="ct5-fP-pZp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u1o-NF-dmZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u1o-NF-dmZ">
+                            <connections>
+                                <segue destination="CQD-gu-rWD" kind="show" id="00t-i6-N29"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Byq-E6-SHX" kind="show" identifier="ToGameRecord" id="z9L-FD-agN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxj-5Z-iEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="880"/>
+            <point key="canvasLocation" x="612" y="1953"/>
+        </scene>
+        <!--GAME SETTING-->
+        <scene sceneID="OGW-RU-5yr">
+            <objects>
+                <viewController title="GAME SETTING" id="CQD-gu-rWD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQx-sX-WiX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sT8-av-GAi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCe-f3-zRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="1591"/>
         </scene>
         <!--Game-->
         <scene sceneID="46t-9t-ggw">
@@ -716,7 +732,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRM-pP-V1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068" y="880"/>
+            <point key="canvasLocation" x="-149" y="1953"/>
+        </scene>
+        <!--GAME RECORD-->
+        <scene sceneID="8Wu-TB-5xb">
+            <objects>
+                <viewController title="GAME RECORD" id="Byq-E6-SHX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cGm-mS-y8V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="apH-vV-UrZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lby-kW-IQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="2314"/>
+        </scene>
+        <!--GAME SETTING-->
+        <scene sceneID="3oj-7e-EgF">
+            <objects>
+                <viewController title="GAME SETTING" id="tkL-pe-XwE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9K-og-bhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg7-Qg-5aB">
+                                <rect key="frame" x="115.66666666666669" y="350.66666666666669" width="183" height="35"/>
+                                <fontDescription key="fontDescription" name="DoHyeon-Regular" family="Do Hyeon" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rg7-Qg-5aB" firstAttribute="centerY" secondItem="c9K-og-bhO" secondAttribute="centerY" id="5K1-mE-ci4"/>
+                            <constraint firstItem="rg7-Qg-5aB" firstAttribute="centerX" secondItem="c9K-og-bhO" secondAttribute="centerX" id="kyN-d2-d8N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qhH-da-uC3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I61-gQ-H40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2097" y="1952"/>
         </scene>
     </scenes>
     <resources>
