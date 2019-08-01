@@ -274,6 +274,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CB11886A22F2830B00716EAC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CB11886B22F2879400716EAC /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */,
+				CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */,
+				CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */,
+				CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */,
+				CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */,
+				CBB9B30922C49D7A004C50B3 /* GameView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		CB5C1C4E22D8021600871C2B /* NumberSelectView */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,12 +389,7 @@
 		CBB9B30522C49D62004C50B3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				CBB9B30622C49D7A004C50B3 /* GameScreen.storyboard */,
-				CBB9B30A22C49D7A004C50B3 /* GameProtocol.swift */,
-				CBB9B30B22C49D7A004C50B3 /* GameWireframe.swift */,
-				CBB9B30822C49D7A004C50B3 /* GameInteractor.swift */,
-				CBB9B30722C49D7A004C50B3 /* GamePresenter.swift */,
-				CBB9B30922C49D7A004C50B3 /* GameView.swift */,
+				CB11886B22F2879400716EAC /* Game */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -583,6 +598,7 @@
 		CBFA01A422B89E2B00F71C7B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CB11886A22F2830B00716EAC /* New Group */,
 				CBFA01A322B89E2300F71C7B /* Home */,
 				CBB9B30522C49D62004C50B3 /* Game */,
 				CB5C1C5722DB0BA700871C2B /* Record */,
