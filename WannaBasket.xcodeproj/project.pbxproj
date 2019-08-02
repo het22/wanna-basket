@@ -11,6 +11,12 @@
 		3826D846CFF9B74130DA5907 /* Pods_WannaBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEED1CBA0688A1F70F232AF /* Pods_WannaBasket.framework */; };
 		94017A0DF400F7160CABE054 /* Pods_WannaBasketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19B4D980A9D39271B31F6A6 /* Pods_WannaBasketUITests.framework */; };
 		CB0652D822B9B99200330DD7 /* Wireframe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0652D722B9B99200330DD7 /* Wireframe.storyboard */; };
+		CB11887522F289E700716EAC /* GameListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB11886F22F289E700716EAC /* GameListScreen.storyboard */; };
+		CB11887622F289E700716EAC /* GameListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11887022F289E700716EAC /* GameListPresenter.swift */; };
+		CB11887722F289E700716EAC /* GameListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11887122F289E700716EAC /* GameListInteractor.swift */; };
+		CB11887822F289E700716EAC /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11887222F289E700716EAC /* GameListView.swift */; };
+		CB11887922F289E700716EAC /* GameListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11887322F289E700716EAC /* GameListProtocol.swift */; };
+		CB11887A22F289E700716EAC /* GameListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB11887422F289E700716EAC /* GameListWireframe.swift */; };
 		CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */; };
 		CB5C1C5022D8022800871C2B /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */; };
 		CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */; };
@@ -128,6 +134,12 @@
 		31D37E559C1328722D7FB561 /* Pods-WannaBasketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketTests/Pods-WannaBasketTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6CD3CA312644EA1D6F143EA /* Pods-WannaBasketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBasketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBasketUITests/Pods-WannaBasketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0652D722B9B99200330DD7 /* Wireframe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wireframe.storyboard; sourceTree = "<group>"; };
+		CB11886F22F289E700716EAC /* GameListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameListScreen.storyboard; sourceTree = "<group>"; };
+		CB11887022F289E700716EAC /* GameListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListPresenter.swift; sourceTree = "<group>"; };
+		CB11887122F289E700716EAC /* GameListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListInteractor.swift; sourceTree = "<group>"; };
+		CB11887222F289E700716EAC /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		CB11887322F289E700716EAC /* GameListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListProtocol.swift; sourceTree = "<group>"; };
+		CB11887422F289E700716EAC /* GameListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListWireframe.swift; sourceTree = "<group>"; };
 		CB5C1C4C22D6D2BF00871C2B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CB5C1C4F22D8022800871C2B /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
 		CB5C1C5122D8764F00871C2B /* NumberSelectViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectViewCell.swift; sourceTree = "<group>"; };
@@ -274,13 +286,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CB11886A22F2830B00716EAC /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		CB11886B22F2879400716EAC /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +297,26 @@
 				CBB9B30922C49D7A004C50B3 /* GameView.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		CB11886C22F287FA00716EAC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CB11886F22F289E700716EAC /* GameListScreen.storyboard */,
+				CB11887322F289E700716EAC /* GameListProtocol.swift */,
+				CB11887422F289E700716EAC /* GameListWireframe.swift */,
+				CB11887122F289E700716EAC /* GameListInteractor.swift */,
+				CB11887022F289E700716EAC /* GameListPresenter.swift */,
+				CB11887222F289E700716EAC /* GameListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		CB11886E22F2887400716EAC /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configure;
 			sourceTree = "<group>";
 		};
 		CB5C1C4E22D8021600871C2B /* NumberSelectView */ = {
@@ -389,6 +414,8 @@
 		CBB9B30522C49D62004C50B3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CB11886C22F287FA00716EAC /* List */,
+				CB11886E22F2887400716EAC /* Configure */,
 				CB11886B22F2879400716EAC /* Game */,
 			);
 			path = Game;
@@ -598,7 +625,6 @@
 		CBFA01A422B89E2B00F71C7B /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				CB11886A22F2830B00716EAC /* New Group */,
 				CBFA01A322B89E2300F71C7B /* Home */,
 				CBB9B30522C49D62004C50B3 /* Game */,
 				CB5C1C5722DB0BA700871C2B /* Record */,
@@ -763,6 +789,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB11887522F289E700716EAC /* GameListScreen.storyboard in Resources */,
 				CBC6F05E22CFA1730021A11D /* StatSelectView.xib in Resources */,
 				CBC6F03C22CDEC8A0021A11D /* PlayerCell.xib in Resources */,
 				CB8E36AC22DDCB5E00735C2D /* QuarterScoreCell.xib in Resources */,
@@ -896,6 +923,7 @@
 				CBB9B31022C49D7A004C50B3 /* GameProtocol.swift in Sources */,
 				CB8E36BE22DFFE7100735C2D /* RealmObject.swift in Sources */,
 				CBC6F06022D03DAB0021A11D /* ClockControl.swift in Sources */,
+				CB11887822F289E700716EAC /* GameListView.swift in Sources */,
 				CBC6F04622CDEC8A0021A11D /* UICollectionView+Extension.swift in Sources */,
 				CB5C1C6122DB0BBC00871C2B /* RecordView.swift in Sources */,
 				CBB2638322E0AB6200E664EF /* Persistable.swift in Sources */,
@@ -922,14 +950,17 @@
 				CBDD243222DC7E4700592B15 /* Game.swift in Sources */,
 				CBC6F03E22CDEC8A0021A11D /* PlayerCell.swift in Sources */,
 				CBB9B30F22C49D7A004C50B3 /* GameView.swift in Sources */,
+				CB11887722F289E700716EAC /* GameListInteractor.swift in Sources */,
 				CB8E36A122DDB6CE00735C2D /* PlayerRecordCell.swift in Sources */,
 				CBC6F04222CDEC8A0021A11D /* NumberFormat.swift in Sources */,
 				CBC6F05C22CFA1670021A11D /* StatSelectView.swift in Sources */,
+				CB11887922F289E700716EAC /* GameListProtocol.swift in Sources */,
 				CBFA016F22B89D2A00F71C7B /* WannaBasket.xcdatamodeld in Sources */,
 				CBFA01A022B89E0E00F71C7B /* HomeView.swift in Sources */,
 				CBFA01AF22B8BA7A00F71C7B /* Team.swift in Sources */,
 				CBFA01A622B89E7C00F71C7B /* Module.swift in Sources */,
 				CB5C1C6522DB5AEB00871C2B /* UIScrollView+Extension.swift in Sources */,
+				CB11887A22F289E700716EAC /* GameListWireframe.swift in Sources */,
 				CBFA019F22B89E0E00F71C7B /* HomeInteractor.swift in Sources */,
 				CB5C1C4D22D6D2BF00871C2B /* Array+Extension.swift in Sources */,
 				CBC6F04722CDEC8A0021A11D /* NibLoadable.swift in Sources */,
@@ -942,6 +973,7 @@
 				CBC6F04422CDEC8A0021A11D /* Reusable.swift in Sources */,
 				CB8E36AE22DF06AE00735C2D /* TypeAlias.swift in Sources */,
 				CB8E36B122DF0D9000735C2D /* RealmDB.swift in Sources */,
+				CB11887622F289E700716EAC /* GameListPresenter.swift in Sources */,
 				CB5C1C6022DB0BBC00871C2B /* RecordInteractor.swift in Sources */,
 				CB5C1C5222D8764F00871C2B /* NumberSelectViewCell.swift in Sources */,
 				CBC6F03822CDEC8A0021A11D /* TeamFormView.swift in Sources */,
