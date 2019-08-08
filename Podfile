@@ -8,6 +8,9 @@ target 'WannaBasket' do
   # Pods for WannaBasket
   pod 'RealmSwift'
   
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
   target 'WannaBasketTests' do
     inherit! :search_paths
     # Pods for testing
