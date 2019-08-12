@@ -1,5 +1,7 @@
 # WannaBasket
-Xcode Project for BECORD iOS Application
+Xcode Project for BECORD iOS Application </br>
+> - app store : https://apps.apple.com/kr/app/비코드-농구기록지-점수판/id1474335547 </br>
+> - support : https://github.com/zero9712/BecordSupport
 
 </br>
 
