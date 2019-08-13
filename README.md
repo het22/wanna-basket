@@ -50,6 +50,29 @@ enum Module {
 
 ## Realm
 
+- 간단한 코드로 NoSQL 로컬 데이터베이스를 구축할 수 있다.
+- Realm Database 싱글턴 객체 
+- Realm Object에 공통으로 쓰일 프로퍼티나 메소드를 구현
+- 특정 Realm Object에 쓰일 메소드는 프로토콜을 통해 확장
+- Realm Database는 Interactor 레이어를 통해서 접근
+
 </br>
 
 ## Persistable
+
+- RealmObject는 Realm Database의 인스턴스만이 다룰 수 있게 한다.
+- VIPER의 모든 레이어는 RealmObject의 Value-Type Object만을 다룬다.
+- Persistable은 **RealmObject와 Value-Type Object 사이의 변환**을 담당한다.
+
+```swift
+protocol Persistable {
+		associatedtype RealmObject: RealmSwift.Object
+  
+  	// RealmObject to Value-Type Object
+    init(realmObject: RealmObject)
+  
+  	// Value-Type Object to RealmObject
+    func realmObject() -> RealmObject
+}
+```
+
