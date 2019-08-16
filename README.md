@@ -69,7 +69,7 @@ enum Module {
 
 ```swift
 protocol Persistable {
-		associatedtype RealmObject: RealmSwift.Object
+    associatedtype RealmObject: RealmSwift.Object
   
   	// RealmObject to Value-Type Object
     init(realmObject: RealmObject)
