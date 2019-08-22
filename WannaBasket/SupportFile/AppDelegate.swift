@@ -17,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Load First Module
+        // Load Tab Bar Controller Module
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            Module.Player(.List).view,
+            Module.Team(.List).view,
+            Module.Game(.List).view
+        ]
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = Module.Home.view
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true
