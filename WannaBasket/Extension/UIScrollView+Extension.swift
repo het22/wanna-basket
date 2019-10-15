@@ -16,14 +16,15 @@ extension UIScrollView {
         
         let savedContentOffset = contentOffset
         let savedFrame = frame
+        let savedSuperview = superview
         let saveVerticalScroll = showsVerticalScrollIndicator
         let saveHorizontalScroll = showsHorizontalScrollIndicator
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         contentOffset = CGPoint.zero
-        frame = CGRect(x: savedFrame.origin.x,
-                       y: savedFrame.origin.y,
+        frame = CGRect(x: 0,
+                       y: 0,
                        width: contentSize.width,
                        height: contentSize.height)
         
@@ -34,15 +35,24 @@ extension UIScrollView {
                                            width: width, height: width)
         watermarkImageView.contentMode = .scaleAspectFit
         watermarkImageView.alpha = 0.1
-        self.addSubview(watermarkImageView)
+        addSubview(watermarkImageView)
+        
+        let tempSuperview = UIView(frame: frame)
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        removeFromSuperview()
+        tempSuperview.addSubview(self)
         
         var image: UIImage?
         if let context = UIGraphicsGetCurrentContext() {
-            layer.render(in: context)
+            tempSuperview.layer.render(in: context)
             image = UIGraphicsGetImageFromCurrentImageContext()
         }
         
         watermarkImageView.removeFromSuperview()
+        removeFromSuperview()
+        savedSuperview?.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = true
         
         contentOffset = savedContentOffset
         frame = savedFrame
@@ -53,5 +63,4 @@ extension UIScrollView {
         
         return image
     }
-    
 }
