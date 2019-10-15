@@ -53,6 +53,7 @@ class RecordView: UIViewController {
     }
 
     @IBAction func saveButtonTapped() {
+        self.view.endEditing(true)
         presenter?.didTapSaveButton()
     }
     
