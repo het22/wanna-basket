@@ -38,6 +38,7 @@ class HomeWireframe: HomeWireframeProtocol {
     func presentModule(source: HomeViewProtocol, module: Module) {
         if let sourceView = source as? UIViewController {
             let destinationView = module.view
+            destinationView.modalPresentationStyle = .overFullScreen
             sourceView.present(destinationView, animated: true, completion: nil)
         }
     }
